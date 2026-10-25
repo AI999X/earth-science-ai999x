@@ -1,0 +1,252 @@
+{
+ "mass": {
+  "unit": "kg"
+ },
+ "length": {
+  "unit": "m"
+ },
+ "time": {
+  "unit": "s"
+ },
+ "speed": {
+  "unit": "m/s"
+ },
+ "acceleration": {
+  "unit": "m/s^2"
+ },
+ "force": {
+  "unit": "N"
+ },
+ "energy": {
+  "unit": "J",
+  "spellings": [
+   "J",
+   "eV",
+   "Wh"
+  ]
+ },
+ "torque": {
+  "unit": "N*m"
+ },
+ "power": {
+  "unit": "W"
+ },
+ "momentum": {
+  "unit": "kg*m/s",
+  "spellings": [
+   "kg*m/s"
+  ]
+ },
+ "impulse": {
+  "unit": "N*s",
+  "spellings": [
+   "N*s"
+  ]
+ },
+ "pressure": {
+  "unit": "Pa"
+ },
+ "density": {
+  "unit": "kg/m^3"
+ },
+ "area": {
+  "unit": "m^2"
+ },
+ "volume": {
+  "unit": "m^3"
+ },
+ "frequency": {
+  "unit": "Hz"
+ },
+ "angular_frequency": {
+  "unit": "rad/s"
+ },
+ "angle": {
+  "unit": "rad"
+ },
+ "voltage": {
+  "unit": "V"
+ },
+ "current": {
+  "unit": "A"
+ },
+ "resistance": {
+  "unit": "ohm"
+ },
+ "charge": {
+  "unit": "C"
+ },
+ "spring_constant": {
+  "unit": "N/m"
+ },
+ "temperature": {
+  "unit": "K"
+ },
+ "temperature_difference": {
+  "unit": "K",
+  "difference": true
+ },
+ "specific_heat": {
+  "unit": "J/(kg*K)"
+ },
+ "friction_coefficient": {
+  "unit": "1"
+ },
+ "electric_field": {
+  "unit": "N/C",
+  "spellings": [
+   "N/C",
+   "V/m"
+  ]
+ },
+ "capacitance": {
+  "unit": "F"
+ },
+ "magnetic_field": {
+  "unit": "T"
+ },
+ "magnetic_flux": {
+  "unit": "Wb"
+ },
+ "resistivity": {
+  "unit": "ohm*m"
+ },
+ "amount": {
+  "unit": "mol"
+ },
+ "moment_of_inertia": {
+  "unit": "kg*m^2"
+ },
+ "angular_momentum": {
+  "unit": "kg*m^2/s"
+ },
+ "angular_acceleration": {
+  "unit": "rad/s^2"
+ },
+ "expansion_coefficient": {
+  "unit": "1/K"
+ },
+ "latent_heat": {
+  "unit": "J/kg"
+ },
+ "turn_density": {
+  "unit": "1/m"
+ },
+ "magnification": {
+  "unit": "1"
+ },
+ "coulomb_constant": {
+  "unit": "N*m^2/C^2"
+ },
+ "gravitational_constant": {
+  "unit": "N*m^2/kg^2"
+ },
+ "permittivity": {
+  "unit": "C^2/(N*m^2)"
+ },
+ "permeability": {
+  "unit": "T*m/A"
+ },
+ "planck_constant": {
+  "unit": "J*s"
+ },
+ "gas_constant": {
+  "unit": "J/(mol*K)"
+ },
+ "inductance": {
+  "unit": "H"
+ },
+ "flow_rate": {
+  "unit": "m^3/s"
+ },
+ "intensity": {
+  "unit": "W/m^2"
+ },
+ "efficiency": {
+  "unit": "1"
+ },
+ "refractive_index": {
+  "unit": "1"
+ },
+ "lapse_rate": {
+  "unit": "K/m"
+ },
+ "temperature_gradient": {
+  "unit": "K/m"
+ },
+ "coriolis_parameter": {
+  "unit": "1/s"
+ },
+ "buoyancy_frequency": {
+  "unit": "1/s"
+ },
+ "specific_energy": {
+  "unit": "J/kg"
+ },
+ "geopotential": {
+  "unit": "m^2/s^2"
+ },
+ "beta_parameter": {
+  "unit": "1/(m*s)"
+ },
+ "radiative_flux": {
+  "unit": "W/m^2"
+ },
+ "heat_flux": {
+  "unit": "W/m^2"
+ },
+ "climate_sensitivity": {
+  "unit": "K*m^2/W"
+ },
+ "heat_capacity_per_area": {
+  "unit": "J/(m^2*K)"
+ },
+ "bulk_modulus": {
+  "unit": "Pa"
+ },
+ "shear_modulus": {
+  "unit": "Pa"
+ },
+ "youngs_modulus": {
+  "unit": "Pa"
+ },
+ "lame_lambda": {
+  "unit": "Pa"
+ },
+ "kinematic_viscosity": {
+  "unit": "m^2/s"
+ },
+ "shear_stress": {
+  "unit": "Pa"
+ },
+ "volume_transport_per_width": {
+  "unit": "m^2/s"
+ },
+ "mass_transport_per_width": {
+  "unit": "kg/(m*s)"
+ },
+ "seismic_moment": {
+  "unit": "N*m"
+ },
+ "thermal_conductivity": {
+  "unit": "W/(m*K)"
+ },
+ "volumetric_heat_production": {
+  "unit": "W/m^3"
+ },
+ "thermal_diffusivity": {
+  "unit": "m^2/s"
+ },
+ "dynamic_viscosity": {
+  "unit": "Pa*s"
+ },
+ "hydraulic_conductivity": {
+  "unit": "m/s"
+ },
+ "stream_power_per_length": {
+  "unit": "W/m"
+ },
+ "unit_stream_power": {
+  "unit": "W/m^2"
+ }
+}

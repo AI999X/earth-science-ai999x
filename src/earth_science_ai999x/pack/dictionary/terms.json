@@ -1,0 +1,3870 @@
+{
+ "labels": [
+  {
+   "phrase": "mass",
+   "kind": "mass"
+  },
+  {
+   "phrase": "initial velocity",
+   "kind": "speed",
+   "role": "initial"
+  },
+  {
+   "phrase": "initial speed",
+   "kind": "speed",
+   "role": "initial"
+  },
+  {
+   "phrase": "final velocity",
+   "kind": "speed",
+   "role": "final"
+  },
+  {
+   "phrase": "final speed",
+   "kind": "speed",
+   "role": "final"
+  },
+  {
+   "phrase": "wave speed",
+   "kind": "speed",
+   "role": "wave"
+  },
+  {
+   "phrase": "velocity",
+   "kind": "speed"
+  },
+  {
+   "phrase": "speed",
+   "kind": "speed"
+  },
+  {
+   "phrase": "centripetal acceleration",
+   "kind": "acceleration",
+   "role": "centripetal"
+  },
+  {
+   "phrase": "gravitational acceleration",
+   "kind": "acceleration",
+   "role": "gravity"
+  },
+  {
+   "phrase": "acceleration due to gravity",
+   "kind": "acceleration",
+   "role": "gravity"
+  },
+  {
+   "phrase": "acceleration",
+   "kind": "acceleration"
+  },
+  {
+   "phrase": "net force",
+   "kind": "force",
+   "role": "net"
+  },
+  {
+   "phrase": "applied force",
+   "kind": "force",
+   "role": "applied"
+  },
+  {
+   "phrase": "pushed with",
+   "kind": "force",
+   "role": "applied"
+  },
+  {
+   "phrase": "pulled with",
+   "kind": "force",
+   "role": "applied"
+  },
+  {
+   "phrase": "friction force",
+   "kind": "force",
+   "role": "friction"
+  },
+  {
+   "phrase": "frictional force",
+   "kind": "force",
+   "role": "friction"
+  },
+  {
+   "phrase": "force of friction",
+   "kind": "force",
+   "role": "friction"
+  },
+  {
+   "phrase": "normal force",
+   "kind": "force",
+   "role": "normal"
+  },
+  {
+   "phrase": "centripetal force",
+   "kind": "force",
+   "role": "centripetal"
+  },
+  {
+   "phrase": "spring force",
+   "kind": "force",
+   "role": "spring"
+  },
+  {
+   "phrase": "weight",
+   "kind": "force",
+   "role": "weight"
+  },
+  {
+   "phrase": "weighs",
+   "kind": "force",
+   "role": "weight"
+  },
+  {
+   "phrase": "force",
+   "kind": "force"
+  },
+  {
+   "phrase": "kinetic energy",
+   "kind": "energy",
+   "role": "kinetic"
+  },
+  {
+   "phrase": "gravitational potential energy",
+   "kind": "energy",
+   "role": "potential"
+  },
+  {
+   "phrase": "elastic potential energy",
+   "kind": "energy",
+   "role": "elastic"
+  },
+  {
+   "phrase": "potential energy",
+   "kind": "energy",
+   "role": "potential"
+  },
+  {
+   "phrase": "energy stored",
+   "kind": "energy",
+   "role": "elastic"
+  },
+  {
+   "phrase": "work done",
+   "kind": "energy",
+   "role": "work"
+  },
+  {
+   "phrase": "work",
+   "kind": "energy",
+   "role": "work"
+  },
+  {
+   "phrase": "heat",
+   "kind": "energy",
+   "role": "heat"
+  },
+  {
+   "phrase": "energy",
+   "kind": "energy"
+  },
+  {
+   "phrase": "power",
+   "kind": "power"
+  },
+  {
+   "phrase": "momentum",
+   "kind": "momentum"
+  },
+  {
+   "phrase": "impulse",
+   "kind": "impulse"
+  },
+  {
+   "phrase": "distance",
+   "kind": "length",
+   "role": "distance"
+  },
+  {
+   "phrase": "displacement",
+   "kind": "length",
+   "role": "distance"
+  },
+  {
+   "phrase": "height",
+   "kind": "length",
+   "role": "height"
+  },
+  {
+   "phrase": "radius",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "wavelength",
+   "kind": "length",
+   "role": "wavelength"
+  },
+  {
+   "phrase": "extension",
+   "kind": "length",
+   "role": "extension"
+  },
+  {
+   "phrase": "compression",
+   "kind": "length",
+   "role": "extension"
+  },
+  {
+   "phrase": "depth",
+   "kind": "length",
+   "role": "depth"
+  },
+  {
+   "phrase": "period",
+   "kind": "time",
+   "role": "period"
+  },
+  {
+   "phrase": "duration",
+   "kind": "time"
+  },
+  {
+   "phrase": "time",
+   "kind": "time"
+  },
+  {
+   "phrase": "angular frequency",
+   "kind": "angular_frequency"
+  },
+  {
+   "phrase": "angular speed",
+   "kind": "angular_frequency"
+  },
+  {
+   "phrase": "angular velocity",
+   "kind": "angular_frequency"
+  },
+  {
+   "phrase": "frequency",
+   "kind": "frequency"
+  },
+  {
+   "phrase": "angle",
+   "kind": "angle"
+  },
+  {
+   "phrase": "potential difference",
+   "kind": "voltage"
+  },
+  {
+   "phrase": "voltage",
+   "kind": "voltage"
+  },
+  {
+   "phrase": "current",
+   "kind": "current"
+  },
+  {
+   "phrase": "resistance",
+   "kind": "resistance"
+  },
+  {
+   "phrase": "charge",
+   "kind": "charge"
+  },
+  {
+   "phrase": "pressure",
+   "kind": "pressure"
+  },
+  {
+   "phrase": "density",
+   "kind": "density"
+  },
+  {
+   "phrase": "area",
+   "kind": "area"
+  },
+  {
+   "phrase": "volume",
+   "kind": "volume"
+  },
+  {
+   "phrase": "spring constant",
+   "kind": "spring_constant"
+  },
+  {
+   "phrase": "stiffness",
+   "kind": "spring_constant"
+  },
+  {
+   "phrase": "torque",
+   "kind": "torque"
+  },
+  {
+   "phrase": "temperature change",
+   "kind": "temperature_difference"
+  },
+  {
+   "phrase": "temperature rise",
+   "kind": "temperature_difference"
+  },
+  {
+   "phrase": "temperature increase",
+   "kind": "temperature_difference"
+  },
+  {
+   "phrase": "temperature difference",
+   "kind": "temperature_difference"
+  },
+  {
+   "phrase": "change in temperature",
+   "kind": "temperature_difference"
+  },
+  {
+   "phrase": "rise in temperature",
+   "kind": "temperature_difference"
+  },
+  {
+   "phrase": "temperature",
+   "kind": "temperature"
+  },
+  {
+   "phrase": "specific heat capacity",
+   "kind": "specific_heat"
+  },
+  {
+   "phrase": "specific heat",
+   "kind": "specific_heat"
+  },
+  {
+   "phrase": "coefficient of kinetic friction",
+   "kind": "friction_coefficient"
+  },
+  {
+   "phrase": "coefficient of friction",
+   "kind": "friction_coefficient"
+  },
+  {
+   "phrase": "coefficient of static friction",
+   "kind": "friction_coefficient",
+   "role": "static"
+  },
+  {
+   "phrase": "initial momentum",
+   "kind": "momentum",
+   "role": "initial"
+  },
+  {
+   "phrase": "final momentum",
+   "kind": "momentum",
+   "role": "final"
+  },
+  {
+   "phrase": "net work",
+   "kind": "energy",
+   "role": "net_work"
+  },
+  {
+   "phrase": "total work",
+   "kind": "energy",
+   "role": "net_work"
+  },
+  {
+   "phrase": "change in kinetic energy",
+   "kind": "energy",
+   "role": "net_work"
+  },
+  {
+   "phrase": "gain in kinetic energy",
+   "kind": "energy",
+   "role": "net_work"
+  },
+  {
+   "phrase": "tension",
+   "kind": "force",
+   "role": "tension"
+  },
+  {
+   "phrase": "average force",
+   "kind": "force",
+   "role": "net"
+  },
+  {
+   "phrase": "average net force",
+   "kind": "force",
+   "role": "net"
+  },
+  {
+   "phrase": "weight along the slope",
+   "kind": "force",
+   "role": "weight_along_slope"
+  },
+  {
+   "phrase": "weight along the incline",
+   "kind": "force",
+   "role": "weight_along_slope"
+  },
+  {
+   "phrase": "weight along the ramp",
+   "kind": "force",
+   "role": "weight_along_slope"
+  },
+  {
+   "phrase": "weight parallel to the slope",
+   "kind": "force",
+   "role": "weight_along_slope"
+  },
+  {
+   "phrase": "weight parallel to the incline",
+   "kind": "force",
+   "role": "weight_along_slope"
+  },
+  {
+   "phrase": "weight parallel to the ramp",
+   "kind": "force",
+   "role": "weight_along_slope"
+  },
+  {
+   "phrase": "weight down the slope",
+   "kind": "force",
+   "role": "weight_along_slope"
+  },
+  {
+   "phrase": "maximum height",
+   "kind": "length",
+   "role": "max_height"
+  },
+  {
+   "phrase": "angle of the incline",
+   "kind": "angle",
+   "role": "incline"
+  },
+  {
+   "phrase": "angle of the slope",
+   "kind": "angle",
+   "role": "incline"
+  },
+  {
+   "phrase": "angle of inclination",
+   "kind": "angle",
+   "role": "incline"
+  },
+  {
+   "phrase": "greatest height",
+   "kind": "length",
+   "role": "max_height"
+  },
+  {
+   "phrase": "peak height",
+   "kind": "length",
+   "role": "max_height"
+  },
+  {
+   "phrase": "force constant",
+   "kind": "spring_constant"
+  },
+  {
+   "phrase": "electric field",
+   "kind": "electric_field"
+  },
+  {
+   "phrase": "electric field strength",
+   "kind": "electric_field"
+  },
+  {
+   "phrase": "field strength",
+   "kind": "electric_field"
+  },
+  {
+   "phrase": "capacitance",
+   "kind": "capacitance"
+  },
+  {
+   "phrase": "magnetic field",
+   "kind": "magnetic_field"
+  },
+  {
+   "phrase": "magnetic field strength",
+   "kind": "magnetic_field"
+  },
+  {
+   "phrase": "magnetic flux",
+   "kind": "magnetic_flux"
+  },
+  {
+   "phrase": "flux",
+   "kind": "magnetic_flux"
+  },
+  {
+   "phrase": "resistivity",
+   "kind": "resistivity"
+  },
+  {
+   "phrase": "number of moles",
+   "kind": "amount"
+  },
+  {
+   "phrase": "amount of gas",
+   "kind": "amount"
+  },
+  {
+   "phrase": "moles",
+   "kind": "amount"
+  },
+  {
+   "phrase": "amount of substance",
+   "kind": "amount"
+  },
+  {
+   "phrase": "moment of inertia",
+   "kind": "moment_of_inertia"
+  },
+  {
+   "phrase": "rotational inertia",
+   "kind": "moment_of_inertia"
+  },
+  {
+   "phrase": "angular momentum",
+   "kind": "angular_momentum"
+  },
+  {
+   "phrase": "angular acceleration",
+   "kind": "angular_acceleration"
+  },
+  {
+   "phrase": "coefficient of linear expansion",
+   "kind": "expansion_coefficient"
+  },
+  {
+   "phrase": "linear expansion coefficient",
+   "kind": "expansion_coefficient"
+  },
+  {
+   "phrase": "coefficient of thermal expansion",
+   "kind": "expansion_coefficient"
+  },
+  {
+   "phrase": "latent heat of fusion",
+   "kind": "latent_heat",
+   "role": "fusion"
+  },
+  {
+   "phrase": "heat of fusion",
+   "kind": "latent_heat",
+   "role": "fusion"
+  },
+  {
+   "phrase": "latent heat of vaporization",
+   "kind": "latent_heat",
+   "role": "vaporization"
+  },
+  {
+   "phrase": "heat of vaporization",
+   "kind": "latent_heat",
+   "role": "vaporization"
+  },
+  {
+   "phrase": "latent heat",
+   "kind": "latent_heat"
+  },
+  {
+   "phrase": "turns per meter",
+   "kind": "turn_density"
+  },
+  {
+   "phrase": "turns per metre",
+   "kind": "turn_density"
+  },
+  {
+   "phrase": "magnification",
+   "kind": "magnification"
+  },
+  {
+   "phrase": "electric force",
+   "kind": "force",
+   "role": "electric"
+  },
+  {
+   "phrase": "electrostatic force",
+   "kind": "force",
+   "role": "electric"
+  },
+  {
+   "phrase": "magnetic force",
+   "kind": "force",
+   "role": "magnetic"
+  },
+  {
+   "phrase": "buoyant force",
+   "kind": "force",
+   "role": "buoyant"
+  },
+  {
+   "phrase": "buoyancy",
+   "kind": "force",
+   "role": "buoyant"
+  },
+  {
+   "phrase": "electric potential",
+   "kind": "voltage",
+   "role": "potential"
+  },
+  {
+   "phrase": "plate separation",
+   "kind": "length",
+   "role": "separation"
+  },
+  {
+   "phrase": "separation",
+   "kind": "length",
+   "role": "separation"
+  },
+  {
+   "phrase": "distance between the plates",
+   "kind": "length",
+   "role": "separation"
+  },
+  {
+   "phrase": "length of the wire",
+   "kind": "length",
+   "role": "wire_length"
+  },
+  {
+   "phrase": "wire length",
+   "kind": "length",
+   "role": "wire_length"
+  },
+  {
+   "phrase": "orbital radius",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "radius of the orbit",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "orbital speed",
+   "kind": "speed",
+   "role": "orbital"
+  },
+  {
+   "phrase": "orbital velocity",
+   "kind": "speed",
+   "role": "orbital"
+  },
+  {
+   "phrase": "orbital period",
+   "kind": "time",
+   "role": "period"
+  },
+  {
+   "phrase": "change in length",
+   "kind": "length",
+   "role": "expansion"
+  },
+  {
+   "phrase": "increase in length",
+   "kind": "length",
+   "role": "expansion"
+  },
+  {
+   "phrase": "expansion",
+   "kind": "length",
+   "role": "expansion"
+  },
+  {
+   "phrase": "original length",
+   "kind": "length",
+   "role": "original"
+  },
+  {
+   "phrase": "initial length",
+   "kind": "length",
+   "role": "original"
+  },
+  {
+   "phrase": "object distance",
+   "kind": "length",
+   "role": "object_distance"
+  },
+  {
+   "phrase": "image distance",
+   "kind": "length",
+   "role": "image_distance"
+  },
+  {
+   "phrase": "focal length",
+   "kind": "length",
+   "role": "focal"
+  },
+  {
+   "phrase": "photon energy",
+   "kind": "energy",
+   "role": "photon"
+  },
+  {
+   "phrase": "energy of the photon",
+   "kind": "energy",
+   "role": "photon"
+  },
+  {
+   "phrase": "energy of a photon",
+   "kind": "energy",
+   "role": "photon"
+  },
+  {
+   "phrase": "rest energy",
+   "kind": "energy",
+   "role": "rest"
+  },
+  {
+   "phrase": "rest mass energy",
+   "kind": "energy",
+   "role": "rest"
+  },
+  {
+   "phrase": "rotational kinetic energy",
+   "kind": "energy",
+   "role": "rotational"
+  },
+  {
+   "phrase": "energy stored in the capacitor",
+   "kind": "energy",
+   "role": "capacitor"
+  },
+  {
+   "phrase": "energy stored in a capacitor",
+   "kind": "energy",
+   "role": "capacitor"
+  },
+  {
+   "phrase": "length of the pendulum",
+   "kind": "length",
+   "role": "pendulum"
+  },
+  {
+   "phrase": "pendulum length",
+   "kind": "length",
+   "role": "pendulum"
+  },
+  {
+   "phrase": "lever arm",
+   "kind": "length",
+   "role": "lever_arm"
+  },
+  {
+   "phrase": "moment arm",
+   "kind": "length",
+   "role": "lever_arm"
+  },
+  {
+   "phrase": "distance from the pivot",
+   "kind": "length",
+   "role": "lever_arm"
+  },
+  {
+   "phrase": "distance from the hinge",
+   "kind": "length",
+   "role": "lever_arm"
+  },
+  {
+   "phrase": "distance from the axis",
+   "kind": "length",
+   "role": "lever_arm"
+  },
+  {
+   "phrase": "surface gravity",
+   "kind": "acceleration",
+   "role": "gravity"
+  },
+  {
+   "phrase": "gravitational field strength",
+   "kind": "acceleration",
+   "role": "gravity"
+  },
+  {
+   "phrase": "heated by",
+   "kind": "temperature_difference"
+  },
+  {
+   "phrase": "warmed by",
+   "kind": "temperature_difference"
+  },
+  {
+   "phrase": "cooled by",
+   "kind": "temperature_difference"
+  },
+  {
+   "phrase": "initial angular velocity",
+   "kind": "angular_frequency",
+   "role": "initial"
+  },
+  {
+   "phrase": "initial angular speed",
+   "kind": "angular_frequency",
+   "role": "initial"
+  },
+  {
+   "phrase": "final angular velocity",
+   "kind": "angular_frequency",
+   "role": "final"
+  },
+  {
+   "phrase": "final angular speed",
+   "kind": "angular_frequency",
+   "role": "final"
+  },
+  {
+   "phrase": "angular displacement",
+   "kind": "angle",
+   "role": "angular_displacement"
+  },
+  {
+   "phrase": "angle turned",
+   "kind": "angle",
+   "role": "angular_displacement"
+  },
+  {
+   "phrase": "angle it turns through",
+   "kind": "angle",
+   "role": "angular_displacement"
+  },
+  {
+   "phrase": "angle of rotation",
+   "kind": "angle",
+   "role": "angular_displacement"
+  },
+  {
+   "phrase": "tangential acceleration",
+   "kind": "acceleration",
+   "role": "tangential"
+  },
+  {
+   "phrase": "absolute pressure",
+   "kind": "pressure",
+   "role": "absolute"
+  },
+  {
+   "phrase": "total pressure",
+   "kind": "pressure",
+   "role": "absolute"
+  },
+  {
+   "phrase": "atmospheric pressure",
+   "kind": "pressure",
+   "role": "atmospheric"
+  },
+  {
+   "phrase": "pressure at the surface",
+   "kind": "pressure",
+   "role": "atmospheric"
+  },
+  {
+   "phrase": "flow rate",
+   "kind": "flow_rate"
+  },
+  {
+   "phrase": "volume flow rate",
+   "kind": "flow_rate"
+  },
+  {
+   "phrase": "rate of flow",
+   "kind": "flow_rate"
+  },
+  {
+   "phrase": "cross-sectional area",
+   "kind": "area"
+  },
+  {
+   "phrase": "coefficient of volume expansion",
+   "kind": "expansion_coefficient",
+   "role": "volume"
+  },
+  {
+   "phrase": "volume expansion coefficient",
+   "kind": "expansion_coefficient",
+   "role": "volume"
+  },
+  {
+   "phrase": "change in volume",
+   "kind": "volume",
+   "role": "expansion"
+  },
+  {
+   "phrase": "increase in volume",
+   "kind": "volume",
+   "role": "expansion"
+  },
+  {
+   "phrase": "original volume",
+   "kind": "volume",
+   "role": "original"
+  },
+  {
+   "phrase": "initial volume",
+   "kind": "volume",
+   "role": "original"
+  },
+  {
+   "phrase": "efficiency",
+   "kind": "efficiency"
+  },
+  {
+   "phrase": "thermal efficiency",
+   "kind": "efficiency"
+  },
+  {
+   "phrase": "maximum efficiency",
+   "kind": "efficiency",
+   "role": "carnot"
+  },
+  {
+   "phrase": "carnot efficiency",
+   "kind": "efficiency",
+   "role": "carnot"
+  },
+  {
+   "phrase": "ideal efficiency",
+   "kind": "efficiency",
+   "role": "carnot"
+  },
+  {
+   "phrase": "coefficient of performance",
+   "kind": "efficiency",
+   "role": "cop"
+  },
+  {
+   "phrase": "heat input",
+   "kind": "energy",
+   "role": "heat_hot"
+  },
+  {
+   "phrase": "heat absorbed from the hot reservoir",
+   "kind": "energy",
+   "role": "heat_hot"
+  },
+  {
+   "phrase": "heat taken in",
+   "kind": "energy",
+   "role": "heat_hot"
+  },
+  {
+   "phrase": "heat from the hot reservoir",
+   "kind": "energy",
+   "role": "heat_hot"
+  },
+  {
+   "phrase": "heat rejected",
+   "kind": "energy",
+   "role": "heat_cold"
+  },
+  {
+   "phrase": "heat expelled",
+   "kind": "energy",
+   "role": "heat_cold"
+  },
+  {
+   "phrase": "heat exhausted",
+   "kind": "energy",
+   "role": "heat_cold"
+  },
+  {
+   "phrase": "heat delivered to the cold reservoir",
+   "kind": "energy",
+   "role": "heat_cold"
+  },
+  {
+   "phrase": "heat removed",
+   "kind": "energy",
+   "role": "heat_cold"
+  },
+  {
+   "phrase": "heat delivered",
+   "kind": "energy",
+   "role": "heat_hot"
+  },
+  {
+   "phrase": "work output",
+   "kind": "energy",
+   "role": "work"
+  },
+  {
+   "phrase": "work input",
+   "kind": "energy",
+   "role": "work"
+  },
+  {
+   "phrase": "hot reservoir temperature",
+   "kind": "temperature",
+   "role": "hot"
+  },
+  {
+   "phrase": "temperature of the hot reservoir",
+   "kind": "temperature",
+   "role": "hot"
+  },
+  {
+   "phrase": "cold reservoir temperature",
+   "kind": "temperature",
+   "role": "cold"
+  },
+  {
+   "phrase": "temperature of the cold reservoir",
+   "kind": "temperature",
+   "role": "cold"
+  },
+  {
+   "phrase": "amplitude",
+   "kind": "length",
+   "role": "amplitude"
+  },
+  {
+   "phrase": "maximum speed",
+   "kind": "speed",
+   "role": "max"
+  },
+  {
+   "phrase": "maximum velocity",
+   "kind": "speed",
+   "role": "max"
+  },
+  {
+   "phrase": "intensity",
+   "kind": "intensity"
+  },
+  {
+   "phrase": "index of refraction",
+   "kind": "refractive_index"
+  },
+  {
+   "phrase": "refractive index",
+   "kind": "refractive_index"
+  },
+  {
+   "phrase": "wavelength in the medium",
+   "kind": "length",
+   "role": "wavelength_medium"
+  },
+  {
+   "phrase": "wavelength in the material",
+   "kind": "length",
+   "role": "wavelength_medium"
+  },
+  {
+   "phrase": "wavelength in vacuum",
+   "kind": "length",
+   "role": "wavelength"
+  },
+  {
+   "phrase": "wavelength in air",
+   "kind": "length",
+   "role": "wavelength"
+  },
+  {
+   "phrase": "speed of light in the medium",
+   "kind": "speed",
+   "role": "medium"
+  },
+  {
+   "phrase": "speed of light in the material",
+   "kind": "speed",
+   "role": "medium"
+  },
+  {
+   "phrase": "radius of curvature",
+   "kind": "length",
+   "role": "curvature"
+  },
+  {
+   "phrase": "length of a pendulum",
+   "kind": "length",
+   "role": "pendulum"
+  },
+  {
+   "phrase": "peak voltage",
+   "kind": "voltage",
+   "role": "peak"
+  },
+  {
+   "phrase": "maximum voltage",
+   "kind": "voltage",
+   "role": "peak"
+  },
+  {
+   "phrase": "rms voltage",
+   "kind": "voltage",
+   "role": "rms"
+  },
+  {
+   "phrase": "peak current",
+   "kind": "current",
+   "role": "peak"
+  },
+  {
+   "phrase": "maximum current",
+   "kind": "current",
+   "role": "peak"
+  },
+  {
+   "phrase": "rms current",
+   "kind": "current",
+   "role": "rms"
+  },
+  {
+   "phrase": "emf",
+   "kind": "voltage",
+   "role": "emf"
+  },
+  {
+   "phrase": "induced emf",
+   "kind": "voltage",
+   "role": "emf"
+  },
+  {
+   "phrase": "motional emf",
+   "kind": "voltage",
+   "role": "emf"
+  },
+  {
+   "phrase": "inductance",
+   "kind": "inductance"
+  },
+  {
+   "phrase": "self-inductance",
+   "kind": "inductance"
+  },
+  {
+   "phrase": "reactance",
+   "kind": "resistance",
+   "role": "reactance"
+  },
+  {
+   "phrase": "inductive reactance",
+   "kind": "resistance",
+   "role": "reactance"
+  },
+  {
+   "phrase": "capacitive reactance",
+   "kind": "resistance",
+   "role": "reactance"
+  },
+  {
+   "phrase": "time constant",
+   "kind": "time",
+   "role": "time_constant"
+  },
+  {
+   "phrase": "characteristic time constant",
+   "kind": "time",
+   "role": "time_constant"
+  },
+  {
+   "phrase": "resonant frequency",
+   "kind": "frequency",
+   "role": "resonant"
+  },
+  {
+   "phrase": "resonance frequency",
+   "kind": "frequency",
+   "role": "resonant"
+  },
+  {
+   "phrase": "radius of the path",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "radius of the circular path",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "radius of curvature of the path",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "radius of the loop",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "rod length",
+   "kind": "length",
+   "role": "wire_length"
+  },
+  {
+   "phrase": "length of the rod",
+   "kind": "length",
+   "role": "wire_length"
+  },
+  {
+   "phrase": "change in current",
+   "kind": "current",
+   "role": "change"
+  },
+  {
+   "phrase": "below the surface",
+   "kind": "length",
+   "role": "depth"
+  },
+  {
+   "phrase": "beneath the surface",
+   "kind": "length",
+   "role": "depth"
+  },
+  {
+   "phrase": "long pendulum",
+   "kind": "length",
+   "role": "pendulum"
+  },
+  {
+   "phrase": "initial voltage",
+   "kind": "voltage",
+   "role": "initial"
+  },
+  {
+   "phrase": "starting voltage",
+   "kind": "voltage",
+   "role": "initial"
+  },
+  {
+   "phrase": "voltage across the capacitor",
+   "kind": "voltage",
+   "role": "capacitor"
+  },
+  {
+   "phrase": "capacitor voltage",
+   "kind": "voltage",
+   "role": "capacitor"
+  },
+  {
+   "phrase": "initial current",
+   "kind": "current",
+   "role": "initial"
+  },
+  {
+   "phrase": "current after",
+   "kind": "current",
+   "role": "plain"
+  },
+  {
+   "phrase": "change in area",
+   "kind": "area",
+   "role": "expansion"
+  },
+  {
+   "phrase": "increase in area",
+   "kind": "area",
+   "role": "expansion"
+  },
+  {
+   "phrase": "original area",
+   "kind": "area",
+   "role": "original"
+  },
+  {
+   "phrase": "initial area",
+   "kind": "area",
+   "role": "original"
+  },
+  {
+   "phrase": "rod of length",
+   "kind": "length",
+   "role": "wire_length"
+  },
+  {
+   "phrase": "a rod of length",
+   "kind": "length",
+   "role": "wire_length"
+  },
+  {
+   "phrase": "full swing",
+   "kind": "time",
+   "role": "period"
+  },
+  {
+   "phrase": "one swing",
+   "kind": "time",
+   "role": "period"
+  },
+  {
+   "phrase": "one complete swing",
+   "kind": "time",
+   "role": "period"
+  },
+  {
+   "phrase": "one oscillation",
+   "kind": "time",
+   "role": "period"
+  },
+  {
+   "phrase": "one complete oscillation",
+   "kind": "time",
+   "role": "period"
+  },
+  {
+   "phrase": "one cycle",
+   "kind": "time",
+   "role": "period"
+  },
+  {
+   "phrase": "small-angle cycle",
+   "kind": "time",
+   "role": "period"
+  },
+  {
+   "phrase": "one complete cycle",
+   "kind": "time",
+   "role": "period"
+  },
+  {
+   "phrase": "distance from the center",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "distance from the centre",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "distance to the center",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "distance to the centre",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "from the center",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "from the centre",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "pendulum of length",
+   "kind": "length",
+   "role": "pendulum"
+  },
+  {
+   "phrase": "one full oscillation",
+   "kind": "time",
+   "role": "period"
+  },
+  {
+   "phrase": "one full cycle",
+   "kind": "time",
+   "role": "period"
+  },
+  {
+   "phrase": "inward force",
+   "kind": "force",
+   "role": "centripetal"
+  },
+  {
+   "phrase": "net inward force",
+   "kind": "force",
+   "role": "centripetal"
+  },
+  {
+   "phrase": "center-seeking force",
+   "kind": "force",
+   "role": "centripetal"
+  },
+  {
+   "phrase": "centre-seeking force",
+   "kind": "force",
+   "role": "centripetal"
+  },
+  {
+   "phrase": "steady-state amplitude",
+   "kind": "length",
+   "role": "amplitude"
+  },
+  {
+   "phrase": "steady state amplitude",
+   "kind": "length",
+   "role": "amplitude"
+  },
+  {
+   "phrase": "amplitude of the steady-state motion",
+   "kind": "length",
+   "role": "amplitude"
+  },
+  {
+   "phrase": "length of each arm",
+   "kind": "length",
+   "role": "pendulum"
+  },
+  {
+   "phrase": "arm length",
+   "kind": "length",
+   "role": "pendulum"
+  },
+  {
+   "phrase": "each arm",
+   "kind": "length",
+   "role": "pendulum"
+  },
+  {
+   "phrase": "speed in the orbit",
+   "kind": "speed",
+   "role": "orbital"
+  },
+  {
+   "phrase": "moment of inertia of the pulley",
+   "kind": "moment_of_inertia",
+   "role": "plain"
+  },
+  {
+   "phrase": "radius of the pulley",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "pulley radius",
+   "kind": "length",
+   "role": "radius"
+  },
+  {
+   "phrase": "inertia",
+   "kind": "moment_of_inertia"
+  },
+  {
+   "phrase": "linear acceleration",
+   "kind": "acceleration"
+  }
+ ],
+ "ask_idioms": [
+  {
+   "phrase": "how fast",
+   "kind": "speed"
+  },
+  {
+   "phrase": "how far",
+   "kind": "length",
+   "role": "distance"
+  },
+  {
+   "phrase": "how high",
+   "kind": "length",
+   "role": "height"
+  },
+  {
+   "phrase": "how much time",
+   "kind": "time"
+  },
+  {
+   "phrase": "how long",
+   "kind": "time"
+  },
+  {
+   "phrase": "weigh",
+   "kind": "force",
+   "role": "weight"
+  },
+  {
+   "phrase": "how many seconds",
+   "kind": "time"
+  },
+  {
+   "phrase": "how many minutes",
+   "kind": "time"
+  },
+  {
+   "phrase": "how many hours",
+   "kind": "time"
+  },
+  {
+   "phrase": "cycles per second",
+   "kind": "frequency"
+  },
+  {
+   "phrase": "oscillations per second",
+   "kind": "frequency"
+  },
+  {
+   "phrase": "pass a fixed point per second",
+   "kind": "frequency"
+  },
+  {
+   "phrase": "how much current",
+   "kind": "current"
+  }
+ ],
+ "implied": [
+  {
+   "phrase": "from rest",
+   "kind": "speed",
+   "role": "initial",
+   "value": 0,
+   "unit": "m/s",
+   "assumption": "starts from rest"
+  },
+  {
+   "phrase": "initially at rest",
+   "kind": "speed",
+   "role": "initial",
+   "value": 0,
+   "unit": "m/s",
+   "assumption": "starts from rest"
+  },
+  {
+   "phrase": "dropped",
+   "kind": "speed",
+   "role": "initial",
+   "value": 0,
+   "unit": "m/s",
+   "assumption": "released with no initial speed"
+  },
+  {
+   "phrase": "comes to rest",
+   "kind": "speed",
+   "role": "final",
+   "value": 0,
+   "unit": "m/s",
+   "assumption": "ends at rest"
+  },
+  {
+   "phrase": "to a stop",
+   "kind": "speed",
+   "role": "final",
+   "value": 0,
+   "unit": "m/s",
+   "assumption": "ends at rest"
+  },
+  {
+   "phrase": "perpendicular",
+   "kind": "angle",
+   "role": "plain",
+   "value": 90,
+   "unit": "deg",
+   "assumption": "the force is perpendicular to the displacement"
+  },
+  {
+   "phrase": "dropped",
+   "kind": "acceleration",
+   "role": "gravity",
+   "value": 9.80665,
+   "unit": "m/s^2",
+   "unless": [
+    "non_earth"
+   ],
+   "assumption": "free fall near Earth's surface without air resistance, g = 9.80665 m/s^2"
+  },
+  {
+   "phrase": "free fall",
+   "kind": "acceleration",
+   "role": "gravity",
+   "value": 9.80665,
+   "unit": "m/s^2",
+   "unless": [
+    "non_earth"
+   ],
+   "assumption": "free fall near Earth's surface without air resistance, g = 9.80665 m/s^2"
+  },
+  {
+   "phrase": "falls freely",
+   "kind": "acceleration",
+   "role": "gravity",
+   "value": 9.80665,
+   "unit": "m/s^2",
+   "unless": [
+    "non_earth"
+   ],
+   "assumption": "free fall near Earth's surface without air resistance, g = 9.80665 m/s^2"
+  },
+  {
+   "phrase": "falls",
+   "kind": "acceleration",
+   "role": "gravity",
+   "value": 9.80665,
+   "unit": "m/s^2",
+   "unless": [
+    "non_earth"
+   ],
+   "assumption": "free fall near Earth's surface without air resistance, g = 9.80665 m/s^2"
+  },
+  {
+   "phrase": "brought to rest",
+   "kind": "speed",
+   "role": "final",
+   "value": 0,
+   "unit": "m/s",
+   "assumption": "ends at rest"
+  },
+  {
+   "phrase": "comes to a stop",
+   "kind": "speed",
+   "role": "final",
+   "value": 0,
+   "unit": "m/s",
+   "assumption": "ends at rest"
+  },
+  {
+   "phrase": "perpendicular to the field",
+   "kind": "angle",
+   "role": "plain",
+   "value": 90,
+   "unit": "deg",
+   "assumption": "the motion or current is perpendicular to the field"
+  },
+  {
+   "phrase": "at right angles to the field",
+   "kind": "angle",
+   "role": "plain",
+   "value": 90,
+   "unit": "deg",
+   "assumption": "the motion or current is perpendicular to the field"
+  },
+  {
+   "phrase": "perpendicular to its field",
+   "kind": "angle",
+   "role": "plain",
+   "value": 90,
+   "unit": "deg",
+   "assumption": "the motion or current is perpendicular to the field"
+  },
+  {
+   "phrase": "perpendicular to the magnetic field",
+   "kind": "angle",
+   "role": "plain",
+   "value": 90,
+   "unit": "deg",
+   "assumption": "the motion or current is perpendicular to the field"
+  },
+  {
+   "phrase": "starts from rest",
+   "kind": "angular_frequency",
+   "role": "initial",
+   "value": 0,
+   "unit": "rad/s",
+   "assumption": "it starts from rest (no initial rotation)",
+   "when_tag": "rotating"
+  },
+  {
+   "phrase": "from rest",
+   "kind": "angular_frequency",
+   "role": "initial",
+   "value": 0,
+   "unit": "rad/s",
+   "assumption": "it starts from rest (no initial rotation)",
+   "when_tag": "rotating"
+  },
+  {
+   "phrase": "to a hover",
+   "kind": "speed",
+   "role": "final",
+   "value": 0,
+   "unit": "m/s",
+   "assumption": "ends hovering at rest"
+  },
+  {
+   "phrase": "comes to a hover",
+   "kind": "speed",
+   "role": "final",
+   "value": 0,
+   "unit": "m/s",
+   "assumption": "ends hovering at rest"
+  }
+ ],
+ "context": [
+  {
+   "phrase": "moon",
+   "tag": "non_earth"
+  },
+  {
+   "phrase": "lunar",
+   "tag": "non_earth"
+  },
+  {
+   "phrase": "mars",
+   "tag": "non_earth"
+  },
+  {
+   "phrase": "martian",
+   "tag": "non_earth"
+  },
+  {
+   "phrase": "jupiter",
+   "tag": "non_earth"
+  },
+  {
+   "phrase": "planet",
+   "tag": "non_earth"
+  },
+  {
+   "phrase": "asteroid",
+   "tag": "non_earth"
+  },
+  {
+   "phrase": "orbit",
+   "tag": "non_earth"
+  },
+  {
+   "phrase": "space station",
+   "tag": "non_earth"
+  },
+  {
+   "phrase": "accelerates",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "accelerating",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "decelerates",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "from rest",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "dropped",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "falls",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "free fall",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "perpendicular",
+   "tag": "oblique_force"
+  },
+  {
+   "phrase": "incline",
+   "tag": "inclined"
+  },
+  {
+   "phrase": "inclined",
+   "tag": "inclined"
+  },
+  {
+   "phrase": "ramp",
+   "tag": "inclined"
+  },
+  {
+   "phrase": "slope",
+   "tag": "inclined"
+  },
+  {
+   "phrase": "thrown straight up",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "thrown upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "thrown upwards",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "thrown vertically",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "thrown vertically upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "tossed straight up",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "tossed upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "tossed upwards",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "launched straight up",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "launched vertically",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "launched upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "fired straight up",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "fired vertically",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "projected vertically",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "thrown straight up",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "thrown upward",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "thrown upwards",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "thrown vertically",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "tossed straight up",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "tossed upward",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "tossed upwards",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "launched straight up",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "launched vertically",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "launched upward",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "fired straight up",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "fired vertically",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "projected vertically",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "brought to rest",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "comes to rest",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "to a stop",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "slows",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "slows down",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "speeds up",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "slides down",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "moves down",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "released",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "hill",
+   "tag": "inclined"
+  },
+  {
+   "phrase": "inclines",
+   "tag": "inclined"
+  },
+  {
+   "phrase": "ramps",
+   "tag": "inclined"
+  },
+  {
+   "phrase": "slopes",
+   "tag": "inclined"
+  },
+  {
+   "phrase": "tilted",
+   "tag": "inclined"
+  },
+  {
+   "phrase": "frictionless",
+   "tag": "frictionless"
+  },
+  {
+   "phrase": "smooth",
+   "tag": "frictionless"
+  },
+  {
+   "phrase": "no friction",
+   "tag": "frictionless"
+  },
+  {
+   "phrase": "without friction",
+   "tag": "frictionless"
+  },
+  {
+   "phrase": "friction is negligible",
+   "tag": "frictionless"
+  },
+  {
+   "phrase": "negligible friction",
+   "tag": "frictionless"
+  },
+  {
+   "phrase": "ignore friction",
+   "tag": "frictionless"
+  },
+  {
+   "phrase": "ignoring friction",
+   "tag": "frictionless"
+  },
+  {
+   "phrase": "neglect friction",
+   "tag": "frictionless"
+  },
+  {
+   "phrase": "neglecting friction",
+   "tag": "frictionless"
+  },
+  {
+   "phrase": "rough",
+   "tag": "friction_present"
+  },
+  {
+   "phrase": "with friction",
+   "tag": "friction_present"
+  },
+  {
+   "phrase": "friction acts",
+   "tag": "friction_present"
+  },
+  {
+   "phrase": "hangs",
+   "tag": "hanging"
+  },
+  {
+   "phrase": "hanging",
+   "tag": "hanging"
+  },
+  {
+   "phrase": "hung",
+   "tag": "hanging"
+  },
+  {
+   "phrase": "suspended",
+   "tag": "hanging"
+  },
+  {
+   "phrase": "dangles",
+   "tag": "hanging"
+  },
+  {
+   "phrase": "dangling",
+   "tag": "hanging"
+  },
+  {
+   "phrase": "at rest",
+   "tag": "equilibrium"
+  },
+  {
+   "phrase": "motionless",
+   "tag": "equilibrium"
+  },
+  {
+   "phrase": "stationary",
+   "tag": "equilibrium"
+  },
+  {
+   "phrase": "in equilibrium",
+   "tag": "equilibrium"
+  },
+  {
+   "phrase": "constant velocity",
+   "tag": "equilibrium"
+  },
+  {
+   "phrase": "constant speed",
+   "tag": "equilibrium"
+  },
+  {
+   "phrase": "released",
+   "tag": "spring_launch"
+  },
+  {
+   "phrase": "launched by a spring",
+   "tag": "spring_launch"
+  },
+  {
+   "phrase": "launched by the spring",
+   "tag": "spring_launch"
+  },
+  {
+   "phrase": "fired by a spring",
+   "tag": "spring_launch"
+  },
+  {
+   "phrase": "leaves the spring",
+   "tag": "spring_launch"
+  },
+  {
+   "phrase": "leave the spring",
+   "tag": "spring_launch"
+  },
+  {
+   "phrase": "dropped",
+   "tag": "free_fall"
+  },
+  {
+   "phrase": "free fall",
+   "tag": "free_fall"
+  },
+  {
+   "phrase": "falls freely",
+   "tag": "free_fall"
+  },
+  {
+   "phrase": "falls",
+   "tag": "free_fall"
+  },
+  {
+   "phrase": "dropped",
+   "tag": "from_rest"
+  },
+  {
+   "phrase": "from rest",
+   "tag": "from_rest"
+  },
+  {
+   "phrase": "released from rest",
+   "tag": "from_rest"
+  },
+  {
+   "phrase": "initially at rest",
+   "tag": "from_rest"
+  },
+  {
+   "tag": "accelerated",
+   "phrase": "accelerate"
+  },
+  {
+   "tag": "accelerated",
+   "phrase": "accelerated"
+  },
+  {
+   "tag": "accelerated",
+   "phrase": "to accelerate"
+  },
+  {
+   "tag": "accelerated",
+   "phrase": "slow down"
+  },
+  {
+   "tag": "accelerated",
+   "phrase": "to rest"
+  },
+  {
+   "tag": "accelerated",
+   "phrase": "to a halt"
+  },
+  {
+   "tag": "accelerated",
+   "phrase": "brake"
+  },
+  {
+   "tag": "accelerated",
+   "phrase": "brakes"
+  },
+  {
+   "tag": "accelerated",
+   "phrase": "braking"
+  },
+  {
+   "tag": "accelerated",
+   "phrase": "stops"
+  },
+  {
+   "tag": "container_contents",
+   "phrase": "holds"
+  },
+  {
+   "tag": "container_contents",
+   "phrase": "filled with"
+  },
+  {
+   "tag": "container_contents",
+   "phrase": "full of"
+  },
+  {
+   "tag": "container_contents",
+   "phrase": "when full"
+  },
+  {
+   "tag": "container_contents",
+   "phrase": "contains"
+  },
+  {
+   "tag": "container_contents",
+   "phrase": "is full"
+  },
+  {
+   "tag": "alternating_current",
+   "phrase": "ac"
+  },
+  {
+   "tag": "alternating_current",
+   "phrase": "alternating"
+  },
+  {
+   "tag": "alternating_current",
+   "phrase": "alternating current"
+  },
+  {
+   "tag": "alternating_current",
+   "phrase": "rms"
+  },
+  {
+   "tag": "alternating_current",
+   "phrase": "peak"
+  },
+  {
+   "tag": "electric",
+   "phrase": "electric field"
+  },
+  {
+   "tag": "electric",
+   "phrase": "point charge"
+  },
+  {
+   "tag": "electric",
+   "phrase": "charged"
+  },
+  {
+   "tag": "electric",
+   "phrase": "charge of"
+  },
+  {
+   "tag": "electric",
+   "phrase": "electron"
+  },
+  {
+   "tag": "electric",
+   "phrase": "proton"
+  },
+  {
+   "tag": "electric",
+   "phrase": "coulomb"
+  },
+  {
+   "tag": "uniform_field",
+   "phrase": "uniform field"
+  },
+  {
+   "tag": "uniform_field",
+   "phrase": "uniform electric field"
+  },
+  {
+   "tag": "uniform_field",
+   "phrase": "parallel plates"
+  },
+  {
+   "tag": "uniform_field",
+   "phrase": "between the plates"
+  },
+  {
+   "tag": "capacitor",
+   "phrase": "capacitor"
+  },
+  {
+   "tag": "capacitor",
+   "phrase": "capacitors"
+  },
+  {
+   "tag": "capacitor",
+   "phrase": "capacitance"
+  },
+  {
+   "tag": "resistive",
+   "phrase": "resistor"
+  },
+  {
+   "tag": "resistive",
+   "phrase": "resistance"
+  },
+  {
+   "tag": "resistive",
+   "phrase": "heater"
+  },
+  {
+   "tag": "resistive",
+   "phrase": "heating element"
+  },
+  {
+   "tag": "resistive",
+   "phrase": "bulb"
+  },
+  {
+   "tag": "resistive",
+   "phrase": "lamp"
+  },
+  {
+   "tag": "resistive",
+   "phrase": "toaster"
+  },
+  {
+   "tag": "wire",
+   "phrase": "wire"
+  },
+  {
+   "tag": "wire",
+   "phrase": "cable"
+  },
+  {
+   "tag": "wire",
+   "phrase": "conductor"
+  },
+  {
+   "tag": "wire",
+   "phrase": "wires"
+  },
+  {
+   "tag": "magnetic",
+   "phrase": "magnetic field"
+  },
+  {
+   "tag": "magnetic",
+   "phrase": "magnetic force"
+  },
+  {
+   "tag": "magnetic",
+   "phrase": "magnetic flux"
+  },
+  {
+   "tag": "magnetic",
+   "phrase": "tesla"
+  },
+  {
+   "tag": "solenoid",
+   "phrase": "solenoid"
+  },
+  {
+   "tag": "solenoid",
+   "phrase": "coil"
+  },
+  {
+   "tag": "celestial",
+   "phrase": "planet"
+  },
+  {
+   "tag": "celestial",
+   "phrase": "moon"
+  },
+  {
+   "tag": "celestial",
+   "phrase": "star"
+  },
+  {
+   "tag": "celestial",
+   "phrase": "asteroid"
+  },
+  {
+   "tag": "celestial",
+   "phrase": "the earth"
+  },
+  {
+   "tag": "celestial",
+   "phrase": "earth's"
+  },
+  {
+   "tag": "celestial",
+   "phrase": "the sun"
+  },
+  {
+   "tag": "celestial",
+   "phrase": "mars"
+  },
+  {
+   "tag": "celestial",
+   "phrase": "jupiter"
+  },
+  {
+   "tag": "orbit",
+   "phrase": "orbit"
+  },
+  {
+   "tag": "orbit",
+   "phrase": "orbits"
+  },
+  {
+   "tag": "orbit",
+   "phrase": "orbiting"
+  },
+  {
+   "tag": "orbit",
+   "phrase": "satellite"
+  },
+  {
+   "tag": "orbit",
+   "phrase": "circular orbit"
+  },
+  {
+   "tag": "gas",
+   "phrase": "gas"
+  },
+  {
+   "tag": "gas",
+   "phrase": "ideal gas"
+  },
+  {
+   "tag": "gas",
+   "phrase": "helium"
+  },
+  {
+   "tag": "gas",
+   "phrase": "nitrogen"
+  },
+  {
+   "tag": "gas",
+   "phrase": "oxygen"
+  },
+  {
+   "tag": "gas",
+   "phrase": "argon"
+  },
+  {
+   "tag": "gas",
+   "phrase": "hydrogen gas"
+  },
+  {
+   "tag": "melting",
+   "phrase": "melt"
+  },
+  {
+   "tag": "melting",
+   "phrase": "melts"
+  },
+  {
+   "tag": "melting",
+   "phrase": "melting"
+  },
+  {
+   "tag": "melting",
+   "phrase": "freeze"
+  },
+  {
+   "tag": "melting",
+   "phrase": "freezes"
+  },
+  {
+   "tag": "melting",
+   "phrase": "freezing"
+  },
+  {
+   "tag": "melting",
+   "phrase": "fusion"
+  },
+  {
+   "tag": "melting",
+   "phrase": "ice"
+  },
+  {
+   "tag": "boiling",
+   "phrase": "boil"
+  },
+  {
+   "tag": "boiling",
+   "phrase": "boils"
+  },
+  {
+   "tag": "boiling",
+   "phrase": "boiling"
+  },
+  {
+   "tag": "boiling",
+   "phrase": "vaporize"
+  },
+  {
+   "tag": "boiling",
+   "phrase": "vaporizes"
+  },
+  {
+   "tag": "boiling",
+   "phrase": "evaporate"
+  },
+  {
+   "tag": "boiling",
+   "phrase": "condense"
+  },
+  {
+   "tag": "boiling",
+   "phrase": "condenses"
+  },
+  {
+   "tag": "boiling",
+   "phrase": "steam"
+  },
+  {
+   "tag": "thermal_expansion",
+   "phrase": "expands"
+  },
+  {
+   "tag": "thermal_expansion",
+   "phrase": "expand"
+  },
+  {
+   "tag": "thermal_expansion",
+   "phrase": "expansion"
+  },
+  {
+   "tag": "thermal_expansion",
+   "phrase": "thermal expansion"
+  },
+  {
+   "tag": "thermal_expansion",
+   "phrase": "longer"
+  },
+  {
+   "tag": "lens",
+   "phrase": "lens"
+  },
+  {
+   "tag": "lens",
+   "phrase": "converging"
+  },
+  {
+   "tag": "lens",
+   "phrase": "diverging"
+  },
+  {
+   "tag": "lens",
+   "phrase": "magnifying glass"
+  },
+  {
+   "tag": "photon",
+   "phrase": "photon"
+  },
+  {
+   "tag": "photon",
+   "phrase": "photons"
+  },
+  {
+   "tag": "photon",
+   "phrase": "light quantum"
+  },
+  {
+   "tag": "matter_wave",
+   "phrase": "de broglie"
+  },
+  {
+   "tag": "matter_wave",
+   "phrase": "matter wave"
+  },
+  {
+   "tag": "matter_wave",
+   "phrase": "electron"
+  },
+  {
+   "tag": "matter_wave",
+   "phrase": "proton"
+  },
+  {
+   "tag": "matter_wave",
+   "phrase": "neutron"
+  },
+  {
+   "tag": "mass_energy",
+   "phrase": "rest energy"
+  },
+  {
+   "tag": "mass_energy",
+   "phrase": "mass-energy"
+  },
+  {
+   "tag": "mass_energy",
+   "phrase": "rest mass energy"
+  },
+  {
+   "tag": "mass_energy",
+   "phrase": "converted entirely into energy"
+  },
+  {
+   "tag": "mass_energy",
+   "phrase": "converted completely into energy"
+  },
+  {
+   "tag": "pendulum",
+   "phrase": "pendulum"
+  },
+  {
+   "tag": "spring_oscillation",
+   "phrase": "oscillates"
+  },
+  {
+   "tag": "spring_oscillation",
+   "phrase": "oscillate"
+  },
+  {
+   "tag": "spring_oscillation",
+   "phrase": "oscillation"
+  },
+  {
+   "tag": "spring_oscillation",
+   "phrase": "oscillating"
+  },
+  {
+   "tag": "spring_oscillation",
+   "phrase": "bobs"
+  },
+  {
+   "tag": "spring_oscillation",
+   "phrase": "vibrates"
+  },
+  {
+   "tag": "pivot",
+   "phrase": "pivot"
+  },
+  {
+   "tag": "pivot",
+   "phrase": "hinge"
+  },
+  {
+   "tag": "pivot",
+   "phrase": "wrench"
+  },
+  {
+   "tag": "pivot",
+   "phrase": "lever"
+  },
+  {
+   "tag": "pivot",
+   "phrase": "torque"
+  },
+  {
+   "tag": "pivot",
+   "phrase": "axle"
+  },
+  {
+   "tag": "rotating",
+   "phrase": "rotates"
+  },
+  {
+   "tag": "rotating",
+   "phrase": "rotating"
+  },
+  {
+   "tag": "rotating",
+   "phrase": "spins"
+  },
+  {
+   "tag": "rotating",
+   "phrase": "spinning"
+  },
+  {
+   "tag": "rotating",
+   "phrase": "flywheel"
+  },
+  {
+   "tag": "rotating",
+   "phrase": "turntable"
+  },
+  {
+   "tag": "rotating",
+   "phrase": "rotation"
+  },
+  {
+   "tag": "submerged",
+   "phrase": "submerged"
+  },
+  {
+   "tag": "submerged",
+   "phrase": "immersed"
+  },
+  {
+   "tag": "submerged",
+   "phrase": "floating"
+  },
+  {
+   "tag": "submerged",
+   "phrase": "floats"
+  },
+  {
+   "tag": "submerged",
+   "phrase": "buoyant"
+  },
+  {
+   "tag": "submerged",
+   "phrase": "buoyancy"
+  },
+  {
+   "tag": "submerged",
+   "phrase": "under water"
+  },
+  {
+   "tag": "submerged",
+   "phrase": "underwater"
+  },
+  {
+   "tag": "pivot",
+   "phrase": "door"
+  },
+  {
+   "tag": "fluid_depth",
+   "phrase": "below the surface"
+  },
+  {
+   "tag": "fluid_depth",
+   "phrase": "under water"
+  },
+  {
+   "tag": "fluid_depth",
+   "phrase": "underwater"
+  },
+  {
+   "tag": "fluid_depth",
+   "phrase": "deep"
+  },
+  {
+   "tag": "fluid_depth",
+   "phrase": "depth"
+  },
+  {
+   "tag": "fluid_depth",
+   "phrase": "bottom of"
+  },
+  {
+   "tag": "heat_engine",
+   "phrase": "heat engine"
+  },
+  {
+   "tag": "heat_engine",
+   "phrase": "engine"
+  },
+  {
+   "tag": "heat_engine",
+   "phrase": "power plant"
+  },
+  {
+   "tag": "heat_engine",
+   "phrase": "carnot"
+  },
+  {
+   "tag": "refrigerator",
+   "phrase": "refrigerator"
+  },
+  {
+   "tag": "refrigerator",
+   "phrase": "freezer"
+  },
+  {
+   "tag": "refrigerator",
+   "phrase": "air conditioner"
+  },
+  {
+   "tag": "heat_pump",
+   "phrase": "heat pump"
+  },
+  {
+   "tag": "shm",
+   "phrase": "simple harmonic"
+  },
+  {
+   "tag": "shm",
+   "phrase": "oscillates"
+  },
+  {
+   "tag": "shm",
+   "phrase": "oscillation"
+  },
+  {
+   "tag": "shm",
+   "phrase": "vibrates"
+  },
+  {
+   "tag": "shm",
+   "phrase": "bobs"
+  },
+  {
+   "tag": "medium",
+   "phrase": "glass"
+  },
+  {
+   "tag": "medium",
+   "phrase": "medium"
+  },
+  {
+   "tag": "medium",
+   "phrase": "diamond"
+  },
+  {
+   "tag": "mirror",
+   "phrase": "mirror"
+  },
+  {
+   "tag": "mirror",
+   "phrase": "concave"
+  },
+  {
+   "tag": "mirror",
+   "phrase": "convex"
+  },
+  {
+   "tag": "charged_particle",
+   "phrase": "proton"
+  },
+  {
+   "tag": "charged_particle",
+   "phrase": "electron"
+  },
+  {
+   "tag": "charged_particle",
+   "phrase": "ion"
+  },
+  {
+   "tag": "charged_particle",
+   "phrase": "charged particle"
+  },
+  {
+   "tag": "charged_particle",
+   "phrase": "alpha particle"
+  },
+  {
+   "tag": "loop",
+   "phrase": "loop"
+  },
+  {
+   "tag": "loop",
+   "phrase": "circular coil"
+  },
+  {
+   "tag": "loop",
+   "phrase": "ring of wire"
+  },
+  {
+   "tag": "inductor",
+   "phrase": "inductor"
+  },
+  {
+   "tag": "inductor",
+   "phrase": "inductance"
+  },
+  {
+   "tag": "inductor",
+   "phrase": "coil"
+  },
+  {
+   "tag": "rl_circuit",
+   "phrase": "rl circuit"
+  },
+  {
+   "tag": "rl_circuit",
+   "phrase": "time constant"
+  },
+  {
+   "tag": "rl_circuit",
+   "phrase": "inductor and a resistor"
+  },
+  {
+   "tag": "rl_circuit",
+   "phrase": "resistor and an inductor"
+  },
+  {
+   "tag": "lc_circuit",
+   "phrase": "resonant"
+  },
+  {
+   "tag": "lc_circuit",
+   "phrase": "resonance"
+  },
+  {
+   "tag": "lc_circuit",
+   "phrase": "lc circuit"
+  },
+  {
+   "tag": "lc_circuit",
+   "phrase": "tuned circuit"
+  },
+  {
+   "tag": "flow",
+   "phrase": "flows"
+  },
+  {
+   "tag": "flow",
+   "phrase": "flow"
+  },
+  {
+   "tag": "flow",
+   "phrase": "pumped"
+  },
+  {
+   "tag": "flow",
+   "phrase": "pipe"
+  },
+  {
+   "tag": "flow",
+   "phrase": "hose"
+  },
+  {
+   "tag": "flow",
+   "phrase": "aorta"
+  },
+  {
+   "tag": "flow",
+   "phrase": "artery"
+  },
+  {
+   "tag": "periodic",
+   "phrase": "one oscillation"
+  },
+  {
+   "tag": "periodic",
+   "phrase": "one complete oscillation"
+  },
+  {
+   "tag": "periodic",
+   "phrase": "one cycle"
+  },
+  {
+   "tag": "periodic",
+   "phrase": "one complete cycle"
+  },
+  {
+   "tag": "periodic",
+   "phrase": "complete cycle"
+  },
+  {
+   "tag": "periodic",
+   "phrase": "flash every"
+  },
+  {
+   "tag": "periodic",
+   "phrase": "flashes every"
+  },
+  {
+   "tag": "periodic",
+   "phrase": "one vibration"
+  },
+  {
+   "tag": "periodic",
+   "phrase": "one revolution"
+  },
+  {
+   "tag": "radiation",
+   "phrase": "intensity"
+  },
+  {
+   "tag": "radiation",
+   "phrase": "sunlight"
+  },
+  {
+   "tag": "radiation",
+   "phrase": "sound"
+  },
+  {
+   "tag": "radiation",
+   "phrase": "laser"
+  },
+  {
+   "tag": "radiation",
+   "phrase": "radiation"
+  },
+  {
+   "tag": "radiation",
+   "phrase": "beam"
+  },
+  {
+   "tag": "radiation",
+   "phrase": "light falls"
+  },
+  {
+   "tag": "radiation",
+   "phrase": "light shines"
+  },
+  {
+   "tag": "medium",
+   "phrase": "refractive index"
+  },
+  {
+   "tag": "medium",
+   "phrase": "index of refraction"
+  },
+  {
+   "tag": "medium",
+   "phrase": "enters water"
+  },
+  {
+   "tag": "medium",
+   "phrase": "in water"
+  },
+  {
+   "tag": "medium",
+   "phrase": "speed of light in"
+  },
+  {
+   "tag": "rc_circuit",
+   "phrase": "rc circuit"
+  },
+  {
+   "tag": "rc_circuit",
+   "phrase": "resistor and a capacitor"
+  },
+  {
+   "tag": "rc_circuit",
+   "phrase": "capacitor and a resistor"
+  },
+  {
+   "tag": "rc_circuit",
+   "phrase": "capacitor discharges"
+  },
+  {
+   "tag": "rc_circuit",
+   "phrase": "capacitor is discharged"
+  },
+  {
+   "tag": "rc_circuit",
+   "phrase": "discharging capacitor"
+  },
+  {
+   "tag": "rc_circuit",
+   "phrase": "capacitor charges"
+  },
+  {
+   "tag": "rc_circuit",
+   "phrase": "charging capacitor"
+  },
+  {
+   "tag": "rc_circuit",
+   "phrase": "capacitor is charged through"
+  },
+  {
+   "tag": "discharging",
+   "phrase": "discharges"
+  },
+  {
+   "tag": "discharging",
+   "phrase": "discharging"
+  },
+  {
+   "tag": "discharging",
+   "phrase": "is discharged"
+  },
+  {
+   "tag": "charging",
+   "phrase": "charges through"
+  },
+  {
+   "tag": "charging",
+   "phrase": "charging"
+  },
+  {
+   "tag": "charging",
+   "phrase": "is charged through"
+  },
+  {
+   "tag": "charging",
+   "phrase": "starts charging"
+  },
+  {
+   "tag": "current_decay",
+   "phrase": "current decays"
+  },
+  {
+   "tag": "current_decay",
+   "phrase": "switched off"
+  },
+  {
+   "tag": "current_decay",
+   "phrase": "is switched off"
+  },
+  {
+   "tag": "current_decay",
+   "phrase": "current dies away"
+  },
+  {
+   "tag": "moving_rod",
+   "phrase": "rod moves"
+  },
+  {
+   "tag": "moving_rod",
+   "phrase": "rod slides"
+  },
+  {
+   "tag": "moving_rod",
+   "phrase": "rod is pulled"
+  },
+  {
+   "tag": "moving_rod",
+   "phrase": "slides along"
+  },
+  {
+   "tag": "moving_rod",
+   "phrase": "moves through a magnetic field"
+  },
+  {
+   "tag": "area_expansion",
+   "phrase": "area"
+  },
+  {
+   "tag": "area_expansion",
+   "phrase": "plate"
+  },
+  {
+   "tag": "area_expansion",
+   "phrase": "sheet"
+  },
+  {
+   "tag": "rc_circuit",
+   "phrase": "discharges through a"
+  },
+  {
+   "tag": "rc_circuit",
+   "phrase": "charging through a"
+  },
+  {
+   "tag": "rc_circuit",
+   "phrase": "charged through a"
+  },
+  {
+   "tag": "rc_circuit",
+   "phrase": "charges through a"
+  },
+  {
+   "tag": "charging",
+   "phrase": "charging through"
+  },
+  {
+   "phrase": "conductor moving",
+   "tag": "moving_rod"
+  },
+  {
+   "phrase": "conductor moves",
+   "tag": "moving_rod"
+  },
+  {
+   "phrase": "rod moving",
+   "tag": "moving_rod"
+  },
+  {
+   "phrase": "moving rod",
+   "tag": "moving_rod"
+  },
+  {
+   "phrase": "sliding rod",
+   "tag": "moving_rod"
+  },
+  {
+   "phrase": "rod is moving",
+   "tag": "moving_rod"
+  },
+  {
+   "phrase": "bar is pulled",
+   "tag": "moving_rod"
+  },
+  {
+   "phrase": "bar moves",
+   "tag": "moving_rod"
+  },
+  {
+   "phrase": "sliding contact",
+   "tag": "moving_rod"
+  },
+  {
+   "phrase": "rotor",
+   "tag": "rotating"
+  },
+  {
+   "phrase": "centrifuge",
+   "tag": "rotating"
+  },
+  {
+   "phrase": "gyroscope",
+   "tag": "rotating"
+  },
+  {
+   "phrase": "platter",
+   "tag": "rotating"
+  },
+  {
+   "phrase": "reaction wheel",
+   "tag": "rotating"
+  },
+  {
+   "phrase": "revolves",
+   "tag": "rotating"
+  },
+  {
+   "phrase": "upon release",
+   "tag": "spring_launch"
+  },
+  {
+   "phrase": "plunger",
+   "tag": "spring_launch"
+  },
+  {
+   "phrase": "launches",
+   "tag": "spring_launch"
+  },
+  {
+   "phrase": "launched from rest",
+   "tag": "spring_launch"
+  },
+  {
+   "phrase": "shoots",
+   "tag": "spring_launch"
+  },
+  {
+   "phrase": "free of friction",
+   "tag": "frictionless"
+  },
+  {
+   "phrase": "perfectly smooth",
+   "tag": "frictionless"
+  },
+  {
+   "phrase": "flowing",
+   "tag": "flow"
+  },
+  {
+   "phrase": "flows through",
+   "tag": "flow"
+  },
+  {
+   "phrase": "nozzle",
+   "tag": "flow"
+  },
+  {
+   "phrase": "intake",
+   "tag": "flow"
+  },
+  {
+   "phrase": "decays",
+   "tag": "current_decay"
+  },
+  {
+   "phrase": "current decay",
+   "tag": "current_decay"
+  },
+  {
+   "phrase": "de-energized",
+   "tag": "current_decay"
+  },
+  {
+   "phrase": "power is cut",
+   "tag": "current_decay"
+  },
+  {
+   "phrase": "switching off",
+   "tag": "current_decay"
+  },
+  {
+   "phrase": "source is removed",
+   "tag": "current_decay"
+  },
+  {
+   "phrase": "disconnects the supply",
+   "tag": "current_decay"
+  },
+  {
+   "phrase": "straight up",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "vertically upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "straight upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "perfectly vertical",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "turbine",
+   "tag": "heat_engine"
+  },
+  {
+   "phrase": "thermodynamic cycle",
+   "tag": "heat_engine"
+  },
+  {
+   "phrase": "each cycle",
+   "tag": "heat_engine"
+  },
+  {
+   "phrase": "per cycle",
+   "tag": "heat_engine"
+  },
+  {
+   "phrase": "full cycle",
+   "tag": "heat_engine"
+  },
+  {
+   "phrase": "complete cycle",
+   "tag": "heat_engine"
+  },
+  {
+   "phrase": "cyclic",
+   "tag": "heat_engine"
+  },
+  {
+   "phrase": "suspending",
+   "tag": "hanging"
+  },
+  {
+   "phrase": "hoisting",
+   "tag": "hanging"
+  },
+  {
+   "phrase": "lifting cable",
+   "tag": "hanging"
+  },
+  {
+   "phrase": "lifting cables",
+   "tag": "hanging"
+  },
+  {
+   "phrase": "beneath the surface",
+   "tag": "fluid_depth"
+  },
+  {
+   "phrase": "below the water",
+   "tag": "fluid_depth"
+  },
+  {
+   "phrase": "below the oil",
+   "tag": "fluid_depth"
+  },
+  {
+   "phrase": "meters down",
+   "tag": "fluid_depth"
+  },
+  {
+   "phrase": "metres down",
+   "tag": "fluid_depth"
+  },
+  {
+   "phrase": "m down",
+   "tag": "fluid_depth"
+  },
+  {
+   "phrase": "deuteron",
+   "tag": "charged_particle"
+  },
+  {
+   "phrase": "positron",
+   "tag": "charged_particle"
+  },
+  {
+   "phrase": "muon",
+   "tag": "charged_particle"
+  },
+  {
+   "phrase": "particle with mass",
+   "tag": "charged_particle"
+  },
+  {
+   "phrase": "discharge",
+   "tag": "discharging"
+  },
+  {
+   "phrase": "annihilated",
+   "tag": "mass_energy"
+  },
+  {
+   "phrase": "annihilation",
+   "tag": "mass_energy"
+  },
+  {
+   "phrase": "into pure energy",
+   "tag": "mass_energy"
+  },
+  {
+   "phrase": "mass into energy",
+   "tag": "mass_energy"
+  },
+  {
+   "phrase": "converted into energy",
+   "tag": "mass_energy"
+  },
+  {
+   "phrase": "constant acceleration",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "uniform acceleration",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "deceleration",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "to a hover",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "comes to a hover",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throwing it directly upwards",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throwing it directly upward",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throwing it straight up",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throws it straight up",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throws it upward",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throws it upwards",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throwing it upward",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throwing it upwards",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "thrown directly upwards",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "thrown directly upward",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throws it directly upward",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throws it directly upwards",
+   "tag": "accelerated"
+  },
+  {
+   "phrase": "throwing it directly upwards",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throwing it directly upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throwing it straight up",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throws it straight up",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throws it upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throws it upwards",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throwing it upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throwing it upwards",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "thrown directly upwards",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "thrown directly upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throws it directly upward",
+   "tag": "thrown_up"
+  },
+  {
+   "phrase": "throws it directly upwards",
+   "tag": "thrown_up"
+  },
+  {
+   "tag": "orbit",
+   "phrase": "elliptical orbit"
+  }
+ ],
+ "kind_tags": {
+  "angle": "oblique_force",
+  "force": "force_stated",
+  "angular_acceleration": "rotating",
+  "moment_of_inertia": "rotating",
+  "angular_momentum": "rotating",
+  "flow_rate": "flow"
+ },
+ "relevance": {
+  "note": "Evidence the unused-input policy reads. conditioning_kinds: quantities that fix geometry, medium or material and so decide which model applies. process_tags: context tags that say a change happens. process_parameters: kinds that parameterise such a change. never_derive: quantities that describe the environment, the material or the geometry; the planner may use them when stated or defaulted, and may be asked for them, but never infers them on the way to something else.",
+  "conditioning_kinds": [
+   "angle",
+   "angular_frequency",
+   "density",
+   "frequency",
+   "friction_coefficient",
+   "pressure",
+   "resistance",
+   "specific_heat",
+   "spring_constant",
+   "temperature",
+   "temperature_difference"
+  ],
+  "process_tags": [
+   "accelerated"
+  ],
+  "process_parameters": [
+   "time",
+   "length",
+   "acceleration",
+   "force",
+   "speed",
+   "energy",
+   "power",
+   "momentum",
+   "impulse"
+  ],
+  "never_derive": [
+   [
+    "acceleration",
+    "gravity"
+   ],
+   [
+    "friction_coefficient",
+    "*"
+   ],
+   [
+    "angle",
+    "*"
+   ],
+   [
+    "spring_constant",
+    "*"
+   ],
+   [
+    "density",
+    "*"
+   ],
+   [
+    "specific_heat",
+    "*"
+   ],
+   [
+    "coulomb_constant",
+    "*"
+   ],
+   [
+    "gravitational_constant",
+    "*"
+   ],
+   [
+    "permittivity",
+    "*"
+   ],
+   [
+    "permeability",
+    "*"
+   ],
+   [
+    "planck_constant",
+    "*"
+   ],
+   [
+    "gas_constant",
+    "*"
+   ],
+   [
+    "speed",
+    "light"
+   ],
+   [
+    "expansion_coefficient",
+    "*"
+   ],
+   [
+    "latent_heat",
+    "*"
+   ],
+   [
+    "resistivity",
+    "*"
+   ],
+   [
+    "refractive_index",
+    "*"
+   ],
+   [
+    "efficiency",
+    "carnot"
+   ]
+  ],
+  "no_stand_in": [
+   {
+    "when_tag": "thrown_up",
+    "kind": "acceleration",
+    "role": "gravity",
+    "reason": "thrown upward, gravity opposes the motion: it is not the acceleration along it"
+   },
+   {
+    "when_tag": "inclined",
+    "kind": "acceleration",
+    "role": "gravity",
+    "reason": "on an incline only a component of gravity acts along the motion"
+   }
+  ]
+ },
+ "role_defaults": [
+  {
+   "kind": "speed",
+   "when_tag": "accelerated",
+   "given": "initial",
+   "asked": "final",
+   "assumption": "the stated speed is the speed before the acceleration, and the speed asked for is the one after it"
+  },
+  {
+   "kind": "angle",
+   "when_tag": "inclined",
+   "given": "incline",
+   "assumption": "the stated angle is the angle of the incline to the horizontal"
+  },
+  {
+   "kind": "length",
+   "when_tag": "lens",
+   "given": "object_distance",
+   "assumption": "the stated distance from the lens is the object's distance"
+  },
+  {
+   "kind": "energy",
+   "when_tag": "melting",
+   "given": "heat",
+   "assumption": "the stated energy is the heat absorbed or released"
+  },
+  {
+   "kind": "energy",
+   "when_tag": "boiling",
+   "given": "heat",
+   "assumption": "the stated energy is the heat absorbed or released"
+  },
+  {
+   "kind": "length",
+   "when_tag": "thermal_expansion",
+   "given": "expansion",
+   "assumption": "the stated length is the change in length"
+  },
+  {
+   "kind": "force",
+   "when_tag": "pivot",
+   "given": "applied",
+   "assumption": "the stated force is the force applied"
+  },
+  {
+   "kind": "length",
+   "when_tag": "uniform_field",
+   "given": "separation",
+   "assumption": "the stated distance is the separation along the field"
+  },
+  {
+   "kind": "length",
+   "when_tag": "electric",
+   "given": "distance",
+   "assumption": "the stated length is the distance from the charge"
+  },
+  {
+   "kind": "length",
+   "when_tag": "wire",
+   "given": "distance",
+   "assumption": "the stated length is the distance from the wire"
+  },
+  {
+   "kind": "energy",
+   "when_tag": "photon",
+   "given": "photon",
+   "assumption": "the stated energy is the energy of one photon"
+  },
+  {
+   "kind": "energy",
+   "when_tag": "mass_energy",
+   "given": "rest",
+   "assumption": "the stated energy is the rest energy of the converted mass"
+  },
+  {
+   "kind": "time",
+   "when_tag": "periodic",
+   "given": "period",
+   "assumption": "the stated time is the time of one cycle (the period)"
+  },
+  {
+   "kind": "length",
+   "when_tag": "mirror",
+   "given": "curvature",
+   "assumption": "the stated radius is the mirror's radius of curvature"
+  },
+  {
+   "kind": "length",
+   "when_tag": "loop",
+   "given": "radius",
+   "assumption": "the stated length is the loop's radius"
+  },
+  {
+   "kind": "length",
+   "when_tag": "charged_particle",
+   "given": "radius",
+   "assumption": "the stated length is the radius of the path"
+  }
+ ],
+ "sign": [
+  {
+   "phrase": "decelerat",
+   "applies_to": "acceleration",
+   "factor": -1
+  },
+  {
+   "phrase": "slows down at",
+   "applies_to": "acceleration",
+   "factor": -1
+  },
+  {
+   "phrase": "brakes at",
+   "applies_to": "acceleration",
+   "factor": -1
+  },
+  {
+   "phrase": "slow down at",
+   "applies_to": "acceleration",
+   "factor": -1
+  },
+  {
+   "phrase": "slowing down at",
+   "applies_to": "acceleration",
+   "factor": -1
+  },
+  {
+   "phrase": "slow down by",
+   "applies_to": "acceleration",
+   "factor": -1
+  },
+  {
+   "phrase": "slows down by",
+   "applies_to": "acceleration",
+   "factor": -1
+  }
+ ],
+ "unsupported_structure": [],
+ "target_refinements": [
+  {
+   "kind": "time",
+   "role": "rise",
+   "phrases": [
+    "highest point",
+    "maximum height",
+    "the top",
+    "its peak",
+    "top of its"
+   ]
+  },
+  {
+   "kind": "length",
+   "from": "height",
+   "role": "max_height",
+   "when_tag": "thrown_up",
+   "phrases": [
+    "rise",
+    "rises",
+    "go",
+    "get",
+    "reach",
+    "reaches",
+    "climb",
+    "climbs",
+    "travel",
+    "travels"
+   ]
+  },
+  {
+   "kind": "energy",
+   "from": "elastic",
+   "role": "capacitor",
+   "when_tag": "capacitor",
+   "phrases": [
+    "stored",
+    "store",
+    "stores"
+   ]
+  },
+  {
+   "kind": "energy",
+   "from": "plain",
+   "role": "capacitor",
+   "when_tag": "capacitor",
+   "phrases": [
+    "stored",
+    "store",
+    "stores"
+   ]
+  },
+  {
+   "kind": "time",
+   "from": "plain",
+   "role": "period",
+   "when_tag": "periodic",
+   "phrases": [
+    "one complete cycle",
+    "one cycle",
+    "one oscillation",
+    "period"
+   ]
+  },
+  {
+   "kind": "time",
+   "from": "plain",
+   "role": "time_constant",
+   "when_tag": "rl_circuit",
+   "phrases": [
+    "time constant"
+   ]
+  },
+  {
+   "kind": "frequency",
+   "from": "plain",
+   "role": "resonant",
+   "when_tag": "lc_circuit",
+   "phrases": [
+    "frequency"
+   ]
+  },
+  {
+   "kind": "energy",
+   "from": "heat",
+   "role": "heat_cold",
+   "when_tag": "heat_engine",
+   "phrases": [
+    "rejected",
+    "expelled",
+    "exhausted",
+    "given off"
+   ]
+  },
+  {
+   "kind": "energy",
+   "from": "heat",
+   "role": "heat_cold",
+   "when_tag": "refrigerator",
+   "phrases": [
+    "removed",
+    "extracted",
+    "taken out"
+   ]
+  },
+  {
+   "kind": "energy",
+   "from": "heat",
+   "role": "heat_hot",
+   "when_tag": "heat_pump",
+   "phrases": [
+    "delivered",
+    "supplied",
+    "pumped"
+   ]
+  },
+  {
+   "kind": "voltage",
+   "from": "plain",
+   "role": "capacitor",
+   "when_tag": "rc_circuit",
+   "phrases": [
+    "voltage across",
+    "voltage on"
+   ]
+  },
+  {
+   "kind": "time",
+   "from": "plain",
+   "role": "time_constant",
+   "when_tag": "rc_circuit",
+   "phrases": [
+    "time constant"
+   ]
+  },
+  {
+   "kind": "length",
+   "from": "distance",
+   "role": "radius",
+   "phrases": [
+    "from the center",
+    "from the centre",
+    "to the center",
+    "to the centre"
+   ]
+  },
+  {
+   "kind": "acceleration",
+   "from": "plain",
+   "role": "gravity",
+   "phrases": [
+    "surface gravity",
+    "gravitational acceleration",
+    "acceleration due to gravity",
+    "acceleration of gravity",
+    "free-fall acceleration",
+    "free fall acceleration"
+   ]
+  }
+ ]
+}
