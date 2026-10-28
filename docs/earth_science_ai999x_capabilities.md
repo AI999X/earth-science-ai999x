@@ -186,6 +186,10 @@ $$
 - **Assumes:** 150 $K  \leq  T  \leq  350$ K; 1 hPa <= p <= 1100 hPa
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![theta (potential temperature (K)) against p (air pressure) from 42500 Pa to 127500 Pa](https://www.ai999x.com/?ax_fig=earth-science-ai999x/potential-temperature-curve)
+
+*theta (potential temperature (K)) against p (air pressure) from 42500 Pa to 127500 Pa. Other inputs as in the worked example: T = 298.15 K. 24 points computed by earth-science-ai999x; marked: the worked example, p = 85000 Pa, theta = 312.321 K.*
+
 ```python
 earth_science_ai999x.solve('potential_temperature', T=298.15, p=85000.0)
 # -> theta = 312.321 K   (SOLVED)
@@ -227,6 +231,14 @@ $$
 - **Method:** Poisson's equation inverted
 - **Assumes:** 150 $K  \leq  \theta  \leq  600$ K; 1 hPa <= p <= 1100 hPa
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![T (air temperature (K)) against theta (potential temperature) from 150 K to 450 K](https://www.ai999x.com/?ax_fig=earth-science-ai999x/temperature-from-potential-temperature-curve)
+
+*T (air temperature (K)) against theta (potential temperature) from 150 K to 450 K. One curve for each value of p (air pressure): 70000 Pa, 35000 Pa. 31 points per curve computed by earth-science-ai999x; marked: the worked example, theta = 300 K, T = 270.934 K.*
+
+![T (air temperature (K)) over theta (potential temperature) from 150 K to 450 K and p (air pressure) from 35000 Pa to 105000 Pa: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 111](https://www.ai999x.com/?ax_fig=earth-science-ai999x/temperature-from-potential-temperature-field)
+
+*T (air temperature (K)) over theta (potential temperature) from 150 K to 450 K and p (air pressure) from 35000 Pa to 105000 Pa: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 111.128 K to dark 456.317 K); iso-lines at T = 200, 300, 400 K. Marked: the worked example, theta = 300 K, p = 70000 Pa, T = 270.934 K.*
 
 ```python
 earth_science_ai999x.solve('temperature_from_potential_temperature', theta=300.0, p=70000.0)
@@ -270,6 +282,14 @@ $$
 - **Method:** dry adiabatic lapse rate g/c_pd times the height gained
 - **Assumes:** $0 < dz  \leq  20$ km; the parcel stays unsaturated
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Dry-adiabatic ascent: parcel temperature: T2 against dz from 0 to 6 km, drawn with height on the vertical axis; 40 runs of the package with T = 293](https://www.ai999x.com/?ax_fig=earth-science-ai999x/dry-adiabatic-ascent-profile)
+
+*Dry-adiabatic ascent: parcel temperature: T2 against dz from 0 to 6 km, drawn with height on the vertical axis; 40 runs of the package with T = 293.15. Marked: the worked example, dz = 1.5 km, T2 = 278.508 K.*
+
+![T2 (parcel temperature after the ascent (K)) against T (starting temperature of the parcel) from 146](https://www.ai999x.com/?ax_fig=earth-science-ai999x/dry-adiabatic-ascent-curve)
+
+*T2 (parcel temperature after the ascent (K)) against T (starting temperature of the parcel) from 146.575 K to 439.725 K. One curve for each value of dz (height through which the parcel rises): 1500 m, 750 m, 3000 m. 20 points per curve computed by earth-science-ai999x; marked: the worked example, T = 293.15 K, T2 = 278.508 K.*
 
 ```python
 earth_science_ai999x.solve('dry_adiabatic_ascent', T=293.15, dz=1500.0)
@@ -316,6 +336,10 @@ $$
 
 *Saturation vapour pressure of water against temperature, computed by the package at 71 temperatures from −30 to 40 °C. Air holding e = 1700 Pa of vapour saturates when cooled to its dew point; at 25 °C saturation is 3162.35 Pa. Marked: Td = 14.9631 °C (288.113 K), e = 1700 Pa.*
 
+![es (saturation vapour pressure (Pa)) against T (temperature) from 268](https://www.ai999x.com/?ax_fig=earth-science-ai999x/saturation-vapor-pressure-curve-2)
+
+*es (saturation vapour pressure (Pa)) against T (temperature) from 268.335 K to 327.965 K. 31 points computed by earth-science-ai999x; marked: the worked example, T = 298.15 K, es = 3162.35 Pa.*
+
 ```python
 earth_science_ai999x.solve('saturation_vapor_pressure', T=298.15)
 # -> es = 3162.35 Pa   (SOLVED)
@@ -359,6 +383,10 @@ $$
 - **Assumes:** $Td  \leq  T$; -45 °$C  \leq  T$, $Td  \leq  60$ °C
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![RH (relative humidity (fraction)) against T (air temperature) from 268](https://www.ai999x.com/?ax_fig=earth-science-ai999x/relative-humidity-from-dewpoint-curve)
+
+*RH (relative humidity (fraction)) against T (air temperature) from 268.335 K to 327.965 K. Other inputs as in the worked example: Td = 288.15 K. 21 points computed by earth-science-ai999x; marked: the worked example, T = 298.15 K, RH = 0.538557.*
+
 ```python
 earth_science_ai999x.solve('relative_humidity_from_dewpoint', T=298.15, Td=288.15)
 # -> RH = 0.538557, RH_percent = 53.8557   (SOLVED)
@@ -401,6 +429,10 @@ $$
 - **Assumes:** 0.1 hPa <= e <= 200 hPa
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Td (dewpoint (K)) against e (water vapour partial pressure) from 850 Pa to 2550 Pa](https://www.ai999x.com/?ax_fig=earth-science-ai999x/dewpoint-from-vapor-pressure-curve)
+
+*Td (dewpoint (K)) against e (water vapour partial pressure) from 850 Pa to 2550 Pa. 31 points computed by earth-science-ai999x; marked: the worked example, e = 1700 Pa, Td = 288.113 K.*
+
 ```python
 earth_science_ai999x.solve('dewpoint_from_vapor_pressure', e=1700.0)
 # -> Td = 288.113 K   (SOLVED)
@@ -441,6 +473,10 @@ $$
 - **Method:** Td = Bolton inversion of RH e_s(T), e_s from Ambaum (2020) (MetPy's convention)
 - **Assumes:** $0.01  \leq  RH  \leq  1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Td (dewpoint (K)) against RH (relative humidity (fraction, or % in a question)) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/dewpoint-from-relative-humidity-curve)
+
+*Td (dewpoint (K)) against RH (relative humidity (fraction, or % in a question)) from 0.02 to 0.98. Other inputs as in the worked example: T = 303.15 K. 41 points computed by earth-science-ai999x; marked: the worked example, RH = 0.6, Td = 294.506 K.*
 
 ```python
 earth_science_ai999x.solve('dewpoint_from_relative_humidity', T=303.15, RH=0.6)
@@ -486,6 +522,14 @@ $$
 - **Assumes:** $0 < e < p$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![w (mixing ratio (kg/kg)) against p (total air pressure) from 50000 Pa to 150000 Pa](https://www.ai999x.com/?ax_fig=earth-science-ai999x/mixing-ratio-curve)
+
+*w (mixing ratio (kg/kg)) against p (total air pressure) from 50000 Pa to 150000 Pa. One curve for each value of e (water vapour partial pressure): 2000 Pa, 1000 Pa, 4000 Pa. 19 points per curve computed by earth-science-ai999x; marked: the worked example, p = 100000 Pa, w = 0.012693.*
+
+![w (mixing ratio (kg/kg)) over e (water vapour partial pressure) from 1000 Pa to 3000 Pa and p (total air pressure) from 50000 Pa to 150000 Pa: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/mixing-ratio-field)
+
+*w (mixing ratio (kg/kg)) over e (water vapour partial pressure) from 1000 Pa to 3000 Pa and p (total air pressure) from 50000 Pa to 150000 Pa: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 0.00585962 to dark 0.0396994); iso-lines at w = 0.01, 0.02, 0.03; blank cells: inputs the capability refuses. Marked: the worked example, e = 2000 Pa, p = 100000 Pa, w = 0.012693.*
+
 ```python
 earth_science_ai999x.solve('mixing_ratio', e=2000.0, p=100000.0)
 # -> w = 0.012693, w_g_per_kg = 12.693   (SOLVED)
@@ -529,6 +573,10 @@ $$
 - **Assumes:** e_s(T) < p
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![ws (saturation mixing ratio (kg/kg)) against T (air temperature) from 268](https://www.ai999x.com/?ax_fig=earth-science-ai999x/saturation-mixing-ratio-curve)
+
+*ws (saturation mixing ratio (kg/kg)) against T (air temperature) from 268.335 K to 327.965 K. One curve for each value of p (total air pressure): 100000 Pa, 50000 Pa. 31 points per curve computed by earth-science-ai999x; marked: the worked example, T = 298.15 K, ws = 0.0203107.*
+
 ```python
 earth_science_ai999x.solve('saturation_mixing_ratio', p=100000.0, T=298.15)
 # -> ws = 0.0203107, ws_g_per_kg = 20.3107   (SOLVED)
@@ -570,6 +618,14 @@ $$
 - **Method:** $Tv = T$ (w + epsilon)/(epsilon $(1 + w)$)
 - **Assumes:** $0  \leq  w  \leq  0.06$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Tv (virtual temperature (K)) against T (air temperature) from 151](https://www.ai999x.com/?ax_fig=earth-science-ai999x/virtual-temperature-curve)
+
+*Tv (virtual temperature (K)) against T (air temperature) from 151.575 K to 454.725 K. Other inputs as in the worked example: w = 0.02. 20 points computed by earth-science-ai999x; marked: the worked example, T = 303.15 K, Tv = 306.763 K.*
+
+![Tv (virtual temperature (K)) over T (air temperature) from 151](https://www.ai999x.com/?ax_fig=earth-science-ai999x/virtual-temperature-field)
+
+*Tv (virtual temperature (K)) over T (air temperature) from 151.575 K to 454.725 K and w (water-vapour mixing ratio (kg/kg)) from 0.01 to 0.03: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 152.487 K to dark 354.794 K); iso-lines at Tv = 200, 250, 300, 350 K; blank cells: inputs the capability refuses. Marked: the worked example, T = 303.15 K, w = 0.02, Tv = 306.763 K.*
 
 ```python
 earth_science_ai999x.solve('virtual_temperature', T=303.15, w=0.02)
@@ -615,6 +671,10 @@ $$
 - **Assumes:** $0  \leq  w  \leq  0.06$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![rho (air density (kg/m^3)) against T (air temperature) from 149](https://www.ai999x.com/?ax_fig=earth-science-ai999x/moist-air-density-curve)
+
+*rho (air density (kg/m^3)) against T (air temperature) from 149.075 K to 447.225 K. One curve for each value of p (air pressure): 100000 Pa, 50000 Pa. Other inputs as in the worked example: w = 0.015. 20 points per curve computed by earth-science-ai999x; marked: the worked example, T = 298.15 K, rho = 1.15805 kg/m^3.*
+
 ```python
 earth_science_ai999x.solve('moist_air_density', p=100000.0, T=298.15, w=0.015)
 # -> rho = 1.15805 kg/m^3, Tv = 300.828 K   (SOLVED)
@@ -657,6 +717,10 @@ $$
 - **Method:** $q = w_s$(p, $Td)/(1 + w_s$(p, Td))
 - **Assumes:** e_s(Td) < p
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![q (specific humidity (kg/kg)) against Td (dewpoint temperature) from 259](https://www.ai999x.com/?ax_fig=earth-science-ai999x/specific-humidity-from-dewpoint-curve)
+
+*q (specific humidity (kg/kg)) against Td (dewpoint temperature) from 259.335 K to 316.965 K. One curve for each value of p (air pressure): 100000 Pa, 50000 Pa. 31 points per curve computed by earth-science-ai999x; marked: the worked example, Td = 288.15 K, q = 0.0106612.*
 
 ```python
 earth_science_ai999x.solve('specific_humidity_from_dewpoint', p=100000.0, Td=288.15)
@@ -702,6 +766,10 @@ $$
 - **Assumes:** $0  \leq  q  \leq  0.06$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![h (moist static energy (J/kg)) against T (air temperature) from 144](https://www.ai999x.com/?ax_fig=earth-science-ai999x/moist-static-energy-curve)
+
+*h (moist static energy (J/kg)) against T (air temperature) from 144.075 K to 432.225 K. One curve for each value of z (height above sea level): 1500 m, 750 m, 3000 m. Other inputs as in the worked example: q = 0.008. 21 points per curve computed by earth-science-ai999x; marked: the worked example, T = 288.15 K, h = 324211 J/kg.*
+
 ```python
 earth_science_ai999x.solve('moist_static_energy', z=1500.0, T=288.15, q=0.008)
 # -> h = 324211 J/kg, s = 304205 J/kg   (SOLVED)
@@ -745,6 +813,10 @@ $$
 - **Method:** Romps (2017) Eq. 22: T_LCL = c/W_{-1}(RH^{$1/a$} c e^c) T, p_LCL = p (T_LCL/T)^{c_pm/R_m}
 - **Assumes:** $Td  \leq  T$; 100 hPa <= p <= 1100 hPa
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![p_lcl (LCL pressure (Pa)) against p (starting pressure) from 50000 Pa to 150000 Pa](https://www.ai999x.com/?ax_fig=earth-science-ai999x/lifting-condensation-level-curve)
+
+*p_lcl (LCL pressure (Pa)) against p (starting pressure) from 50000 Pa to 150000 Pa. Other inputs as in the worked example: T = 303.15 K, Td = 293.15 K. 19 points computed by earth-science-ai999x; marked: the worked example, p = 100000 Pa, p_lcl = 86421.3 Pa.*
 
 ```python
 earth_science_ai999x.solve('lifting_condensation_level', p=100000.0, T=303.15, Td=293.15)
@@ -790,6 +862,10 @@ $$
 - **Assumes:** $Td  \leq  T$; 100 hPa <= p <= 1100 hPa
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![theta_e (equivalent potential temperature (K)) against p (air pressure) from 42500 Pa to 127500 Pa](https://www.ai999x.com/?ax_fig=earth-science-ai999x/equivalent-potential-temperature-curve)
+
+*theta_e (equivalent potential temperature (K)) against p (air pressure) from 42500 Pa to 127500 Pa. Other inputs as in the worked example: T = 293.15 K, Td = 288.15 K. 24 points computed by earth-science-ai999x; marked: the worked example, p = 85000 Pa, theta_e = 345.676 K.*
+
 ```python
 earth_science_ai999x.solve('equivalent_potential_temperature', p=85000.0, T=293.15, Td=288.15)
 # -> theta_e = 345.676 K   (SOLVED)
@@ -833,6 +909,10 @@ $$
 - **Assumes:** -40 °$C  \leq  T  \leq  50$ °C; constant latent heat $L_v = 2.50084e6$ J/kg in the lapse-rate formula
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![lapse_rate (moist adiabatic lapse rate (K/m)) against T (air temperature) from 263](https://www.ai999x.com/?ax_fig=earth-science-ai999x/moist-adiabatic-lapse-rate-curve)
+
+*lapse_rate (moist adiabatic lapse rate (K/m)) against T (air temperature) from 263.835 K to 322.465 K. One curve for each value of p (air pressure): 100000 Pa, 50000 Pa. 31 points per curve computed by earth-science-ai999x; marked: the worked example, T = 293.15 K, lapse_rate = 0.00422189 K/m.*
+
 ```python
 earth_science_ai999x.solve('moist_adiabatic_lapse_rate', T=293.15, p=100000.0)
 # -> lapse_rate = 0.00422189 K/m, rs = 0.0148683   (SOLVED)
@@ -874,6 +954,10 @@ $$
 - **Method:** WCT = 13.12 + 0.6215 $T - 11.37$ $V^{0.16} + 0.3965$ T $V^{0.16}$ (T in °C, V in km/h)
 - **Assumes:** $T  \leq  10$ °C; $V > 3$ mph (4.8 km/h)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![WCT (wind chill temperature (K)) against V (wind speed at 10 m) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/wind-chill-curve)
+
+*WCT (wind chill temperature (K)) against V (wind speed at 10 m) from 0.833333 m/s to 83.3333 m/s on a logarithmic axis. Other inputs as in the worked example: T = 263.15 K. 33 points computed by earth-science-ai999x; marked: the worked example, V = 8.33333 m/s, WCT = 253.63 K.*
 
 ```python
 earth_science_ai999x.solve('wind_chill', T=263.15, V=8.333333333333334)
@@ -918,6 +1002,10 @@ $$
 - **Assumes:** 80 °$F  \leq  T  \leq  130$ °F; $0  \leq  RH  \leq  1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![HI (heat index (K)) against RH (relative humidity (fraction, or % in a question)) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/heat-index-curve)
+
+*HI (heat index (K)) against RH (relative humidity (fraction, or % in a question)) from 0.02 to 0.98. Other inputs as in the worked example: T = 305.15 K. 41 points computed by earth-science-ai999x; marked: the worked example, RH = 0.7, HI = 313.559 K.*
+
 ```python
 earth_science_ai999x.solve('heat_index', T=305.15, RH=0.7000000000000001)
 # -> HI = 313.559 K   (SOLVED)
@@ -959,6 +1047,10 @@ $$
 - **Method:** $f = 2$ Omega sin(phi), $Omega = 7.292115e-5$ rad/s
 - **Assumes:** -90 <= latitude <= 90 degrees
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![f (Coriolis parameter (1/s)) against lat (latitude (degrees, north positive)) from 0 to 90](https://www.ai999x.com/?ax_fig=earth-science-ai999x/coriolis-parameter-curve)
+
+*f (Coriolis parameter (1/s)) against lat (latitude (degrees, north positive)) from 0 to 90. 41 points computed by earth-science-ai999x; marked: the worked example, lat = 45, f = 0.000103126 1/s.*
 
 ```python
 earth_science_ai999x.solve('coriolis_parameter', lat=45.0)
@@ -1003,6 +1095,10 @@ $$
 - **Assumes:** |latitude| >= 0.5 degrees
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![T_inertial (inertial period (s)) against lat (latitude (degrees, north positive)) from 0 to 90](https://www.ai999x.com/?ax_fig=earth-science-ai999x/inertial-period-curve)
+
+*T_inertial (inertial period (s)) against lat (latitude (degrees, north positive)) from 0 to 90. 40 points computed by earth-science-ai999x; marked: the worked example, lat = 45, T_inertial = 60927.2 s.*
+
 ```python
 earth_science_ai999x.solve('inertial_period', lat=45.0)
 # -> T_inertial = 60927.2 s, T_hours = 16.9242, f = 0.000103126 1/s   (SOLVED)
@@ -1046,6 +1142,10 @@ $$
 - **Assumes:** 0 <= direction <= 360; meteorological convention: the direction the wind comes from
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![A wind of 10 m/s blowing FROM 225° (as stated, meteorological convention) drawn on a compass: the air moves towards the opposite side](https://www.ai999x.com/?ax_fig=earth-science-ai999x/wind-components-vector)
+
+*A wind of 10 m/s blowing FROM 225° (as stated, meteorological convention) drawn on a compass: the air moves towards the opposite side. Its components returned by the package: u = 7.07107 m/s (eastward), v = 7.07107 m/s (northward). Marked: the direction it comes from.*
+
 ```python
 earth_science_ai999x.solve('wind_components', speed=10.0, direction=225.0)
 # -> u = 7.07107 m/s, v = 7.07107 m/s   (SOLVED)
@@ -1088,6 +1188,10 @@ $$
 - **Method:** V = hypot(u, v); direction = 90 - atan2(-v, -u) in degrees
 - **Assumes:** calm $(u = v = 0)$ gives direction 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![The stated wind components u = 5 m/s and v = -3 m/s as a vector on a compass; the package returned speed 5](https://www.ai999x.com/?ax_fig=earth-science-ai999x/wind-speed-direction-vector)
+
+*The stated wind components u = 5 m/s and v = -3 m/s as a vector on a compass; the package returned speed 5.83095 m/s from 300.964° (where the air comes from, opposite to the arrow). Marked: that direction.*
 
 ```python
 earth_science_ai999x.solve('wind_speed_direction', u=5.0, v=-3.0)
@@ -1133,6 +1237,10 @@ $$
 - **Assumes:** 5 <= |latitude| <= 85 degrees; $dn > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Vg (geostrophic wind speed (m/s)) against lat (latitude (degrees, north positive)) from 0 to 90](https://www.ai999x.com/?ax_fig=earth-science-ai999x/geostrophic-wind-curve)
+
+*Vg (geostrophic wind speed (m/s)) against lat (latitude (degrees, north positive)) from 0 to 90. One curve for each value of dz (change of geopotential height across the distance): 60 m, 30 m, 120 m. Other inputs as in the worked example: dn = 500000.0 m. 35 points per curve computed by earth-science-ai999x; marked: the worked example, lat = 45, Vg = 11.4113 m/s.*
+
 ```python
 earth_science_ai999x.solve('geostrophic_wind', lat=45.0, dz=60.0, dn=500000.0)
 # -> Vg = 11.4113 m/s, f = 0.000103126 1/s   (SOLVED)
@@ -1176,6 +1284,14 @@ $$
 - **Method:** $N = sqrt$((g/theta) d theta/dz)
 - **Assumes:** d $\theta/dz > 0$ (stable stratification)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![N (Brunt-Väisälä frequency (1/s)) against dtheta_dz (vertical gradient of potential temperature) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/brunt-vaisala-frequency-curve)
+
+*N (Brunt-Väisälä frequency (1/s)) against dtheta_dz (vertical gradient of potential temperature) from 0.0015 K/m to 0.0045 K/m. One curve for each value of theta (potential temperature at the level): 300 K, 600 K. 31 points per curve computed by earth-science-ai999x; marked: the worked example, dtheta_dz = 0.003 K/m, N = 0.00990285 1/s.*
+
+![N (Brunt-Väisälä frequency (1/s)) over dtheta_dz (vertical gradient of potential temperature) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/brunt-vaisala-frequency-field)
+
+*N (Brunt-Väisälä frequency (1/s)) over dtheta_dz (vertical gradient of potential temperature) from 0.0015 K/m to 0.0045 K/m and theta (potential temperature at the level) from 150 K to 450 K: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 0.00571741 1/s to dark 0.0143506 1/s); iso-lines at N = 0.006, 0.008, 0.01, 0.012, 0.014 1/s; blank cells: inputs the capability refuses. Marked: the worked example, dtheta_dz = 0.003 K/m, theta = 300 K, N = 0.00990285 1/s.*
 
 ```python
 earth_science_ai999x.solve('brunt_vaisala_frequency', theta=300.0, dtheta_dz=0.003)
@@ -1222,6 +1338,14 @@ $$
 - **Assumes:** isothermal dry air; constant gravity $g = 9.80665$ $m/s^{2}$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Isothermal atmosphere: pressure with height: p against z from 0 to 20 km, drawn with height on the vertical axis; 41 runs of the package with p0 = 101325](https://www.ai999x.com/?ax_fig=earth-science-ai999x/isothermal-pressure-profile)
+
+*Isothermal atmosphere: pressure with height: p against z from 0 to 20 km, drawn with height on the vertical axis; 41 runs of the package with p0 = 101325.0, T = 273.15. Marked: the worked example, z = 5 km, p = 54.2154 kPa.*
+
+![p (pressure at height z (Pa)) against z (height above the reference level) from 500 m to 50000 m on a logarithmic axis](https://www.ai999x.com/?ax_fig=earth-science-ai999x/isothermal-pressure-curve)
+
+*p (pressure at height z (Pa)) against z (height above the reference level) from 500 m to 50000 m on a logarithmic axis. One curve for each value of p0 (pressure at z = 0): 101325 Pa, 50662.5 Pa. Other inputs as in the worked example: T = 273.15 K. 41 points per curve computed by earth-science-ai999x; marked: the worked example, z = 5000 m, p = 54215.4 Pa.*
+
 ```python
 earth_science_ai999x.solve('isothermal_pressure', p0=101325.0, T=273.15, z=5000.0)
 # -> p = 54215.4 Pa, H = 7995.29 m   (SOLVED)
@@ -1262,6 +1386,10 @@ $$
 - **Method:** $H = R_d$ T/g
 - **Assumes:** dry air, constant gravity
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![H (scale height (m)) against T (temperature) from 144](https://www.ai999x.com/?ax_fig=earth-science-ai999x/scale-height-curve)
+
+*H (scale height (m)) against T (temperature) from 144.075 K to 432.225 K. 21 points computed by earth-science-ai999x; marked: the worked example, T = 288.15 K, H = 8434.35 m.*
 
 ```python
 earth_science_ai999x.solve('scale_height', T=288.15)
@@ -1304,6 +1432,10 @@ $$
 - **Method:** dz = (R_d Tv/g) ln(p1/p2)
 - **Assumes:** $p_{1} > p_{2}$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![dz (layer thickness (m)) against p2 (pressure at the top of the layer) from 25000 Pa to 75000 Pa](https://www.ai999x.com/?ax_fig=earth-science-ai999x/hypsometric-thickness-curve)
+
+*dz (layer thickness (m)) against p2 (pressure at the top of the layer) from 25000 Pa to 75000 Pa. One curve for each value of p1 (pressure at the bottom of the layer): 100000 Pa, 50000 Pa. Other inputs as in the worked example: Tv = 263.15 K. 31 points per curve computed by earth-science-ai999x; marked: the worked example, p2 = 50000 Pa, dz = 5339.02 m.*
 
 ```python
 earth_science_ai999x.solve('hypsometric_thickness', p1=100000.0, p2=50000.0, Tv=263.15)
@@ -1355,6 +1487,14 @@ $$
 
 *Temperature against height in an atmosphere with a constant lapse rate of 6.5 K/km from 288.15 K and 101325 Pa at the surface, and a dry parcel lifted adiabatically from the same surface temperature, both computed by the package every 200 m to 11 km. Marked: z = 3 km, T = 268.65 K, p = 70108 Pa.*
 
+![Temperature with height (constant lapse rate): T against z from 0 to 11 km, drawn with height on the vertical axis; 41 runs of the package with p0 = 101325](https://www.ai999x.com/?ax_fig=earth-science-ai999x/pressure-with-lapse-rate-profile-2)
+
+*Temperature with height (constant lapse rate): T against z from 0 to 11 km, drawn with height on the vertical axis; 41 runs of the package with p0 = 101325.0, T0 = 288.15, gamma = 0.006500000000000001. Marked: the worked example, z = 3 km, T = 268.65 K.*
+
+![p (pressure at height z (Pa)) against z (height above the reference level) from 300 m to 30000 m on a logarithmic axis](https://www.ai999x.com/?ax_fig=earth-science-ai999x/pressure-with-lapse-rate-curve)
+
+*p (pressure at height z (Pa)) against z (height above the reference level) from 300 m to 30000 m on a logarithmic axis. One curve for each value of p0 (pressure at z = 0): 101325 Pa, 50662.5 Pa. Other inputs as in the worked example: T0 = 288.15 K, gamma = 0.006500000000000001 K/m. 37 points per curve computed by earth-science-ai999x; marked: the worked example, z = 3000 m, p = 70108 Pa.*
+
 ```python
 earth_science_ai999x.solve('pressure_with_lapse_rate', p0=101325.0, T0=288.15, gamma=0.006500000000000001, z=3000.0)
 # -> p = 70108 Pa, T = 268.65 K   (SOLVED)
@@ -1395,6 +1535,14 @@ $$
 - **Method:** $p = p_{0}$ (1 - gamma z/T0)^(g/(R_d gamma))
 - **Assumes:** -500 $m  \leq  z  \leq  11$ km (troposphere)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Standard atmosphere: pressure with height: p against z from 0 to 30 km, drawn with height on the vertical axis; 15 runs of the package](https://www.ai999x.com/?ax_fig=earth-science-ai999x/standard-atmosphere-pressure-profile)
+
+*Standard atmosphere: pressure with height: p against z from 0 to 30 km, drawn with height on the vertical axis; 15 runs of the package. Marked: the worked example, z = 1.5 km, p = 84.5476 kPa.*
+
+![p (standard-atmosphere pressure (Pa)) against z (height above sea level) from 150 m to 15000 m on a logarithmic axis](https://www.ai999x.com/?ax_fig=earth-science-ai999x/standard-atmosphere-pressure-curve)
+
+*p (standard-atmosphere pressure (Pa)) against z (height above sea level) from 150 m to 15000 m on a logarithmic axis. 38 points computed by earth-science-ai999x; marked: the worked example, z = 1500 m, p = 84547.6 Pa.*
 
 ```python
 earth_science_ai999x.solve('standard_atmosphere_pressure', z=1500.0)
@@ -1437,6 +1585,10 @@ $$
 - **Assumes:** 226 hPa <= p <= 1075 hPa
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![z (pressure altitude (m)) against p (pressure) from 25000 Pa to 75000 Pa](https://www.ai999x.com/?ax_fig=earth-science-ai999x/standard-atmosphere-height-curve)
+
+*z (pressure altitude (m)) against p (pressure) from 25000 Pa to 75000 Pa. 31 points computed by earth-science-ai999x; marked: the worked example, p = 50000 Pa, z = 5571.43 m.*
+
 ```python
 earth_science_ai999x.solve('standard_atmosphere_height', p=50000.0)
 # -> z = 5571.43 m   (SOLVED)
@@ -1478,6 +1630,10 @@ $$
 - **Method:** $Phi = g$ R_e z/(R_e + z)
 - **Assumes:** -1 $km  \leq  z  \leq  200$ km
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![phi (geopotential (m^2/s^2)) against z (geometric height above sea level) from 5000 m to 15000 m](https://www.ai999x.com/?ax_fig=earth-science-ai999x/geopotential-height-curve)
+
+*phi (geopotential (m^2/s^2)) against z (geometric height above sea level) from 5000 m to 15000 m. 31 points computed by earth-science-ai999x; marked: the worked example, z = 10000 m, phi = 97912.8 m^2/s^2.*
 
 ```python
 earth_science_ai999x.solve('geopotential_height', z=10000.0)
@@ -1523,6 +1679,10 @@ $$
 - **Assumes:** $U > 0$; 5 <= |latitude| <= 85; no meridional wavenumber $(l = 0)$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![c (zonal phase speed (m/s; negative = westward)) against Lx (zonal wavelength) from 600000 m to 6](https://www.ai999x.com/?ax_fig=earth-science-ai999x/rossby-wave-speed-curve)
+
+*c (zonal phase speed (m/s; negative = westward)) against Lx (zonal wavelength) from 600000 m to 6.0000e+07 m on a logarithmic axis. Other inputs as in the worked example: U = 15.0 m/s, lat = 45.0. 37 points computed by earth-science-ai999x; marked: the worked example, Lx = 6e+06 m, c = 0.239432 m/s.*
+
 ```python
 earth_science_ai999x.solve('rossby_wave_speed', U=15.0, lat=45.0, Lx=6000000.0)
 # -> c = 0.239432 m/s, beta = 1.61868e-11 1/(m*s), Ls = 6.04847e+06 m   (SOLVED)
@@ -1565,6 +1725,10 @@ $$
 - **Assumes:** 0 < eps <= 1; grey body: emissivity independent of wavelength
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![F (emitted flux (W/m^2)) against T (surface temperature) from 144 K to 432 K](https://www.ai999x.com/?ax_fig=earth-science-ai999x/blackbody-flux-curve)
+
+*F (emitted flux (W/m^2)) against T (surface temperature) from 144 K to 432 K. One curve for each value of eps (emissivity (0 < eps <= 1; default 1, a black body)): 1, 0.5. 31 points per curve computed by earth-science-ai999x; marked: the worked example, T = 288 K, F = 390.105 W/m^2.*
+
 ```python
 earth_science_ai999x.solve('blackbody_flux', T=288.0, eps=1.0)
 # -> F = 390.105 W/m^2   (SOLVED)
@@ -1605,6 +1769,10 @@ $$
 - **Method:** lambda_max = b/T, $b = 2.897771955e-3$ m K
 - **Assumes:** 1 $K  \leq  T  \leq  1e5$ K
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![lambda_max (peak wavelength (m)) against T (temperature of the body) from 2886 K to 8658 K](https://www.ai999x.com/?ax_fig=earth-science-ai999x/wien-peak-wavelength-curve)
+
+*lambda_max (peak wavelength (m)) against T (temperature of the body) from 2886 K to 8658 K. 31 points computed by earth-science-ai999x; marked: the worked example, T = 5772 K, lambda_max = 5.0204e-07 m.*
 
 ```python
 earth_science_ai999x.solve('wien_peak_wavelength', T=5772.0)
@@ -1647,6 +1815,14 @@ $$
 - **Method:** T_e = (S (1 - albedo)/(4 sigma))^$(1/4)$
 - **Assumes:** 0 <= albedo < 1; fast rotation: absorbed sunlight spread over the whole sphere
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Te (equilibrium temperature (K)) against albedo (planetary (Bond) albedo, a fraction) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/planetary-equilibrium-temperature-curve)
+
+*Te (equilibrium temperature (K)) against albedo (planetary (Bond) albedo, a fraction) from 0.02 to 0.98. One curve for each value of S (solar flux at the planet's distance (solar constant)): 1361 W/m^2, 680.5 W/m^2, 2722 W/m^2. 41 points per curve computed by earth-science-ai999x; marked: the worked example, albedo = 0.3, Te = 254.578 K.*
+
+![Te (equilibrium temperature (K)) over S (solar flux at the planet's distance (solar constant)) from 680](https://www.ai999x.com/?ax_fig=earth-science-ai999x/planetary-equilibrium-temperature-field)
+
+*Te (equilibrium temperature (K)) over S (solar flux at the planet's distance (solar constant)) from 680.5 W/m^2 to 2041.5 W/m^2 and albedo (planetary (Bond) albedo, a fraction) from 0.02 to 0.98: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 88.013 K to dark 306.462 K); iso-lines at Te = 100, 150, 200, 250, 300 K. Marked: the worked example, S = 1361 W/m^2, albedo = 0.3, Te = 254.578 K.*
 
 ```python
 earth_science_ai999x.solve('planetary_equilibrium_temperature', S=1361.0, albedo=0.3)
@@ -1692,6 +1868,14 @@ $$
 - **Assumes:** the layer is transparent to sunlight; 0 < eps <= 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![A one-layer greenhouse: sunlight S = 1361 W/m² with albedo 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/greenhouse-single-layer-diagram)
+
+*A one-layer greenhouse: sunlight S = 1361 W/m² with albedo 0.3 reaches the surface, the layer of emissivity 0.78 absorbs and re-emits infrared up and down. The temperatures the package returned: surface Ts = 288.064 K, layer Ta = 242.232 K. Marked: both.*
+
+![Ts (surface temperature (K)) against albedo (planetary (Bond) albedo, a fraction) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/greenhouse-single-layer-curve)
+
+*Ts (surface temperature (K)) against albedo (planetary (Bond) albedo, a fraction) from 0.02 to 0.98. One curve for each value of S (solar constant): 1361 W/m^2, 680.5 W/m^2, 2722 W/m^2. Other inputs as in the worked example: eps = 0.78. 41 points per curve computed by earth-science-ai999x; marked: the worked example, albedo = 0.3, Ts = 288.064 K.*
+
 ```python
 earth_science_ai999x.solve('greenhouse_single_layer', S=1361.0, albedo=0.3, eps=0.78)
 # -> Ts = 288.064 K, Ta = 242.232 K   (SOLVED)
@@ -1736,6 +1920,10 @@ $$
 - **Method:** $T_s = (N + 1)^{1/4}$ T_e, layer i from the top at $i^{1/4}$ T_e
 - **Assumes:** $1  \leq  N  \leq  100$ whole layers; layers transparent to sunlight, opaque to thermal radiation
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Ts (surface temperature (K)) against albedo (planetary (Bond) albedo, a fraction) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/greenhouse-n-layers-curve)
+
+*Ts (surface temperature (K)) against albedo (planetary (Bond) albedo, a fraction) from 0.02 to 0.98. One curve for each value of S (solar constant): 1361 W/m^2, 680.5 W/m^2, 2722 W/m^2. Other inputs as in the worked example: N = 2. 41 points per curve computed by earth-science-ai999x; marked: the worked example, albedo = 0.3, Ts = 335.044 K.*
 
 ```python
 earth_science_ai999x.solve('greenhouse_n_layers', S=1361.0, albedo=0.3, N=2)
@@ -1785,6 +1973,10 @@ $$
 
 *Daily mean solar radiation at the top of the atmosphere (solar constant 1361 W/m², rounded to whole W/m²) for latitudes 80° N to 80° S (rows) and solar declinations −23.44°, −11.72°, 0°, 11.72° and 23.44° (columns), each cell computed by the package: the summer pole receives the most, the winter pole none. At latitude 45° and δ = 23.44°: 499.319 W/m², day length 15.4259 h.*
 
+![Q (daily mean insolation (W/m^2)) against S0 (solar constant (at the actual Earth-Sun distance)) from 680](https://www.ai999x.com/?ax_fig=earth-science-ai999x/daily-mean-insolation-curve)
+
+*Q (daily mean insolation (W/m^2)) against S0 (solar constant (at the actual Earth-Sun distance)) from 680.5 W/m^2 to 2041.5 W/m^2. Other inputs as in the worked example: lat = 45.0, decl = 23.44. 31 points computed by earth-science-ai999x; marked: the worked example, S0 = 1361 W/m^2, Q = 499.319 W/m^2.*
+
 ```python
 earth_science_ai999x.solve('daily_mean_insolation', lat=45.0, decl=23.44, S0=1361.0)
 # -> Q = 499.319 W/m^2, day_length_h = 15.4259   (SOLVED)
@@ -1831,6 +2023,10 @@ $$
 - **Assumes:** $\lambda > 0$, $C > 0$; the forcing is switched on at $t = 0$ and then held constant
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![dT (warming after t (K)) against C (effective heat capacity per unit area) from 4](https://www.ai999x.com/?ax_fig=earth-science-ai999x/energy-balance-response-curve)
+
+*dT (warming after t (K)) against C (effective heat capacity per unit area) from 4.2000e+07 J/(m^2*K) to 4.2000e+09 J/(m^2*K) on a logarithmic axis. One curve for each value of F (radiative forcing applied at t = 0): 3.7 W/m^2, 1.85 W/m^2, 7.4 W/m^2. Other inputs as in the worked example: lam = 0.8 K*m^2/W, t = 10.0. 41 points per curve computed by earth-science-ai999x; marked: the worked example, C = 4.2000e+08 J/(m^2*K), dT = 1.80283 K.*
+
 ```python
 earth_science_ai999x.solve('energy_balance_response', F=3.7, lam=0.8, C=420000000.0, t=10.0)
 # -> dT = 1.80283 K, dT_eq = 2.96 K, tau_years = 10.6472   (SOLVED)
@@ -1871,6 +2067,10 @@ $$
 - **Method:** Bigg (1967) polynomial in T68 (UNESCO 1983 Eq. 14)
 - **Assumes:** 0 °$C  \leq  T  \leq  40$ °C; atmospheric pressure
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![rho (density (kg/m^3)) against T (water temperature) from 249](https://www.ai999x.com/?ax_fig=earth-science-ai999x/pure-water-density-curve)
+
+*rho (density (kg/m^3)) against T (water temperature) from 249.435 K to 304.865 K. 18 points computed by earth-science-ai999x; marked: the worked example, T = 277.15 K, rho = 999.975 kg/m^3.*
 
 ```python
 earth_science_ai999x.solve('pure_water_density', T=277.15)
@@ -1913,6 +2113,10 @@ $$
 - **Method:** UNESCO (1981) one-atmosphere equation of state (EOS-80)
 - **Assumes:** $0  \leq  S  \leq  42$; -2 °$C  \leq  T  \leq  40$ °C
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![rho (density (kg/m^3)) against S (practical salinity (PSS-78)) from 17](https://www.ai999x.com/?ax_fig=earth-science-ai999x/seawater-density-surface-curve)
+
+*rho (density (kg/m^3)) against S (practical salinity (PSS-78)) from 17.5 to 52.5. Other inputs as in the worked example: T = 288.15 K. 22 points computed by earth-science-ai999x; marked: the worked example, S = 35, rho = 1025.97 kg/m^3.*
 
 ```python
 earth_science_ai999x.solve('seawater_density_surface', S=35.0, T=288.15)
@@ -1958,6 +2162,14 @@ $$
 - **Assumes:** $0  \leq  S  \leq  42$; -2 °$C  \leq  T  \leq  40$ °C; $0  \leq  p  \leq  10$,000 dbar
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Seawater density with pressure: rho against p from 0 to 6000 dbar, drawn with depth increasing downwards; 41 runs of the package with S = 35](https://www.ai999x.com/?ax_fig=earth-science-ai999x/seawater-density-profile)
+
+*Seawater density with pressure: rho against p from 0 to 6000 dbar, drawn with depth increasing downwards; 41 runs of the package with S = 35.0, T = 275.15. Marked: the worked example, p = 4000 dbar, rho = 1046.02 kg/m³.*
+
+![rho (in-situ density (kg/m^3)) against T (in-situ temperature) from 247](https://www.ai999x.com/?ax_fig=earth-science-ai999x/seawater-density-curve)
+
+*rho (in-situ density (kg/m^3)) against T (in-situ temperature) from 247.635 K to 302.665 K. One curve for each value of p (sea pressure (0 at the surface)): 4.0000e+07 Pa, 2.0000e+07 Pa, 8.0000e+07 Pa. Other inputs as in the worked example: S = 35.0. 18 points per curve computed by earth-science-ai999x; marked: the worked example, T = 275.15 K, rho = 1046.02 kg/m^3.*
+
 ```python
 earth_science_ai999x.solve('seawater_density', S=35.0, T=275.15, p=40000000.0)
 # -> rho = 1046.02 kg/m^3, sigma = 46.0168   (SOLVED)
@@ -2000,6 +2212,10 @@ $$
 - **Method:** $t_f = -0.0575$ $S + 1.710523e-3$ $S^{1.5} - 2.154996e-4$ $S^{2} - 7.53e-4$ p (p in dbar)
 - **Assumes:** $4  \leq  S  \leq  40$; $0  \leq  p  \leq  500$ dbar
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Tf (freezing temperature (K)) against S (practical salinity (PSS-78)) from 17](https://www.ai999x.com/?ax_fig=earth-science-ai999x/seawater-freezing-point-curve)
+
+*Tf (freezing temperature (K)) against S (practical salinity (PSS-78)) from 17.5 to 52.5. Other inputs as in the worked example: p = 0.0 Pa. 20 points computed by earth-science-ai999x; marked: the worked example, S = 35, Tf = 271.228 K.*
 
 ```python
 earth_science_ai999x.solve('seawater_freezing_point', S=35.0, p=0.0)
@@ -2044,6 +2260,14 @@ $$
 - **Assumes:** $0  \leq  S  \leq  40$; 0 °$C  \leq  T  \leq  40$ °C; $0  \leq  p  \leq  10$,000 dbar
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Sound speed with pressure: c against p from 0 to 6000 dbar, drawn with depth increasing downwards; 41 runs of the package with S = 35](https://www.ai999x.com/?ax_fig=earth-science-ai999x/sound-speed-seawater-profile)
+
+*Sound speed with pressure: c against p from 0 to 6000 dbar, drawn with depth increasing downwards; 41 runs of the package with S = 35.0, T = 283.15. Marked: the worked example, p = 1000 dbar, c = 1506.35 m/s.*
+
+![c (speed of sound (m/s)) against T (water temperature) from 254](https://www.ai999x.com/?ax_fig=earth-science-ai999x/sound-speed-seawater-curve)
+
+*c (speed of sound (m/s)) against T (water temperature) from 254.835 K to 311.465 K. One curve for each value of p (sea pressure (0 at the surface)): 1.0000e+07 Pa, 5e+06 Pa, 2.0000e+07 Pa. Other inputs as in the worked example: S = 35.0. 22 points per curve computed by earth-science-ai999x; marked: the worked example, T = 283.15 K, c = 1506.35 m/s.*
+
 ```python
 earth_science_ai999x.solve('sound_speed_seawater', S=35.0, T=283.15, p=10000000.0)
 # -> c = 1506.35 m/s   (SOLVED)
@@ -2087,6 +2311,14 @@ $$
 - **Assumes:** 0 <= depth <= 11,000 m
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![p (sea pressure (Pa)) against depth (depth below the sea surface) from 500 m to 1500 m](https://www.ai999x.com/?ax_fig=earth-science-ai999x/ocean-pressure-from-depth-curve)
+
+*p (sea pressure (Pa)) against depth (depth below the sea surface) from 500 m to 1500 m. Other inputs as in the worked example: lat = 30.0. 31 points computed by earth-science-ai999x; marked: the worked example, depth = 1000 m, p = 1.0096e+07 Pa.*
+
+![p (sea pressure (Pa)) over depth (depth below the sea surface) from 500 m to 1500 m and lat (latitude (degrees, north positive)) from 0 to 90: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 5](https://www.ai999x.com/?ax_fig=earth-science-ai999x/ocean-pressure-from-depth-field)
+
+*p (sea pressure (Pa)) over depth (depth below the sea surface) from 500 m to 1500 m and lat (latitude (degrees, north positive)) from 0 to 90: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 5.03541e+06 Pa to dark 1.5221e+07 Pa); iso-lines at p = 6.00e6, 8.00e6, 1.00e7, 1.20e7, 1.40e7 Pa. Marked: the worked example, depth = 1000 m, lat = 30, p = 1.0096e+07 Pa.*
+
 ```python
 earth_science_ai999x.solve('ocean_pressure_from_depth', depth=1000.0, lat=30.0)
 # -> p = 1.00955e+07 Pa, p_dbar = 1009.55   (SOLVED)
@@ -2128,6 +2360,14 @@ $$
 - **Method:** z = (9.72659 $p - 2.2512e-5$ $p^{2} + 2.279e-10$ $p^{3} - 1.82e-15$ $p^{4})/(g$(phi) + 1.092e-6 p)
 - **Assumes:** $0  \leq  p  \leq  12$,000 dbar
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![depth (depth (m)) against p (sea pressure (0 at the surface)) from 5e+06 Pa to 1](https://www.ai999x.com/?ax_fig=earth-science-ai999x/ocean-depth-from-pressure-curve)
+
+*depth (depth (m)) against p (sea pressure (0 at the surface)) from 5e+06 Pa to 1.5000e+07 Pa. Other inputs as in the worked example: lat = 30.0. 31 points computed by earth-science-ai999x; marked: the worked example, p = 1.0000e+07 Pa, depth = 990.808 m.*
+
+![depth (depth (m)) over p (sea pressure (0 at the surface)) from 5e+06 Pa to 1](https://www.ai999x.com/?ax_fig=earth-science-ai999x/ocean-depth-from-pressure-field)
+
+*depth (depth (m)) over p (sea pressure (0 at the surface)) from 5e+06 Pa to 1.5000e+07 Pa and lat (latitude (degrees, north positive)) from 0 to 90: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 494.034 m to dark 1486.41 m); iso-lines at depth = 600, 800, 1000, 1200, 1400 m. Marked: the worked example, p = 1.0000e+07 Pa, lat = 30, depth = 990.808 m.*
 
 ```python
 earth_science_ai999x.solve('ocean_depth_from_pressure', p=10000000.0, lat=30.0)
@@ -2172,6 +2412,10 @@ $$
 - **Method:** Bryden (1973) polynomial (UNESCO 1983 Eq. 30)
 - **Assumes:** $0  \leq  S  \leq  42$; -2 °$C  \leq  T  \leq  40$ °C
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![gamma (adiabatic gradient (K per dbar)) against p (sea pressure (0 at the surface)) from 1e+06 Pa to 1](https://www.ai999x.com/?ax_fig=earth-science-ai999x/seawater-adiabatic-gradient-curve)
+
+*gamma (adiabatic gradient (K per dbar)) against p (sea pressure (0 at the surface)) from 1e+06 Pa to 1.0000e+08 Pa on a logarithmic axis. Other inputs as in the worked example: S = 35.0, T = 283.15 K. 41 points computed by earth-science-ai999x; marked: the worked example, p = 1.0000e+07 Pa, gamma = 0.000127387.*
 
 ```python
 earth_science_ai999x.solve('seawater_adiabatic_gradient', S=35.0, T=283.15, p=10000000.0)
@@ -2219,6 +2463,10 @@ $$
 - **Assumes:** $0  \leq  S  \leq  42$; -2 °$C  \leq  T  \leq  40$ °C
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![theta (potential temperature (K)) against p (sea pressure (0 at the surface)) from 2](https://www.ai999x.com/?ax_fig=earth-science-ai999x/seawater-potential-temperature-curve)
+
+*theta (potential temperature (K)) against p (sea pressure (0 at the surface)) from 2.5000e+07 Pa to 7.5000e+07 Pa. Outputs with the same unit drawn together: dtheta (theta - T (K)). Other inputs as in the worked example: S = 35.0, T = 276.15 K, pr = 0.0 Pa. 31 points computed by earth-science-ai999x; marked: the worked example, p = 5.0000e+07 Pa, theta = 275.663 K.*
+
 ```python
 earth_science_ai999x.solve('seawater_potential_temperature', S=35.0, T=276.15, p=50000000.0, pr=0.0)
 # -> theta = 275.663 K, theta_C = 2.5132, dtheta = -0.486797 K   (SOLVED)
@@ -2260,6 +2508,10 @@ $$
 - **Method:** $g = 9.780318$ (1 + 5.2788e-3 $sin^{2}$ $\phi + 2.36e-5$ $sin^{4}$ phi)/(1 + z/R)^2
 - **Assumes:** -90 <= latitude <= 90; spherical inverse-square reduction for height (R = 6371 km)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![g (gravitational acceleration (m/s^2)) against lat (latitude (degrees, north positive)) from 0 to 90](https://www.ai999x.com/?ax_fig=earth-science-ai999x/gravity-at-latitude-curve)
+
+*g (gravitational acceleration (m/s^2)) against lat (latitude (degrees, north positive)) from 0 to 90. Other inputs as in the worked example: z = 0.0 m. 41 points computed by earth-science-ai999x; marked: the worked example, lat = 45, g = 9.80619 m/s^2.*
 
 ```python
 earth_science_ai999x.solve('gravity_at_latitude', lat=45.0, z=0.0)
@@ -2304,6 +2556,10 @@ $$
 - **Assumes:** wavelength much longer than the depth; standard gravity
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![c (wave speed (m/s)) against h (water depth) from 2000 m to 6000 m](https://www.ai999x.com/?ax_fig=earth-science-ai999x/shallow-water-wave-curve)
+
+*c (wave speed (m/s)) against h (water depth) from 2000 m to 6000 m. Other inputs as in the worked example: distance = 5000000.0 m. 31 points computed by earth-science-ai999x; marked: the worked example, h = 4000 m, c = 198.057 m/s.*
+
 ```python
 earth_science_ai999x.solve('shallow_water_wave', h=4000.0, distance=5000000.0)
 # -> c = 198.057 m/s, travel_time = 25245.2 s, travel_time_h = 7.01257   (SOLVED)
@@ -2345,6 +2601,14 @@ $$
 - **Method:** $D_E = pi$ sqrt(2 Az/|f|)
 - **Assumes:** 5 <= |latitude| <= 89; constant eddy viscosity; deep ocean
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![D_E (Ekman depth pi delta (m)) against lat (latitude (degrees, north positive)) from 0 to 90](https://www.ai999x.com/?ax_fig=earth-science-ai999x/ekman-depth-curve)
+
+*D_E (Ekman depth pi delta (m)) against lat (latitude (degrees, north positive)) from 0 to 90. One curve for each value of Az (vertical eddy viscosity): 0.05 m^2/s, 0.025 m^2/s, 0.1 m^2/s. 37 points per curve computed by earth-science-ai999x; marked: the worked example, lat = 45, D_E = 97.8286 m.*
+
+![D_E (Ekman depth pi delta (m)) over Az (vertical eddy viscosity) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/ekman-depth-field)
+
+*D_E (Ekman depth pi delta (m)) over Az (vertical eddy viscosity) from 0.025 m^2/s to 0.075 m^2/s and lat (latitude (degrees, north positive)) from 0 to 90: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 58.3529 m to dark 301.102 m); iso-lines at D_E = 100, 150, 200, 250 m; blank cells: inputs the capability refuses. Marked: the worked example, Az = 0.05 m^2/s, lat = 45, D_E = 97.8286 m.*
 
 ```python
 earth_science_ai999x.solve('ekman_depth', Az=0.05, lat=45.0)
@@ -2389,6 +2653,10 @@ $$
 - **Method:** M = tau/(rho |f|)
 - **Assumes:** 5 <= |latitude| <= 89; steady state, deep ocean
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![M (Ekman volume transport per unit width (m^2/s)) against lat (latitude (degrees, north positive)) from 0 to 90](https://www.ai999x.com/?ax_fig=earth-science-ai999x/ekman-transport-curve)
+
+*M (Ekman volume transport per unit width (m^2/s)) against lat (latitude (degrees, north positive)) from 0 to 90. One curve for each value of tau (wind stress on the sea surface): 0.1 Pa, 0.05 Pa, 0.2 Pa. Other inputs as in the worked example: rho = 1025.0 kg/m^3. 37 points per curve computed by earth-science-ai999x; marked: the worked example, lat = 45, M = 0.946036 m^2/s.*
 
 ```python
 earth_science_ai999x.solve('ekman_transport', tau=0.1, lat=45.0, rho=1025.0)
@@ -2435,6 +2703,10 @@ $$
 - **Assumes:** isotropic, linear elastic; $K > 0$, $mu > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Vp (P-wave speed (m/s)) against K (bulk modulus (incompressibility)) from 5](https://www.ai999x.com/?ax_fig=earth-science-ai999x/seismic-velocities-from-moduli-curve)
+
+*Vp (P-wave speed (m/s)) against K (bulk modulus (incompressibility)) from 5.0000e+09 Pa to 5.0000e+11 Pa on a logarithmic axis. One curve for each value of rho (density of the rock): 2700 kg/m^3, 1350 kg/m^3, 5400 kg/m^3. Other inputs as in the worked example: mu = 30000000000.0 Pa. 41 points per curve computed by earth-science-ai999x; marked: the worked example, K = 5.0000e+10 Pa, Vp = 5773.5 m/s.*
+
 ```python
 earth_science_ai999x.solve('seismic_velocities_from_moduli', K=50000000000.0, mu=30000000000.0, rho=2700.0)
 # -> Vp = 5773.5 m/s, Vs = 3333.33 m/s, Vp_Vs = 1.73205   (SOLVED)
@@ -2479,6 +2751,10 @@ $$
 - **Method:** Lamé constants from E and nu, then $Vp = sqrt$((lambda + 2 mu)/rho), $Vs = \sqrt{\frac{\mu}{\rho}}$
 - **Assumes:** isotropic, linear elastic; $-1 < \nu < 0.5$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Vp (P-wave speed (m/s)) against rho (density of the rock) from 1350 kg/m^3 to 4050 kg/m^3](https://www.ai999x.com/?ax_fig=earth-science-ai999x/seismic-velocities-from-young-curve)
+
+*Vp (P-wave speed (m/s)) against rho (density of the rock) from 1350 kg/m^3 to 4050 kg/m^3. One curve for each value of E (Young's modulus): 7.0000e+10 Pa, 3.5000e+10 Pa, 1.4000e+11 Pa. Other inputs as in the worked example: nu = 0.25. 31 points per curve computed by earth-science-ai999x; marked: the worked example, rho = 2700 kg/m^3, Vp = 5577.73 m/s.*
 
 ```python
 earth_science_ai999x.solve('seismic_velocities_from_young', E=70000000000.0, nu=0.25, rho=2700.0)
@@ -2528,6 +2804,10 @@ $$
 - **Assumes:** isotropic, linear elastic; $Vp > sqrt$(4/3) Vs
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![mu (shear modulus (Pa)) against Vs (S-wave speed) from 1730 m/s to 5190 m/s](https://www.ai999x.com/?ax_fig=earth-science-ai999x/elastic-constants-from-velocities-curve)
+
+*mu (shear modulus (Pa)) against Vs (S-wave speed) from 1730 m/s to 5190 m/s. One curve for each value of rho (density of the rock): 2700 kg/m^3, 1350 kg/m^3, 5400 kg/m^3. Other inputs as in the worked example: Vp = 6000.0 m/s. 31 points per curve computed by earth-science-ai999x; marked: the worked example, Vs = 3460 m/s, mu = 3.2323e+10 Pa.*
+
 ```python
 earth_science_ai999x.solve('elastic_constants_from_velocities', Vp=6000.0, Vs=3460.0, rho=2700.0)
 # -> mu = 3.23233e+10 Pa, lam = 3.25534e+10 Pa, K = 5.41022e+10 Pa, E = 8.08656e+10 Pa, nu = 0.250886   (SOLVED)
@@ -2573,6 +2853,10 @@ $$
 - **Method:** great-circle angle by atan2 (Vincenty's formula on the sphere)
 - **Assumes:** spherical Earth of radius 6371 km
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![delta (epicentral distance (degrees)) against lon1 (longitude of the first point (epicentre)) from 69](https://www.ai999x.com/?ax_fig=earth-science-ai999x/epicentral-distance-curve)
+
+*delta (epicentral distance (degrees)) against lon1 (longitude of the first point (epicentre)) from 69.85 to 209.55. One curve for each value of lat1 (latitude of the first point (epicentre)): 35.7, 22.5, 67.5. Other inputs as in the worked example: lat2 = 51.5, lon2 = -0.1. 31 points per curve computed by earth-science-ai999x; marked: the worked example, lon1 = 139.7, delta = 85.9539.*
 
 ```python
 earth_science_ai999x.solve('epicentral_distance', lat1=35.7, lon1=139.7, lat2=51.5, lon2=-0.1)
@@ -2620,6 +2904,10 @@ $$
 - **Assumes:** WGS84 ellipsoid (a = 6378137 m, f = 1/298.257223563); 0.01 to 120 degrees apart
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![distance (geodesic distance (m)) against lon1 (longitude of the first point (epicentre)) from 69](https://www.ai999x.com/?ax_fig=earth-science-ai999x/geodesic-distance-azimuth-curve)
+
+*distance (geodesic distance (m)) against lon1 (longitude of the first point (epicentre)) from 69.85 to 209.55. One curve for each value of lat1 (latitude of the first point (epicentre)): 35.7, 22.5, 67.5. Other inputs as in the worked example: lat2 = 51.5, lon2 = -0.1. 31 points per curve computed by earth-science-ai999x; marked: the worked example, lon1 = 139.7, distance = 9.58123e+06 m.*
+
 ```python
 earth_science_ai999x.solve('geodesic_distance_azimuth', lat1=35.7, lon1=139.7, lat2=51.5, lon2=-0.1)
 # -> distance = 9.58123e+06 m, azimuth = 336.249, back_azimuth = 31.6632   (SOLVED)
@@ -2662,6 +2950,10 @@ $$
 - **Assumes:** $1e6  \leq  M_{0}  \leq  1e25$ N m
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Mw (moment magnitude) against M0 (scalar seismic moment) from 5](https://www.ai999x.com/?ax_fig=earth-science-ai999x/moment-magnitude-curve)
+
+*Mw (moment magnitude) against M0 (scalar seismic moment) from 5.5000e+20 N*m to 1.6500e+21 N*m. 31 points computed by earth-science-ai999x; marked: the worked example, M0 = 1.1000e+21 N*m, Mw = 7.99426.*
+
 ```python
 earth_science_ai999x.solve('moment_magnitude', M0=1.1e+21)
 # -> Mw = 7.99426, M0_dyne_cm = 1.1e+28   (SOLVED)
@@ -2703,6 +2995,14 @@ $$
 - **Method:** $ML = log10$ $A + log10$(r/100) + 0.00301 $(r - 100) + 3.0$ (A in mm, r in km)
 - **Assumes:** 10 $km  \leq  r  \leq  600$ km; calibration of central California (Bakun and Joyner 1984)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![ML (local magnitude) against r (hypocentral distance) from 10000 m to 1e+06 m on a logarithmic axis](https://www.ai999x.com/?ax_fig=earth-science-ai999x/local-magnitude-curve)
+
+*ML (local magnitude) against r (hypocentral distance) from 10000 m to 1e+06 m on a logarithmic axis. One curve for each value of A (zero-to-peak Wood-Anderson amplitude): 0.01 m, 0.005 m, 0.02 m. 36 points per curve computed by earth-science-ai999x; marked: the worked example, r = 100000 m, ML = 4.*
+
+![ML (local magnitude) over r (hypocentral distance) from 10000 m to 1e+06 m and A (zero-to-peak Wood-Anderson amplitude) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/local-magnitude-field)
+
+*ML (local magnitude) over r (hypocentral distance) from 10000 m to 1e+06 m and A (zero-to-peak Wood-Anderson amplitude) from 0.001 m to 0.1 m (logarithmic axes): each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 1.7291 to dark 6.90757); iso-lines at ML = 2, 3, 4, 5, 6; blank cells: inputs the capability refuses. Marked: the worked example, r = 100000 m, A = 0.01 m, ML = 4.*
 
 ```python
 earth_science_ai999x.solve('local_magnitude', A=0.01, r=100000.0)
@@ -2751,6 +3051,10 @@ $$
 - **Assumes:** at least 10 events with $M  \geq  Mc$; magnitudes complete above Mc
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![b (b-value) against Mc (magnitude of completeness) from 1 to 3](https://www.ai999x.com/?ax_fig=earth-science-ai999x/gutenberg-richter-b-value-curve)
+
+*b (b-value) against Mc (magnitude of completeness) from 1 to 3. One curve for each value of dM (magnitude bin width (0 for unbinned magnitudes; default 0)): 0.1, 0.2. Other inputs as in the worked example: mags = [2.1, 2.4, 2.0, 3.1, 2.6, 2.2, 2.9, 2.3, 2.0…. 17 points per curve computed by earth-science-ai999x; marked: the worked example, Mc = 2, b = 0.766402.*
+
 ```python
 earth_science_ai999x.solve('gutenberg_richter_b_value', mags=[2.1, 2.4, 2.0, 3.1, 2.6, 2.2, 2.9, 2.3, 2.0, 4.0, 2.5, 2.1], Mc=2.0, dM=0.1)
 # -> b = 0.766402, a = 2.61199, n = 12, mean = 2.51667   (SOLVED)
@@ -2794,6 +3098,10 @@ $$
 - **Method:** least squares of $t^{2}$ against $x^{2}$: slope $1/V^{2}$, intercept $t_{0}^{2}$
 - **Assumes:** flat reflector, constant velocity above it; offsets in m, times in s
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![The data t (two-way reflection times (list, in seconds)) against x (source-receiver offsets (list, in metres)) as given in the worked example (5 points)](https://www.ai999x.com/?ax_fig=earth-science-ai999x/nmo-velocity-xy)
+
+*The data t (two-way reflection times (list, in seconds)) against x (source-receiver offsets (list, in metres)) as given in the worked example (5 points). Also returned: V_nmo = 2500.07 m/s, t0 = 0.999995 s, depth = 1250.03 m.*
 
 ```python
 earth_science_ai999x.solve('nmo_velocity', x=[0, 500, 1000, 1500, 2000], t=[1.0, 1.0198, 1.077, 1.1662, 1.2806])
@@ -2841,6 +3149,10 @@ $$
 
 *The direction and relative strength of a geocentric dipole field at the surface, drawn on a meridian section of the Earth: at each magnetic latitude from 75° S to 75° N the package returns the inclination (dip below the horizontal) and the field strength relative to the equator, here the arrow's angle and length. Examples: -75°: I = -82.3693°, ×1.94911; -30°: I = -49.1066°, ×1.32288; 15°: I = 28.1868°, ×1.09588; 60°: I = 73.8979°, ×1.80278; at 45° the field dips 63.4349°.*
 
+![inclination (inclination (degrees, positive downward)) against lat (magnetic latitude (degrees)) from 0 to 90](https://www.ai999x.com/?ax_fig=earth-science-ai999x/dipole-inclination-curve)
+
+*inclination (inclination (degrees, positive downward)) against lat (magnetic latitude (degrees)) from 0 to 90. 40 points computed by earth-science-ai999x; marked: the worked example, lat = 45, inclination = 63.4349.*
+
 ```python
 earth_science_ai999x.solve('dipole_inclination', lat=45.0)
 # -> inclination = 63.4349, F_ratio = 1.58114   (SOLVED)
@@ -2881,6 +3193,10 @@ $$
 - **Method:** latitude = atan(tan I/2)
 - **Assumes:** geocentric axial dipole; |I| < 90
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![paleolatitude (paleolatitude (degrees)) against I_deg (inclination of the remanent magnetisation (degrees)) from 0 to 90](https://www.ai999x.com/?ax_fig=earth-science-ai999x/paleolatitude-curve)
+
+*paleolatitude (paleolatitude (degrees)) against I_deg (inclination of the remanent magnetisation (degrees)) from 0 to 90. 40 points computed by earth-science-ai999x; marked: the worked example, I_deg = 60, paleolatitude = 40.8934.*
 
 ```python
 earth_science_ai999x.solve('paleolatitude', I_deg=60.0)
@@ -2928,6 +3244,10 @@ $$
 - **Assumes:** rigid plate on a sphere of radius 6371 km; site 0.5 to 179.5 degrees from the pole
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![speed (plate speed (mm/yr)) against pole_lat (latitude of the Euler pole) from 0 to 90](https://www.ai999x.com/?ax_fig=earth-science-ai999x/plate-velocity-curve)
+
+*speed (plate speed (mm/yr)) against pole_lat (latitude of the Euler pole) from 0 to 90. One curve for each value of omega (rotation rate about the pole, counter-clockwise positive (degrees per Myr)): 0.75, 0.375, 1.5. Other inputs as in the worked example: pole_lon = -73.7, lat = 35.0, lon = -120.0. 41 points per curve computed by earth-science-ai999x; marked: the worked example, pole_lat = 61.5, speed = 52.794.*
+
 ```python
 earth_science_ai999x.solve('plate_velocity', pole_lat=61.5, pole_lon=-73.7, omega=0.75, lat=35.0, lon=-120.0)
 # -> speed = 52.794, azimuth = 123.02   (SOLVED)
@@ -2970,6 +3290,14 @@ $$
 - **Method:** $dg = 2$ pi G drho h
 - **Assumes:** laterally infinite slab; $G = 6.6743e-11$ N $m^{2}/kg^{2}$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![dg_mGal (gravity anomaly (mGal)) against h (slab thickness) from 50 m to 150 m](https://www.ai999x.com/?ax_fig=earth-science-ai999x/bouguer-slab-curve)
+
+*dg_mGal (gravity anomaly (mGal)) against h (slab thickness) from 50 m to 150 m. One curve for each value of drho (density contrast of the slab): 2670 kg/m^3, 1335 kg/m^3. 31 points per curve computed by earth-science-ai999x; marked: the worked example, h = 100 m, dg_mGal = 11.1969.*
+
+![dg_mGal (gravity anomaly (mGal)) over h (slab thickness) from 50 m to 150 m and drho (density contrast of the slab) from 1335 kg/m^3 to 4005 kg/m^3: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 2](https://www.ai999x.com/?ax_fig=earth-science-ai999x/bouguer-slab-field)
+
+*dg_mGal (gravity anomaly (mGal)) over h (slab thickness) from 50 m to 150 m and drho (density contrast of the slab) from 1335 kg/m^3 to 4005 kg/m^3: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 2.79922 to dark 25.193); iso-lines at dg_mGal = 5, 10, 15, 20. Marked: the worked example, h = 100 m, drho = 2670 kg/m^3, dg_mGal = 11.1969.*
 
 ```python
 earth_science_ai999x.solve('bouguer_slab', drho=2670.0, h=100.0)
@@ -3014,6 +3342,10 @@ $$
 - **Method:** $dg = (4/3)$ pi G drho $R^{3}/z^{2}$
 - **Assumes:** $0 < R < z$; observation point directly above the centre
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![dg_mGal (peak gravity anomaly (mGal)) against z (depth to the centre of the sphere) from 100 m to 300 m](https://www.ai999x.com/?ax_fig=earth-science-ai999x/buried-sphere-anomaly-curve)
+
+*dg_mGal (peak gravity anomaly (mGal)) against z (depth to the centre of the sphere) from 100 m to 300 m. One curve for each value of drho (density contrast of the sphere): 500 kg/m^3, 250 kg/m^3, 1000 kg/m^3. Other inputs as in the worked example: R = 100.0 m. 30 points per curve computed by earth-science-ai999x; marked: the worked example, z = 200 m, dg_mGal = 0.349466.*
 
 ```python
 earth_science_ai999x.solve('buried_sphere_anomaly', drho=500.0, R=100.0, z=200.0)
@@ -3061,6 +3393,14 @@ $$
 - **Method:** T(z) = T0 + q0 z/k - A $z^{2}/(2k)$, q(z) = q0 - A z
 - **Assumes:** steady one-dimensional conduction; uniform heat production and conductivity
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Geotherm with radiogenic heating: T against z from 0 to 40 km, drawn with depth increasing downwards; 41 runs of the package with T0 = 283](https://www.ai999x.com/?ax_fig=earth-science-ai999x/geotherm-radiogenic-profile)
+
+*Geotherm with radiogenic heating: T against z from 0 to 40 km, drawn with depth increasing downwards; 41 runs of the package with T0 = 283.15, q0 = 0.065, k = 2.5, A = 1e-06. Marked: the worked example, z = 10 km, T = 523.15 K.*
+
+![T (temperature at depth (K)) against z (depth) from 1000 m to 100000 m on a logarithmic axis](https://www.ai999x.com/?ax_fig=earth-science-ai999x/geotherm-radiogenic-curve)
+
+*T (temperature at depth (K)) against z (depth) from 1000 m to 100000 m on a logarithmic axis. One curve for each value of T0 (surface temperature): 283.15 K, 141.575 K, 566.3 K. Other inputs as in the worked example: q0 = 0.065 W/m^2, k = 2.5 W/(m*K), A = 1e-06 W/m^3. 41 points per curve computed by earth-science-ai999x; marked: the worked example, z = 10000 m, T = 523.15 K.*
 
 ```python
 earth_science_ai999x.solve('geotherm_radiogenic', T0=283.15, q0=0.065, k=2.5, A=1e-06, z=10000.0)
@@ -3111,6 +3451,10 @@ $$
 - **Assumes:** 0 < age <= 200 Myr (half-space cooling; old seafloor flattens in reality)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![depth (seafloor depth (m)) against t (age of the seafloor (millions of years)) from 5 to 500 on a logarithmic axis](https://www.ai999x.com/?ax_fig=earth-science-ai999x/seafloor-depth-age-curve)
+
+*depth (seafloor depth (m)) against t (age of the seafloor (millions of years)) from 5 to 500 on a logarithmic axis. Outputs with the same unit drawn together: subsidence (subsidence below the ridge (m)). 33 points computed by earth-science-ai999x; marked: the worked example, t = 50, depth = 5008.09 m.*
+
 ```python
 earth_science_ai999x.solve('seafloor_depth_age', t=50.0)
 # -> depth = 5008.09 m, subsidence = 2508.09 m   (SOLVED)
@@ -3158,6 +3502,14 @@ $$
 
 *Fraction of carbon-14 remaining (half-life 5730 years) every 2000 years and at each of the first five half-lives, computed by the package (decay constant 0.000120968 per year); a sample with 0.5 of its original carbon-14 is 5568.05 years old. Marked: t = 10000 years, fraction = 0.298292.*
 
+![fraction (fraction of the parent remaining) against half_life (half-life (years)) from 573 to 57300 on a logarithmic axis](https://www.ai999x.com/?ax_fig=earth-science-ai999x/radioactive-decay-remaining-curve)
+
+*fraction (fraction of the parent remaining) against half_life (half-life (years)) from 573 to 57300 on a logarithmic axis. One curve for each value of t (elapsed time (years)): 10000, 5000, 20000. 41 points per curve computed by earth-science-ai999x; marked: the worked example, half_life = 5730, fraction = 0.298292.*
+
+![fraction (fraction of the parent remaining) over half_life (half-life (years)) from 573 to 57300 and t (elapsed time (years)) from 1000 to 100000 (logarithmic axes): each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 6](https://www.ai999x.com/?ax_fig=earth-science-ai999x/radioactive-decay-remaining-field)
+
+*fraction (fraction of the parent remaining) over half_life (half-life (years)) from 573 to 57300 and t (elapsed time (years)) from 1000 to 100000 (logarithmic axes): each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 6.7790e-18 to dark 0.987976); iso-lines at fraction = 0.2, 0.4, 0.6, 0.8; blank cells: inputs the capability refuses. Marked: the worked example, half_life = 5730, t = 10000, fraction = 0.298292.*
+
 ```python
 earth_science_ai999x.solve('radioactive_decay_remaining', half_life=5730.0, t=10000.0)
 # -> fraction = 0.298292, decayed = 0.701708, lambda = 0.000120968   (SOLVED)
@@ -3201,6 +3553,14 @@ $$
 - **Assumes:** closed system; no daughter at the start
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![age (age (years)) against ratio (radiogenic daughter / parent atom ratio) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/radiometric-age-curve)
+
+*age (age (years)) against ratio (radiogenic daughter / parent atom ratio) from 0.02 to 0.98. One curve for each value of half_life (half-life of the parent (years)): 1.2500e+09, 6.2500e+08, 2.5000e+09. 41 points per curve computed by earth-science-ai999x; marked: the worked example, ratio = 0.5, age = 7.3120e+08.*
+
+![age (age (years)) over half_life (half-life of the parent (years)) from 6](https://www.ai999x.com/?ax_fig=earth-science-ai999x/radiometric-age-field)
+
+*age (age (years)) over half_life (half-life of the parent (years)) from 6.2500e+08 to 1.8750e+09 and ratio (radiogenic daughter / parent atom ratio) from 0.02 to 0.98: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 1.7856e+07 to dark 1.8478e+09); iso-lines at age = 5.00e8, 1.00e9, 1.50e9. Marked: the worked example, half_life = 1.2500e+09, ratio = 0.5, age = 7.3120e+08.*
+
 ```python
 earth_science_ai999x.solve('radiometric_age', ratio=0.5, half_life=1250000000.0)
 # -> age = 7.31203e+08, lambda = 5.54518e-10   (SOLVED)
@@ -3243,6 +3603,10 @@ $$
 - **Method:** $t = (1/\lambda)$ ln($1 + (\lambda/lambda_e)$ Ar*/K)
 - **Assumes:** closed system, no initial argon
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![age (K-Ar age (years)) against ratio (radiogenic 40Ar*/40K atom ratio) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/potassium-argon-age-curve)
+
+*age (K-Ar age (years)) against ratio (radiogenic 40Ar*/40K atom ratio) from 0.02 to 0.98. 41 points computed by earth-science-ai999x; marked: the worked example, ratio = 0.0055, age = 9.2264e+07.*
 
 ```python
 earth_science_ai999x.solve('potassium_argon_age', ratio=0.0055)
@@ -3288,6 +3652,14 @@ $$
 - **Assumes:** cogenetic samples, closed systems, same initial ratio
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![The data y (daughter/stable isotope ratios (list, e](https://www.ai999x.com/?ax_fig=earth-science-ai999x/isochron-age-xy)
+
+*The data y (daughter/stable isotope ratios (list, e.g. 87Sr/86Sr)) against x (parent/stable isotope ratios (list, e.g. 87Rb/86Sr)) as given in the worked example (4 points). Also returned: age = 9.9637e+08, slope = 0.014249, initial_ratio = 0.70499. Other inputs: lam = 1.42e-11.*
+
+![age (isochron age (years)) against lam (decay constant of the parent (default 1](https://www.ai999x.com/?ax_fig=earth-science-ai999x/isochron-age-curve)
+
+*age (isochron age (years)) against lam (decay constant of the parent (default 1.42e-11 /yr)) from 7.1000e-12 to 2.1300e-11. Other inputs as in the worked example: x = [0.5, 1.2, 2.8, 4.1], y = [0.7121, 0.7221, 0.7449, 0.7634]. 31 points computed by earth-science-ai999x; marked: the worked example, lam = 1.4200e-11, age = 9.9637e+08.*
+
 ```python
 earth_science_ai999x.solve('isochron_age', x=[0.5, 1.2, 2.8, 4.1], y=[0.7121, 0.7221, 0.7449, 0.7634], lam=1.42e-11)
 # -> age = 9.96372e+08, slope = 0.014249, initial_ratio = 0.70499   (SOLVED)
@@ -3328,6 +3700,10 @@ $$
 - **Method:** $t = -8033$ ln F
 - **Assumes:** $1e-5  \leq  F  \leq  1$ (no bomb carbon)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![age (conventional radiocarbon age (years BP)) against F (fraction modern (14C activity relative to the modern standard; or % in a question)) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/radiocarbon-age-curve)
+
+*age (conventional radiocarbon age (years BP)) against F (fraction modern (14C activity relative to the modern standard; or % in a question)) from 0.02 to 0.98. 41 points computed by earth-science-ai999x; marked: the worked example, F = 0.5, age = 5568.05.*
 
 ```python
 earth_science_ai999x.solve('radiocarbon_age', F=0.5)
@@ -3374,6 +3750,10 @@ $$
 - **Assumes:** grain Reynolds number <= 1; a smooth sphere, no neighbouring grains
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![w (settling velocity (m/s)) against mu (dynamic viscosity of the fluid) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/stokes-settling-velocity-curve)
+
+*w (settling velocity (m/s)) against mu (dynamic viscosity of the fluid) from 0.0005 Pa*s to 0.0015 Pa*s. One curve for each value of rho_s (grain density): 2650 kg/m^3, 1325 kg/m^3, 5300 kg/m^3. Other inputs as in the worked example: d = 5e-05 m, rho_f = 1000.0 kg/m^3. 31 points per curve computed by earth-science-ai999x; marked: the worked example, mu = 0.001 Pa*s, w = 0.00224736 m/s.*
+
 ```python
 earth_science_ai999x.solve('stokes_settling_velocity', d=5e-05, rho_s=2650.0, rho_f=1000.0, mu=0.001)
 # -> w = 0.00224736 m/s, Re = 0.112368   (SOLVED)
@@ -3419,6 +3799,14 @@ $$
 - **Method:** $dF = 5.35$ ln(C/C0) $W/m^{2}$; $dT_eq = \lambda$ dF
 - **Assumes:** $1  \leq  C$, $C_{0}  \leq  100$,000 ppm; the simplified logarithmic expression of Myhre et al. (1998)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![dF (radiative forcing (W/m^2)) against C (CO2 concentration (ppm)) from 280 to 840](https://www.ai999x.com/?ax_fig=earth-science-ai999x/co2-radiative-forcing-curve)
+
+*dF (radiative forcing (W/m^2)) against C (CO2 concentration (ppm)) from 280 to 840. One curve for each value of C0 (reference CO2 concentration (ppm)): 280, 140, 560. 31 points per curve computed by earth-science-ai999x; marked: the worked example, C = 560, dF = 3.70834 W/m^2.*
+
+![dF (radiative forcing (W/m^2)) over C (CO2 concentration (ppm)) from 280 to 840 and C0 (reference CO2 concentration (ppm)) from 140 to 420: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its sign and magnitude (second colour negative); iso-lines at dF = 0, 2, 4, 6, 8 W/m^2](https://www.ai999x.com/?ax_fig=earth-science-ai999x/co2-radiative-forcing-field)
+
+*dF (radiative forcing (W/m^2)) over C (CO2 concentration (ppm)) from 280 to 840 and C0 (reference CO2 concentration (ppm)) from 140 to 420: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its sign and magnitude (second colour negative); iso-lines at dF = 0, 2, 4, 6, 8 W/m^2. Marked: the worked example, C = 560, C0 = 280, dF = 3.70834 W/m^2.*
 
 ```python
 earth_science_ai999x.solve('co2_radiative_forcing', C=560.0, C0=280.0)
@@ -3467,6 +3855,10 @@ $$
 - **Assumes:** $vp > vs > 0$; straight rays at constant speeds (a local, crustal distance)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Travel-time diagram: P and S arrival times against distance (P 6000 m/s, S 3500 m/s as stated), 30 runs of the package for S−P intervals from 1 to 30 s](https://www.ai999x.com/?ax_fig=earth-science-ai999x/sp-epicentral-distance-diagram)
+
+*Travel-time diagram: P and S arrival times against distance (P 6000 m/s, S 3500 m/s as stated), 30 runs of the package for S−P intervals from 1 to 30 s. The stated interval 10.0 s fixes the distance the package returned: 84 km (P at 14 s, S at 24 s). Marked: that distance.*
+
 ```python
 earth_science_ai999x.solve('sp_epicentral_distance', dt=10.0, vp=6000.0, vs=3500.0)
 # -> distance = 84000 m, distance_km = 84, tp = 14 s, ts = 24 s   (SOLVED)
@@ -3514,6 +3906,14 @@ $$
 - **Assumes:** $h > 0$; $rho_m > rho_c$; local (Airy) compensation, uniform crustal density
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Airy isostasy: a mountain of height h = 3 km (stated) above crust of density 2800 kg/m³ floating on mantle of 3300 kg/m³ is balanced by a root of 16](https://www.ai999x.com/?ax_fig=earth-science-ai999x/airy-isostasy-column)
+
+*Airy isostasy: a mountain of height h = 3 km (stated) above crust of density 2800 kg/m³ floating on mantle of 3300 kg/m³ is balanced by a root of 16.8 km, the value the package returned. Vertical sizes to scale; the reference crust thickness (35 km) only sets the drawing. Marked: h and the root.*
+
+![root (root depth below the normal crust (m)) against rho_c (crustal density) from 1400 kg/m^3 to 4200 kg/m^3](https://www.ai999x.com/?ax_fig=earth-science-ai999x/airy-isostasy-curve)
+
+*root (root depth below the normal crust (m)) against rho_c (crustal density) from 1400 kg/m^3 to 4200 kg/m^3. One curve for each value of h (elevation of the topography above sea level): 3000 m, 1500 m, 6000 m. Other inputs as in the worked example: rho_m = 3300.0 kg/m^3. 21 points per curve computed by earth-science-ai999x; marked: the worked example, rho_c = 2800 kg/m^3, root = 16800 m.*
+
 ```python
 earth_science_ai999x.solve('airy_isostasy', h=3000.0, rho_c=2800.0, rho_m=3300.0)
 # -> root = 16800 m, root_km = 16.8   (SOLVED)
@@ -3558,6 +3958,10 @@ $$
 - **Method:** $\rho = rho0$ D/(D + h)
 - **Assumes:** $h > 0$; rho0, $D > 0$; a column on land (no water load)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![rho (density of the elevated column (kg/m^3)) against h (elevation of the column above sea level) from 300 m to 30000 m on a logarithmic axis](https://www.ai999x.com/?ax_fig=earth-science-ai999x/pratt-isostasy-curve)
+
+*rho (density of the elevated column (kg/m^3)) against h (elevation of the column above sea level) from 300 m to 30000 m on a logarithmic axis. One curve for each value of rho0 (density of a column whose top is at sea level): 2800 kg/m^3, 1400 kg/m^3, 5600 kg/m^3. Other inputs as in the worked example: D = 100000.0 m. 41 points per curve computed by earth-science-ai999x; marked: the worked example, h = 3000 m, rho = 2718.45 kg/m^3.*
 
 ```python
 earth_science_ai999x.solve('pratt_isostasy', h=3000.0, rho0=2800.0, D=100000.0)
@@ -3606,6 +4010,10 @@ $$
 - **Assumes:** 5 <= |latitude| <= 85 degrees; R, $Vg > 0$; anticyclonic: Vg <= |f| $R/4$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![V (gradient wind speed (m/s)) against Vg (geostrophic wind speed) from 2 m/s to 200 m/s on a logarithmic axis](https://www.ai999x.com/?ax_fig=earth-science-ai999x/gradient-wind-curve)
+
+*V (gradient wind speed (m/s)) against Vg (geostrophic wind speed) from 2 m/s to 200 m/s on a logarithmic axis. One curve for each value of R (radius of curvature of the flow): 500000 m, 250000 m, 1e+06 m. Other inputs as in the worked example: lat = 45.0, flow = cyclonic. 41 points per curve computed by earth-science-ai999x; marked: the worked example, Vg = 20 m/s, V = 15.4004 m/s.*
+
 ```python
 earth_science_ai999x.solve('gradient_wind', lat=45.0, R=500000.0, Vg=20.0, flow='cyclonic')
 # -> V = 15.4004 m/s, ratio = 0.770018, f = 0.000103126 1/s   (SOLVED)
@@ -3652,6 +4060,14 @@ $$
 - **Method:** $\omega^{2} = g$ k tanh(k h) solved by Newton's method; $c = \omega/k$; $c_g = c$ (1 + 2kh/sinh 2kh)/2
 - **Assumes:** $0.5  \leq  T  \leq  60$ s; $0 < h  \leq  11$,000 m; linear (small-amplitude) waves
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![L (wavelength (m)) against T (wave period) from 1 s to 100 s on a logarithmic axis](https://www.ai999x.com/?ax_fig=earth-science-ai999x/wave-dispersion-curve)
+
+*L (wavelength (m)) against T (wave period) from 1 s to 100 s on a logarithmic axis. One curve for each value of h (water depth): 20 m, 10 m, 40 m. 36 points per curve computed by earth-science-ai999x; marked: the worked example, T = 10 s, L = 121.21 m.*
+
+![L (wavelength (m)) over T (wave period) from 1 s to 100 s and h (water depth) from 2 m to 200 m (logarithmic axes): each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 1](https://www.ai999x.com/?ax_fig=earth-science-ai999x/wave-dispersion-field)
+
+*L (wavelength (m)) over T (wave period) from 1 s to 100 s and h (water depth) from 2 m to 200 m (logarithmic axes): each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 1.56078 m to dark 2100.57 m, logarithmic shading); iso-lines at L = 10, 100, 1000 m; blank cells: inputs the capability refuses. Marked: the worked example, T = 10 s, h = 20 m, L = 121.21 m.*
 
 ```python
 earth_science_ai999x.solve('wave_dispersion', T=10.0, h=20.0)
@@ -3702,6 +4118,10 @@ $$
 - **Assumes:** K, A, $L > 0$; $dh > 0$; laminar flow in a saturated, homogeneous medium
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Q (discharge (m^3/s)) against L (flow length) from 50 m to 150 m](https://www.ai999x.com/?ax_fig=earth-science-ai999x/darcy-flow-curve)
+
+*Q (discharge (m^3/s)) against L (flow length) from 50 m to 150 m. One curve for each value of K (hydraulic conductivity): 0.0001 m/s, 5.0000e-05 m/s, 0.0002 m/s. Other inputs as in the worked example: A = 50.0 m^2, dh = 2.0 m. 31 points per curve computed by earth-science-ai999x; marked: the worked example, L = 100 m, Q = 0.0001 m^3/s.*
+
 ```python
 earth_science_ai999x.solve('darcy_flow', K=0.0001, A=50.0, dh=2.0, L=100.0)
 # -> Q = 0.0001 m^3/s, q = 2e-06 m/s, gradient = 0.02   (SOLVED)
@@ -3748,6 +4168,14 @@ $$
 - **Assumes:** $Q > 0$; $0 < S  \leq  1$; steady uniform flow
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Omega (total stream power per unit length (W/m)) against Q (discharge) from 50 m^3/s to 150 m^3/s](https://www.ai999x.com/?ax_fig=earth-science-ai999x/stream-power-curve)
+
+*Omega (total stream power per unit length (W/m)) against Q (discharge) from 50 m^3/s to 150 m^3/s. One curve for each value of S (channel slope (m/m)): 0.002, 0.001, 0.004. 31 points per curve computed by earth-science-ai999x; marked: the worked example, Q = 100 m^3/s, Omega = 1961.33 W/m.*
+
+![Omega (total stream power per unit length (W/m)) over Q (discharge) from 50 m^3/s to 150 m^3/s and S (channel slope (m/m)) from 0](https://www.ai999x.com/?ax_fig=earth-science-ai999x/stream-power-field)
+
+*Omega (total stream power per unit length (W/m)) over Q (discharge) from 50 m^3/s to 150 m^3/s and S (channel slope (m/m)) from 0.001 to 0.003: each of the 21 × 15 cells is one run of earth-science-ai999x, shaded by its value (light 490.332 W/m to dark 4412.99 W/m); iso-lines at Omega = 1000, 2000, 3000, 4000 W/m. Marked: the worked example, Q = 100 m^3/s, S = 0.002, Omega = 1961.33 W/m.*
+
 ```python
 earth_science_ai999x.solve('stream_power', Q=100.0, S=0.002)
 # -> Omega = 1961.33 W/m   (SOLVED)
@@ -3792,6 +4220,10 @@ $$
 - **Method:** $Ro = U$/(|f| L), $f = 2$ Omega sin(latitude)
 - **Assumes:** |latitude| >= 1 degree; U, $L > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Ro (Rossby number) against lat (latitude (degrees, north positive)) from 0 to 90](https://www.ai999x.com/?ax_fig=earth-science-ai999x/rossby-number-curve)
+
+*Ro (Rossby number) against lat (latitude (degrees, north positive)) from 0 to 90. One curve for each value of U (velocity scale): 10 m/s, 5 m/s, 20 m/s. Other inputs as in the worked example: L = 1000000.0 m. 40 points per curve computed by earth-science-ai999x; marked: the worked example, lat = 45, Ro = 0.0969687.*
 
 ```python
 earth_science_ai999x.solve('rossby_number', U=10.0, L=1000000.0, lat=45.0)
@@ -3839,6 +4271,10 @@ $$
 - **Assumes:** |declination| <= 23.5 degrees; -180 <= hour angle <= 180 degrees; geometric (no refraction)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![elevation (solar elevation angle (degrees)) against lat (latitude (degrees, north positive)) from 0 to 90](https://www.ai999x.com/?ax_fig=earth-science-ai999x/solar-elevation-angle-curve)
+
+*elevation (solar elevation angle (degrees)) against lat (latitude (degrees, north positive)) from 0 to 90. One curve for each value of H (hour angle (degrees, negative before solar noon)): 0, 22.5, 67.5. Other inputs as in the worked example: decl = 23.44. 41 points per curve computed by earth-science-ai999x; marked: the worked example, lat = 40, elevation = 73.44.*
+
 ```python
 earth_science_ai999x.solve('solar_elevation_angle', lat=40.0, decl=23.44, H=0.0)
 # -> elevation = 73.44, zenith = 16.56, azimuth = 180   (SOLVED)
@@ -3885,6 +4321,10 @@ $$
 - **Method:** $q = k$ dT/sqrt(pi kappa t); thermal thickness 2 erfinv(0.9) sqrt(kappa t) = 2.326 sqrt(kappa t)
 - **Assumes:** $0 < t  \leq  200$ Myr; conductive half-space cooling
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![q (surface heat flow (W/m^2)) against t (age of the seafloor (millions of years)) from 25 to 75](https://www.ai999x.com/?ax_fig=earth-science-ai999x/half-space-heat-flow-curve)
+
+*q (surface heat flow (W/m^2)) against t (age of the seafloor (millions of years)) from 25 to 75. 31 points computed by earth-science-ai999x; marked: the worked example, t = 50, q = 0.060932 W/m^2.*
 
 ```python
 earth_science_ai999x.solve('half_space_heat_flow', t=50.0)

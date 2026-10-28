@@ -1,5 +1,5 @@
 {
- "package": "1.0.1",
+ "package": "1.0.2",
  "pack": "1.0.1",
  "knowledge_db": null,
  "files": {
@@ -9,7 +9,7 @@
   "knowledge/reference_cases.json": "7414a14e2c4202a7fae8cdd14e1a2ef7267f35a9665b0633001349c698d4e4e7",
   "capabilities/procedures.py": "12d9408f4e489e678bb5ea5b3e675f962a708e7c05c63467cfd4fea142d2b58c",
   "capabilities/procedures_certified.json": "6e5bd6daa684e5b18a10df5c5ad3686dd7bce66c435404fc0a250a51c671f2b0",
-  "earth_science_knowledge_public.sqlite": "c040836741705d587fb8188d9a5bcf622e70135533d086bcb03a437f23d59dce",
+  "earth_science_knowledge_public.sqlite": "a8ae954bbf34d2afef7dcca82f89f6915f2e2a4d4dc53c7179a07a308941b780",
   "search/encoder.int8.onnx": "521452d928a72da4d241b1835ab0f46b0e81ff58ffff0367b9a7029bd129fbd9",
   "search/tokenizer.json": "b2f2deb461e6ad672b8e42aac29773e7a9be77d582cdf58808113ea43fda565e",
   "search/index.json": "d8f81d9706c9a0efa7d9643bcec3d39a6c3500766ce0f44937d85ad90f772507",

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "earth-science-ai999x"
-version = "1.0.1"
+version = "1.0.2"
 description = "Offline earth science solver: atmospheric thermodynamics and meteorology, climate and radiation balance, oceanography and seawater properties, seismology and geophysics, and geology, with steps, LaTeX and honest refusals"
 readme = "README.md"
 requires-python = ">=3.10"
