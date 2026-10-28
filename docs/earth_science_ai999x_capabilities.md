@@ -312,6 +312,10 @@ $$
 - **Assumes:** -45 °$C  \leq  T  \leq  60$ °C (liquid water, possibly supercooled)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Saturation vapour pressure of water against temperature, computed by the package at 71 temperatures from −30 to 40 °C](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/saturation-vapor-pressure-curve.svg)
+
+*Saturation vapour pressure of water against temperature, computed by the package at 71 temperatures from −30 to 40 °C. Air holding e = 1700 Pa of vapour saturates when cooled to its dew point; at 25 °C saturation is 3162.35 Pa. Marked: Td = 14.9631 °C (288.113 K), e = 1700 Pa.*
+
 ```python
 earth_science_ai999x.solve('saturation_vapor_pressure', T=298.15)
 # -> es = 3162.35 Pa   (SOLVED)
@@ -1347,6 +1351,10 @@ $$
 - **Assumes:** $0 < \gamma  \leq  9.8$ K/km; dry air, constant gravity
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Temperature against height in an atmosphere with a constant lapse rate of 6](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/pressure-with-lapse-rate-profile.svg)
+
+*Temperature against height in an atmosphere with a constant lapse rate of 6.5 K/km from 288.15 K and 101325 Pa at the surface, and a dry parcel lifted adiabatically from the same surface temperature, both computed by the package every 200 m to 11 km. Marked: z = 3 km, T = 268.65 K, p = 70108 Pa.*
+
 ```python
 earth_science_ai999x.solve('pressure_with_lapse_rate', p0=101325.0, T0=288.15, gamma=0.006500000000000001, z=3000.0)
 # -> p = 70108 Pa, T = 268.65 K   (SOLVED)
@@ -1772,6 +1780,10 @@ $$
 - **Method:** $Q = (S_{0}/pi)$(h0 sin phi sin delta + cos phi cos delta sin h0)
 - **Assumes:** |latitude| < 89.9; |declination| <= 23.5
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Daily mean solar radiation at the top of the atmosphere (solar constant 1361 W/m², rounded to whole W/m²) for latitudes 80° N to 80° S (rows) and solar declinations −23](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/daily-mean-insolation-heatmap.svg)
+
+*Daily mean solar radiation at the top of the atmosphere (solar constant 1361 W/m², rounded to whole W/m²) for latitudes 80° N to 80° S (rows) and solar declinations −23.44°, −11.72°, 0°, 11.72° and 23.44° (columns), each cell computed by the package: the summer pole receives the most, the winter pole none. At latitude 45° and δ = 23.44°: 499.319 W/m², day length 15.4259 h.*
 
 ```python
 earth_science_ai999x.solve('daily_mean_insolation', lat=45.0, decl=23.44, S0=1361.0)
@@ -2825,6 +2837,10 @@ $$
 - **Assumes:** geocentric axial dipole
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![The direction and relative strength of a geocentric dipole field at the surface, drawn on a meridian section of the Earth: at each magnetic latitude from 75° S to 75° N the package returns the inclination (dip below the horizontal) and the field strength relative to the equator, here the arrow's angle and length](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/dipole-inclination-field.svg)
+
+*The direction and relative strength of a geocentric dipole field at the surface, drawn on a meridian section of the Earth: at each magnetic latitude from 75° S to 75° N the package returns the inclination (dip below the horizontal) and the field strength relative to the equator, here the arrow's angle and length. Examples: -75°: I = -82.3693°, ×1.94911; -30°: I = -49.1066°, ×1.32288; 15°: I = 28.1868°, ×1.09588; 60°: I = 73.8979°, ×1.80278; at 45° the field dips 63.4349°.*
+
 ```python
 earth_science_ai999x.solve('dipole_inclination', lat=45.0)
 # -> inclination = 63.4349, F_ratio = 1.58114   (SOLVED)
@@ -3137,6 +3153,10 @@ $$
 - **Method:** N/N0 = 2^(-t/t_half), $\lambda = ln$ 2/t_half
 - **Assumes:** half-life > 0; $t  \leq  60$ half-lives
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Fraction of carbon-14 remaining (half-life 5730 years) every 2000 years and at each of the first five half-lives, computed by the package (decay constant 0](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/radioactive-decay-remaining-decay.svg)
+
+*Fraction of carbon-14 remaining (half-life 5730 years) every 2000 years and at each of the first five half-lives, computed by the package (decay constant 0.000120968 per year); a sample with 0.5 of its original carbon-14 is 5568.05 years old. Marked: t = 10000 years, fraction = 0.298292.*
 
 ```python
 earth_science_ai999x.solve('radioactive_decay_remaining', half_life=5730.0, t=10000.0)
