@@ -1,16 +1,16 @@
-# earth-science-ai999x — offline, verified earth science solver with step-by-step answers
+# earth-science-ai999x: offline, verified earth science solver with step-by-step answers
 
 [![tests](https://github.com/AI999X/earth-science-ai999x/actions/workflows/ci.yml/badge.svg)](https://github.com/AI999X/earth-science-ai999x/actions/workflows/ci.yml) [![PyPI](https://img.shields.io/pypi/v/earth-science-ai999x)](https://pypi.org/project/earth-science-ai999x/) [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face-yellow)](https://huggingface.co/AI999X/earth-science-ai999x)
 
 **[Desktop app & command line](https://www.ai999x.com/desktop-cli/)** · **[Compute in your browser](https://www.ai999x.com/models/earth-science-ai999x/#try)** · **[Install (Python)](https://pypi.org/project/earth-science-ai999x/)** · **[Guides](https://huggingface.co/AI999X/earth-science-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/earth-science-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.1.0
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.5.0
 
-Field: **Physical Sciences** · Tasks: Question Answering, Token Classification, Text Classification, Sentence Similarity, Feature Extraction
+Field: **Physical Sciences** · Tasks: Question Answering
 
-earth-science-ai999x is an offline, deterministic Python solver that answers earth science questions with verified results from 85 certified capabilities, gives 522 documented answers identically on Windows and Linux, and refuses rather than guesses when an answer cannot be verified.
+earth-science-ai999x is an offline, deterministic earth science solver written in Rust: a desktop app, a command-line program, a browser module and a Python package. It answers earth science questions with verified results from 85 certified capabilities, gives 522 documented answers identically on Windows and Linux, and refuses rather than guesses when an answer cannot be verified.
 
-**earth-science-ai999x** is a compact, deterministic earth science engine for Python. It reads a question in plain English (or a typed call), picks a certified earth science capability, computes the answer exactly, checks it, and returns the result with its steps, units, LaTeX and assumptions — or an honest refusal that says what is missing. It runs fully offline on any CPU, needs no GPU, no API key and no internet, and is built to give **zero wrong answers**: when it is not sure, it refuses instead of guessing.
+**earth-science-ai999x** reads a question in plain English (or a typed call), picks a certified earth science capability, computes the answer exactly, checks it, and returns the result with its steps, units, LaTeX and assumptions, or a refusal that says what is missing. It runs fully offline on any CPU, needs no GPU, no API key and no internet, and is built to give **zero wrong answers**: when it is not sure, it refuses instead of guessing.
 
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-support%20development-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/ibnuljaiffarabi) ![License](https://img.shields.io/badge/license-Apache--2.0-blue) ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue) ![Offline](https://img.shields.io/badge/runs-offline%20on%20CPU-green) ![Rust](https://img.shields.io/badge/Rust-Windows%20%7C%20Linux%20%7C%20WebAssembly-orange)
 
@@ -20,13 +20,13 @@ earth-science-ai999x is an offline, deterministic Python solver that answers ear
 
 | Way to run it | For | Get it |
 |---|---|---|
-| **AI999X Earth Science desktop app** 1.4.0 | Windows, Linux — this model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-earth-science-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-earth-science-1.4.0-linux-x86_64.tar.gz) |
-| **AI999X desktop app** 1.4.0 | Windows, Linux — every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz) |
-| **Command line** (`earth-science`) | Windows, Linux — one program per model, offline, no Python | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz) |
-| **In your browser** | any device — nothing to install | [Compute on the model page](https://www.ai999x.com/models/earth-science-ai999x/#try) |
+| **AI999X Earth Science desktop app** 1.5.0 | Windows, Linux. This model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-earth-science-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-earth-science-1.5.0-linux-x86_64.tar.gz) |
+| **AI999X desktop app** 1.5.0 | Windows, Linux. Every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz) |
+| **Command line** (`earth-science`) | Windows, Linux. One program per model, offline, no Python | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz) |
+| **In your browser** | any device. Nothing to install | [Compute on the model page](https://www.ai999x.com/models/earth-science-ai999x/#try) |
 | **Python** | Python 3.10+ | `pip install earth-science-ai999x` |
 
-Checksums: [SHA256SUMS](https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS) · every version: [https://downloads.ai999x.com/desktop/latest/](https://downloads.ai999x.com/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
+Checksums: [SHA256SUMS](https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS) · every version: [https://downloads.ai999x.com/desktop/latest/](https://downloads.ai999x.com/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
 
 ## Quick start
 
@@ -37,11 +37,11 @@ Download **AI999X Earth Science** for your system (above), unpack it and start i
 Linux, from a terminal:
 
 ```bash
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-earth-science-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-earth-science-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-earth-science-1.4.0-linux-x86_64.tar.gz
-./ai999x-earth-science-1.4.0-linux-x86_64/ai999x-earth-science
+tar xzf ai999x-earth-science-1.5.0-linux-x86_64.tar.gz
+./ai999x-earth-science-1.5.0-linux-x86_64/ai999x-earth-science
 ```
 
 ### Command line
@@ -49,30 +49,30 @@ tar xzf ai999x-earth-science-1.4.0-linux-x86_64.tar.gz
 Linux:
 
 ```bash
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 earth-science --version
 ```
 
 Windows (PowerShell):
 
 ```powershell
-$F = "ai999x-cli-1.4.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 earth-science --version
 ```
 
 Every command below was run as shown; the text under it is what the program printed.
 
-**Ask in words** — Write the question as you would say it: the program reads the quantities and their units, picks the capability and answers.
+**Ask in words**: Write the question as you would say it: the program reads the quantities and their units, picks the capability and answers.
 
 ```console
 $ earth-science ask "Lifting condensation level with pressure = 1000 hPa, temperature = 30 °C and dewpoint = 20 °C."
@@ -86,7 +86,7 @@ T_lcl = 290.8124964 K
   assumes: Td <= T; 100 hPa <= p <= 1100 hPa
 ```
 
-**What a capability needs** — The equation or method, every input and output with its SI unit. Read this before solve: it tells you the input names.
+**What a capability needs**: The equation or method, every input and output with its SI unit. Read this before solve: it tells you the input names.
 
 ```console
 $ earth-science info lifting_condensation_level
@@ -99,7 +99,7 @@ Lifting condensation level (Romps 2017)
   out  T_lcl    LCL temperature (K) [K]
 ```
 
-**Solve** — Inputs as name=value, each with any unit of the right kind. The answer lists every output, the method used, each input converted to SI, and the conditions the answer assumes.
+**Solve**: Inputs as name=value, each with any unit of the right kind. The answer lists every output, the method used, each input converted to SI, and the conditions the answer assumes.
 
 ```console
 $ earth-science solve lifting_condensation_level "p=100000 Pa" "T=303.15 K" "Td=293.15 K"
@@ -112,7 +112,7 @@ T_lcl = 290.8124964 K
   assumes: Td <= T; 100 hPa <= p <= 1100 hPa
 ```
 
-**Many questions at once** — One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | earth-science batch
+**Many questions at once**: One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | earth-science batch
 
 `cases.jsonl`:
 
@@ -259,18 +259,18 @@ _What this means:_ This calculation determines the stability of the atmosphere b
 
 ## Documentation
 
-- **Rust user guide** — the command line, every capability with a command and what it printed: [PDF](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_rust_guide.pdf) · [Markdown](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_rust_guide.md)
-- **Python guide** — every capability with a Python example: [PDF](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_capabilities.pdf) · [Markdown](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_capabilities.md)
-- **Desktop app & command line** — downloads, install, ask and search, figures, offline use, checksums: https://www.ai999x.com/desktop-cli/
-- **Model page** — compute in your browser, every capability explained: https://www.ai999x.com/models/earth-science-ai999x/
+- **Rust user guide**: the command line, every capability with a command and what it printed: [PDF](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_rust_guide.pdf) · [Markdown](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_rust_guide.md)
+- **Python guide**: every capability with a Python example: [PDF](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_capabilities.pdf) · [Markdown](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_capabilities.md)
+- **Desktop app & command line**: downloads, install, ask and search, figures, offline use, checksums: https://www.ai999x.com/desktop-cli/
+- **Model page**: compute in your browser, every capability explained: https://www.ai999x.com/models/earth-science-ai999x/
 
 ## Highlights
 
 - **Verified, not generated.** Every answer is computed by a certified earth science capability and checked (substituted back, dimension-checked or compared with an independent computation) before it is returned.
-- **Zero wrong answers by design.** Seven explicit outcomes — SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE, UNRECOGNIZED_FORMAT, INTERNAL_ERROR — never a silent guess. Every one of its 522 documented answers is reproduced exactly on every tested platform.
+- **Zero wrong answers by design.** Seven explicit outcomes (SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE, UNRECOGNIZED_FORMAT, INTERNAL_ERROR), never a silent guess. Every one of its 522 documented answers is reproduced exactly on every tested platform.
 - **Plain-English questions and a guaranteed typed interface.** `ask()` reads documented question forms; `solve(capability_id, **inputs)` always solves a supported task with valid inputs.
 - **Explains itself.** Steps, formulas in LaTeX, units, assumptions and the model used, ready for notebooks, tutoring apps and homework checkers.
-- **Native and in the browser.** Every capability also computes natively in Rust: the desktop app and the `earth-science` command line for Windows and Linux, and WebAssembly on the model page — no Python, no network.
+- **Native and in the browser.** Every capability also computes natively in Rust: the desktop app and the `earth-science` command line for Windows and Linux, and WebAssembly on the model page, no Python, no network.
 - **Small and portable.** Pure Python (sympy, mpmath); identical answers on Windows and Linux (Python 3.10, 3.11, 3.12, 3.13, 3.14).
 - **Coverage:** atmospheric thermodynamics and meteorology, climate and radiation balance, oceanography and seawater properties, seismology and geophysics, and geology.
 
@@ -278,7 +278,7 @@ _What this means:_ This calculation determines the stability of the atmosphere b
 
 | Property | Value |
 |---|---|
-| Package | `earth-science-ai999x` 1.1.0 (import `earth_science_ai999x`) |
+| Package | `earth-science-ai999x` 1.5.0 (import `earth_science_ai999x`) |
 | Type | Deterministic neuro-symbolic earth science engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 85 certified procedures |
 | Knowledge pack | version 1.0.1 |
@@ -312,25 +312,14 @@ earth_science.ask("Who created you?").message
 # -> earth-science-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-The Python package also installs a Python command, `earth-science-ai999x "<question>"`; for the native program use `earth-science` (above). The outputs above were produced by running this exact code on earth-science-ai999x 1.1.0.
-
-## Find the right capability, and draw it
-
-`earth_science.search()` finds which certified capability a question is about — across **every** AI999X model, so a question for another model points you to it. It runs **[ai999x-encoder](https://huggingface.co/AI999X/ai999x-encoder)**, AI999X's own capability encoder (4.7M parameters, a 4.9 MB ONNX model, offline; the root `model.safetensors` of this repository): `pip install "earth-science-ai999x[search]"`. `ask(question, suggest=True)` adds the same pointers to a question it does not answer; an answer itself never changes.
-
-```python
-import earth_science_ai999x as earth_science
-
-earth_science.search("Solve x^2 - 5x + 6 = 0", k=2)
-# -> Roots of a quadratic equation (math-foundations-ai999x, 0.63); Roots of a cubic equation (math-foundations-ai999x, 0.59)
-```
+The Python package also installs a Python command, `earth-science-ai999x "<question>"`; for the native program use `earth-science` (above). The outputs above were produced by running this exact code on earth-science-ai999x 1.5.0.
 
 ## How every answer is verified
 
-1. **Reading** — the question is turned into typed quantities (value, unit, kind, role) and one asked quantity; every stated number must be used or the question is refused.
-2. **Planning** — only certified capabilities may answer; a capability applies only under the conditions the wording states (for example a pendulum, a liquid at rest, boiling).
-3. **Computing** — exact symbolic or high-precision numeric evaluation.
-4. **Checking** — dimensions, substitution back into the defining equation, and agreement between independent readings; any disagreement becomes a refusal, never a number.
+1. **Reading**: the question is turned into typed quantities (value, unit, kind, role) and one asked quantity; every stated number must be used or the question is refused.
+2. **Planning**: only certified capabilities may answer; a capability applies only under the conditions the wording states (for example a pendulum, a liquid at rest, boiling).
+3. **Computing**: exact symbolic or high-precision numeric evaluation.
+4. **Checking**: dimensions, substitution back into the defining equation, and agreement between independent readings; any disagreement becomes a refusal, never a number.
 
 Capabilities are certified before they ship: each must reproduce hand-worked reference cases, reject a deliberately wrong variant (a control), and leave every benchmark answer unchanged.
 
@@ -416,31 +405,31 @@ Every point was computed by `earth-science-ai999x`.
 
 **Temperature profile of the lower atmosphere**
 
-![Temperature profile of the lower atmosphere — computed by earth-science-ai999x](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/pressure-with-lapse-rate-profile.svg)
+![Temperature profile of the lower atmosphere, computed by earth-science-ai999x](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/pressure-with-lapse-rate-profile.svg)
 
 _Temperature against height in an atmosphere with a constant lapse rate of 6.5 K/km from 288.15 K and 101325 Pa at the surface, and a dry parcel lifted adiabatically from the same surface temperature, both computed by the package every 200 m to 11 km. Marked: z = 3 km, T = 268.65 K, p = 70108 Pa._
 
 **Saturation vapour pressure and the dew point**
 
-![Saturation vapour pressure and the dew point — computed by earth-science-ai999x](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/saturation-vapor-pressure-curve.svg)
+![Saturation vapour pressure and the dew point, computed by earth-science-ai999x](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/saturation-vapor-pressure-curve.svg)
 
 _Saturation vapour pressure of water against temperature, computed by the package at 71 temperatures from −30 to 40 °C. Air holding e = 1700 Pa of vapour saturates when cooled to its dew point; at 25 °C saturation is 3162.35 Pa. Marked: Td = 14.9631 °C (288.113 K), e = 1700 Pa._
 
 **Radioactive decay of carbon-14**
 
-![Radioactive decay of carbon-14 — computed by earth-science-ai999x](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/radioactive-decay-remaining-decay.svg)
+![Radioactive decay of carbon-14, computed by earth-science-ai999x](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/radioactive-decay-remaining-decay.svg)
 
 _Fraction of carbon-14 remaining (half-life 5730 years) every 2000 years and at each of the first five half-lives, computed by the package (decay constant 0.000120968 per year); a sample with 0.5 of its original carbon-14 is 5568.05 years old. Marked: t = 10000 years, fraction = 0.298292._
 
 **Earth's dipole field: inclination around the globe**
 
-![Earth's dipole field: inclination around the globe — computed by earth-science-ai999x](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/dipole-inclination-field.svg)
+![Earth's dipole field: inclination around the globe, computed by earth-science-ai999x](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/dipole-inclination-field.svg)
 
 _The direction and relative strength of a geocentric dipole field at the surface, drawn on a meridian section of the Earth: at each magnetic latitude from 75° S to 75° N the package returns the inclination (dip below the horizontal) and the field strength relative to the equator, here the arrow's angle and length. Examples: -75°: I = -82.3693°, ×1.94911; -30°: I = -49.1066°, ×1.32288; 15°: I = 28.1868°, ×1.09588; 60°: I = 73.8979°, ×1.80278; at 45° the field dips 63.4349°._
 
 **Daily insolation: latitude against season**
 
-![Daily insolation: latitude against season — computed by earth-science-ai999x](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/daily-mean-insolation-heatmap.svg)
+![Daily insolation: latitude against season, computed by earth-science-ai999x](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/figures/daily-mean-insolation-heatmap.svg)
 
 _Daily mean solar radiation at the top of the atmosphere (solar constant 1361 W/m², rounded to whole W/m²) for latitudes 80° N to 80° S (rows) and solar declinations −23.44°, −11.72°, 0°, 11.72° and 23.44° (columns), each cell computed by the package: the summer pole receives the most, the winter pole none. At latitude 45° and δ = 23.44°: 499.319 W/m², day length 15.4259 h._
 
@@ -455,22 +444,22 @@ _Daily mean solar radiation at the top of the atmosphere (solar constant 1361 W/
 ## Out of scope
 
 - Open-ended explanation, essay writing or tutoring dialogue: it is a solver, not a chatbot.
-- Questions outside its certified earth science capabilities, and any question whose stated numbers it cannot all use — it refuses with the reason instead.
+- Questions outside its certified earth science capabilities, and any question whose stated numbers it cannot all use: it refuses with the reason instead.
 - High-stakes engineering, medical or legal decisions without independent review.
 
 ## Limitations
 
 - It answers what its certified capabilities cover (atmospheric thermodynamics and meteorology, climate and radiation balance, oceanography and seawater properties, seismology and geophysics, and geology); anything else is refused with a reason.
-- `ask()` reads documented question forms and common phrasings; unusual wording may be refused — use `solve()` for guaranteed results.
+- `ask()` reads documented question forms and common phrasings; unusual wording may be refused; use `solve()` for guaranteed results.
 - Results are as correct as the certified relations and their stated conditions; a certified relation is a checked model, not a claim about every physical situation.
 
 ## Citation
 
 ```bibtex
-@software{earth_science_ai999x_1_1_0,
+@software{earth_science_ai999x_1_5_0,
   title  = {earth-science-ai999x: an offline, verified earth science solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.1.0},
+  year   = {2026}, version = {1.5.0},
   url    = {https://huggingface.co/AI999X/earth-science-ai999x}
 }
 ```
@@ -487,4 +476,15 @@ Created and engineered by **Ibnul Jaif Farabi** · **[AI999X](https://huggingfac
 
 ## Source and releases
 
-This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/earth-science-ai999x/) (`pip install .` builds it). Releases are tagged `v<version>`; the wheel is attached to each [GitHub release](https://github.com/AI999X/earth-science-ai999x/releases). The optional ONNX models (formula graphs and, where measured, a decision model) are on [Hugging Face](https://huggingface.co/AI999X/earth-science-ai999x/tree/main/onnx).
+This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/earth-science-ai999x/) (`pip install .` builds it). Releases are tagged `v1.5.0`; the [GitHub release](https://github.com/AI999X/earth-science-ai999x/releases/tag/v1.5.0) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
+
+## Build the program from source
+
+`rust/` holds the Rust source of the `earth-science` command-line program and browser module: the AI999X engine (`rust/ax-engine`), this model (`rust/earth-science`) and its data (`rust/models/earth_science/pack.json`). With Rust 1.80 or later:
+
+```bash
+cd rust
+cargo build --release -p earth-science-ai999x
+./target/release/earth-science --help
+cargo test -p earth-science-ai999x
+```

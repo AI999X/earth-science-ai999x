@@ -165,7 +165,7 @@ Call `solve("<id>", **inputs)` with plain numbers; the result's `values` holds e
 
 <a id="potential_temperature"></a>
 
-### Potential temperature — `potential_temperature`
+### Potential temperature: `potential_temperature`
 
 The temperature an air parcel would have if brought dry-adiabatically to 1000 hPa (Poisson's equation).
 
@@ -211,7 +211,7 @@ earth_science_ai999x.solve('potential_temperature', T=263.15, p=50000.0)
 
 <a id="temperature_from_potential_temperature"></a>
 
-### Temperature from potential temperature — `temperature_from_potential_temperature`
+### Temperature from potential temperature: `temperature_from_potential_temperature`
 
 The air temperature at pressure p of a parcel with a given potential temperature.
 
@@ -261,7 +261,7 @@ earth_science_ai999x.solve('temperature_from_potential_temperature', theta=330.0
 
 <a id="dry_adiabatic_ascent"></a>
 
-### Temperature of a dry parcel after adiabatic ascent — `dry_adiabatic_ascent`
+### Temperature of a dry parcel after adiabatic ascent, `dry_adiabatic_ascent`
 
 The temperature of an unsaturated air parcel lifted dry-adiabatically through a height dz, and the dry adiabatic lapse rate g/c_pd.
 
@@ -312,7 +312,7 @@ earth_science_ai999x.solve('dry_adiabatic_ascent', T=303.15, dz=800.0)
 
 <a id="saturation_vapor_pressure"></a>
 
-### Saturation vapour pressure over water — `saturation_vapor_pressure`
+### Saturation vapour pressure over water: `saturation_vapor_pressure`
 
 The equilibrium vapour pressure over a plane surface of liquid water (Ambaum 2020, latent heat varying with temperature).
 
@@ -361,7 +361,7 @@ earth_science_ai999x.solve('saturation_vapor_pressure', T=268.15)
 
 <a id="relative_humidity_from_dewpoint"></a>
 
-### Relative humidity from temperature and dewpoint — `relative_humidity_from_dewpoint`
+### Relative humidity from temperature and dewpoint, `relative_humidity_from_dewpoint`
 
 Relative humidity as the ratio of the vapour pressure at the dewpoint to the saturation vapour pressure.
 
@@ -409,7 +409,7 @@ earth_science_ai999x.solve('relative_humidity_from_dewpoint', T=278.15, Td=275.1
 
 <a id="dewpoint_from_vapor_pressure"></a>
 
-### Dewpoint from vapour pressure — `dewpoint_from_vapor_pressure`
+### Dewpoint from vapour pressure: `dewpoint_from_vapor_pressure`
 
 The dewpoint at which the given vapour pressure would saturate (inversion of Bolton's 1980 formula).
 
@@ -453,7 +453,7 @@ earth_science_ai999x.solve('dewpoint_from_vapor_pressure', e=450.0)
 
 <a id="dewpoint_from_relative_humidity"></a>
 
-### Dewpoint from temperature and relative humidity — `dewpoint_from_relative_humidity`
+### Dewpoint from temperature and relative humidity, `dewpoint_from_relative_humidity`
 
 The dewpoint of air at temperature T and relative humidity RH: Bolton's inversion applied to RH e_s(T).
 
@@ -500,7 +500,7 @@ earth_science_ai999x.solve('dewpoint_from_relative_humidity', T=273.15, RH=0.85)
 
 <a id="mixing_ratio"></a>
 
-### Water-vapour mixing ratio from vapour pressure — `mixing_ratio`
+### Water-vapour mixing ratio from vapour pressure, `mixing_ratio`
 
 Mass of water vapour per mass of dry air from the vapour partial pressure and the total pressure.
 
@@ -551,7 +551,7 @@ earth_science_ai999x.solve('mixing_ratio', e=800.0, p=85000.0)
 
 <a id="saturation_mixing_ratio"></a>
 
-### Saturation mixing ratio — `saturation_mixing_ratio`
+### Saturation mixing ratio: `saturation_mixing_ratio`
 
 The mixing ratio of air saturated with respect to liquid water at temperature T and pressure p.
 
@@ -598,7 +598,7 @@ earth_science_ai999x.solve('saturation_mixing_ratio', p=50000.0, T=253.149999999
 
 <a id="virtual_temperature"></a>
 
-### Virtual temperature — `virtual_temperature`
+### Virtual temperature: `virtual_temperature`
 
 The temperature dry air would need to have the density of the moist air at the same pressure.
 
@@ -648,7 +648,7 @@ earth_science_ai999x.solve('virtual_temperature', T=283.15, w=0.006)
 
 <a id="moist_air_density"></a>
 
-### Density of moist air — `moist_air_density`
+### Density of moist air: `moist_air_density`
 
 Density of moist air from the ideal-gas law with the virtual temperature.
 
@@ -696,7 +696,7 @@ earth_science_ai999x.solve('moist_air_density', p=70000.0, T=273.15, w=0.004)
 
 <a id="specific_humidity_from_dewpoint"></a>
 
-### Specific humidity from dewpoint and pressure — `specific_humidity_from_dewpoint`
+### Specific humidity from dewpoint and pressure, `specific_humidity_from_dewpoint`
 
 Specific humidity (mass of vapour per mass of moist air) from the dewpoint and the pressure.
 
@@ -743,7 +743,7 @@ earth_science_ai999x.solve('specific_humidity_from_dewpoint', p=85000.0, Td=278.
 
 <a id="moist_static_energy"></a>
 
-### Moist static energy — `moist_static_energy`
+### Moist static energy: `moist_static_energy`
 
 Moist static energy c_pd T + g z + L_v q (and the dry static energy c_pd T + g z) per unit mass.
 
@@ -791,7 +791,7 @@ earth_science_ai999x.solve('moist_static_energy', z=0.0, T=301.15, q=0.018)
 
 <a id="lifting_condensation_level"></a>
 
-### Lifting condensation level (Romps 2017) — `lifting_condensation_level`
+### Lifting condensation level (Romps 2017): `lifting_condensation_level`
 
 Pressure and temperature at which a parcel lifted dry-adiabatically from (p, T, Td) becomes saturated, from Romps' exact solution with the Lambert W function.
 
@@ -840,7 +840,7 @@ earth_science_ai999x.solve('lifting_condensation_level', p=95000.0, T=288.15, Td
 
 <a id="equivalent_potential_temperature"></a>
 
-### Equivalent potential temperature (Bolton 1980) — `equivalent_potential_temperature`
+### Equivalent potential temperature (Bolton 1980), `equivalent_potential_temperature`
 
 The potential temperature a parcel would have after all its vapour condensed and the latent heat warmed it.
 
@@ -887,7 +887,7 @@ earth_science_ai999x.solve('equivalent_potential_temperature', p=100000.0, T=303
 
 <a id="moist_adiabatic_lapse_rate"></a>
 
-### Saturated (moist) adiabatic lapse rate — `moist_adiabatic_lapse_rate`
+### Saturated (moist) adiabatic lapse rate: `moist_adiabatic_lapse_rate`
 
 The rate at which a saturated parcel cools as it rises, with condensation releasing latent heat.
 
@@ -934,7 +934,7 @@ earth_science_ai999x.solve('moist_adiabatic_lapse_rate', T=273.15, p=70000.0)
 
 <a id="wind_chill"></a>
 
-### Wind chill temperature index — `wind_chill`
+### Wind chill temperature index: `wind_chill`
 
 The wind chill temperature index of the 2001 North American formula (wind measured at 10 m).
 
@@ -981,7 +981,7 @@ earth_science_ai999x.solve('wind_chill', T=273.15, V=5.555555555555555)
 
 <a id="heat_index"></a>
 
-### Heat index (NWS) — `heat_index`
+### Heat index (NWS): `heat_index`
 
 The apparent temperature of the US National Weather Service: Rothfusz's regression with the NWS adjustments for low and high humidity.
 
@@ -1028,7 +1028,7 @@ earth_science_ai999x.solve('heat_index', T=311.15, RH=0.1)
 
 <a id="coriolis_parameter"></a>
 
-### Coriolis parameter — `coriolis_parameter`
+### Coriolis parameter: `coriolis_parameter`
 
 The Coriolis parameter $f = 2$ Omega sin(latitude).
 
@@ -1073,7 +1073,7 @@ earth_science_ai999x.solve('coriolis_parameter', lat=-30.0)
 
 <a id="inertial_period"></a>
 
-### Period of inertial oscillations — `inertial_period`
+### Period of inertial oscillations: `inertial_period`
 
 The period 2 pi/|f| of free inertial oscillations of the wind or an ocean current at a latitude.
 
@@ -1120,7 +1120,7 @@ earth_science_ai999x.solve('inertial_period', lat=30.0)
 
 <a id="wind_components"></a>
 
-### Wind components from speed and direction — `wind_components`
+### Wind components from speed and direction: `wind_components`
 
 The eastward (u) and northward (v) wind components from the speed and the direction the wind blows FROM.
 
@@ -1167,7 +1167,7 @@ earth_science_ai999x.solve('wind_components', speed=15.0, direction=300.0)
 
 <a id="wind_speed_direction"></a>
 
-### Wind speed and direction from components — `wind_speed_direction`
+### Wind speed and direction from components: `wind_speed_direction`
 
 Wind speed and the direction the wind blows from (degrees clockwise from north, (0, 360]) from u and v.
 
@@ -1214,7 +1214,7 @@ earth_science_ai999x.solve('wind_speed_direction', u=-8.0, v=6.0)
 
 <a id="geostrophic_wind"></a>
 
-### Geostrophic wind from a height gradient — `geostrophic_wind`
+### Geostrophic wind from a height gradient: `geostrophic_wind`
 
 Geostrophic wind speed from the change of geopotential height of a pressure surface over a horizontal distance.
 
@@ -1263,7 +1263,7 @@ earth_science_ai999x.solve('geostrophic_wind', lat=30.0, dz=40.0, dn=300000.0)
 
 <a id="brunt_vaisala_frequency"></a>
 
-### Brunt-Väisälä (buoyancy) frequency — `brunt_vaisala_frequency`
+### Brunt-Väisälä (buoyancy) frequency, `brunt_vaisala_frequency`
 
 The buoyancy frequency of a stably stratified atmosphere from the potential temperature and its vertical gradient.
 
@@ -1315,7 +1315,7 @@ earth_science_ai999x.solve('brunt_vaisala_frequency', theta=350.0, dtheta_dz=0.0
 
 <a id="isothermal_pressure"></a>
 
-### Pressure at height in an isothermal atmosphere — `isothermal_pressure`
+### Pressure at height in an isothermal atmosphere, `isothermal_pressure`
 
 The barometric formula: pressure at height z in an isothermal dry atmosphere, and its scale height R_d T/g.
 
@@ -1367,7 +1367,7 @@ earth_science_ai999x.solve('isothermal_pressure', p0=100000.0, T=253.14999999999
 
 <a id="scale_height"></a>
 
-### Atmospheric scale height — `scale_height`
+### Atmospheric scale height: `scale_height`
 
 The height over which pressure falls by a factor e in an isothermal dry atmosphere.
 
@@ -1411,7 +1411,7 @@ earth_science_ai999x.solve('scale_height', T=223.14999999999998)
 
 <a id="hypsometric_thickness"></a>
 
-### Thickness of a layer (hypsometric equation) — `hypsometric_thickness`
+### Thickness of a layer (hypsometric equation), `hypsometric_thickness`
 
 The geometric thickness between two pressure levels from the layer-mean virtual temperature.
 
@@ -1459,7 +1459,7 @@ earth_science_ai999x.solve('hypsometric_thickness', p1=85000.0, p2=70000.0, Tv=2
 
 <a id="pressure_with_lapse_rate"></a>
 
-### Pressure at height with a constant lapse rate — `pressure_with_lapse_rate`
+### Pressure at height with a constant lapse rate, `pressure_with_lapse_rate`
 
 Pressure at height z in a dry atmosphere whose temperature falls linearly with height (troposphere model).
 
@@ -1516,7 +1516,7 @@ earth_science_ai999x.solve('pressure_with_lapse_rate', p0=100000.0, T0=298.15, g
 
 <a id="standard_atmosphere_pressure"></a>
 
-### Pressure at a height in the standard atmosphere — `standard_atmosphere_pressure`
+### Pressure at a height in the standard atmosphere, `standard_atmosphere_pressure`
 
 Pressure at a height in the tropospheric standard atmosphere (T0 = 288 K, 6.5 K/km, 1013.25 hPa; as MetPy).
 
@@ -1565,7 +1565,7 @@ earth_science_ai999x.solve('standard_atmosphere_pressure', z=9000.0)
 
 <a id="standard_atmosphere_height"></a>
 
-### Height of a pressure level in the standard atmosphere — `standard_atmosphere_height`
+### Height of a pressure level in the standard atmosphere, `standard_atmosphere_height`
 
 The height of a pressure level in the tropospheric standard atmosphere (pressure altitude; as MetPy).
 
@@ -1610,7 +1610,7 @@ earth_science_ai999x.solve('standard_atmosphere_height', p=85000.0)
 
 <a id="geopotential_height"></a>
 
-### Geopotential and geopotential height — `geopotential_height`
+### Geopotential and geopotential height: `geopotential_height`
 
 Geopotential and geopotential height of a geometric height above sea level, with gravity falling off as $1/(R_e + z)^{2}$ (as MetPy).
 
@@ -1655,7 +1655,7 @@ earth_science_ai999x.solve('geopotential_height', z=50000.0)
 
 <a id="rossby_wave_speed"></a>
 
-### Phase speed of a barotropic Rossby wave — `rossby_wave_speed`
+### Phase speed of a barotropic Rossby wave: `rossby_wave_speed`
 
 Zonal phase speed of a barotropic Rossby wave in a uniform westerly flow on a beta-plane, the beta parameter, and the stationary wavelength 2 pi sqrt(U/beta).
 
@@ -1704,7 +1704,7 @@ earth_science_ai999x.solve('rossby_wave_speed', U=10.0, lat=60.0, Lx=4000000.0)
 
 <a id="blackbody_flux"></a>
 
-### Radiant flux emitted by a black or grey body (Stefan-Boltzmann) — `blackbody_flux`
+### Radiant flux emitted by a black or grey body (Stefan-Boltzmann), `blackbody_flux`
 
 Power emitted per unit area by a surface of temperature T and (grey) emissivity eps.
 
@@ -1749,7 +1749,7 @@ earth_science_ai999x.solve('blackbody_flux', T=255.0, eps=0.95)
 
 <a id="wien_peak_wavelength"></a>
 
-### Wavelength of peak blackbody emission (Wien) — `wien_peak_wavelength`
+### Wavelength of peak blackbody emission (Wien), `wien_peak_wavelength`
 
 The wavelength at which a black body of temperature T emits most strongly per unit wavelength.
 
@@ -1794,7 +1794,7 @@ earth_science_ai999x.solve('wien_peak_wavelength', T=288.0)
 
 <a id="planetary_equilibrium_temperature"></a>
 
-### Planetary equilibrium (effective radiating) temperature — `planetary_equilibrium_temperature`
+### Planetary equilibrium (effective radiating) temperature, `planetary_equilibrium_temperature`
 
 The temperature at which a planet radiating as a black body balances the sunlight it absorbs.
 
@@ -1845,7 +1845,7 @@ earth_science_ai999x.solve('planetary_equilibrium_temperature', S=589.0, albedo=
 
 <a id="greenhouse_single_layer"></a>
 
-### Surface temperature in the single-layer greenhouse model — `greenhouse_single_layer`
+### Surface temperature in the single-layer greenhouse model, `greenhouse_single_layer`
 
 Surface and atmosphere temperatures when one isothermal layer, transparent to sunlight, absorbs and emits a fraction eps of thermal radiation.
 
@@ -1897,7 +1897,7 @@ earth_science_ai999x.solve('greenhouse_single_layer', S=1361.0, albedo=0.3, eps=
 
 <a id="greenhouse_n_layers"></a>
 
-### Surface temperature with N fully absorbing layers — `greenhouse_n_layers`
+### Surface temperature with N fully absorbing layers, `greenhouse_n_layers`
 
 Surface and layer temperatures of the N-layer grey-atmosphere model (each layer absorbs all thermal radiation).
 
@@ -1946,7 +1946,7 @@ earth_science_ai999x.solve('greenhouse_n_layers', S=2601.0, albedo=0.75, N=10)
 
 <a id="daily_mean_insolation"></a>
 
-### Daily mean insolation at the top of the atmosphere — `daily_mean_insolation`
+### Daily mean insolation at the top of the atmosphere, `daily_mean_insolation`
 
 The 24-hour mean solar flux on a horizontal surface at the top of the atmosphere for a latitude and solar declination (polar day and polar night included).
 
@@ -1998,7 +1998,7 @@ earth_science_ai999x.solve('daily_mean_insolation', lat=80.0, decl=20.0, S0=1361
 
 <a id="energy_balance_response"></a>
 
-### Warming of a one-box energy-balance model — `energy_balance_response`
+### Warming of a one-box energy-balance model: `energy_balance_response`
 
 Temperature response after t years to a constant radiative forcing F in a one-box model C $dT/dt = F - T/\lambda$, the equilibrium warming lambda F and the e-folding time lambda C.
 
@@ -2048,7 +2048,7 @@ earth_science_ai999x.solve('energy_balance_response', F=1.5, lam=0.5, C=80000000
 
 <a id="pure_water_density"></a>
 
-### Density of pure water (SMOW, Bigg 1967) — `pure_water_density`
+### Density of pure water (SMOW, Bigg 1967): `pure_water_density`
 
 Density of standard mean ocean water (no salt) at atmospheric pressure, UNESCO 1983 polynomial.
 
@@ -2092,7 +2092,7 @@ earth_science_ai999x.solve('pure_water_density', T=298.15)
 
 <a id="seawater_density_surface"></a>
 
-### Density of seawater at the surface (UNESCO 1981) — `seawater_density_surface`
+### Density of seawater at the surface (UNESCO 1981), `seawater_density_surface`
 
 Density of seawater at atmospheric pressure from practical salinity and temperature (EOS-80), and sigma-t.
 
@@ -2139,7 +2139,7 @@ earth_science_ai999x.solve('seawater_density_surface', S=30.0, T=275.15)
 
 <a id="seawater_density"></a>
 
-### In-situ density of seawater (EOS-80) — `seawater_density`
+### In-situ density of seawater (EOS-80): `seawater_density`
 
 In-situ density of seawater from practical salinity, temperature and sea pressure with the secant bulk modulus.
 
@@ -2191,7 +2191,7 @@ earth_science_ai999x.solve('seawater_density', S=34.5, T=283.15, p=10000000.0)
 
 <a id="seawater_freezing_point"></a>
 
-### Freezing point of seawater (UNESCO 1983) — `seawater_freezing_point`
+### Freezing point of seawater (UNESCO 1983): `seawater_freezing_point`
 
 The freezing temperature of seawater from practical salinity and sea pressure (Millero 1978).
 
@@ -2238,7 +2238,7 @@ earth_science_ai999x.solve('seawater_freezing_point', S=34.0, p=3000000.0)
 
 <a id="sound_speed_seawater"></a>
 
-### Speed of sound in seawater (Chen and Millero 1977) — `sound_speed_seawater`
+### Speed of sound in seawater (Chen and Millero 1977), `sound_speed_seawater`
 
 Speed of sound in seawater from practical salinity, temperature and sea pressure (UNESCO 1983 algorithm).
 
@@ -2289,7 +2289,7 @@ earth_science_ai999x.solve('sound_speed_seawater', S=35.0, T=275.15, p=50000000.
 
 <a id="ocean_pressure_from_depth"></a>
 
-### Sea pressure at a depth (Saunders 1981) — `ocean_pressure_from_depth`
+### Sea pressure at a depth (Saunders 1981): `ocean_pressure_from_depth`
 
 Sea pressure at a depth in the ocean, allowing for latitude (Saunders 1981).
 
@@ -2340,7 +2340,7 @@ earth_science_ai999x.solve('ocean_pressure_from_depth', depth=5000.0, lat=60.0)
 
 <a id="ocean_depth_from_pressure"></a>
 
-### Depth from sea pressure (Fofonoff and Millard 1983) — `ocean_depth_from_pressure`
+### Depth from sea pressure (Fofonoff and Millard 1983), `ocean_depth_from_pressure`
 
 Depth in the ocean from sea pressure and latitude (UNESCO 1983 standard algorithm).
 
@@ -2390,7 +2390,7 @@ earth_science_ai999x.solve('ocean_depth_from_pressure', p=50000000.0, lat=45.0)
 
 <a id="seawater_adiabatic_gradient"></a>
 
-### Adiabatic temperature gradient of seawater (Bryden 1973) — `seawater_adiabatic_gradient`
+### Adiabatic temperature gradient of seawater (Bryden 1973), `seawater_adiabatic_gradient`
 
 How fast the temperature of seawater rises under adiabatic compression, per decibar.
 
@@ -2438,7 +2438,7 @@ earth_science_ai999x.solve('seawater_adiabatic_gradient', S=34.7, T=275.15, p=40
 
 <a id="seawater_potential_temperature"></a>
 
-### Potential temperature of seawater (Fofonoff 1977) — `seawater_potential_temperature`
+### Potential temperature of seawater (Fofonoff 1977), `seawater_potential_temperature`
 
 The temperature a seawater parcel would have if moved adiabatically to a reference pressure (default the surface), by a fourth-order Runge-Kutta integration of the adiabatic gradient.
 
@@ -2488,7 +2488,7 @@ earth_science_ai999x.solve('seawater_potential_temperature', S=34.7, T=283.15, p
 
 <a id="gravity_at_latitude"></a>
 
-### Gravitational acceleration at a latitude and height — `gravity_at_latitude`
+### Gravitational acceleration at a latitude and height, `gravity_at_latitude`
 
 Normal gravity at sea level for a latitude (International Gravity Formula 1967, as UNESCO 1983) reduced for height with the inverse-square law.
 
@@ -2533,7 +2533,7 @@ earth_science_ai999x.solve('gravity_at_latitude', lat=0.0, z=4000.0)
 
 <a id="shallow_water_wave"></a>
 
-### Speed of a shallow-water (long) wave and tsunami travel time — `shallow_water_wave`
+### Speed of a shallow-water (long) wave and tsunami travel time, `shallow_water_wave`
 
 Speed sqrt(g h) of a wave much longer than the water depth (tsunami, tide), and its travel time over a distance.
 
@@ -2580,7 +2580,7 @@ earth_science_ai999x.solve('shallow_water_wave', h=10.0, distance=1000.0)
 
 <a id="ekman_depth"></a>
 
-### Ekman layer depth — `ekman_depth`
+### Ekman layer depth: `ekman_depth`
 
 Depth of frictional influence of the wind on the ocean (the current reverses direction at $D_E = pi$ delta).
 
@@ -2631,7 +2631,7 @@ earth_science_ai999x.solve('ekman_depth', Az=0.01, lat=-30.0)
 
 <a id="ekman_transport"></a>
 
-### Ekman transport — `ekman_transport`
+### Ekman transport: `ekman_transport`
 
 Volume transport per unit width of the wind-driven Ekman layer, directed 90 degrees to the right of the wind in the northern hemisphere (left in the southern).
 
@@ -2679,7 +2679,7 @@ earth_science_ai999x.solve('ekman_transport', tau=0.2, lat=-30.0, rho=1027.0)
 
 <a id="seismic_velocities_from_moduli"></a>
 
-### P- and S-wave speeds from bulk and shear moduli — `seismic_velocities_from_moduli`
+### P- and S-wave speeds from bulk and shear moduli, `seismic_velocities_from_moduli`
 
 Body-wave speeds of an isotropic elastic rock from its bulk modulus, shear modulus and density.
 
@@ -2728,7 +2728,7 @@ earth_science_ai999x.solve('seismic_velocities_from_moduli', K=130000000000.0, m
 
 <a id="seismic_velocities_from_young"></a>
 
-### P- and S-wave speeds from Young's modulus and Poisson's ratio — `seismic_velocities_from_young`
+### P- and S-wave speeds from Young's modulus and Poisson's ratio, `seismic_velocities_from_young`
 
 Body-wave speeds of an isotropic elastic rock from Young's modulus, Poisson's ratio and density.
 
@@ -2778,7 +2778,7 @@ earth_science_ai999x.solve('seismic_velocities_from_young', E=160000000000.0, nu
 
 <a id="elastic_constants_from_velocities"></a>
 
-### Elastic moduli and Poisson's ratio from Vp, Vs and density — `elastic_constants_from_velocities`
+### Elastic moduli and Poisson's ratio from Vp, Vs and density, `elastic_constants_from_velocities`
 
 Shear modulus, Lamé's lambda, bulk modulus, Young's modulus and Poisson's ratio of an isotropic rock from its seismic velocities and density.
 
@@ -2830,7 +2830,7 @@ earth_science_ai999x.solve('elastic_constants_from_velocities', Vp=8100.0, Vs=45
 
 <a id="epicentral_distance"></a>
 
-### Epicentral distance on a spherical Earth — `epicentral_distance`
+### Epicentral distance on a spherical Earth: `epicentral_distance`
 
 Great-circle angular distance between an epicentre and a station, and its length on a sphere of radius 6371 km.
 
@@ -2879,7 +2879,7 @@ earth_science_ai999x.solve('epicentral_distance', lat1=0.0, lon1=0.0, lat2=30.0,
 
 <a id="geodesic_distance_azimuth"></a>
 
-### Geodesic distance and azimuths on the WGS84 ellipsoid (Vincenty) — `geodesic_distance_azimuth`
+### Geodesic distance and azimuths on the WGS84 ellipsoid (Vincenty), `geodesic_distance_azimuth`
 
 Distance along the WGS84 ellipsoid between two points, the azimuth from the first to the second and the back-azimuth, by Vincenty's inverse method.
 
@@ -2929,7 +2929,7 @@ earth_science_ai999x.solve('geodesic_distance_azimuth', lat1=-33.9, lon1=18.4, l
 
 <a id="moment_magnitude"></a>
 
-### Moment magnitude from seismic moment — `moment_magnitude`
+### Moment magnitude from seismic moment: `moment_magnitude`
 
 Moment magnitude Mw of an earthquake from its scalar seismic moment (Hanks and Kanamori 1979, as ObsPy: $Mw = log10$(M0 in dyne cm)/1.5 - 10.7).
 
@@ -2975,7 +2975,7 @@ earth_science_ai999x.solve('moment_magnitude', M0=3.5e+17)
 
 <a id="local_magnitude"></a>
 
-### Local (Richter) magnitude from Wood-Anderson amplitude — `local_magnitude`
+### Local (Richter) magnitude from Wood-Anderson amplitude, `local_magnitude`
 
 Local magnitude from the zero-to-peak Wood-Anderson amplitude and the hypocentral distance, with the attenuation of Bakun and Joyner (1984), as ObsPy.
 
@@ -3026,7 +3026,7 @@ earth_science_ai999x.solve('local_magnitude', A=0.0005, r=50000.0)
 
 <a id="gutenberg_richter_b_value"></a>
 
-### Gutenberg-Richter b-value (maximum likelihood) — `gutenberg_richter_b_value`
+### Gutenberg-Richter b-value (maximum likelihood), `gutenberg_richter_b_value`
 
 The b-value of the Gutenberg-Richter law log10 $N = a - b$ M by Aki's maximum-likelihood estimator, with Utsu's correction for magnitudes binned at width dM; also the a-value of the cumulative count at Mc.
 
@@ -3076,7 +3076,7 @@ earth_science_ai999x.solve('gutenberg_richter_b_value', mags=[3.0, 3.4, 3.1, 3.9
 
 <a id="nmo_velocity"></a>
 
-### Normal-moveout velocity from reflection picks — `nmo_velocity`
+### Normal-moveout velocity from reflection picks, `nmo_velocity`
 
 Stacking (NMO) velocity, zero-offset time and reflector depth from reflection travel times at several offsets, by a least-squares fit of $t^{2} = t_{0}^{2} + x^{2}/V^{2.}$
 
@@ -3124,7 +3124,7 @@ earth_science_ai999x.solve('nmo_velocity', x=[200, 800, 1600], t=[0.62, 0.71, 0.
 
 <a id="dipole_inclination"></a>
 
-### Inclination and strength of a geocentric dipole field — `dipole_inclination`
+### Inclination and strength of a geocentric dipole field, `dipole_inclination`
 
 Magnetic inclination (dip) and field strength relative to the equator at a magnetic latitude for a geocentric axial dipole.
 
@@ -3173,7 +3173,7 @@ earth_science_ai999x.solve('dipole_inclination', lat=-20.0)
 
 <a id="paleolatitude"></a>
 
-### Paleolatitude from magnetic inclination — `paleolatitude`
+### Paleolatitude from magnetic inclination: `paleolatitude`
 
 The magnetic (paleo)latitude at which a rock acquired its magnetisation, from the inclination of its remanence, for a geocentric axial dipole; and the angular distance to the paleopole.
 
@@ -3219,7 +3219,7 @@ earth_science_ai999x.solve('paleolatitude', I_deg=-30.0)
 
 <a id="plate_velocity"></a>
 
-### Plate velocity from an Euler pole — `plate_velocity`
+### Plate velocity from an Euler pole: `plate_velocity`
 
 Speed and direction of a point on a rigid plate rotating about an Euler pole (sphere of radius 6371 km).
 
@@ -3269,7 +3269,7 @@ earth_science_ai999x.solve('plate_velocity', pole_lat=50.0, pole_lon=-100.0, ome
 
 <a id="bouguer_slab"></a>
 
-### Gravity anomaly of an infinite horizontal slab (Bouguer) — `bouguer_slab`
+### Gravity anomaly of an infinite horizontal slab (Bouguer), `bouguer_slab`
 
 Vertical gravity anomaly of an infinite horizontal slab of thickness h and density contrast drho.
 
@@ -3320,7 +3320,7 @@ earth_science_ai999x.solve('bouguer_slab', drho=-400.0, h=2000.0)
 
 <a id="buried_sphere_anomaly"></a>
 
-### Gravity anomaly above a buried sphere — `buried_sphere_anomaly`
+### Gravity anomaly above a buried sphere: `buried_sphere_anomaly`
 
 Peak vertical gravity anomaly directly above a buried sphere of radius R, depth z to its centre and density contrast drho.
 
@@ -3369,7 +3369,7 @@ earth_science_ai999x.solve('buried_sphere_anomaly', drho=-300.0, R=1000.0, z=300
 
 <a id="geotherm_radiogenic"></a>
 
-### Steady geotherm with radiogenic heat production — `geotherm_radiogenic`
+### Steady geotherm with radiogenic heat production, `geotherm_radiogenic`
 
 Temperature and heat flow at depth in a conducting layer with uniform radiogenic heat production, from the surface temperature and surface heat flow.
 
@@ -3423,7 +3423,7 @@ earth_science_ai999x.solve('geotherm_radiogenic', T0=288.15, q0=0.08, k=3.0, A=2
 
 <a id="seafloor_depth_age"></a>
 
-### Depth of the ocean floor with age (half-space cooling) — `seafloor_depth_age`
+### Depth of the ocean floor with age (half-space cooling), `seafloor_depth_age`
 
 Seafloor depth as oceanic lithosphere cools and contracts with age (half-space cooling, isostatic compensation under water). Defaults: ridge depth 2500 m, mantle 1300 °C, water 0 °C, alpha $3e-5$ $1/K$, kappa $1e-6$ $m^{2}/s$, rho_m 3300 and rho_w 1000 $kg/m^{3.}$
 
@@ -3475,7 +3475,7 @@ earth_science_ai999x.solve('seafloor_depth_age', t=100.0, dr=2600.0, Tm=1623.15,
 
 <a id="radioactive_decay_remaining"></a>
 
-### Fraction of a radioactive parent remaining — `radioactive_decay_remaining`
+### Fraction of a radioactive parent remaining, `radioactive_decay_remaining`
 
 Fraction of the parent nuclide left (and decayed) after a time t, and the decay constant ln 2/half-life.
 
@@ -3531,7 +3531,7 @@ earth_science_ai999x.solve('radioactive_decay_remaining', half_life=1250000000.0
 
 <a id="radiometric_age"></a>
 
-### Radiometric age from a daughter/parent ratio — `radiometric_age`
+### Radiometric age from a daughter/parent ratio, `radiometric_age`
 
 Age of a closed system from the ratio of radiogenic daughter to remaining parent atoms and the half-life (no initial daughter).
 
@@ -3582,7 +3582,7 @@ earth_science_ai999x.solve('radiometric_age', ratio=3.0, half_life=4468000000.0)
 
 <a id="potassium_argon_age"></a>
 
-### Potassium-argon age (branched decay) — `potassium_argon_age`
+### Potassium-argon age (branched decay): `potassium_argon_age`
 
 K-Ar age from the radiogenic 40Ar*/40K ratio, allowing for the branching of 40K decay to 40Ar (electron capture) and 40Ca. Defaults: $\lambda = 5.543e-10 /yr$, $lambda_e = 0.581e-10 /yr$ (Steiger and Jäger 1977).
 
@@ -3628,7 +3628,7 @@ earth_science_ai999x.solve('potassium_argon_age', ratio=0.12, lam=5.543e-10, lam
 
 <a id="isochron_age"></a>
 
-### Isochron age (e.g. Rb-Sr) from sample ratios — `isochron_age`
+### Isochron age (e.g. Rb-Sr) from sample ratios, `isochron_age`
 
 Age and initial ratio from an isochron: a least-squares line through (parent/stable, daughter/stable) ratios of cogenetic samples (ordinary least squares, not a York fit). Default decay constant $1.42e-11 /yr$ (87Rb).
 
@@ -3681,7 +3681,7 @@ earth_science_ai999x.solve('isochron_age', x=[0.2, 0.9, 1.7, 3.3, 5.0], y=[0.704
 
 <a id="radiocarbon_age"></a>
 
-### Conventional radiocarbon age — `radiocarbon_age`
+### Conventional radiocarbon age: `radiocarbon_age`
 
 Conventional radiocarbon age (years BP) from the fraction modern carbon, with the Libby mean life of 8033 years (Stuiver and Polach 1977); not calibrated to calendar years.
 
@@ -3726,7 +3726,7 @@ earth_science_ai999x.solve('radiocarbon_age', F=0.25)
 
 <a id="stokes_settling_velocity"></a>
 
-### Settling velocity of a small grain (Stokes) — `stokes_settling_velocity`
+### Settling velocity of a small grain (Stokes), `stokes_settling_velocity`
 
 Terminal settling velocity of a small sphere in a viscous fluid (Stokes' law), with the grain Reynolds number (refused when it exceeds 1).
 
@@ -3776,7 +3776,7 @@ earth_science_ai999x.solve('stokes_settling_velocity', d=1e-05, rho_s=2650.0, rh
 
 <a id="co2_radiative_forcing"></a>
 
-### Radiative forcing of a change in CO2 (Myhre et al. 1998) — `co2_radiative_forcing`
+### Radiative forcing of a change in CO2 (Myhre et al. 1998), `co2_radiative_forcing`
 
 The radiative forcing $dF = 5.35$ ln(C/C0) $W/m^{2}$ of a change in CO2 concentration from C0 to C, and with a climate sensitivity parameter the equilibrium warming lambda dF.
 
@@ -3830,7 +3830,7 @@ earth_science_ai999x.solve('co2_radiative_forcing', C=420.0, C0=280.0, lam=0.8)
 
 <a id="sp_epicentral_distance"></a>
 
-### Distance to an earthquake from the S-P interval — `sp_epicentral_distance`
+### Distance to an earthquake from the S-P interval, `sp_epicentral_distance`
 
 The distance from a station to the hypocentre from the delay between the S and P arrivals, for straight rays at constant P and S speeds.
 
@@ -3881,7 +3881,7 @@ earth_science_ai999x.solve('sp_epicentral_distance', dt=45.0, vp=8000.0, vs=4500
 
 <a id="airy_isostasy"></a>
 
-### Mountain root by Airy isostasy — `airy_isostasy`
+### Mountain root by Airy isostasy: `airy_isostasy`
 
 The crustal root below topography of height h compensated by Airy isostasy (crust of uniform density floating on denser mantle), and with a normal crustal thickness the total thickness under the mountain.
 
@@ -3936,7 +3936,7 @@ earth_science_ai999x.solve('airy_isostasy', h=5000.0, rho_c=2700.0, rho_m=3300.0
 
 <a id="pratt_isostasy"></a>
 
-### Column density by Pratt isostasy — `pratt_isostasy`
+### Column density by Pratt isostasy: `pratt_isostasy`
 
 The density of a crustal column standing h above sea level under Pratt isostasy (columns of different density down to a common compensation depth D), given the density of a column whose top is at sea level.
 
@@ -3985,7 +3985,7 @@ earth_science_ai999x.solve('pratt_isostasy', h=1000.0, rho0=2900.0, D=80000.0)
 
 <a id="gradient_wind"></a>
 
-### Gradient wind in curved flow — `gradient_wind`
+### Gradient wind in curved flow: `gradient_wind`
 
 The gradient wind speed of curved, frictionless flow from the geostrophic wind, the radius of curvature of the trajectory and the latitude, for cyclonic or anticyclonic flow (the regular solution).
 
@@ -4036,7 +4036,7 @@ earth_science_ai999x.solve('gradient_wind', lat=45.0, R=1000000.0, Vg=10.0, flow
 
 <a id="wave_dispersion"></a>
 
-### Water-wave dispersion at finite depth — `wave_dispersion`
+### Water-wave dispersion at finite depth: `wave_dispersion`
 
 Wavelength, phase speed and group speed of a linear surface gravity wave of period T in water of depth h, from the full dispersion relation $\omega^{2} = g$ k tanh(k h) (deep and shallow limits included).
 
@@ -4091,7 +4091,7 @@ earth_science_ai999x.solve('wave_dispersion', T=6.0, h=100.0)
 
 <a id="darcy_flow"></a>
 
-### Groundwater discharge by Darcy's law — `darcy_flow`
+### Groundwater discharge by Darcy's law: `darcy_flow`
 
 The volumetric discharge $Q = K$ A dh/L through a porous medium, the specific discharge (Darcy flux) and, with a porosity, the average linear (seepage) velocity.
 
@@ -4144,7 +4144,7 @@ earth_science_ai999x.solve('darcy_flow', K=5e-05, A=20.0, dh=5.0, L=250.0, n=0.3
 
 <a id="stream_power"></a>
 
-### Stream power of a river — `stream_power`
+### Stream power of a river: `stream_power`
 
 The total stream power per unit channel length $Omega = \rho$ g Q S and, with the channel width, the unit stream power $\omega = Omega/w.$
 
@@ -4198,7 +4198,7 @@ earth_science_ai999x.solve('stream_power', Q=50.0, S=0.005, w=20.0)
 
 <a id="rossby_number"></a>
 
-### Rossby number — `rossby_number`
+### Rossby number: `rossby_number`
 
 The Rossby number $Ro = U$/(|f| L) of a flow with speed scale U and length scale L at a latitude: the ratio of inertial to Coriolis accelerations.
 
@@ -4247,7 +4247,7 @@ earth_science_ai999x.solve('rossby_number', U=0.1, L=100000.0, lat=30.0)
 
 <a id="solar_elevation_angle"></a>
 
-### Solar elevation and azimuth — `solar_elevation_angle`
+### Solar elevation and azimuth: `solar_elevation_angle`
 
 The sun's elevation above the horizon, its zenith angle and azimuth (clockwise from north) for a latitude, a solar declination and an hour angle (15 degrees per hour from solar noon, negative in the morning).
 
@@ -4297,7 +4297,7 @@ earth_science_ai999x.solve('solar_elevation_angle', lat=40.0, decl=0.0, H=45.0)
 
 <a id="half_space_heat_flow"></a>
 
-### Surface heat flow of cooling oceanic lithosphere (half-space model) — `half_space_heat_flow`
+### Surface heat flow of cooling oceanic lithosphere (half-space model), `half_space_heat_flow`
 
 The conductive surface heat flow $q = k$ dT/sqrt(pi kappa t) of oceanic lithosphere of age t (half-space cooling) and its thermal thickness. Defaults: dT 1300 K, k 3.3 W/(m K), kappa $1e-6$ $m^{2}/s.$
 

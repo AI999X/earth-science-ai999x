@@ -1,4 +1,4 @@
-# earth-science: the Earth Science program — user guide
+# earth-science: the Earth Science program, user guide
 
 **earth-science-ai999x 1.1.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
@@ -17,63 +17,63 @@ Earth Science covers atmospheric thermodynamics and meteorology, climate and rad
 
 ## 1. Get it
 
-Version 1.4.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
+Version 1.5.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
 
 | what | system | download |
 |---|---|---|
-| Desktop app: Earth Science | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-earth-science-1.4.0-windows-x86_64.zip |
-| Desktop app: Earth Science | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-earth-science-1.4.0-linux-x86_64.tar.gz |
-| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip |
-| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz |
-| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip |
-| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz |
+| Desktop app: Earth Science | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-earth-science-1.5.0-windows-x86_64.zip |
+| Desktop app: Earth Science | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-earth-science-1.5.0-linux-x86_64.tar.gz |
+| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip |
+| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz |
+| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip |
+| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz |
 
 ### Desktop app
 
-Earth Science in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-earth-science-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-earth-science.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+Earth Science in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-earth-science-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-earth-science.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-earth-science-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-earth-science-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-earth-science-1.4.0-linux-x86_64.tar.gz
-./ai999x-earth-science-1.4.0-linux-x86_64/ai999x-earth-science
+tar xzf ai999x-earth-science-1.5.0-linux-x86_64.tar.gz
+./ai999x-earth-science-1.5.0-linux-x86_64/ai999x-earth-science
 ```
 
-It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-1.4.0-linux-x86_64.tar.gz
-./ai999x-1.4.0-linux-x86_64/ai999x
+tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
+./ai999x-1.5.0-linux-x86_64/ai999x
 ```
 
-### Command line — Linux
+### Command line: Linux
 
 The bundle holds one program per model; `earth-science` is this one. The checksum line should print OK.
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 earth-science --version
 ```
 
-### Command line — Windows (PowerShell)
+### Command line: Windows (PowerShell)
 
 The fourth line should print True.
 
 ```powershell
-$F = "ai999x-cli-1.4.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 earth-science --version
 ```
@@ -96,7 +96,7 @@ Prints the model, its version and that this is the Rust build.
 
 ```shell
 $ earth-science --version
-earth-science-ai999x 1.0.3 (Rust build, ax-engine 0.1.0)
+earth-science-ai999x 1.5.0 (Rust build, ax-engine 1.5.0)
 ```
 
 ### 2.2 Ask in words
@@ -197,29 +197,7 @@ $ earth-science solve lifting_condensation_level "p=100000 Pa" "T=303.15 K"
 NEEDS_INPUT: lifting_condensation_level needs Td (starting dewpoint). Example: solve('lifting_condensation_level', p='100000 Pa', T='303.15 K', Td='293.15 K').
 ```
 
-### 2.9 Draw the figures
-
-The live figures for your own inputs, written as SVG files into the folder given with --out (here the current folder); open them in any browser. Without --out the SVG text comes back as JSON.
-
-```shell
-$ earth-science figures lifting_condensation_level "p=100000 Pa" "T=303.15 K" "Td=293.15 K" --out .
-[
-  {
-    "slug": "lifting-condensation-level-live-1",
-    "title": "LCL pressure (Pa) as starting pressure varies",
-    "caption": "LCL pressure (Pa) as p runs from 2.5e+04 to 1.075e+05 Pa, every other input as you entered it (23 solutions). Marked: your p = 1e+05 Pa gives p_lcl = 8.642e+04. Your inputs: p = 100000 Pa, T = 303.15 K, Td = 293.15 K.",
-    "file": ".\\lifting-condensation-level-live-1.svg"
-  },
-  {
-    "slug": "lifting-condensation-level-live-2",
-    "title": "LCL pressure (Pa) as starting dewpoint varies",
-    "caption": "LCL pressure (Pa) as Td runs from 229.7 to 301.3 K, every other input as you entered it (25 solutions). Marked: your Td = 293.1 K gives p_lcl = 8.642e+04. Your inputs: p = 100000 Pa, T = 303.15 K, Td = 293.15 K.",
-    "file": ".\\lifting-condensation-level-live-2.svg"
-  }
-]
-```
-
-### 2.10 Many questions at once
+### 2.9 Many questions at once
 
 One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | earth-science batch
 
@@ -292,24 +270,6 @@ answers = [json.loads(line) for line in out.splitlines()]
 
 `earth-science figures <capability> name=value ... --out DIR` draws the live figures for those inputs and writes each as an SVG file into DIR (an existing folder); without `--out` the SVG text comes back as JSON. The desktop app and the model page draw the same figures as soon as you press Compute.
 
-```shell
-$ earth-science figures lifting_condensation_level "p=100000 Pa" "T=303.15 K" "Td=293.15 K" --out .
-[
-  {
-    "slug": "lifting-condensation-level-live-1",
-    "title": "LCL pressure (Pa) as starting pressure varies",
-    "caption": "LCL pressure (Pa) as p runs from 2.5e+04 to 1.075e+05 Pa, every other input as you entered it (23 solutions). Marked: your p = 1e+05 Pa gives p_lcl = 8.642e+04. Your inputs: p = 100000 Pa, T = 303.15 K, Td = 293.15 K.",
-    "file": ".\\lifting-condensation-level-live-1.svg"
-  },
-  {
-    "slug": "lifting-condensation-level-live-2",
-    "title": "LCL pressure (Pa) as starting dewpoint varies",
-    "caption": "LCL pressure (Pa) as Td runs from 229.7 to 301.3 K, every other input as you entered it (25 solutions). Marked: your Td = 293.1 K gives p_lcl = 8.642e+04. Your inputs: p = 100000 Pa, T = 303.15 K, Td = 293.15 K.",
-    "file": ".\\lifting-condensation-level-live-2.svg"
-  }
-]
-```
-
 ## 7. In a web page or Node.js: WebAssembly
 
 The same model is a WebAssembly module, `earth_science_ai999x.wasm` (https://www.ai999x.com/compute/rust/earth_science_ai999x.wasm), with a small loader, `ax-wasm.js` (https://www.ai999x.com/compute/rust/ax-wasm.js). It runs in a browser, a Web Worker or Node.js, with no server.
@@ -333,7 +293,7 @@ By topic. For each: what it does, what it needs and gives, when it applies, and 
 
 <a id="heat_index"></a>
 
-#### Heat index (NWS) — `heat_index`
+#### Heat index (NWS): `heat_index`
 
 The apparent temperature of the US National Weather Service: Rothfusz's regression with the NWS adjustments for low and high humidity.
 
@@ -344,7 +304,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `T` | in | air temperature | K |
-| `RH` | in | relative humidity (fraction, or % in a question) | — |
+| `RH` | in | relative humidity (fraction, or % in a question) | - |
 | `HI` | out | heat index (K) | K |
 
 **Applies when:** 80 °F <= T <= 130 °F; 0 <= RH <= 1.
@@ -362,7 +322,7 @@ HI = 313.5592737 K
 
 <a id="wind_chill"></a>
 
-#### Wind chill temperature index — `wind_chill`
+#### Wind chill temperature index: `wind_chill`
 
 The wind chill temperature index of the 2001 North American formula (wind measured at 10 m).
 
@@ -393,7 +353,7 @@ WCT = 253.629502 K
 
 <a id="inertial_period"></a>
 
-#### Period of inertial oscillations — `inertial_period`
+#### Period of inertial oscillations: `inertial_period`
 
 The period 2 pi/|f| of free inertial oscillations of the wind or an ocean current at a latitude.
 
@@ -403,9 +363,9 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `lat` | in | latitude (degrees, north positive) | — |
+| `lat` | in | latitude (degrees, north positive) | - |
 | `T_inertial` | out | inertial period (s) | s |
-| `T_hours` | out | inertial period (hours) | — |
+| `T_hours` | out | inertial period (hours) | - |
 | `f` | out | Coriolis parameter (1/s) | 1/s |
 
 **Applies when:** |latitude| >= 0.5 degrees.
@@ -426,7 +386,7 @@ f = 0.0001031260793 1/s
 
 <a id="brunt_vaisala_frequency"></a>
 
-#### Brunt-Väisälä (buoyancy) frequency — `brunt_vaisala_frequency`
+#### Brunt-Väisälä (buoyancy) frequency, `brunt_vaisala_frequency`
 
 The buoyancy frequency of a stably stratified atmosphere from the potential temperature and its vertical gradient.
 
@@ -457,7 +417,7 @@ period = 634.4823283 s
 
 <a id="coriolis_parameter"></a>
 
-#### Coriolis parameter — `coriolis_parameter`
+#### Coriolis parameter: `coriolis_parameter`
 
 The Coriolis parameter f = 2 Omega sin(latitude).
 
@@ -467,7 +427,7 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `lat` | in | latitude (degrees, north positive) | — |
+| `lat` | in | latitude (degrees, north positive) | - |
 | `f` | out | Coriolis parameter (1/s) | 1/s |
 
 **Applies when:** -90 <= latitude <= 90 degrees.
@@ -484,7 +444,7 @@ f = 0.0001031260793 1/s
 
 <a id="geostrophic_wind"></a>
 
-#### Geostrophic wind from a height gradient — `geostrophic_wind`
+#### Geostrophic wind from a height gradient: `geostrophic_wind`
 
 Geostrophic wind speed from the change of geopotential height of a pressure surface over a horizontal distance.
 
@@ -494,7 +454,7 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `lat` | in | latitude (degrees, north positive) | — |
+| `lat` | in | latitude (degrees, north positive) | - |
 | `dz` | in | change of geopotential height across the distance | m |
 | `dn` | in | horizontal distance over which the height changes | m |
 | `Vg` | out | geostrophic wind speed (m/s) | m/s |
@@ -517,7 +477,7 @@ f = 0.0001031260793 1/s
 
 <a id="gradient_wind"></a>
 
-#### Gradient wind in curved flow — `gradient_wind`
+#### Gradient wind in curved flow: `gradient_wind`
 
 The gradient wind speed of curved, frictionless flow from the geostrophic wind, the radius of curvature of the trajectory and the latitude, for cyclonic or anticyclonic flow (the regular solution).
 
@@ -527,12 +487,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `lat` | in | latitude (degrees, north positive) | — |
+| `lat` | in | latitude (degrees, north positive) | - |
 | `R` | in | radius of curvature of the flow | m |
 | `Vg` | in | geostrophic wind speed | m/s |
-| `flow` | in | cyclonic or anticyclonic | — |
+| `flow` | in | cyclonic or anticyclonic | - |
 | `V` | out | gradient wind speed (m/s) | m/s |
-| `ratio` | out | V/Vg | — |
+| `ratio` | out | V/Vg | - |
 | `f` | out | \|f\| (1/s) | 1/s |
 
 **Applies when:** 5 <= |latitude| <= 85 degrees; R, Vg > 0; anticyclonic: Vg <= |f| R/4.
@@ -554,7 +514,7 @@ f = 0.0001031260793 1/s
 
 <a id="rossby_wave_speed"></a>
 
-#### Phase speed of a barotropic Rossby wave — `rossby_wave_speed`
+#### Phase speed of a barotropic Rossby wave: `rossby_wave_speed`
 
 Zonal phase speed of a barotropic Rossby wave in a uniform westerly flow on a beta-plane, the beta parameter, and the stationary wavelength 2 pi sqrt(U/beta).
 
@@ -565,7 +525,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `U` | in | zonal mean (westerly) wind speed | m/s |
-| `lat` | in | latitude (degrees, north positive) | — |
+| `lat` | in | latitude (degrees, north positive) | - |
 | `Lx` | in | zonal wavelength | m |
 | `c` | out | zonal phase speed (m/s; negative = westward) | m/s |
 | `beta` | out | beta = df/dy (1/(m s)) | 1/(m*s) |
@@ -589,7 +549,7 @@ Ls = 6048467.424 m
 
 <a id="rossby_number"></a>
 
-#### Rossby number — `rossby_number`
+#### Rossby number: `rossby_number`
 
 The Rossby number Ro = U/(|f| L) of a flow with speed scale U and length scale L at a latitude: the ratio of inertial to Coriolis accelerations.
 
@@ -601,8 +561,8 @@ $$
 |---|---|---|---|
 | `U` | in | velocity scale | m/s |
 | `L` | in | horizontal length scale | m |
-| `lat` | in | latitude (degrees, north positive) | — |
-| `Ro` | out | Rossby number | — |
+| `lat` | in | latitude (degrees, north positive) | - |
+| `Ro` | out | Rossby number | - |
 | `f` | out | \|f\| (1/s) | 1/s |
 
 **Applies when:** |latitude| >= 1 degree; U, L > 0.
@@ -622,7 +582,7 @@ f = 0.0001031260793 1/s
 
 <a id="wind_components"></a>
 
-#### Wind components from speed and direction — `wind_components`
+#### Wind components from speed and direction: `wind_components`
 
 The eastward (u) and northward (v) wind components from the speed and the direction the wind blows FROM.
 
@@ -633,7 +593,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `speed` | in | wind speed | m/s |
-| `direction` | in | direction the wind blows from (degrees clockwise from north) | — |
+| `direction` | in | direction the wind blows from (degrees clockwise from north) | - |
 | `u` | out | eastward component (m/s) | m/s |
 | `v` | out | northward component (m/s) | m/s |
 
@@ -653,7 +613,7 @@ v = 7.071067812 m/s
 
 <a id="wind_speed_direction"></a>
 
-#### Wind speed and direction from components — `wind_speed_direction`
+#### Wind speed and direction from components: `wind_speed_direction`
 
 Wind speed and the direction the wind blows from (degrees clockwise from north, (0, 360]) from u and v.
 
@@ -666,7 +626,7 @@ $$
 | `u` | in | eastward wind component | m/s |
 | `v` | in | northward wind component | m/s |
 | `speed` | out | wind speed (m/s) | m/s |
-| `direction` | out | direction the wind comes from (degrees) | — |
+| `direction` | out | direction the wind comes from (degrees) | - |
 
 **Applies when:** calm (u = v = 0) gives direction 0.
 
@@ -686,7 +646,7 @@ direction = 300.9637565
 
 <a id="dewpoint_from_relative_humidity"></a>
 
-#### Dewpoint from temperature and relative humidity — `dewpoint_from_relative_humidity`
+#### Dewpoint from temperature and relative humidity, `dewpoint_from_relative_humidity`
 
 The dewpoint of air at temperature T and relative humidity RH: Bolton's inversion applied to RH e_s(T).
 
@@ -697,7 +657,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `T` | in | air temperature | K |
-| `RH` | in | relative humidity (fraction, or % in a question) | — |
+| `RH` | in | relative humidity (fraction, or % in a question) | - |
 | `Td` | out | dewpoint (K) | K |
 
 **Applies when:** 0.01 <= RH <= 1.
@@ -715,7 +675,7 @@ Td = 294.5065 K
 
 <a id="dewpoint_from_vapor_pressure"></a>
 
-#### Dewpoint from vapour pressure — `dewpoint_from_vapor_pressure`
+#### Dewpoint from vapour pressure: `dewpoint_from_vapor_pressure`
 
 The dewpoint at which the given vapour pressure would saturate (inversion of Bolton's 1980 formula).
 
@@ -742,7 +702,7 @@ Td = 288.1130551 K
 
 <a id="relative_humidity_from_dewpoint"></a>
 
-#### Relative humidity from temperature and dewpoint — `relative_humidity_from_dewpoint`
+#### Relative humidity from temperature and dewpoint, `relative_humidity_from_dewpoint`
 
 Relative humidity as the ratio of the vapour pressure at the dewpoint to the saturation vapour pressure.
 
@@ -754,8 +714,8 @@ $$
 |---|---|---|---|
 | `T` | in | air temperature | K |
 | `Td` | in | dewpoint temperature | K |
-| `RH` | out | relative humidity (fraction) | — |
-| `RH_percent` | out | relative humidity (%) | — |
+| `RH` | out | relative humidity (fraction) | - |
+| `RH_percent` | out | relative humidity (%) | - |
 
 **Applies when:** Td <= T; -45 °C <= T, Td <= 60 °C.
 
@@ -773,7 +733,7 @@ RH_percent = 53.85566217
 
 <a id="saturation_mixing_ratio"></a>
 
-#### Saturation mixing ratio — `saturation_mixing_ratio`
+#### Saturation mixing ratio: `saturation_mixing_ratio`
 
 The mixing ratio of air saturated with respect to liquid water at temperature T and pressure p.
 
@@ -785,8 +745,8 @@ $$
 |---|---|---|---|
 | `p` | in | total air pressure | Pa |
 | `T` | in | air temperature | K |
-| `ws` | out | saturation mixing ratio (kg/kg) | — |
-| `ws_g_per_kg` | out | saturation mixing ratio (g/kg) | — |
+| `ws` | out | saturation mixing ratio (kg/kg) | - |
+| `ws_g_per_kg` | out | saturation mixing ratio (g/kg) | - |
 
 **Applies when:** e_s(T) < p.
 
@@ -804,7 +764,7 @@ ws_g_per_kg = 20.3107222
 
 <a id="saturation_vapor_pressure"></a>
 
-#### Saturation vapour pressure over water — `saturation_vapor_pressure`
+#### Saturation vapour pressure over water: `saturation_vapor_pressure`
 
 The equilibrium vapour pressure over a plane surface of liquid water (Ambaum 2020, latent heat varying with temperature).
 
@@ -831,7 +791,7 @@ es = 3162.345599 Pa
 
 <a id="specific_humidity_from_dewpoint"></a>
 
-#### Specific humidity from dewpoint and pressure — `specific_humidity_from_dewpoint`
+#### Specific humidity from dewpoint and pressure, `specific_humidity_from_dewpoint`
 
 Specific humidity (mass of vapour per mass of moist air) from the dewpoint and the pressure.
 
@@ -843,8 +803,8 @@ $$
 |---|---|---|---|
 | `p` | in | air pressure | Pa |
 | `Td` | in | dewpoint temperature | K |
-| `q` | out | specific humidity (kg/kg) | — |
-| `w` | out | mixing ratio (kg/kg) | — |
+| `q` | out | specific humidity (kg/kg) | - |
+| `w` | out | mixing ratio (kg/kg) | - |
 
 **Applies when:** e_s(Td) < p.
 
@@ -862,7 +822,7 @@ w = 0.0107760894
 
 <a id="mixing_ratio"></a>
 
-#### Water-vapour mixing ratio from vapour pressure — `mixing_ratio`
+#### Water-vapour mixing ratio from vapour pressure, `mixing_ratio`
 
 Mass of water vapour per mass of dry air from the vapour partial pressure and the total pressure.
 
@@ -874,8 +834,8 @@ $$
 |---|---|---|---|
 | `e` | in | water vapour partial pressure | Pa |
 | `p` | in | total air pressure | Pa |
-| `w` | out | mixing ratio (kg/kg) | — |
-| `w_g_per_kg` | out | mixing ratio (g/kg) | — |
+| `w` | out | mixing ratio (kg/kg) | - |
+| `w_g_per_kg` | out | mixing ratio (g/kg) | - |
 
 **Applies when:** 0 < e < p.
 
@@ -895,7 +855,7 @@ w_g_per_kg = 12.69299816
 
 <a id="scale_height"></a>
 
-#### Atmospheric scale height — `scale_height`
+#### Atmospheric scale height: `scale_height`
 
 The height over which pressure falls by a factor e in an isothermal dry atmosphere.
 
@@ -922,7 +882,7 @@ H = 8434.351641 m
 
 <a id="moist_air_density"></a>
 
-#### Density of moist air — `moist_air_density`
+#### Density of moist air: `moist_air_density`
 
 Density of moist air from the ideal-gas law with the virtual temperature.
 
@@ -934,7 +894,7 @@ $$
 |---|---|---|---|
 | `p` | in | air pressure | Pa |
 | `T` | in | air temperature | K |
-| `w` | in | water-vapour mixing ratio (kg/kg) | — |
+| `w` | in | water-vapour mixing ratio (kg/kg) | - |
 | `rho` | out | air density (kg/m^3) | kg/m^3 |
 | `Tv` | out | virtual temperature (K) | K |
 
@@ -955,7 +915,7 @@ Tv = 300.8281879 K
 
 <a id="equivalent_potential_temperature"></a>
 
-#### Equivalent potential temperature (Bolton 1980) — `equivalent_potential_temperature`
+#### Equivalent potential temperature (Bolton 1980), `equivalent_potential_temperature`
 
 The potential temperature a parcel would have after all its vapour condensed and the latent heat warmed it.
 
@@ -986,7 +946,7 @@ theta_e = 345.6759213 K
 
 <a id="geopotential_height"></a>
 
-#### Geopotential and geopotential height — `geopotential_height`
+#### Geopotential and geopotential height: `geopotential_height`
 
 Geopotential and geopotential height of a geometric height above sea level, with gravity falling off as 1/(R_e + z)^2 (as MetPy).
 
@@ -1015,7 +975,7 @@ Z = 9984.328497 m
 
 <a id="standard_atmosphere_height"></a>
 
-#### Height of a pressure level in the standard atmosphere — `standard_atmosphere_height`
+#### Height of a pressure level in the standard atmosphere, `standard_atmosphere_height`
 
 The height of a pressure level in the tropospheric standard atmosphere (pressure altitude; as MetPy).
 
@@ -1042,7 +1002,7 @@ z = 5571.434423 m
 
 <a id="lifting_condensation_level"></a>
 
-#### Lifting condensation level (Romps 2017) — `lifting_condensation_level`
+#### Lifting condensation level (Romps 2017): `lifting_condensation_level`
 
 Pressure and temperature at which a parcel lifted dry-adiabatically from (p, T, Td) becomes saturated, from Romps' exact solution with the Lambert W function.
 
@@ -1075,7 +1035,7 @@ T_lcl = 290.8124964 K
 
 <a id="moist_static_energy"></a>
 
-#### Moist static energy — `moist_static_energy`
+#### Moist static energy: `moist_static_energy`
 
 Moist static energy c_pd T + g z + L_v q (and the dry static energy c_pd T + g z) per unit mass.
 
@@ -1087,7 +1047,7 @@ $$
 |---|---|---|---|
 | `z` | in | height above sea level | m |
 | `T` | in | air temperature | K |
-| `q` | in | specific humidity (kg/kg) | — |
+| `q` | in | specific humidity (kg/kg) | - |
 | `h` | out | moist static energy (J/kg) | J/kg |
 | `s` | out | dry static energy (J/kg) | J/kg |
 
@@ -1108,7 +1068,7 @@ s = 304204.5458 J/kg
 
 <a id="potential_temperature"></a>
 
-#### Potential temperature — `potential_temperature`
+#### Potential temperature: `potential_temperature`
 
 The temperature an air parcel would have if brought dry-adiabatically to 1000 hPa (Poisson's equation).
 
@@ -1137,7 +1097,7 @@ theta = 312.3207471 K
 
 <a id="standard_atmosphere_pressure"></a>
 
-#### Pressure at a height in the standard atmosphere — `standard_atmosphere_pressure`
+#### Pressure at a height in the standard atmosphere, `standard_atmosphere_pressure`
 
 Pressure at a height in the tropospheric standard atmosphere (T0 = 288 K, 6.5 K/km, 1013.25 hPa; as MetPy).
 
@@ -1164,7 +1124,7 @@ p = 84547.60127 Pa
 
 <a id="isothermal_pressure"></a>
 
-#### Pressure at height in an isothermal atmosphere — `isothermal_pressure`
+#### Pressure at height in an isothermal atmosphere, `isothermal_pressure`
 
 The barometric formula: pressure at height z in an isothermal dry atmosphere, and its scale height R_d T/g.
 
@@ -1197,7 +1157,7 @@ H = 7995.291171 m
 
 <a id="pressure_with_lapse_rate"></a>
 
-#### Pressure at height with a constant lapse rate — `pressure_with_lapse_rate`
+#### Pressure at height with a constant lapse rate, `pressure_with_lapse_rate`
 
 Pressure at height z in a dry atmosphere whose temperature falls linearly with height (troposphere model).
 
@@ -1232,7 +1192,7 @@ T = 268.65 K
 
 <a id="moist_adiabatic_lapse_rate"></a>
 
-#### Saturated (moist) adiabatic lapse rate — `moist_adiabatic_lapse_rate`
+#### Saturated (moist) adiabatic lapse rate: `moist_adiabatic_lapse_rate`
 
 The rate at which a saturated parcel cools as it rises, with condensation releasing latent heat.
 
@@ -1245,7 +1205,7 @@ $$
 | `T` | in | air temperature | K |
 | `p` | in | air pressure | Pa |
 | `lapse_rate` | out | moist adiabatic lapse rate (K/m) | K/m |
-| `rs` | out | saturation mixing ratio (kg/kg) | — |
+| `rs` | out | saturation mixing ratio (kg/kg) | - |
 
 **Applies when:** -40 °C <= T <= 50 °C; constant latent heat L_v = 2.50084e6 J/kg in the lapse-rate formula.
 
@@ -1263,7 +1223,7 @@ rs = 0.0148682638
 
 <a id="temperature_from_potential_temperature"></a>
 
-#### Temperature from potential temperature — `temperature_from_potential_temperature`
+#### Temperature from potential temperature: `temperature_from_potential_temperature`
 
 The air temperature at pressure p of a parcel with a given potential temperature.
 
@@ -1292,7 +1252,7 @@ T = 270.9340268 K
 
 <a id="dry_adiabatic_ascent"></a>
 
-#### Temperature of a dry parcel after adiabatic ascent — `dry_adiabatic_ascent`
+#### Temperature of a dry parcel after adiabatic ascent, `dry_adiabatic_ascent`
 
 The temperature of an unsaturated air parcel lifted dry-adiabatically through a height dz, and the dry adiabatic lapse rate g/c_pd.
 
@@ -1323,7 +1283,7 @@ lapse_rate = 0.009761102563 K/m
 
 <a id="hypsometric_thickness"></a>
 
-#### Thickness of a layer (hypsometric equation) — `hypsometric_thickness`
+#### Thickness of a layer (hypsometric equation), `hypsometric_thickness`
 
 The geometric thickness between two pressure levels from the layer-mean virtual temperature.
 
@@ -1354,7 +1314,7 @@ dz = 5339.024515 m
 
 <a id="virtual_temperature"></a>
 
-#### Virtual temperature — `virtual_temperature`
+#### Virtual temperature: `virtual_temperature`
 
 The temperature dry air would need to have the density of the moist air at the same pressure.
 
@@ -1365,7 +1325,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `T` | in | air temperature | K |
-| `w` | in | water-vapour mixing ratio (kg/kg) | — |
+| `w` | in | water-vapour mixing ratio (kg/kg) | - |
 | `Tv` | out | virtual temperature (K) | K |
 
 **Applies when:** 0 <= w <= 0.06.
@@ -1385,7 +1345,7 @@ Tv = 306.7630037 K
 
 <a id="energy_balance_response"></a>
 
-#### Warming of a one-box energy-balance model — `energy_balance_response`
+#### Warming of a one-box energy-balance model: `energy_balance_response`
 
 Temperature response after t years to a constant radiative forcing F in a one-box model C dT/dt = F - T/lambda, the equilibrium warming lambda F and the e-folding time lambda C.
 
@@ -1398,10 +1358,10 @@ $$
 | `F` | in | radiative forcing applied at t = 0 | W/m^2 |
 | `lam` | in | climate sensitivity parameter | K*m^2/W |
 | `C` | in | effective heat capacity per unit area | J/(m^2*K) |
-| `t` | in | time since the forcing began (years) | — |
+| `t` | in | time since the forcing began (years) | - |
 | `dT` | out | warming after t (K) | K |
 | `dT_eq` | out | equilibrium warming (K) | K |
-| `tau_years` | out | e-folding time (years) | — |
+| `tau_years` | out | e-folding time (years) | - |
 
 **Applies when:** lambda > 0, C > 0; the forcing is switched on at t = 0 and then held constant.
 
@@ -1424,7 +1384,7 @@ tau_years = 10.64719751
 
 <a id="co2_radiative_forcing"></a>
 
-#### Radiative forcing of a change in CO2 (Myhre et al. 1998) — `co2_radiative_forcing`
+#### Radiative forcing of a change in CO2 (Myhre et al. 1998), `co2_radiative_forcing`
 
 The radiative forcing dF = 5.35 ln(C/C0) W/m^2 of a change in CO2 concentration from C0 to C, and with a climate sensitivity parameter the equilibrium warming lambda dF.
 
@@ -1434,11 +1394,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `C` | in | CO2 concentration (ppm) | — |
-| `C0` | in | reference CO2 concentration (ppm) | — |
+| `C` | in | CO2 concentration (ppm) | - |
+| `C0` | in | reference CO2 concentration (ppm) | - |
 | `lam` | in | climate sensitivity parameter (K per W/m^2, optional) (optional) | K*m^2/W |
 | `dF` | out | radiative forcing (W/m^2) | W/m^2 |
-| `doublings` | out | number of CO2 doublings log2(C/C0) | — |
+| `doublings` | out | number of CO2 doublings log2(C/C0) | - |
 | `dT_eq` | out | equilibrium warming lambda dF (K) | K |
 
 **Applies when:** 1 <= C, C0 <= 100,000 ppm; the simplified logarithmic expression of Myhre et al. (1998).
@@ -1457,7 +1417,7 @@ In the worked example, C = 560, C0 = 280 go through the equation above and give 
 
 <a id="solar_elevation_angle"></a>
 
-#### Solar elevation and azimuth — `solar_elevation_angle`
+#### Solar elevation and azimuth: `solar_elevation_angle`
 
 The sun's elevation above the horizon, its zenith angle and azimuth (clockwise from north) for a latitude, a solar declination and an hour angle (15 degrees per hour from solar noon, negative in the morning).
 
@@ -1467,12 +1427,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `lat` | in | latitude (degrees, north positive) | — |
-| `decl` | in | solar declination (degrees) | — |
-| `H` | in | hour angle (degrees, negative before solar noon) | — |
-| `elevation` | out | solar elevation angle (degrees) | — |
-| `zenith` | out | solar zenith angle (degrees) | — |
-| `azimuth` | out | solar azimuth, clockwise from north (degrees) | — |
+| `lat` | in | latitude (degrees, north positive) | - |
+| `decl` | in | solar declination (degrees) | - |
+| `H` | in | hour angle (degrees, negative before solar noon) | - |
+| `elevation` | out | solar elevation angle (degrees) | - |
+| `zenith` | out | solar zenith angle (degrees) | - |
+| `azimuth` | out | solar azimuth, clockwise from north (degrees) | - |
 
 **Applies when:** |declination| <= 23.5 degrees; -180 <= hour angle <= 180 degrees; geometric (no refraction).
 
@@ -1494,7 +1454,7 @@ azimuth = 180
 
 <a id="radiocarbon_age"></a>
 
-#### Conventional radiocarbon age — `radiocarbon_age`
+#### Conventional radiocarbon age: `radiocarbon_age`
 
 Conventional radiocarbon age (years BP) from the fraction modern carbon, with the Libby mean life of 8033 years (Stuiver and Polach 1977); not calibrated to calendar years.
 
@@ -1504,8 +1464,8 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `F` | in | fraction modern (14C activity relative to the modern standard; or % in a question) | — |
-| `age` | out | conventional radiocarbon age (years BP) | — |
+| `F` | in | fraction modern (14C activity relative to the modern standard; or % in a question) | - |
+| `age` | out | conventional radiocarbon age (years BP) | - |
 
 **Applies when:** 1e-5 <= F <= 1 (no bomb carbon).
 
@@ -1521,7 +1481,7 @@ age = 5568.051301
 
 <a id="radioactive_decay_remaining"></a>
 
-#### Fraction of a radioactive parent remaining — `radioactive_decay_remaining`
+#### Fraction of a radioactive parent remaining, `radioactive_decay_remaining`
 
 Fraction of the parent nuclide left (and decayed) after a time t, and the decay constant ln 2/half-life.
 
@@ -1531,11 +1491,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `half_life` | in | half-life (years) | — |
-| `t` | in | elapsed time (years) | — |
-| `fraction` | out | fraction of the parent remaining | — |
-| `decayed` | out | fraction decayed | — |
-| `lambda` | out | decay constant (1/yr) | — |
+| `half_life` | in | half-life (years) | - |
+| `t` | in | elapsed time (years) | - |
+| `fraction` | out | fraction of the parent remaining | - |
+| `decayed` | out | fraction decayed | - |
+| `lambda` | out | decay constant (1/yr) | - |
 
 **Applies when:** half-life > 0; t <= 60 half-lives.
 
@@ -1554,7 +1514,7 @@ lambda = 0.0001209680943
 
 <a id="isochron_age"></a>
 
-#### Isochron age (e.g. Rb-Sr) from sample ratios — `isochron_age`
+#### Isochron age (e.g. Rb-Sr) from sample ratios, `isochron_age`
 
 Age and initial ratio from an isochron: a least-squares line through (parent/stable, daughter/stable) ratios of cogenetic samples (ordinary least squares, not a York fit). Default decay constant 1.42e-11 /yr (87Rb).
 
@@ -1564,12 +1524,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `x` | in | parent/stable isotope ratios (list, e.g. 87Rb/86Sr) | — |
-| `y` | in | daughter/stable isotope ratios (list, e.g. 87Sr/86Sr) | — |
-| `lam` | in | decay constant of the parent (default 1.42e-11 /yr) (optional) | — |
-| `age` | out | isochron age (years) | — |
-| `slope` | out | isochron slope e^(lambda t) - 1 | — |
-| `initial_ratio` | out | initial daughter/stable ratio (intercept) | — |
+| `x` | in | parent/stable isotope ratios (list, e.g. 87Rb/86Sr) | - |
+| `y` | in | daughter/stable isotope ratios (list, e.g. 87Sr/86Sr) | - |
+| `lam` | in | decay constant of the parent (default 1.42e-11 /yr) (optional) | - |
+| `age` | out | isochron age (years) | - |
+| `slope` | out | isochron slope e^(lambda t) - 1 | - |
+| `initial_ratio` | out | initial daughter/stable ratio (intercept) | - |
 
 **Applies when:** cogenetic samples, closed systems, same initial ratio.
 
@@ -1587,7 +1547,7 @@ initial_ratio = 0.7049895541
 
 <a id="potassium_argon_age"></a>
 
-#### Potassium-argon age (branched decay) — `potassium_argon_age`
+#### Potassium-argon age (branched decay): `potassium_argon_age`
 
 K-Ar age from the radiogenic 40Ar*/40K ratio, allowing for the branching of 40K decay to 40Ar (electron capture) and 40Ca. Defaults: lambda = 5.543e-10 /yr, lambda_e = 0.581e-10 /yr (Steiger and Jäger 1977).
 
@@ -1597,10 +1557,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `ratio` | in | radiogenic 40Ar*/40K atom ratio | — |
-| `lam` | in | total decay constant of 40K (default 5.543e-10 /yr) (optional) | — |
-| `lam_e` | in | partial decay constant to 40Ar (default 0.581e-10 /yr) (optional) | — |
-| `age` | out | K-Ar age (years) | — |
+| `ratio` | in | radiogenic 40Ar*/40K atom ratio | - |
+| `lam` | in | total decay constant of 40K (default 5.543e-10 /yr) (optional) | - |
+| `lam_e` | in | partial decay constant to 40Ar (default 0.581e-10 /yr) (optional) | - |
+| `age` | out | K-Ar age (years) | - |
 
 **Applies when:** closed system, no initial argon.
 
@@ -1616,7 +1576,7 @@ age = 92264335.51
 
 <a id="radiometric_age"></a>
 
-#### Radiometric age from a daughter/parent ratio — `radiometric_age`
+#### Radiometric age from a daughter/parent ratio, `radiometric_age`
 
 Age of a closed system from the ratio of radiogenic daughter to remaining parent atoms and the half-life (no initial daughter).
 
@@ -1626,10 +1586,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `ratio` | in | radiogenic daughter / parent atom ratio | — |
-| `half_life` | in | half-life of the parent (years) | — |
-| `age` | out | age (years) | — |
-| `lambda` | out | decay constant (1/yr) | — |
+| `ratio` | in | radiogenic daughter / parent atom ratio | - |
+| `half_life` | in | half-life of the parent (years) | - |
+| `age` | out | age (years) | - |
+| `lambda` | out | decay constant (1/yr) | - |
 
 **Applies when:** closed system; no daughter at the start.
 
@@ -1649,7 +1609,7 @@ lambda = 5.545177444e-10
 
 <a id="pratt_isostasy"></a>
 
-#### Column density by Pratt isostasy — `pratt_isostasy`
+#### Column density by Pratt isostasy: `pratt_isostasy`
 
 The density of a crustal column standing h above sea level under Pratt isostasy (columns of different density down to a common compensation depth D), given the density of a column whose top is at sea level.
 
@@ -1682,7 +1642,7 @@ drho = 81.55339806 kg/m^3
 
 <a id="airy_isostasy"></a>
 
-#### Mountain root by Airy isostasy — `airy_isostasy`
+#### Mountain root by Airy isostasy: `airy_isostasy`
 
 The crustal root below topography of height h compensated by Airy isostasy (crust of uniform density floating on denser mantle), and with a normal crustal thickness the total thickness under the mountain.
 
@@ -1697,7 +1657,7 @@ $$
 | `rho_m` | in | mantle density | kg/m^3 |
 | `tc` | in | normal crustal thickness (optional) (optional) | m |
 | `root` | out | root depth below the normal crust (m) | m |
-| `root_km` | out | root depth (km) | — |
+| `root_km` | out | root depth (km) | - |
 | `crust_thickness` | out | total crustal thickness under the topography (m) | m |
 
 **Applies when:** h > 0; rho_m > rho_c; local (Airy) compensation, uniform crustal density.
@@ -1719,7 +1679,7 @@ In the worked example, h = 3000 m, rho_c = 2800 kg/m^3, rho_m = 3300 kg/m^3 go t
 
 <a id="dipole_inclination"></a>
 
-#### Inclination and strength of a geocentric dipole field — `dipole_inclination`
+#### Inclination and strength of a geocentric dipole field, `dipole_inclination`
 
 Magnetic inclination (dip) and field strength relative to the equator at a magnetic latitude for a geocentric axial dipole.
 
@@ -1729,9 +1689,9 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `lat` | in | magnetic latitude (degrees) | — |
-| `inclination` | out | inclination (degrees, positive downward) | — |
-| `F_ratio` | out | field strength / equatorial strength | — |
+| `lat` | in | magnetic latitude (degrees) | - |
+| `inclination` | out | inclination (degrees, positive downward) | - |
+| `F_ratio` | out | field strength / equatorial strength | - |
 
 **Applies when:** geocentric axial dipole.
 
@@ -1748,7 +1708,7 @@ F_ratio = 1.58113883
 
 <a id="paleolatitude"></a>
 
-#### Paleolatitude from magnetic inclination — `paleolatitude`
+#### Paleolatitude from magnetic inclination: `paleolatitude`
 
 The magnetic (paleo)latitude at which a rock acquired its magnetisation, from the inclination of its remanence, for a geocentric axial dipole; and the angular distance to the paleopole.
 
@@ -1758,9 +1718,9 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `I_deg` | in | inclination of the remanent magnetisation (degrees) | — |
-| `paleolatitude` | out | paleolatitude (degrees) | — |
-| `pole_distance` | out | distance to the pole (degrees) | — |
+| `I_deg` | in | inclination of the remanent magnetisation (degrees) | - |
+| `paleolatitude` | out | paleolatitude (degrees) | - |
+| `pole_distance` | out | distance to the pole (degrees) | - |
 
 **Applies when:** geocentric axial dipole; |I| < 90.
 
@@ -1779,7 +1739,7 @@ pole_distance = 49.10660535
 
 <a id="stream_power"></a>
 
-#### Stream power of a river — `stream_power`
+#### Stream power of a river: `stream_power`
 
 The total stream power per unit channel length Omega = rho g Q S and, with the channel width, the unit stream power omega = Omega/w.
 
@@ -1790,7 +1750,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `Q` | in | discharge | m^3/s |
-| `S` | in | channel slope (m/m) | — |
+| `S` | in | channel slope (m/m) | - |
 | `w` | in | channel width (optional) (optional) | m |
 | `rho` | in | water density (default 1000 kg/m^3) (optional) | kg/m^3 |
 | `Omega` | out | total stream power per unit length (W/m) | W/m |
@@ -1813,7 +1773,7 @@ In the worked example, Q = 100 m^3/s, S = 0.002 go through the equation above an
 
 <a id="gravity_at_latitude"></a>
 
-#### Gravitational acceleration at a latitude and height — `gravity_at_latitude`
+#### Gravitational acceleration at a latitude and height, `gravity_at_latitude`
 
 Normal gravity at sea level for a latitude (International Gravity Formula 1967, as UNESCO 1983) reduced for height with the inverse-square law.
 
@@ -1823,7 +1783,7 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `lat` | in | latitude (degrees, north positive) | — |
+| `lat` | in | latitude (degrees, north positive) | - |
 | `z` | in | height above sea level (default 0) (optional) | m |
 | `g` | out | gravitational acceleration (m/s^2) | m/s^2 |
 
@@ -1842,7 +1802,7 @@ g = 9.806189875 m/s^2
 
 <a id="buried_sphere_anomaly"></a>
 
-#### Gravity anomaly above a buried sphere — `buried_sphere_anomaly`
+#### Gravity anomaly above a buried sphere: `buried_sphere_anomaly`
 
 Peak vertical gravity anomaly directly above a buried sphere of radius R, depth z to its centre and density contrast drho.
 
@@ -1855,7 +1815,7 @@ $$
 | `drho` | in | density contrast of the sphere | kg/m^3 |
 | `R` | in | radius of the sphere | m |
 | `z` | in | depth to the centre of the sphere | m |
-| `dg_mGal` | out | peak gravity anomaly (mGal) | — |
+| `dg_mGal` | out | peak gravity anomaly (mGal) | - |
 | `dg` | out | peak gravity anomaly (m/s^2) | m/s^2 |
 
 **Applies when:** 0 < R < z; observation point directly above the centre.
@@ -1875,7 +1835,7 @@ dg = 3.494655308e-06 m/s^2
 
 <a id="bouguer_slab"></a>
 
-#### Gravity anomaly of an infinite horizontal slab (Bouguer) — `bouguer_slab`
+#### Gravity anomaly of an infinite horizontal slab (Bouguer), `bouguer_slab`
 
 Vertical gravity anomaly of an infinite horizontal slab of thickness h and density contrast drho.
 
@@ -1887,7 +1847,7 @@ $$
 |---|---|---|---|
 | `drho` | in | density contrast of the slab | kg/m^3 |
 | `h` | in | slab thickness | m |
-| `dg_mGal` | out | gravity anomaly (mGal) | — |
+| `dg_mGal` | out | gravity anomaly (mGal) | - |
 | `dg` | out | gravity anomaly (m/s^2) | m/s^2 |
 
 **Applies when:** laterally infinite slab; G = 6.6743e-11 N m^2/kg^2.
@@ -1908,7 +1868,7 @@ dg = 0.0001119687561 m/s^2
 
 <a id="geotherm_radiogenic"></a>
 
-#### Steady geotherm with radiogenic heat production — `geotherm_radiogenic`
+#### Steady geotherm with radiogenic heat production, `geotherm_radiogenic`
 
 Temperature and heat flow at depth in a conducting layer with uniform radiogenic heat production, from the surface temperature and surface heat flow.
 
@@ -1945,7 +1905,7 @@ q = 0.055 W/m^2
 
 <a id="half_space_heat_flow"></a>
 
-#### Surface heat flow of cooling oceanic lithosphere (half-space model) — `half_space_heat_flow`
+#### Surface heat flow of cooling oceanic lithosphere (half-space model), `half_space_heat_flow`
 
 The conductive surface heat flow q = k dT/sqrt(pi kappa t) of oceanic lithosphere of age t (half-space cooling) and its thermal thickness. Defaults: dT 1300 K, k 3.3 W/(m K), kappa 1e-6 m^2/s.
 
@@ -1955,12 +1915,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `t` | in | age of the seafloor (millions of years) | — |
+| `t` | in | age of the seafloor (millions of years) | - |
 | `dT` | in | mantle minus surface temperature (default 1300 K) (optional) | K |
 | `k` | in | thermal conductivity (default 3.3 W/(m K)) (optional) | W/(m*K) |
 | `kappa` | in | thermal diffusivity (default 1e-6 m^2/s) (optional) | m^2/s |
 | `q` | out | surface heat flow (W/m^2) | W/m^2 |
-| `q_mW` | out | surface heat flow (mW/m^2) | — |
+| `q_mW` | out | surface heat flow (mW/m^2) | - |
 | `thickness` | out | thermal thickness, where (T - Ts)/dT = 0.9 (m) | m |
 
 **Applies when:** 0 < t <= 200 Myr; conductive half-space cooling.
@@ -1981,7 +1941,7 @@ thickness = 92401.54658 m
 
 <a id="darcy_flow"></a>
 
-#### Groundwater discharge by Darcy's law — `darcy_flow`
+#### Groundwater discharge by Darcy's law: `darcy_flow`
 
 The volumetric discharge Q = K A dh/L through a porous medium, the specific discharge (Darcy flux) and, with a porosity, the average linear (seepage) velocity.
 
@@ -1995,10 +1955,10 @@ $$
 | `A` | in | cross-sectional area of flow | m^2 |
 | `dh` | in | head difference | m |
 | `L` | in | flow length | m |
-| `n` | in | effective porosity (optional) (optional) | — |
+| `n` | in | effective porosity (optional) (optional) | - |
 | `Q` | out | discharge (m^3/s) | m^3/s |
 | `q` | out | specific discharge (Darcy flux, m/s) | m/s |
-| `gradient` | out | hydraulic gradient dh/L | — |
+| `gradient` | out | hydraulic gradient dh/L | - |
 | `v` | out | average linear velocity q/n (m/s) | m/s |
 
 **Applies when:** K, A, L > 0; dh > 0; laminar flow in a saturated, homogeneous medium.
@@ -2022,7 +1982,7 @@ gradient = 0.02
 
 <a id="ekman_depth"></a>
 
-#### Ekman layer depth — `ekman_depth`
+#### Ekman layer depth: `ekman_depth`
 
 Depth of frictional influence of the wind on the ocean (the current reverses direction at D_E = pi delta).
 
@@ -2033,7 +1993,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `Az` | in | vertical eddy viscosity | m^2/s |
-| `lat` | in | latitude (degrees, north positive) | — |
+| `lat` | in | latitude (degrees, north positive) | - |
 | `D_E` | out | Ekman depth pi delta (m) | m |
 | `delta` | out | Ekman e-folding depth sqrt(2 Az/\|f\|) (m) | m |
 
@@ -2053,7 +2013,7 @@ delta = 31.13979481 m
 
 <a id="ekman_transport"></a>
 
-#### Ekman transport — `ekman_transport`
+#### Ekman transport: `ekman_transport`
 
 Volume transport per unit width of the wind-driven Ekman layer, directed 90 degrees to the right of the wind in the northern hemisphere (left in the southern).
 
@@ -2064,7 +2024,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `tau` | in | wind stress on the sea surface | Pa |
-| `lat` | in | latitude (degrees, north positive) | — |
+| `lat` | in | latitude (degrees, north positive) | - |
 | `rho` | in | seawater density (default 1025 kg/m^3) (optional) | kg/m^3 |
 | `M` | out | Ekman volume transport per unit width (m^2/s) | m^2/s |
 | `mass_transport` | out | Ekman mass transport per unit width (kg/(m s)) | kg/(m*s) |
@@ -2086,7 +2046,7 @@ mass_transport = 969.6868209 kg/(m*s)
 
 <a id="shallow_water_wave"></a>
 
-#### Speed of a shallow-water (long) wave and tsunami travel time — `shallow_water_wave`
+#### Speed of a shallow-water (long) wave and tsunami travel time, `shallow_water_wave`
 
 Speed sqrt(g h) of a wave much longer than the water depth (tsunami, tide), and its travel time over a distance.
 
@@ -2100,7 +2060,7 @@ $$
 | `distance` | in | distance travelled (optional) (optional) | m |
 | `c` | out | wave speed (m/s) | m/s |
 | `travel_time` | out | travel time (s) | s |
-| `travel_time_h` | out | travel time (hours) | — |
+| `travel_time_h` | out | travel time (hours) | - |
 
 **Applies when:** wavelength much longer than the depth; standard gravity.
 
@@ -2121,7 +2081,7 @@ travel_time_h = 7.012569365
 
 <a id="seawater_adiabatic_gradient"></a>
 
-#### Adiabatic temperature gradient of seawater (Bryden 1973) — `seawater_adiabatic_gradient`
+#### Adiabatic temperature gradient of seawater (Bryden 1973), `seawater_adiabatic_gradient`
 
 How fast the temperature of seawater rises under adiabatic compression, per decibar.
 
@@ -2131,11 +2091,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `S` | in | practical salinity (PSS-78) | — |
+| `S` | in | practical salinity (PSS-78) | - |
 | `T` | in | in-situ temperature | K |
 | `p` | in | sea pressure (0 at the surface) | Pa |
-| `gamma` | out | adiabatic gradient (K per dbar) | — |
-| `gamma_per_km_dbar` | out | adiabatic gradient (K per 1000 dbar) | — |
+| `gamma` | out | adiabatic gradient (K per dbar) | - |
+| `gamma_per_km_dbar` | out | adiabatic gradient (K per 1000 dbar) | - |
 
 **Applies when:** 0 <= S <= 42; -2 °C <= T <= 40 °C.
 
@@ -2154,7 +2114,7 @@ gamma_per_km_dbar = 0.1273870565
 
 <a id="pure_water_density"></a>
 
-#### Density of pure water (SMOW, Bigg 1967) — `pure_water_density`
+#### Density of pure water (SMOW, Bigg 1967): `pure_water_density`
 
 Density of standard mean ocean water (no salt) at atmospheric pressure, UNESCO 1983 polynomial.
 
@@ -2181,7 +2141,7 @@ rho = 999.9749579 kg/m^3
 
 <a id="seawater_density_surface"></a>
 
-#### Density of seawater at the surface (UNESCO 1981) — `seawater_density_surface`
+#### Density of seawater at the surface (UNESCO 1981), `seawater_density_surface`
 
 Density of seawater at atmospheric pressure from practical salinity and temperature (EOS-80), and sigma-t.
 
@@ -2191,10 +2151,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `S` | in | practical salinity (PSS-78) | — |
+| `S` | in | practical salinity (PSS-78) | - |
 | `T` | in | water temperature | K |
 | `rho` | out | density (kg/m^3) | kg/m^3 |
-| `sigma_t` | out | sigma-t = rho - 1000 (kg/m^3) | — |
+| `sigma_t` | out | sigma-t = rho - 1000 (kg/m^3) | - |
 
 **Applies when:** 0 <= S <= 42; -2 °C <= T <= 40 °C.
 
@@ -2212,7 +2172,7 @@ sigma_t = 25.97196289
 
 <a id="ocean_depth_from_pressure"></a>
 
-#### Depth from sea pressure (Fofonoff and Millard 1983) — `ocean_depth_from_pressure`
+#### Depth from sea pressure (Fofonoff and Millard 1983), `ocean_depth_from_pressure`
 
 Depth in the ocean from sea pressure and latitude (UNESCO 1983 standard algorithm).
 
@@ -2223,7 +2183,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `p` | in | sea pressure (0 at the surface) | Pa |
-| `lat` | in | latitude (degrees, north positive) | — |
+| `lat` | in | latitude (degrees, north positive) | - |
 | `depth` | out | depth (m) | m |
 
 **Applies when:** 0 <= p <= 12,000 dbar.
@@ -2241,7 +2201,7 @@ depth = 990.8082107 m
 
 <a id="seawater_freezing_point"></a>
 
-#### Freezing point of seawater (UNESCO 1983) — `seawater_freezing_point`
+#### Freezing point of seawater (UNESCO 1983): `seawater_freezing_point`
 
 The freezing temperature of seawater from practical salinity and sea pressure (Millero 1978).
 
@@ -2251,10 +2211,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `S` | in | practical salinity (PSS-78) | — |
+| `S` | in | practical salinity (PSS-78) | - |
 | `p` | in | sea pressure (0 at the surface; default 0) (optional) | Pa |
 | `Tf` | out | freezing temperature (K) | K |
-| `Tf_C` | out | freezing temperature (°C, ITS-90) | — |
+| `Tf_C` | out | freezing temperature (°C, ITS-90) | - |
 
 **Applies when:** 4 <= S <= 40; 0 <= p <= 500 dbar.
 
@@ -2272,7 +2232,7 @@ Tf_C = -1.9218401
 
 <a id="seawater_density"></a>
 
-#### In-situ density of seawater (EOS-80) — `seawater_density`
+#### In-situ density of seawater (EOS-80): `seawater_density`
 
 In-situ density of seawater from practical salinity, temperature and sea pressure with the secant bulk modulus.
 
@@ -2282,11 +2242,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `S` | in | practical salinity (PSS-78) | — |
+| `S` | in | practical salinity (PSS-78) | - |
 | `T` | in | in-situ temperature | K |
 | `p` | in | sea pressure (0 at the surface) | Pa |
 | `rho` | out | in-situ density (kg/m^3) | kg/m^3 |
-| `sigma` | out | rho - 1000 (kg/m^3) | — |
+| `sigma` | out | rho - 1000 (kg/m^3) | - |
 
 **Applies when:** 0 <= S <= 42; -2 °C <= T <= 40 °C; 0 <= p <= 10,000 dbar.
 
@@ -2305,7 +2265,7 @@ sigma = 46.01684344
 
 <a id="seawater_potential_temperature"></a>
 
-#### Potential temperature of seawater (Fofonoff 1977) — `seawater_potential_temperature`
+#### Potential temperature of seawater (Fofonoff 1977), `seawater_potential_temperature`
 
 The temperature a seawater parcel would have if moved adiabatically to a reference pressure (default the surface), by a fourth-order Runge-Kutta integration of the adiabatic gradient.
 
@@ -2315,12 +2275,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `S` | in | practical salinity (PSS-78) | — |
+| `S` | in | practical salinity (PSS-78) | - |
 | `T` | in | in-situ temperature | K |
 | `p` | in | sea pressure (0 at the surface) | Pa |
 | `pr` | in | reference sea pressure (default 0, the surface) (optional) | Pa |
 | `theta` | out | potential temperature (K) | K |
-| `theta_C` | out | potential temperature (°C) | — |
+| `theta_C` | out | potential temperature (°C) | - |
 | `dtheta` | out | theta - T (K) | K |
 
 **Applies when:** 0 <= S <= 42; -2 °C <= T <= 40 °C.
@@ -2342,7 +2302,7 @@ dtheta = -0.486796787 K
 
 <a id="ocean_pressure_from_depth"></a>
 
-#### Sea pressure at a depth (Saunders 1981) — `ocean_pressure_from_depth`
+#### Sea pressure at a depth (Saunders 1981): `ocean_pressure_from_depth`
 
 Sea pressure at a depth in the ocean, allowing for latitude (Saunders 1981).
 
@@ -2353,9 +2313,9 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `depth` | in | depth below the sea surface | m |
-| `lat` | in | latitude (degrees, north positive) | — |
+| `lat` | in | latitude (degrees, north positive) | - |
 | `p` | out | sea pressure (Pa) | Pa |
-| `p_dbar` | out | sea pressure (dbar) | — |
+| `p_dbar` | out | sea pressure (dbar) | - |
 
 **Applies when:** 0 <= depth <= 11,000 m.
 
@@ -2373,7 +2333,7 @@ p_dbar = 1009.55403
 
 <a id="sound_speed_seawater"></a>
 
-#### Speed of sound in seawater (Chen and Millero 1977) — `sound_speed_seawater`
+#### Speed of sound in seawater (Chen and Millero 1977), `sound_speed_seawater`
 
 Speed of sound in seawater from practical salinity, temperature and sea pressure (UNESCO 1983 algorithm).
 
@@ -2383,7 +2343,7 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `S` | in | practical salinity (PSS-78) | — |
+| `S` | in | practical salinity (PSS-78) | - |
 | `T` | in | water temperature | K |
 | `p` | in | sea pressure (0 at the surface) | Pa |
 | `c` | out | speed of sound (m/s) | m/s |
@@ -2404,7 +2364,7 @@ c = 1506.346784 m/s
 
 <a id="wave_dispersion"></a>
 
-#### Water-wave dispersion at finite depth — `wave_dispersion`
+#### Water-wave dispersion at finite depth: `wave_dispersion`
 
 Wavelength, phase speed and group speed of a linear surface gravity wave of period T in water of depth h, from the full dispersion relation omega^2 = g k tanh(k h) (deep and shallow limits included).
 
@@ -2419,7 +2379,7 @@ $$
 | `L` | out | wavelength (m) | m |
 | `c` | out | phase speed (m/s) | m/s |
 | `cg` | out | group speed (m/s) | m/s |
-| `kh` | out | relative depth k h | — |
+| `kh` | out | relative depth k h | - |
 | `L0` | out | deep-water wavelength g T^2/(2 pi) (m) | m |
 
 **Applies when:** 0.5 <= T <= 60 s; 0 < h <= 11,000 m; linear (small-amplitude) waves.
@@ -2443,7 +2403,7 @@ L0 = 156.0776823 m
 
 <a id="seafloor_depth_age"></a>
 
-#### Depth of the ocean floor with age (half-space cooling) — `seafloor_depth_age`
+#### Depth of the ocean floor with age (half-space cooling), `seafloor_depth_age`
 
 Seafloor depth as oceanic lithosphere cools and contracts with age (half-space cooling, isostatic compensation under water). Defaults: ridge depth 2500 m, mantle 1300 °C, water 0 °C, alpha 3e-5 1/K, kappa 1e-6 m^2/s, rho_m 3300 and rho_w 1000 kg/m^3.
 
@@ -2453,7 +2413,7 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `t` | in | age of the seafloor (millions of years) | — |
+| `t` | in | age of the seafloor (millions of years) | - |
 | `dr` | in | depth at the ridge (default 2500 m) (optional) | m |
 | `Tm` | in | mantle temperature (default 1300 °C) (optional) | K |
 | `Tw` | in | seawater temperature (default 0 °C) (optional) | K |
@@ -2479,7 +2439,7 @@ subsidence = 2508.087917 m
 
 <a id="plate_velocity"></a>
 
-#### Plate velocity from an Euler pole — `plate_velocity`
+#### Plate velocity from an Euler pole: `plate_velocity`
 
 Speed and direction of a point on a rigid plate rotating about an Euler pole (sphere of radius 6371 km).
 
@@ -2489,13 +2449,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `pole_lat` | in | latitude of the Euler pole | — |
-| `pole_lon` | in | longitude of the Euler pole | — |
-| `omega` | in | rotation rate about the pole, counter-clockwise positive (degrees per Myr) | — |
-| `lat` | in | latitude of the site | — |
-| `lon` | in | longitude of the site | — |
-| `speed` | out | plate speed (mm/yr) | — |
-| `azimuth` | out | direction of motion (degrees from north) | — |
+| `pole_lat` | in | latitude of the Euler pole | - |
+| `pole_lon` | in | longitude of the Euler pole | - |
+| `omega` | in | rotation rate about the pole, counter-clockwise positive (degrees per Myr) | - |
+| `lat` | in | latitude of the site | - |
+| `lon` | in | longitude of the site | - |
+| `speed` | out | plate speed (mm/yr) | - |
+| `azimuth` | out | direction of motion (degrees from north) | - |
 
 **Applies when:** rigid plate on a sphere of radius 6371 km; site 0.5 to 179.5 degrees from the pole.
 
@@ -2518,7 +2478,7 @@ azimuth = 123.0201167
 
 <a id="daily_mean_insolation"></a>
 
-#### Daily mean insolation at the top of the atmosphere — `daily_mean_insolation`
+#### Daily mean insolation at the top of the atmosphere, `daily_mean_insolation`
 
 The 24-hour mean solar flux on a horizontal surface at the top of the atmosphere for a latitude and solar declination (polar day and polar night included).
 
@@ -2528,11 +2488,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `lat` | in | latitude (degrees, north positive) | — |
-| `decl` | in | solar declination (degrees) | — |
+| `lat` | in | latitude (degrees, north positive) | - |
+| `decl` | in | solar declination (degrees) | - |
 | `S0` | in | solar constant (at the actual Earth-Sun distance) | W/m^2 |
 | `Q` | out | daily mean insolation (W/m^2) | W/m^2 |
-| `day_length_h` | out | length of the day (hours) | — |
+| `day_length_h` | out | length of the day (hours) | - |
 
 **Applies when:** |latitude| < 89.9; |declination| <= 23.5.
 
@@ -2551,7 +2511,7 @@ day_length_h = 15.42589241
 
 <a id="planetary_equilibrium_temperature"></a>
 
-#### Planetary equilibrium (effective radiating) temperature — `planetary_equilibrium_temperature`
+#### Planetary equilibrium (effective radiating) temperature, `planetary_equilibrium_temperature`
 
 The temperature at which a planet radiating as a black body balances the sunlight it absorbs.
 
@@ -2562,7 +2522,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `S` | in | solar flux at the planet's distance (solar constant) | W/m^2 |
-| `albedo` | in | planetary (Bond) albedo, a fraction | — |
+| `albedo` | in | planetary (Bond) albedo, a fraction | - |
 | `Te` | out | equilibrium temperature (K) | K |
 | `absorbed` | out | absorbed flux per unit surface area, S(1 - albedo)/4 (W/m^2) | W/m^2 |
 
@@ -2582,7 +2542,7 @@ absorbed = 238.175 W/m^2
 
 <a id="blackbody_flux"></a>
 
-#### Radiant flux emitted by a black or grey body (Stefan-Boltzmann) — `blackbody_flux`
+#### Radiant flux emitted by a black or grey body (Stefan-Boltzmann), `blackbody_flux`
 
 Power emitted per unit area by a surface of temperature T and (grey) emissivity eps.
 
@@ -2593,7 +2553,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `T` | in | surface temperature | K |
-| `eps` | in | emissivity (0 < eps <= 1; default 1, a black body) (optional) | — |
+| `eps` | in | emissivity (0 < eps <= 1; default 1, a black body) (optional) | - |
 | `F` | out | emitted flux (W/m^2) | W/m^2 |
 
 **Applies when:** 0 < eps <= 1; grey body: emissivity independent of wavelength.
@@ -2611,7 +2571,7 @@ F = 390.1051535 W/m^2
 
 <a id="greenhouse_single_layer"></a>
 
-#### Surface temperature in the single-layer greenhouse model — `greenhouse_single_layer`
+#### Surface temperature in the single-layer greenhouse model, `greenhouse_single_layer`
 
 Surface and atmosphere temperatures when one isothermal layer, transparent to sunlight, absorbs and emits a fraction eps of thermal radiation.
 
@@ -2622,8 +2582,8 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `S` | in | solar constant | W/m^2 |
-| `albedo` | in | planetary (Bond) albedo, a fraction | — |
-| `eps` | in | long-wave emissivity (absorptivity) of the atmospheric layer | — |
+| `albedo` | in | planetary (Bond) albedo, a fraction | - |
+| `eps` | in | long-wave emissivity (absorptivity) of the atmospheric layer | - |
 | `Ts` | out | surface temperature (K) | K |
 | `Ta` | out | atmosphere temperature (K) | K |
 
@@ -2644,7 +2604,7 @@ Ta = 242.2317974 K
 
 <a id="greenhouse_n_layers"></a>
 
-#### Surface temperature with N fully absorbing layers — `greenhouse_n_layers`
+#### Surface temperature with N fully absorbing layers, `greenhouse_n_layers`
 
 Surface and layer temperatures of the N-layer grey-atmosphere model (each layer absorbs all thermal radiation).
 
@@ -2655,8 +2615,8 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `S` | in | solar constant | W/m^2 |
-| `albedo` | in | planetary (Bond) albedo, a fraction | — |
-| `N` | in | number of absorbing layers (whole number) | — |
+| `albedo` | in | planetary (Bond) albedo, a fraction | - |
+| `N` | in | number of absorbing layers (whole number) | - |
 | `Ts` | out | surface temperature (K) | K |
 | `T_top` | out | temperature of the top layer (K) | K |
 | `T_bottom_layer` | out | temperature of the lowest layer (K) | K |
@@ -2678,7 +2638,7 @@ T_bottom_layer = 302.7461356 K
 
 <a id="wien_peak_wavelength"></a>
 
-#### Wavelength of peak blackbody emission (Wien) — `wien_peak_wavelength`
+#### Wavelength of peak blackbody emission (Wien), `wien_peak_wavelength`
 
 The wavelength at which a black body of temperature T emits most strongly per unit wavelength.
 
@@ -2690,7 +2650,7 @@ $$
 |---|---|---|---|
 | `T` | in | temperature of the body | K |
 | `lambda_max` | out | peak wavelength (m) | m |
-| `lambda_um` | out | peak wavelength (micrometres) | — |
+| `lambda_um` | out | peak wavelength (micrometres) | - |
 
 **Applies when:** 1 K <= T <= 1e5 K.
 
@@ -2709,7 +2669,7 @@ lambda_um = 0.5020394932
 
 <a id="stokes_settling_velocity"></a>
 
-#### Settling velocity of a small grain (Stokes) — `stokes_settling_velocity`
+#### Settling velocity of a small grain (Stokes), `stokes_settling_velocity`
 
 Terminal settling velocity of a small sphere in a viscous fluid (Stokes' law), with the grain Reynolds number (refused when it exceeds 1).
 
@@ -2724,7 +2684,7 @@ $$
 | `rho_f` | in | fluid density | kg/m^3 |
 | `mu` | in | dynamic viscosity of the fluid | Pa*s |
 | `w` | out | settling velocity (m/s) | m/s |
-| `Re` | out | grain Reynolds number | — |
+| `Re` | out | grain Reynolds number | - |
 
 **Applies when:** grain Reynolds number <= 1; a smooth sphere, no neighbouring grains.
 
@@ -2746,7 +2706,7 @@ Re = 0.1123678646
 
 <a id="sp_epicentral_distance"></a>
 
-#### Distance to an earthquake from the S-P interval — `sp_epicentral_distance`
+#### Distance to an earthquake from the S-P interval, `sp_epicentral_distance`
 
 The distance from a station to the hypocentre from the delay between the S and P arrivals, for straight rays at constant P and S speeds.
 
@@ -2760,7 +2720,7 @@ $$
 | `vp` | in | P-wave speed | m/s |
 | `vs` | in | S-wave speed | m/s |
 | `distance` | out | distance to the source (m) | m |
-| `distance_km` | out | distance (km) | — |
+| `distance_km` | out | distance (km) | - |
 | `tp` | out | P travel time (s) | s |
 | `ts` | out | S travel time (s) | s |
 
@@ -2783,7 +2743,7 @@ ts = 24 s
 
 <a id="elastic_constants_from_velocities"></a>
 
-#### Elastic moduli and Poisson's ratio from Vp, Vs and density — `elastic_constants_from_velocities`
+#### Elastic moduli and Poisson's ratio from Vp, Vs and density, `elastic_constants_from_velocities`
 
 Shear modulus, Lamé's lambda, bulk modulus, Young's modulus and Poisson's ratio of an isotropic rock from its seismic velocities and density.
 
@@ -2800,7 +2760,7 @@ $$
 | `lam` | out | Lamé's first parameter (Pa) | Pa |
 | `K` | out | bulk modulus (Pa) | Pa |
 | `E` | out | Young's modulus (Pa) | Pa |
-| `nu` | out | Poisson's ratio | — |
+| `nu` | out | Poisson's ratio | - |
 
 **Applies when:** isotropic, linear elastic; Vp > sqrt(4/3) Vs.
 
@@ -2822,7 +2782,7 @@ nu = 0.250886451
 
 <a id="epicentral_distance"></a>
 
-#### Epicentral distance on a spherical Earth — `epicentral_distance`
+#### Epicentral distance on a spherical Earth: `epicentral_distance`
 
 Great-circle angular distance between an epicentre and a station, and its length on a sphere of radius 6371 km.
 
@@ -2832,12 +2792,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `lat1` | in | latitude of the first point (epicentre) | — |
-| `lon1` | in | longitude of the first point (epicentre) | — |
-| `lat2` | in | latitude of the second point (station) | — |
-| `lon2` | in | longitude of the second point (station) | — |
-| `delta` | out | epicentral distance (degrees) | — |
-| `distance_km` | out | great-circle distance (km) | — |
+| `lat1` | in | latitude of the first point (epicentre) | - |
+| `lon1` | in | longitude of the first point (epicentre) | - |
+| `lat2` | in | latitude of the second point (station) | - |
+| `lon2` | in | longitude of the second point (station) | - |
+| `delta` | out | epicentral distance (degrees) | - |
+| `distance_km` | out | great-circle distance (km) | - |
 
 **Applies when:** spherical Earth of radius 6371 km.
 
@@ -2857,7 +2817,7 @@ distance_km = 9557.635991
 
 <a id="geodesic_distance_azimuth"></a>
 
-#### Geodesic distance and azimuths on the WGS84 ellipsoid (Vincenty) — `geodesic_distance_azimuth`
+#### Geodesic distance and azimuths on the WGS84 ellipsoid (Vincenty), `geodesic_distance_azimuth`
 
 Distance along the WGS84 ellipsoid between two points, the azimuth from the first to the second and the back-azimuth, by Vincenty's inverse method.
 
@@ -2867,13 +2827,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `lat1` | in | latitude of the first point (epicentre) | — |
-| `lon1` | in | longitude of the first point (epicentre) | — |
-| `lat2` | in | latitude of the second point (station) | — |
-| `lon2` | in | longitude of the second point (station) | — |
+| `lat1` | in | latitude of the first point (epicentre) | - |
+| `lon1` | in | longitude of the first point (epicentre) | - |
+| `lat2` | in | latitude of the second point (station) | - |
+| `lon2` | in | longitude of the second point (station) | - |
 | `distance` | out | geodesic distance (m) | m |
-| `azimuth` | out | azimuth at point 1 (degrees from north) | — |
-| `back_azimuth` | out | back-azimuth from point 2 (degrees from north) | — |
+| `azimuth` | out | azimuth at point 1 (degrees from north) | - |
+| `back_azimuth` | out | back-azimuth from point 2 (degrees from north) | - |
 
 **Applies when:** WGS84 ellipsoid (a = 6378137 m, f = 1/298.257223563); 0.01 to 120 degrees apart.
 
@@ -2894,7 +2854,7 @@ back_azimuth = 31.66321763
 
 <a id="gutenberg_richter_b_value"></a>
 
-#### Gutenberg-Richter b-value (maximum likelihood) — `gutenberg_richter_b_value`
+#### Gutenberg-Richter b-value (maximum likelihood), `gutenberg_richter_b_value`
 
 The b-value of the Gutenberg-Richter law log10 N = a - b M by Aki's maximum-likelihood estimator, with Utsu's correction for magnitudes binned at width dM; also the a-value of the cumulative count at Mc.
 
@@ -2904,13 +2864,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `mags` | in | list of event magnitudes | — |
-| `Mc` | in | magnitude of completeness | — |
-| `dM` | in | magnitude bin width (0 for unbinned magnitudes; default 0) (optional) | — |
-| `b` | out | b-value | — |
-| `a` | out | a-value (log10 of the number of events >= Mc, plus b Mc) | — |
-| `n` | out | number of events used | — |
-| `mean` | out | mean magnitude of the events used | — |
+| `mags` | in | list of event magnitudes | - |
+| `Mc` | in | magnitude of completeness | - |
+| `dM` | in | magnitude bin width (0 for unbinned magnitudes; default 0) (optional) | - |
+| `b` | out | b-value | - |
+| `a` | out | a-value (log10 of the number of events >= Mc, plus b Mc) | - |
+| `n` | out | number of events used | - |
+| `mean` | out | mean magnitude of the events used | - |
 
 **Applies when:** at least 10 events with M >= Mc; magnitudes complete above Mc.
 
@@ -2930,7 +2890,7 @@ mean = 2.516666667
 
 <a id="local_magnitude"></a>
 
-#### Local (Richter) magnitude from Wood-Anderson amplitude — `local_magnitude`
+#### Local (Richter) magnitude from Wood-Anderson amplitude, `local_magnitude`
 
 Local magnitude from the zero-to-peak Wood-Anderson amplitude and the hypocentral distance, with the attenuation of Bakun and Joyner (1984), as ObsPy.
 
@@ -2942,7 +2902,7 @@ $$
 |---|---|---|---|
 | `A` | in | zero-to-peak Wood-Anderson amplitude | m |
 | `r` | in | hypocentral distance | m |
-| `ML` | out | local magnitude | — |
+| `ML` | out | local magnitude | - |
 
 **Applies when:** 10 km <= r <= 600 km; calibration of central California (Bakun and Joyner 1984).
 
@@ -2959,7 +2919,7 @@ ML = 4
 
 <a id="moment_magnitude"></a>
 
-#### Moment magnitude from seismic moment — `moment_magnitude`
+#### Moment magnitude from seismic moment: `moment_magnitude`
 
 Moment magnitude Mw of an earthquake from its scalar seismic moment (Hanks and Kanamori 1979, as ObsPy: Mw = log10(M0 in dyne cm)/1.5 - 10.7).
 
@@ -2970,8 +2930,8 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `M0` | in | scalar seismic moment | N*m |
-| `Mw` | out | moment magnitude | — |
-| `M0_dyne_cm` | out | seismic moment (dyne cm) | — |
+| `Mw` | out | moment magnitude | - |
+| `M0_dyne_cm` | out | seismic moment (dyne cm) | - |
 
 **Applies when:** 1e6 <= M0 <= 1e25 N m.
 
@@ -2988,7 +2948,7 @@ M0_dyne_cm = 1.1e+28
 
 <a id="nmo_velocity"></a>
 
-#### Normal-moveout velocity from reflection picks — `nmo_velocity`
+#### Normal-moveout velocity from reflection picks, `nmo_velocity`
 
 Stacking (NMO) velocity, zero-offset time and reflector depth from reflection travel times at several offsets, by a least-squares fit of t^2 = t0^2 + x^2/V^2.
 
@@ -2998,8 +2958,8 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `x` | in | source-receiver offsets (list, in metres) | — |
-| `t` | in | two-way reflection times (list, in seconds) | — |
+| `x` | in | source-receiver offsets (list, in metres) | - |
+| `t` | in | two-way reflection times (list, in seconds) | - |
 | `V_nmo` | out | NMO velocity (m/s) | m/s |
 | `t0` | out | zero-offset two-way time (s) | s |
 | `depth` | out | reflector depth V t0/2 for a constant velocity (m) | m |
@@ -3019,7 +2979,7 @@ depth = 1250.028105 m
 
 <a id="seismic_velocities_from_moduli"></a>
 
-#### P- and S-wave speeds from bulk and shear moduli — `seismic_velocities_from_moduli`
+#### P- and S-wave speeds from bulk and shear moduli, `seismic_velocities_from_moduli`
 
 Body-wave speeds of an isotropic elastic rock from its bulk modulus, shear modulus and density.
 
@@ -3034,7 +2994,7 @@ $$
 | `rho` | in | density of the rock | kg/m^3 |
 | `Vp` | out | P-wave speed (m/s) | m/s |
 | `Vs` | out | S-wave speed (m/s) | m/s |
-| `Vp_Vs` | out | Vp/Vs | — |
+| `Vp_Vs` | out | Vp/Vs | - |
 
 **Applies when:** isotropic, linear elastic; K > 0, mu > 0.
 
@@ -3054,7 +3014,7 @@ Vp_Vs = 1.732050808
 
 <a id="seismic_velocities_from_young"></a>
 
-#### P- and S-wave speeds from Young's modulus and Poisson's ratio — `seismic_velocities_from_young`
+#### P- and S-wave speeds from Young's modulus and Poisson's ratio, `seismic_velocities_from_young`
 
 Body-wave speeds of an isotropic elastic rock from Young's modulus, Poisson's ratio and density.
 
@@ -3065,11 +3025,11 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `E` | in | Young's modulus | Pa |
-| `nu` | in | Poisson's ratio | — |
+| `nu` | in | Poisson's ratio | - |
 | `rho` | in | density of the rock | kg/m^3 |
 | `Vp` | out | P-wave speed (m/s) | m/s |
 | `Vs` | out | S-wave speed (m/s) | m/s |
-| `Vp_Vs` | out | Vp/Vs | — |
+| `Vp_Vs` | out | Vp/Vs | - |
 
 **Applies when:** isotropic, linear elastic; -1 < nu < 0.5.
 
@@ -3087,4 +3047,4 @@ Vp_Vs = 1.732050808
 
 **What the worked example means:** This calculation determines seismic wave velocities for an isotropic elastic rock using Young's modulus, Poisson's ratio, and density. By converting these engineering constants into Lamé parameters, the model derives the primary wave speed as 5577.73 m/s and the secondary wave speed as 3220.31 m/s. The resulting velocity ratio of 1.73205 indicates how much faster compressional waves travel compared to shear waves in this specific material configuration.
 
-Questions and reports: support@ai999x.com. AI999X — The Future Is Self-Improving.
+Questions and reports: support@ai999x.com. AI999X, The Future Is Self-Improving.

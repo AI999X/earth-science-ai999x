@@ -1,5 +1,5 @@
 {
- "package": "1.1.0",
+ "package": "1.5.0",
  "pack": "1.0.1",
  "knowledge_db": null,
  "files": {
@@ -9,13 +9,7 @@
   "knowledge/reference_cases.json": "7414a14e2c4202a7fae8cdd14e1a2ef7267f35a9665b0633001349c698d4e4e7",
   "capabilities/procedures.py": "12d9408f4e489e678bb5ea5b3e675f962a708e7c05c63467cfd4fea142d2b58c",
   "capabilities/procedures_certified.json": "6e5bd6daa684e5b18a10df5c5ad3686dd7bce66c435404fc0a250a51c671f2b0",
-  "earth_science_knowledge_public.sqlite": "a64cccd8dcb265710fd4285fc5594337d70e6c853bcaaf540d90337455d8c4aa",
-  "search/encoder.int8.onnx": "521452d928a72da4d241b1835ab0f46b0e81ff58ffff0367b9a7029bd129fbd9",
-  "search/tokenizer.json": "b2f2deb461e6ad672b8e42aac29773e7a9be77d582cdf58808113ea43fda565e",
-  "search/index.json": "cbd28f9d940abc33d3bfd4a61beed818eda670deffcfe40b46845d84423f9ef9",
-  "reader/reader.int8.onnx": "ecee16f238097a01129c8c071809cc24d3edb25c7d73ca29bd5c383981ca0c33",
-  "reader/tokenizer.json": "a54ec88bce54ad97ea91cd47911b41025e80d47e13af62d47cf5758a65ba8387",
-  "reader/labels.json": "328c9073146573ae8e9890ac487d5a4cfe6914fef45fb0047633ac580f8fff80"
+  "earth_science_knowledge_public.sqlite": "d4de8d3cf1b9082a9a4e82b9e182bc0d70e14093f256d826b9047436d12f4d4a"
  },
  "engine": [
   "__init__.py",
