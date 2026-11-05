@@ -4,7 +4,7 @@
 
 **[Desktop app & command line](https://www.ai999x.com/desktop-cli/)** · **[Compute in your browser](https://www.ai999x.com/models/earth-science-ai999x/#try)** · **[Install (Python)](https://pypi.org/project/earth-science-ai999x/)** · **[Guides](https://huggingface.co/AI999X/earth-science-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/earth-science-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.3
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.1.0
 
 Field: **Physical Sciences** · Tasks: Question Answering, Token Classification, Text Classification, Sentence Similarity, Feature Extraction
 
@@ -20,26 +20,13 @@ earth-science-ai999x is an offline, deterministic Python solver that answers ear
 
 | Way to run it | For | Get it |
 |---|---|---|
-| **AI999X Earth Science desktop app** 1.2.0 | Windows, Linux — this model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-earth-science-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-earth-science-1.2.0-linux-x86_64.tar.gz) |
-| **AI999X desktop app** 1.2.0 | Windows, Linux — every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-1.2.0-linux-x86_64.tar.gz) |
-| **Command line** (`earth-science`) | Windows, Linux — one program per model, offline, no Python | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz) |
+| **AI999X Earth Science desktop app** 1.4.0 | Windows, Linux — this model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-earth-science-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-earth-science-1.4.0-linux-x86_64.tar.gz) |
+| **AI999X desktop app** 1.4.0 | Windows, Linux — every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz) |
+| **Command line** (`earth-science`) | Windows, Linux — one program per model, offline, no Python | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz) |
 | **In your browser** | any device — nothing to install | [Compute on the model page](https://www.ai999x.com/models/earth-science-ai999x/#try) |
 | **Python** | Python 3.10+ | `pip install earth-science-ai999x` |
 
-Checksums: [SHA256SUMS](https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS) · every version: [https://www.ai999x.com/downloads/desktop/latest/](https://www.ai999x.com/downloads/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
-
-## Rust versions
-
-Earth Science also comes as native programs compiled from Rust, version 1.2.0 of the AI999X desktop app and command line: they run offline on your computer and need no Python. Each file is in this repository's `rust/` folder, on the [GitHub release v1.0.3](https://github.com/AI999X/earth-science-ai999x/releases/tag/v1.0.3) and on the website.
-
-| Program | System | File | Size | Download | Use |
-|---|---|---|---|---|---|
-| Desktop app (Earth Science) | Windows x86-64 | `ai999x-earth-science-1.2.0-windows-x86_64.zip` | 6.9 MB | [Hub](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/rust/ai999x-earth-science-1.2.0-windows-x86_64.zip) · [GitHub](https://github.com/AI999X/earth-science-ai999x/releases/download/v1.0.3/ai999x-earth-science-1.2.0-windows-x86_64.zip) · [website](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-earth-science-1.2.0-windows-x86_64.zip) | unzip, then double-click `ai999x-earth-science.exe` (no installer) |
-| Desktop app (Earth Science) | Linux x86-64 | `ai999x-earth-science-1.2.0-linux-x86_64.tar.gz` | 7.8 MB | [Hub](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/rust/ai999x-earth-science-1.2.0-linux-x86_64.tar.gz) · [GitHub](https://github.com/AI999X/earth-science-ai999x/releases/download/v1.0.3/ai999x-earth-science-1.2.0-linux-x86_64.tar.gz) · [website](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-earth-science-1.2.0-linux-x86_64.tar.gz) | extract, then run `./ai999x-earth-science` (X11 or Wayland desktop) |
-| Command line (`earth-science`) | Windows x86-64 | `ai999x-earth-science-cli-1.2.0-windows-x86_64.zip` | 2.7 MB | [Hub](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/rust/ai999x-earth-science-cli-1.2.0-windows-x86_64.zip) · [GitHub](https://github.com/AI999X/earth-science-ai999x/releases/download/v1.0.3/ai999x-earth-science-cli-1.2.0-windows-x86_64.zip) · [website (all models)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-windows-x86_64.zip) | unzip, then `earth-science.exe ask "<question>"` or `earth-science.exe solve <capability> name=value` |
-| Command line (`earth-science`) | Linux x86-64 | `ai999x-earth-science-cli-1.2.0-linux-x86_64.tar.gz` | 2.7 MB | [Hub](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/rust/ai999x-earth-science-cli-1.2.0-linux-x86_64.tar.gz) · [GitHub](https://github.com/AI999X/earth-science-ai999x/releases/download/v1.0.3/ai999x-earth-science-cli-1.2.0-linux-x86_64.tar.gz) · [website (all models)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz) | extract, then `./earth-science ask "<question>"` or `./earth-science solve <capability> name=value` |
-
-The command-line archive holds `earth-science` with a README of its commands and examples, the licence and the notice. Checksums: [`rust/SHA256SUMS`](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/rust/SHA256SUMS) (`sha256sum -c SHA256SUMS`).
+Checksums: [SHA256SUMS](https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS) · every version: [https://downloads.ai999x.com/desktop/latest/](https://downloads.ai999x.com/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
 
 ## Quick start
 
@@ -50,11 +37,11 @@ Download **AI999X Earth Science** for your system (above), unpack it and start i
 Linux, from a terminal:
 
 ```bash
-curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-earth-science-1.2.0-linux-x86_64.tar.gz
-curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-earth-science-1.4.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-earth-science-1.2.0-linux-x86_64.tar.gz
-./ai999x-earth-science-1.2.0-linux-x86_64/ai999x-earth-science
+tar xzf ai999x-earth-science-1.4.0-linux-x86_64.tar.gz
+./ai999x-earth-science-1.4.0-linux-x86_64/ai999x-earth-science
 ```
 
 ### Command line
@@ -62,23 +49,23 @@ tar xzf ai999x-earth-science-1.2.0-linux-x86_64.tar.gz
 Linux:
 
 ```bash
-curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz
-curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.2.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.2.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 earth-science --version
 ```
 
 Windows (PowerShell):
 
 ```powershell
-$F = "ai999x-cli-1.2.0-windows-x86_64.zip"
-Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.2.0/$F" -OutFile $F
-Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.4.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.2.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 earth-science --version
 ```
@@ -123,26 +110,6 @@ T_lcl = 290.8124964 K
   T = 303.15 K
   Td = 293.15 K
   assumes: Td <= T; 100 hPa <= p <= 1100 hPa
-```
-
-**Draw the figures** — The live figures for your own inputs, written as SVG files into the folder given with --out (here the current folder); open them in any browser. Without --out the SVG text comes back as JSON.
-
-```console
-$ earth-science figures lifting_condensation_level "p=100000 Pa" "T=303.15 K" "Td=293.15 K" --out .
-[
-  {
-    "slug": "lifting-condensation-level-live-1",
-    "title": "LCL pressure (Pa) as starting pressure varies",
-    "caption": "LCL pressure (Pa) as p runs from 2.5e+04 to 1.075e+05 Pa, every other input as you entered it (23 solutions). Marked: your p = 1e+05 Pa gives p_lcl = 8.642e+04. Your inputs: p = 100000 Pa, T = 303.15 K, Td = 293.15 K.",
-    "file": "./lifting-condensation-level-live-1.svg"
-  },
-  {
-    "slug": "lifting-condensation-level-live-2",
-    "title": "LCL pressure (Pa) as starting dewpoint varies",
-    "caption": "LCL pressure (Pa) as Td runs from 229.7 to 301.3 K, every other input as you entered it (25 solutions). Marked: your Td = 293.1 K gives p_lcl = 8.642e+04. Your inputs: p = 100000 Pa, T = 303.15 K, Td = 293.15 K.",
-    "file": "./lifting-condensation-level-live-2.svg"
-  }
-]
 ```
 
 **Many questions at once** — One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | earth-science batch
@@ -311,7 +278,7 @@ _What this means:_ This calculation determines the stability of the atmosphere b
 
 | Property | Value |
 |---|---|
-| Package | `earth-science-ai999x` 1.0.3 (import `earth_science_ai999x`) |
+| Package | `earth-science-ai999x` 1.1.0 (import `earth_science_ai999x`) |
 | Type | Deterministic neuro-symbolic earth science engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 85 certified procedures |
 | Knowledge pack | version 1.0.1 |
@@ -345,7 +312,7 @@ earth_science.ask("Who created you?").message
 # -> earth-science-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-The Python package also installs a Python command, `earth-science-ai999x "<question>"`; for the native program use `earth-science` (above). The outputs above were produced by running this exact code on earth-science-ai999x 1.0.3.
+The Python package also installs a Python command, `earth-science-ai999x "<question>"`; for the native program use `earth-science` (above). The outputs above were produced by running this exact code on earth-science-ai999x 1.1.0.
 
 ## Find the right capability, and draw it
 
@@ -500,10 +467,10 @@ _Daily mean solar radiation at the top of the atmosphere (solar constant 1361 W/
 ## Citation
 
 ```bibtex
-@software{earth_science_ai999x_1_0_3,
+@software{earth_science_ai999x_1_1_0,
   title  = {earth-science-ai999x: an offline, verified earth science solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.0.3},
+  year   = {2026}, version = {1.1.0},
   url    = {https://huggingface.co/AI999X/earth-science-ai999x}
 }
 ```
