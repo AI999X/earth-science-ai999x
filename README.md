@@ -2,7 +2,7 @@
 
 [![tests](https://github.com/AI999X/earth-science-ai999x/actions/workflows/ci.yml/badge.svg)](https://github.com/AI999X/earth-science-ai999x/actions/workflows/ci.yml) [![PyPI](https://img.shields.io/pypi/v/earth-science-ai999x)](https://pypi.org/project/earth-science-ai999x/) [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face-yellow)](https://huggingface.co/AI999X/earth-science-ai999x)
 
-**[Install](https://pypi.org/project/earth-science-ai999x/)** · **[Capability guide](https://huggingface.co/AI999X/earth-science-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/earth-science-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
+**[Desktop app & command line](https://www.ai999x.com/desktop-cli/)** · **[Compute in your browser](https://www.ai999x.com/models/earth-science-ai999x/#try)** · **[Install (Python)](https://pypi.org/project/earth-science-ai999x/)** · **[Guides](https://huggingface.co/AI999X/earth-science-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/earth-science-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
 License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.3
 
@@ -12,7 +12,290 @@ earth-science-ai999x is an offline, deterministic Python solver that answers ear
 
 **earth-science-ai999x** is a compact, deterministic earth science engine for Python. It reads a question in plain English (or a typed call), picks a certified earth science capability, computes the answer exactly, checks it, and returns the result with its steps, units, LaTeX and assumptions — or an honest refusal that says what is missing. It runs fully offline on any CPU, needs no GPU, no API key and no internet, and is built to give **zero wrong answers**: when it is not sure, it refuses instead of guessing.
 
-[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-support%20development-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/ibnuljaiffarabi) ![License](https://img.shields.io/badge/license-Apache--2.0-blue) ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue) ![Offline](https://img.shields.io/badge/runs-offline%20on%20CPU-green)
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-support%20development-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/ibnuljaiffarabi) ![License](https://img.shields.io/badge/license-Apache--2.0-blue) ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue) ![Offline](https://img.shields.io/badge/runs-offline%20on%20CPU-green) ![Rust](https://img.shields.io/badge/Rust-Windows%20%7C%20Linux%20%7C%20WebAssembly-orange)
+
+**Run it your way.** earth-science-ai999x comes as the AI999X desktop app and as the command-line program `earth-science` for Windows and Linux, runs in your browser as WebAssembly, and installs as a Python package. The desktop app, the command line and the browser run the same compiled Rust program on your own device: offline, no Python needed.
+
+## Get it
+
+| Way to run it | For | Get it |
+|---|---|---|
+| **AI999X Earth Science desktop app** 1.2.0 | Windows, Linux — this model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-earth-science-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-earth-science-1.2.0-linux-x86_64.tar.gz) |
+| **AI999X desktop app** 1.2.0 | Windows, Linux — every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-1.2.0-linux-x86_64.tar.gz) |
+| **Command line** (`earth-science`) | Windows, Linux — one program per model, offline, no Python | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz) |
+| **In your browser** | any device — nothing to install | [Compute on the model page](https://www.ai999x.com/models/earth-science-ai999x/#try) |
+| **Python** | Python 3.10+ | `pip install earth-science-ai999x` |
+
+Checksums: [SHA256SUMS](https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS) · every version: [https://www.ai999x.com/downloads/desktop/latest/](https://www.ai999x.com/downloads/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
+
+## Rust versions
+
+Earth Science also comes as native programs compiled from Rust, version 1.2.0 of the AI999X desktop app and command line: they run offline on your computer and need no Python. Each file is in this repository's `rust/` folder, on the [GitHub release v1.0.3](https://github.com/AI999X/earth-science-ai999x/releases/tag/v1.0.3) and on the website.
+
+| Program | System | File | Size | Download | Use |
+|---|---|---|---|---|---|
+| Desktop app (Earth Science) | Windows x86-64 | `ai999x-earth-science-1.2.0-windows-x86_64.zip` | 6.9 MB | [Hub](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/rust/ai999x-earth-science-1.2.0-windows-x86_64.zip) · [GitHub](https://github.com/AI999X/earth-science-ai999x/releases/download/v1.0.3/ai999x-earth-science-1.2.0-windows-x86_64.zip) · [website](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-earth-science-1.2.0-windows-x86_64.zip) | unzip, then double-click `ai999x-earth-science.exe` (no installer) |
+| Desktop app (Earth Science) | Linux x86-64 | `ai999x-earth-science-1.2.0-linux-x86_64.tar.gz` | 7.8 MB | [Hub](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/rust/ai999x-earth-science-1.2.0-linux-x86_64.tar.gz) · [GitHub](https://github.com/AI999X/earth-science-ai999x/releases/download/v1.0.3/ai999x-earth-science-1.2.0-linux-x86_64.tar.gz) · [website](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-earth-science-1.2.0-linux-x86_64.tar.gz) | extract, then run `./ai999x-earth-science` (X11 or Wayland desktop) |
+| Command line (`earth-science`) | Windows x86-64 | `ai999x-earth-science-cli-1.2.0-windows-x86_64.zip` | 2.7 MB | [Hub](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/rust/ai999x-earth-science-cli-1.2.0-windows-x86_64.zip) · [GitHub](https://github.com/AI999X/earth-science-ai999x/releases/download/v1.0.3/ai999x-earth-science-cli-1.2.0-windows-x86_64.zip) · [website (all models)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-windows-x86_64.zip) | unzip, then `earth-science.exe ask "<question>"` or `earth-science.exe solve <capability> name=value` |
+| Command line (`earth-science`) | Linux x86-64 | `ai999x-earth-science-cli-1.2.0-linux-x86_64.tar.gz` | 2.7 MB | [Hub](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/rust/ai999x-earth-science-cli-1.2.0-linux-x86_64.tar.gz) · [GitHub](https://github.com/AI999X/earth-science-ai999x/releases/download/v1.0.3/ai999x-earth-science-cli-1.2.0-linux-x86_64.tar.gz) · [website (all models)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz) | extract, then `./earth-science ask "<question>"` or `./earth-science solve <capability> name=value` |
+
+The command-line archive holds `earth-science` with a README of its commands and examples, the licence and the notice. Checksums: [`rust/SHA256SUMS`](https://huggingface.co/AI999X/earth-science-ai999x/resolve/main/rust/SHA256SUMS) (`sha256sum -c SHA256SUMS`).
+
+## Quick start
+
+### Desktop app
+
+Download **AI999X Earth Science** for your system (above), unpack it and start it; type a question in words or pick a capability, fill in the form and press Compute. Figures and an explanation of the answer appear beside it. The AI999X desktop app has the same, with Earth Science among all AI999X models.
+
+Linux, from a terminal:
+
+```bash
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-earth-science-1.2.0-linux-x86_64.tar.gz
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS
+sha256sum -c --ignore-missing SHA256SUMS
+tar xzf ai999x-earth-science-1.2.0-linux-x86_64.tar.gz
+./ai999x-earth-science-1.2.0-linux-x86_64/ai999x-earth-science
+```
+
+### Command line
+
+Linux:
+
+```bash
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz
+curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS
+sha256sum -c --ignore-missing SHA256SUMS
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.2.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.2.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+earth-science --version
+```
+
+Windows (PowerShell):
+
+```powershell
+$F = "ai999x-cli-1.2.0-windows-x86_64.zip"
+Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.2.0/$F" -OutFile $F
+Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS" -OutFile SHA256SUMS
+(Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
+Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.2.0-windows-x86_64"; $env:Path += ";$D"
+[Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
+earth-science --version
+```
+
+Every command below was run as shown; the text under it is what the program printed.
+
+**Ask in words** — Write the question as you would say it: the program reads the quantities and their units, picks the capability and answers.
+
+```console
+$ earth-science ask "Lifting condensation level with pressure = 1000 hPa, temperature = 30 °C and dewpoint = 20 °C."
+Read as: Lifting condensation level (Romps 2017)
+p_lcl = 86421.30262 Pa
+T_lcl = 290.8124964 K
+  by: Lifting condensation level (Romps 2017)  (Romps (2017) Eq. 22: T_LCL = c/W_{-1}(RH^{1/a} c e^c) T, p_LCL = p (T_LCL/T)^{c_pm/R_m})
+  T = 303.15 K
+  Td = 293.15 K
+  p = 100000 Pa
+  assumes: Td <= T; 100 hPa <= p <= 1100 hPa
+```
+
+**What a capability needs** — The equation or method, every input and output with its SI unit. Read this before solve: it tells you the input names.
+
+```console
+$ earth-science info lifting_condensation_level
+Lifting condensation level (Romps 2017)
+  Romps (2017) Eq. 22: T_LCL = c/W_{-1}(RH^{1/a} c e^c) T, p_LCL = p (T_LCL/T)^{c_pm/R_m}
+  in   p        starting pressure [Pa]
+  in   T        starting temperature [K]
+  in   Td       starting dewpoint [K]
+  out  p_lcl    LCL pressure (Pa) [Pa]
+  out  T_lcl    LCL temperature (K) [K]
+```
+
+**Solve** — Inputs as name=value, each with any unit of the right kind. The answer lists every output, the method used, each input converted to SI, and the conditions the answer assumes.
+
+```console
+$ earth-science solve lifting_condensation_level "p=100000 Pa" "T=303.15 K" "Td=293.15 K"
+p_lcl = 86421.30262 Pa
+T_lcl = 290.8124964 K
+  by: Lifting condensation level (Romps 2017)  (Romps (2017) Eq. 22: T_LCL = c/W_{-1}(RH^{1/a} c e^c) T, p_LCL = p (T_LCL/T)^{c_pm/R_m})
+  p = 100000 Pa
+  T = 303.15 K
+  Td = 293.15 K
+  assumes: Td <= T; 100 hPa <= p <= 1100 hPa
+```
+
+**Draw the figures** — The live figures for your own inputs, written as SVG files into the folder given with --out (here the current folder); open them in any browser. Without --out the SVG text comes back as JSON.
+
+```console
+$ earth-science figures lifting_condensation_level "p=100000 Pa" "T=303.15 K" "Td=293.15 K" --out .
+[
+  {
+    "slug": "lifting-condensation-level-live-1",
+    "title": "LCL pressure (Pa) as starting pressure varies",
+    "caption": "LCL pressure (Pa) as p runs from 2.5e+04 to 1.075e+05 Pa, every other input as you entered it (23 solutions). Marked: your p = 1e+05 Pa gives p_lcl = 8.642e+04. Your inputs: p = 100000 Pa, T = 303.15 K, Td = 293.15 K.",
+    "file": "./lifting-condensation-level-live-1.svg"
+  },
+  {
+    "slug": "lifting-condensation-level-live-2",
+    "title": "LCL pressure (Pa) as starting dewpoint varies",
+    "caption": "LCL pressure (Pa) as Td runs from 229.7 to 301.3 K, every other input as you entered it (25 solutions). Marked: your Td = 293.1 K gives p_lcl = 8.642e+04. Your inputs: p = 100000 Pa, T = 303.15 K, Td = 293.15 K.",
+    "file": "./lifting-condensation-level-live-2.svg"
+  }
+]
+```
+
+**Many questions at once** — One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | earth-science batch
+
+`cases.jsonl`:
+
+```json
+{"key": "lifting_condensation_level", "inputs": {"p": "100000 Pa", "T": "303.15 K", "Td": "293.15 K"}}
+{"key": "seawater_density", "inputs": {"S": 35, "T": "2 degC", "p": "40 MPa"}}
+```
+
+```console
+$ earth-science batch < cases.jsonl
+{"outcome":"SOLVED","message":"","value":86421.3026232,"unit":"Pa","solved_for":"p_lcl","si":[["p",100000.0],["T",303.15],["Td",293.15]],"values":[["p_lcl",86421.3026232,"Pa"],["T_lcl",290.812496352,"K"]],"target":"p_lcl","phrase":"LCL pressure (Pa)","assumptions":["Td <= T","100 hPa <= p <= 1100 hPa"],"name":"Lifting condensation level (Romps 2017)","equation":"Romps (2017) Eq. 22: T_LCL = c/W_{-1}(RH^{1/a} c e^c) T, p_LCL = p (T_LCL/T)^{c_pm/R_m}"}
+{"outcome":"SOLVED","message":"","value":1046.01684344,"unit":"kg/m^3","solved_for":"rho","si":[["S",35.0],["T",275.15],["p",40000000.0]],"values":[["rho",1046.01684344,"kg/m^3"],["sigma",46.0168434363,""]],"target":"rho","phrase":"in-situ density (kg/m^3)","assumptions":["0 <= S <= 42","-2 °C <= T <= 40 °C","0 <= p <= 10,000 dbar"],"name":"In-situ density of seawater (EOS-80)","equation":"rho = rho(S,T,0)/(1 - P/K(S,T,P)), P in bar (UNESCO 1983)"}
+```
+
+### In your browser
+
+Open [Earth Science on ai999x.com](https://www.ai999x.com/models/earth-science-ai999x/#try), choose a capability and press **Compute**: the model runs on your own device as WebAssembly; nothing is sent anywhere. Change any input (any unit of the right kind) and the answer, its explanation and the figures follow.
+
+In your own page: `earth_science_ai999x.wasm` and the loader `ax-wasm.js` (https://www.ai999x.com/compute/rust/ax-wasm.js).
+
+### Python
+
+```bash
+pip install earth-science-ai999x
+```
+
+## Worked examples in every form
+
+The same worked example from the command line, from Python and in the browser. Each command-line output is what the program printed.
+
+### Heat index (NWS)
+
+The apparent temperature of the US National Weather Service: Rothfusz's regression with the NWS adjustments for low and high humidity.
+
+Command line:
+
+```console
+$ earth-science solve heat_index "T=305.15 K" RH=0.7
+HI = 313.5592737 K
+  by: Heat index (NWS)  (Rothfusz (1990) regression with the NWS adjustments (as MetPy), computed in °F)
+  T = 305.15 K
+  RH = 0.7
+  assumes: 80 °F <= T <= 130 °F; 0 <= RH <= 1
+```
+
+Python:
+
+```python
+import earth_science_ai999x as m
+
+a = m.solve("heat_index", T="305.15 K", RH="0.7")
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/earth-science-ai999x/#cap-heat_index) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the apparent temperature by combining the effects of air heat and humidity on the body's ability to cool itself through evaporation. Using the National Weather Service method, an input air temperature of 305.15 K and a relative humidity value of 0.7 produce a heat index result of 313.559 K. This metric helps assess potential health risks such as exhaustion or stroke during hot weather conditions.
+
+### Wind chill temperature index
+
+The wind chill temperature index of the 2001 North American formula (wind measured at 10 m).
+
+Command line:
+
+```console
+$ earth-science solve wind_chill "T=263.15 K" "V=8.333333333 m/s"
+WCT = 253.629502 K
+  by: Wind chill temperature index  (WCT = 13.12 + 0.6215 T - 11.37 V^0.16 + 0.3965 T V^0.16 (T in °C, V in km/h))
+  T = 263.15 K
+  V = 8.333333333 m/s
+  assumes: T <= 10 °C; V > 3 mph (4.8 km/h)
+```
+
+Python:
+
+```python
+import earth_science_ai999x as m
+
+a = m.solve("wind_chill", T="263.15 K", V="8.333333333 m/s")
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/earth-science-ai999x/#cap-wind_chill) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the wind chill temperature index, which represents how cold the air feels to human skin due to accelerated heat loss. Using the 2001 North American formula with inputs of air temperature 263.15 K and wind speed at ten meters 8.33333 m/s, the resulting perceived temperature is 253.63 K. This value helps assess the risk of frostbite and hypothermia under these specific weather conditions.
+
+### Period of inertial oscillations
+
+The period 2 pi/|f| of free inertial oscillations of the wind or an ocean current at a latitude.
+
+Command line:
+
+```console
+$ earth-science solve inertial_period lat=45
+T_inertial = 60927.21986 s
+T_hours = 16.92422774
+f = 0.0001031260793 1/s
+  by: Period of inertial oscillations  (T = 2 pi/|f| with f = 2 Omega sin(phi))
+  lat = 45
+  assumes: |latitude| >= 0.5 degrees
+```
+
+Python:
+
+```python
+import earth_science_ai999x as m
+
+a = m.solve("inertial_period", lat="45")
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/earth-science-ai999x/#cap-inertial_period) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the time required for a free-moving object to complete one circular path due to the Coriolis effect alone. Using the latitude 45, it computes the Coriolis parameter as 0.000103126 1/s and derives the inertial period of 60927.2 s. This result represents the natural timescale for oscillations in ocean currents or atmospheric winds at that specific location.
+
+### Brunt-Väisälä (buoyancy) frequency
+
+The buoyancy frequency of a stably stratified atmosphere from the potential temperature and its vertical gradient.
+
+Command line:
+
+```console
+$ earth-science solve brunt_vaisala_frequency "theta=300 K" "dtheta_dz=0.003 K/m"
+N = 0.009902853124 1/s
+period = 634.4823283 s
+  by: Brunt-Väisälä (buoyancy) frequency  (N = sqrt((g/theta) d theta/dz))
+  theta = 300 K
+  dtheta_dz = 0.003 K/m
+  assumes: d theta/dz > 0 (stable stratification)
+```
+
+Python:
+
+```python
+import earth_science_ai999x as m
+
+a = m.solve("brunt_vaisala_frequency", theta="300 K", dtheta_dz="0.003 K/m")
+print(a.values or (a.value, a.unit))
+```
+
+Browser: [open this capability on the model page](https://www.ai999x.com/models/earth-science-ai999x/#cap-brunt_vaisala_frequency) and press **Compute in your browser**.
+
+_What this means:_ This calculation determines the stability of the atmosphere by computing the Brunt-Väisälä frequency from the potential temperature and its vertical gradient. The resulting frequency of 0.00990285 1/s indicates how strongly an air parcel will oscillate if displaced vertically within this stable layer, corresponding to a full oscillation cycle that takes 634.482 s to complete.
+
+## Documentation
+
+- **Rust user guide** — the command line, every capability with a command and what it printed: [PDF](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_rust_guide.pdf) · [Markdown](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_rust_guide.md)
+- **Python guide** — every capability with a Python example: [PDF](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_capabilities.pdf) · [Markdown](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_capabilities.md)
+- **Desktop app & command line** — downloads, install, ask and search, figures, offline use, checksums: https://www.ai999x.com/desktop-cli/
+- **Model page** — compute in your browser, every capability explained: https://www.ai999x.com/models/earth-science-ai999x/
 
 ## Highlights
 
@@ -20,6 +303,7 @@ earth-science-ai999x is an offline, deterministic Python solver that answers ear
 - **Zero wrong answers by design.** Seven explicit outcomes — SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE, UNRECOGNIZED_FORMAT, INTERNAL_ERROR — never a silent guess. Every one of its 522 documented answers is reproduced exactly on every tested platform.
 - **Plain-English questions and a guaranteed typed interface.** `ask()` reads documented question forms; `solve(capability_id, **inputs)` always solves a supported task with valid inputs.
 - **Explains itself.** Steps, formulas in LaTeX, units, assumptions and the model used, ready for notebooks, tutoring apps and homework checkers.
+- **Native and in the browser.** Every capability also computes natively in Rust: the desktop app and the `earth-science` command line for Windows and Linux, and WebAssembly on the model page — no Python, no network.
 - **Small and portable.** Pure Python (sympy, mpmath); identical answers on Windows and Linux (Python 3.10, 3.11, 3.12, 3.13, 3.14).
 - **Coverage:** atmospheric thermodynamics and meteorology, climate and radiation balance, oceanography and seawater properties, seismology and geophysics, and geology.
 
@@ -38,7 +322,7 @@ earth-science-ai999x is an offline, deterministic Python solver that answers ear
 | Creator / engineer | Ibnul Jaif Farabi |
 | Organization | AI999X |
 
-## Quickstart
+## Python quick start
 
 ```bash
 pip install earth-science-ai999x
@@ -61,7 +345,7 @@ earth_science.ask("Who created you?").message
 # -> earth-science-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-Command line: `earth-science-ai999x "<question>"`, `earth-science-ai999x --capabilities`. The outputs above were produced by running this exact code on earth-science-ai999x 1.0.3.
+The Python package also installs a Python command, `earth-science-ai999x "<question>"`; for the native program use `earth-science` (above). The outputs above were produced by running this exact code on earth-science-ai999x 1.0.3.
 
 ## Find the right capability, and draw it
 
@@ -83,7 +367,7 @@ earth_science.search("Solve x^2 - 5x + 6 = 0", k=2)
 
 Capabilities are certified before they ship: each must reproduce hand-worked reference cases, reject a deliberately wrong variant (a control), and leave every benchmark answer unchanged.
 
-## Worked examples
+## Python worked examples, with their steps
 
 Each question was put to `earth-science-ai999x`; the answer is the one it returned, with the steps it took.
 

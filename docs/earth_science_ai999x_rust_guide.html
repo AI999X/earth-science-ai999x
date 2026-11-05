@@ -1,0 +1,1357 @@
+<!doctype html><html><head><meta charset="utf-8"><title>earth-science — user guide (Rust build)</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
+<style>
+@page{size:A4;margin:16mm 15mm}
+body{font-family:"Segoe UI",Arial,sans-serif;font-size:10.5pt;line-height:1.45;color:#1b1f24;max-width:880px;margin:auto}
+h1{font-size:22pt;border-bottom:2px solid #2b5c8a;padding-bottom:4px;margin-top:28px;page-break-before:always}
+h1:first-of-type{page-break-before:avoid}
+h2{font-size:15pt;color:#2b5c8a;margin-top:22px;page-break-after:avoid}
+h3{font-size:12pt;margin-top:16px;page-break-after:avoid}
+pre{background:#f4f6f8;border:1px solid #dde3e8;border-radius:4px;padding:8px 10px;font-size:8.8pt;white-space:pre-wrap;page-break-inside:avoid}
+code{font-family:Consolas,monospace;font-size:9pt;background:#f4f6f8;padding:0 2px}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;margin:8px 0;font-size:9pt;width:100%;page-break-inside:auto}
+th,td{border:1px solid #cfd6dd;padding:3px 6px;vertical-align:top;text-align:left}
+th{background:#eaf0f5}
+.math{margin:6px 0;overflow-x:auto}
+.badge{display:inline-block;color:#fff;border-radius:3px;padding:0 5px;font-size:8.5pt;white-space:nowrap}
+figure{margin:10px 0;text-align:center;page-break-inside:avoid}figure img{max-width:88%}.svgfig svg{max-width:88%;height:auto}
+figcaption{font-size:9pt;color:#555}
+.pb{page-break-after:always}
+</style></head><body>
+<h1>earth-science: the Earth Science program — user guide</h1>
+<p><strong>earth-science-ai999x 1.0.3</strong>, Rust build: command line, desktop app and browser. <strong>Creator / engineer:</strong> Ibnul Jaif Farabi · <strong>Company:</strong> AI999X · support@ai999x.com</p>
+<p>Earth Science covers atmospheric thermodynamics and meteorology, climate and radiation balance, oceanography and seawater properties, seismology and geophysics, and geology. This guide is about <code>earth-science</code>, the model as a self-contained program for Windows and Linux: 85 capabilities in 20 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model&#x27;s page (https://www.ai999x.com/models/earth-science-ai999x/); the Python package (<code>pip install earth-science-ai999x</code>) has its own guide. Every command output printed here is what the program printed.</p>
+<h2>Contents</h2>
+<ul><li>1. Get it: desktop app, command line, browser, Python</li><li>2. Quick start</li><li>3. Writing inputs</li><li>4. Outcomes and exit codes</li><li>5. Scripts and agents: batch and JSON</li><li>6. Figures</li><li>7. In a web page or Node.js: WebAssembly</li><li>8. Every capability</li></ul>
+<h2>1. Get it</h2>
+<p>Version 1.4.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS; the newest version is always under https://www.ai999x.com/downloads/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/</p>
+<table><thead><tr><th>what</th><th>system</th><th>download</th></tr></thead><tbody><tr><td>Desktop app: Earth Science</td><td>Windows x86-64</td><td>https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-earth-science-1.4.0-windows-x86_64.zip</td></tr><tr><td>Desktop app: Earth Science</td><td>Linux x86-64</td><td>https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-earth-science-1.4.0-linux-x86_64.tar.gz</td></tr><tr><td>Desktop app: all models</td><td>Windows x86-64</td><td>https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip</td></tr><tr><td>Desktop app: all models</td><td>Linux x86-64</td><td>https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz</td></tr><tr><td>Command line</td><td>Windows x86-64</td><td>https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip</td></tr><tr><td>Command line</td><td>Linux x86-64</td><td>https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz</td></tr></tbody></table>
+<h3>Desktop app</h3>
+<p>Earth Science in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-earth-science-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-earth-science.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:</p>
+<pre><code class="shell">curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-earth-science-1.4.0-linux-x86_64.tar.gz
+curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS
+sha256sum -c --ignore-missing SHA256SUMS
+tar xzf ai999x-earth-science-1.4.0-linux-x86_64.tar.gz
+./ai999x-earth-science-1.4.0-linux-x86_64/ai999x-earth-science</code></pre>
+<p>It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:</p>
+<pre><code class="shell">curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz
+curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS
+sha256sum -c --ignore-missing SHA256SUMS
+tar xzf ai999x-1.4.0-linux-x86_64.tar.gz
+./ai999x-1.4.0-linux-x86_64/ai999x</code></pre>
+<h3>Command line — Linux</h3>
+<p>The bundle holds one program per model; <code>earth-science</code> is this one. The checksum line should print OK.</p>
+<pre><code class="shell">curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
+curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS
+sha256sum -c --ignore-missing SHA256SUMS
+mkdir -p ~/.local/share &amp;&amp; tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
+echo &#x27;export PATH=&quot;$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH&quot;&#x27; &gt;&gt; ~/.bashrc &amp;&amp; source ~/.bashrc
+earth-science --version</code></pre>
+<h3>Command line — Windows (PowerShell)</h3>
+<p>The fourth line should print True.</p>
+<pre><code class="powershell">$F = &quot;ai999x-cli-1.4.0-windows-x86_64.zip&quot;
+Invoke-WebRequest &quot;https://www.ai999x.com/downloads/desktop/1.4.0/$F&quot; -OutFile $F
+Invoke-WebRequest &quot;https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS&quot; -OutFile SHA256SUMS
+(Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split &#x27; &#x27;)[0]
+Expand-Archive $F -DestinationPath &quot;$env:LOCALAPPDATA\AI999X&quot; -Force
+$D = &quot;$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64&quot;; $env:Path += &quot;;$D&quot;
+[Environment]::SetEnvironmentVariable(&quot;Path&quot;, [Environment]::GetEnvironmentVariable(&quot;Path&quot;, &quot;User&quot;) + &quot;;$D&quot;, &quot;User&quot;)
+earth-science --version</code></pre>
+<h3>In your browser</h3>
+<p>Open https://www.ai999x.com/models/earth-science-ai999x/, choose a capability and press Compute in your browser: the same program runs on your device as WebAssembly; nothing is sent anywhere.</p>
+<h3>Python</h3>
+<pre><code class="shell">pip install earth-science-ai999x</code></pre>
+<h2>2. Quick start</h2>
+<h3>2.1 Check the install</h3>
+<p>Prints the model, its version and that this is the Rust build.</p>
+<pre><code class="shell">$ earth-science --version
+earth-science-ai999x 1.0.3 (Rust build, ax-engine 0.1.0)</code></pre>
+<h3>2.2 Ask in words</h3>
+<p>Write the question as you would say it: the program reads the quantities and their units, picks the capability and answers.</p>
+<pre><code class="shell">$ earth-science ask &quot;Lifting condensation level with pressure = 1000 hPa, temperature = 30 °C and dewpoint = 20 °C.&quot;
+Read as: Lifting condensation level (Romps 2017)
+p_lcl = 86421.30262 Pa
+T_lcl = 290.8124964 K
+  by: Lifting condensation level (Romps 2017)  (Romps (2017) Eq. 22: T_LCL = c/W_{-1}(RH^{1/a} c e^c) T, p_LCL = p (T_LCL/T)^{c_pm/R_m})
+  T = 303.15 K
+  Td = 293.15 K
+  p = 100000 Pa
+  assumes: Td &lt;= T; 100 hPa &lt;= p &lt;= 1100 hPa</code></pre>
+<h3>2.3 Find a capability</h3>
+<p>Search the capabilities by what you want to know; the first column is the id to pass to info and solve.</p>
+<pre><code class="shell">$ earth-science search &quot;lifting condensation level (romps 2017)&quot;
+lifting_condensation_level           Lifting condensation level (Romps 2017)  (atmospheric thermodynamics)
+dry_adiabatic_ascent                 Temperature of a dry parcel after adiabatic ascent  (atmospheric thermodynamics)
+standard_atmosphere_height           Height of a pressure level in the standard atmosphere  (atmospheric thermodynamics)
+pratt_isostasy                       Column density by Pratt isostasy  (geodynamics)
+airy_isostasy                        Mountain root by Airy isostasy  (geodynamics)
+brunt_vaisala_frequency              Brunt-Väisälä (buoyancy) frequency  (atmospheric dynamics)
+geopotential_height                  Geopotential and geopotential height  (atmospheric thermodynamics)
+gravity_at_latitude                  Gravitational acceleration at a latitude and height  (geophysics)
+… 4 more</code></pre>
+<h3>2.4 List the capabilities</h3>
+<p>Every capability the program answers: its id (what you pass to solve) and its name.</p>
+<pre><code class="shell">$ earth-science list
+airy_isostasy                            Mountain root by Airy isostasy
+blackbody_flux                           Radiant flux emitted by a black or grey body (Stefan-Boltzmann)
+bouguer_slab                             Gravity anomaly of an infinite horizontal slab (Bouguer)
+brunt_vaisala_frequency                  Brunt-Väisälä (buoyancy) frequency
+buried_sphere_anomaly                    Gravity anomaly above a buried sphere
+co2_radiative_forcing                    Radiative forcing of a change in CO2 (Myhre et al. 1998)
+coriolis_parameter                       Coriolis parameter
+daily_mean_insolation                    Daily mean insolation at the top of the atmosphere
+… 77 more</code></pre>
+<h3>2.5 What a capability needs</h3>
+<p>The equation or method, every input and output with its SI unit. Read this before solve: it tells you the input names.</p>
+<pre><code class="shell">$ earth-science info lifting_condensation_level
+Lifting condensation level (Romps 2017)
+  Romps (2017) Eq. 22: T_LCL = c/W_{-1}(RH^{1/a} c e^c) T, p_LCL = p (T_LCL/T)^{c_pm/R_m}
+  in   p        starting pressure [Pa]
+  in   T        starting temperature [K]
+  in   Td       starting dewpoint [K]
+  out  p_lcl    LCL pressure (Pa) [Pa]
+  out  T_lcl    LCL temperature (K) [K]</code></pre>
+<h3>2.6 Solve</h3>
+<p>Inputs as name=value, each with any unit of the right kind. The answer lists every output, the method used, each input converted to SI, and the conditions the answer assumes.</p>
+<pre><code class="shell">$ earth-science solve lifting_condensation_level &quot;p=100000 Pa&quot; &quot;T=303.15 K&quot; &quot;Td=293.15 K&quot;
+p_lcl = 86421.30262 Pa
+T_lcl = 290.8124964 K
+  by: Lifting condensation level (Romps 2017)  (Romps (2017) Eq. 22: T_LCL = c/W_{-1}(RH^{1/a} c e^c) T, p_LCL = p (T_LCL/T)^{c_pm/R_m})
+  p = 100000 Pa
+  T = 303.15 K
+  Td = 293.15 K
+  assumes: Td &lt;= T; 100 hPa &lt;= p &lt;= 1100 hPa</code></pre>
+<h3>2.7 Machine-readable answer</h3>
+<p>--json prints the same answer as one line of JSON (values in SI): for scripts and other programs.</p>
+<pre><code class="shell">$ earth-science solve lifting_condensation_level &quot;p=100000 Pa&quot; &quot;T=303.15 K&quot; &quot;Td=293.15 K&quot; --json
+{&quot;outcome&quot;:&quot;SOLVED&quot;,&quot;message&quot;:&quot;&quot;,&quot;value&quot;:86421.3026232,&quot;unit&quot;:&quot;Pa&quot;,&quot;solved_for&quot;:&quot;p_lcl&quot;,&quot;si&quot;:[[&quot;p&quot;,100000.0],[&quot;T&quot;,303.15],[&quot;Td&quot;,293.15]],&quot;values&quot;:[[&quot;p_lcl&quot;,86421.3026232,&quot;Pa&quot;],[&quot;T_lcl&quot;,290.812496352,&quot;K&quot;]],&quot;target&quot;:&quot;p_lcl&quot;,&quot;phrase&quot;:&quot;LCL pressure (Pa)&quot;,&quot;assumptions&quot;:[&quot;Td &lt;= T&quot;,&quot;100 hPa &lt;= p &lt;= 1100 hPa&quot;],&quot;name&quot;:&quot;Lifting condensation level (Romps 2017)&quot;,&quot;equation&quot;:&quot;Romps (2017) Eq. 22: T_LCL = c/W_{-1}(RH^{1/a} c e^c) T, p_LCL = p (T_LCL/T)^{c_pm/R_m}&quot;}</code></pre>
+<h3>2.8 When an input is missing</h3>
+<p>No number is guessed: the answer names what is missing, shows a complete call, and the program exits with status 1.</p>
+<pre><code class="shell">$ earth-science solve lifting_condensation_level &quot;p=100000 Pa&quot; &quot;T=303.15 K&quot;
+NEEDS_INPUT: lifting_condensation_level needs Td (starting dewpoint). Example: solve(&#x27;lifting_condensation_level&#x27;, p=&#x27;100000 Pa&#x27;, T=&#x27;303.15 K&#x27;, Td=&#x27;293.15 K&#x27;).</code></pre>
+<h3>2.9 Draw the figures</h3>
+<p>The live figures for your own inputs, written as SVG files into the folder given with --out (here the current folder); open them in any browser. Without --out the SVG text comes back as JSON.</p>
+<pre><code class="shell">$ earth-science figures lifting_condensation_level &quot;p=100000 Pa&quot; &quot;T=303.15 K&quot; &quot;Td=293.15 K&quot; --out .
+[
+  {
+    &quot;slug&quot;: &quot;lifting-condensation-level-live-1&quot;,
+    &quot;title&quot;: &quot;LCL pressure (Pa) as starting pressure varies&quot;,
+    &quot;caption&quot;: &quot;LCL pressure (Pa) as p runs from 2.5e+04 to 1.075e+05 Pa, every other input as you entered it (23 solutions). Marked: your p = 1e+05 Pa gives p_lcl = 8.642e+04. Your inputs: p = 100000 Pa, T = 303.15 K, Td = 293.15 K.&quot;,
+    &quot;file&quot;: &quot;.\\lifting-condensation-level-live-1.svg&quot;
+  },
+  {
+    &quot;slug&quot;: &quot;lifting-condensation-level-live-2&quot;,
+    &quot;title&quot;: &quot;LCL pressure (Pa) as starting dewpoint varies&quot;,
+    &quot;caption&quot;: &quot;LCL pressure (Pa) as Td runs from 229.7 to 301.3 K, every other input as you entered it (25 solutions). Marked: your Td = 293.1 K gives p_lcl = 8.642e+04. Your inputs: p = 100000 Pa, T = 303.15 K, Td = 293.15 K.&quot;,
+    &quot;file&quot;: &quot;.\\lifting-condensation-level-live-2.svg&quot;
+  }
+]</code></pre>
+<h3>2.10 Many questions at once</h3>
+<p>One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | earth-science batch</p>
+<p><code>cases.jsonl</code>:</p>
+<pre><code class="json">{&quot;key&quot;: &quot;lifting_condensation_level&quot;, &quot;inputs&quot;: {&quot;p&quot;: &quot;100000 Pa&quot;, &quot;T&quot;: &quot;303.15 K&quot;, &quot;Td&quot;: &quot;293.15 K&quot;}}
+{&quot;key&quot;: &quot;seawater_density&quot;, &quot;inputs&quot;: {&quot;S&quot;: 35, &quot;T&quot;: &quot;2 degC&quot;, &quot;p&quot;: &quot;40 MPa&quot;}}</code></pre>
+<pre><code class="shell">$ earth-science batch &lt; cases.jsonl
+{&quot;outcome&quot;:&quot;SOLVED&quot;,&quot;message&quot;:&quot;&quot;,&quot;value&quot;:86421.3026232,&quot;unit&quot;:&quot;Pa&quot;,&quot;solved_for&quot;:&quot;p_lcl&quot;,&quot;si&quot;:[[&quot;p&quot;,100000.0],[&quot;T&quot;,303.15],[&quot;Td&quot;,293.15]],&quot;values&quot;:[[&quot;p_lcl&quot;,86421.3026232,&quot;Pa&quot;],[&quot;T_lcl&quot;,290.812496352,&quot;K&quot;]],&quot;target&quot;:&quot;p_lcl&quot;,&quot;phrase&quot;:&quot;LCL pressure (Pa)&quot;,&quot;assumptions&quot;:[&quot;Td &lt;= T&quot;,&quot;100 hPa &lt;= p &lt;= 1100 hPa&quot;],&quot;name&quot;:&quot;Lifting condensation level (Romps 2017)&quot;,&quot;equation&quot;:&quot;Romps (2017) Eq. 22: T_LCL = c/W_{-1}(RH^{1/a} c e^c) T, p_LCL = p (T_LCL/T)^{c_pm/R_m}&quot;}
+{&quot;outcome&quot;:&quot;SOLVED&quot;,&quot;message&quot;:&quot;&quot;,&quot;value&quot;:1046.01684344,&quot;unit&quot;:&quot;kg/m^3&quot;,&quot;solved_for&quot;:&quot;rho&quot;,&quot;si&quot;:[[&quot;S&quot;,35.0],[&quot;T&quot;,275.15],[&quot;p&quot;,40000000.0]],&quot;values&quot;:[[&quot;rho&quot;,1046.01684344,&quot;kg/m^3&quot;],[&quot;sigma&quot;,46.0168434363,&quot;&quot;]],&quot;target&quot;:&quot;rho&quot;,&quot;phrase&quot;:&quot;in-situ density (kg/m^3)&quot;,&quot;assumptions&quot;:[&quot;0 &lt;= S &lt;= 42&quot;,&quot;-2 °C &lt;= T &lt;= 40 °C&quot;,&quot;0 &lt;= p &lt;= 10,000 dbar&quot;],&quot;name&quot;:&quot;In-situ density of seawater (EOS-80)&quot;,&quot;equation&quot;:&quot;rho = rho(S,T,0)/(1 - P/K(S,T,P)), P in bar (UNESCO 1983)&quot;}</code></pre>
+<h2>3. Writing inputs</h2>
+<p>Inputs are written <code>name=value</code>, one per argument; <code>earth-science info &lt;capability&gt;</code> lists the names. Quote an argument that holds a space or brackets (bash, zsh and PowerShell all accept double quotes). The answer always states each input as it was read, converted to SI, so a misread unit is visible at once.</p>
+<table><thead><tr><th>kind</th><th>example</th><th>how it is read</th></tr></thead><tbody><tr><td>a number with a unit</td><td><code>&quot;R=0.128 nm&quot;</code></td><td>any unit of the same kind; converted to SI</td></tr><tr><td>a number in SI</td><td><code>R=1.28e-10</code></td><td>no unit means the SI unit shown by info</td></tr><tr><td>a choice</td><td><code>structure=FCC</code></td><td>one of the values info lists</td></tr><tr><td>a list or vector</td><td><code>&quot;v=[1, 2, 3]&quot; or &quot;v=1, 2, 3&quot;</code></td><td>brackets keep it a list</td></tr><tr><td>a matrix</td><td><code>&quot;A=[[1, 2], [3, 4]]&quot;</code></td><td>one list per row</td></tr><tr><td>true / false</td><td><code>inclusive=true</code></td><td>for yes/no options</td></tr></tbody></table>
+<p>An equation can be solved for any of its quantities: give the others and add <code>--target &lt;symbol&gt;</code>. Without <code>--target</code>, the program solves for the quantity the capability is named after.</p>
+<h2>4. Outcomes and exit codes</h2>
+<p>The program never guesses a number: when it cannot answer, it says why and exits with status 1, so a script can tell an answer from a refusal without reading the text.</p>
+<table><thead><tr><th>outcome</th><th>meaning</th><th>exit status</th></tr></thead><tbody><tr><td>SOLVED</td><td>the answer: every output with its unit, the method, the inputs in SI, the conditions assumed</td><td>0</td></tr><tr><td>NEEDS_INPUT</td><td>an input is missing; the message names it and shows a complete call</td><td>1</td></tr><tr><td>INVALID_INPUT</td><td>a value or unit of the wrong kind, an unknown input name, or a value outside the conditions</td><td>1</td></tr><tr><td>AMBIGUOUS</td><td>the inputs allow two different answers; say which one is meant</td><td>1</td></tr><tr><td>OUT_OF_SCOPE</td><td>the model has no capability for this, or the result would not be meaningful</td><td>1</td></tr><tr><td>(usage)</td><td>a command the program does not know: it prints its usage</td><td>2</td></tr></tbody></table>
+<h2>5. Scripts and agents: batch and JSON</h2>
+<p><code>earth-science solve ... --json</code> prints one answer as one line of JSON. <code>earth-science batch</code> reads one request per line on standard input and writes one JSON answer per line, in order, starting the program once for any number of requests. A request is <code>{&quot;key&quot;: &quot;&lt;capability&gt;&quot;, &quot;inputs&quot;: {&quot;name&quot;: &quot;value&quot;, ...}, &quot;target&quot;: null}</code>. In PowerShell, pipe the file in: <code>Get-Content cases.jsonl | earth-science batch</code>. <code>earth-science catalog</code> prints every capability with its inputs as JSON, to build forms or tool definitions.</p>
+<table><thead><tr><th>answer field</th><th>meaning</th></tr></thead><tbody><tr><td>outcome</td><td>one of the outcomes above</td></tr><tr><td>message</td><td>why there is no answer (empty when SOLVED)</td></tr><tr><td>value, unit</td><td>the main result in SI units</td></tr><tr><td>values</td><td>every output: [symbol, value, unit] (procedures)</td></tr><tr><td>target</td><td>the quantity solved for</td></tr><tr><td>si</td><td>each numeric input converted to SI: [symbol, value]</td></tr><tr><td>assumptions</td><td>the conditions the answer relies on</td></tr><tr><td>name, equation</td><td>the capability and its equation or method</td></tr></tbody></table>
+<pre><code class="python">import json, subprocess
+
+reqs = [{&quot;key&quot;: &quot;&lt;capability&gt;&quot;, &quot;inputs&quot;: {&quot;name&quot;: &quot;value&quot;}}]
+out = subprocess.run([&quot;earth-science&quot;, &quot;batch&quot;], input=&quot;\n&quot;.join(map(json.dumps, reqs)),
+                     capture_output=True, text=True, check=True).stdout
+answers = [json.loads(line) for line in out.splitlines()]</code></pre>
+<h2>6. Figures</h2>
+<p><code>earth-science figures &lt;capability&gt; name=value ... --out DIR</code> draws the live figures for those inputs and writes each as an SVG file into DIR (an existing folder); without <code>--out</code> the SVG text comes back as JSON. The desktop app and the model page draw the same figures as soon as you press Compute.</p>
+<pre><code class="shell">$ earth-science figures lifting_condensation_level &quot;p=100000 Pa&quot; &quot;T=303.15 K&quot; &quot;Td=293.15 K&quot; --out .
+[
+  {
+    &quot;slug&quot;: &quot;lifting-condensation-level-live-1&quot;,
+    &quot;title&quot;: &quot;LCL pressure (Pa) as starting pressure varies&quot;,
+    &quot;caption&quot;: &quot;LCL pressure (Pa) as p runs from 2.5e+04 to 1.075e+05 Pa, every other input as you entered it (23 solutions). Marked: your p = 1e+05 Pa gives p_lcl = 8.642e+04. Your inputs: p = 100000 Pa, T = 303.15 K, Td = 293.15 K.&quot;,
+    &quot;file&quot;: &quot;.\\lifting-condensation-level-live-1.svg&quot;
+  },
+  {
+    &quot;slug&quot;: &quot;lifting-condensation-level-live-2&quot;,
+    &quot;title&quot;: &quot;LCL pressure (Pa) as starting dewpoint varies&quot;,
+    &quot;caption&quot;: &quot;LCL pressure (Pa) as Td runs from 229.7 to 301.3 K, every other input as you entered it (25 solutions). Marked: your Td = 293.1 K gives p_lcl = 8.642e+04. Your inputs: p = 100000 Pa, T = 303.15 K, Td = 293.15 K.&quot;,
+    &quot;file&quot;: &quot;.\\lifting-condensation-level-live-2.svg&quot;
+  }
+]</code></pre>
+<h2>7. In a web page or Node.js: WebAssembly</h2>
+<p>The same model is a WebAssembly module, <code>earth_science_ai999x.wasm</code> (https://www.ai999x.com/compute/rust/earth_science_ai999x.wasm), with a small loader, <code>ax-wasm.js</code> (https://www.ai999x.com/compute/rust/ax-wasm.js). It runs in a browser, a Web Worker or Node.js, with no server.</p>
+<pre><code class="html">&lt;script src=&quot;ax-wasm.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  AXWasm.load(&quot;earth_science_ai999x.wasm&quot;).then(function (m) {
+    var a = m.solve({key: &quot;&lt;capability&gt;&quot;, inputs: {name: &quot;value&quot;}});
+    console.log(a.outcome, a.values || a.value);
+    console.log(m.catalog().capabilities.length + &quot; capabilities&quot;);
+  });
+&lt;/script&gt;</code></pre>
+<h2>8. Every capability</h2>
+<p>By topic. For each: what it does, what it needs and gives, when it applies, and a command with what the program printed for it. <code>earth-science info &lt;id&gt;</code> shows the same inputs and outputs in the terminal.</p>
+<h3>Applied meteorology (2)</h3>
+<h4 id="heat_index">Heat index (NWS) — <code>heat_index</code></h4>
+<p>The apparent temperature of the US National Weather Service: Rothfusz&#x27;s regression with the NWS adjustments for low and high humidity.</p>
+<div class="math">\[HI = -42.379 + 2.049T + 10.143RH - 0.2248\,T\,RH - \dots\ (^\circ\mathrm{F},\ RH\ \mathrm{in}\ \%)\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T</code></td><td>in</td><td>air temperature</td><td>K</td></tr><tr><td><code>RH</code></td><td>in</td><td>relative humidity (fraction, or % in a question)</td><td>—</td></tr><tr><td><code>HI</code></td><td>out</td><td>heat index (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 80 °F &lt;= T &lt;= 130 °F; 0 &lt;= RH &lt;= 1.</p>
+<pre><code class="shell">$ earth-science solve heat_index &quot;T=305.15 K&quot; RH=0.7
+HI = 313.5592737 K
+  by: Heat index (NWS)  (Rothfusz (1990) regression with the NWS adjustments (as MetPy), computed in °F)
+  T = 305.15 K
+  RH = 0.7
+  assumes: 80 °F &lt;= T &lt;= 130 °F; 0 &lt;= RH &lt;= 1</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the apparent temperature by combining the effects of air heat and humidity on the body&#x27;s ability to cool itself through evaporation. Using the National Weather Service method, an input air temperature of 305.15 K and a relative humidity value of 0.7 produce a heat index result of 313.559 K. This metric helps assess potential health risks such as exhaustion or stroke during hot weather conditions.</p>
+<h4 id="wind_chill">Wind chill temperature index — <code>wind_chill</code></h4>
+<p>The wind chill temperature index of the 2001 North American formula (wind measured at 10 m).</p>
+<div class="math">\[WCT = 13.12 + 0.6215\,T - 11.37\,V^{0.16} + 0.3965\,T\,V^{0.16}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T</code></td><td>in</td><td>air temperature</td><td>K</td></tr><tr><td><code>V</code></td><td>in</td><td>wind speed at 10 m</td><td>m/s</td></tr><tr><td><code>WCT</code></td><td>out</td><td>wind chill temperature (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> T &lt;= 10 °C; V &gt; 3 mph (4.8 km/h).</p>
+<pre><code class="shell">$ earth-science solve wind_chill &quot;T=263.15 K&quot; &quot;V=8.333333333 m/s&quot;
+WCT = 253.629502 K
+  by: Wind chill temperature index  (WCT = 13.12 + 0.6215 T - 11.37 V^0.16 + 0.3965 T V^0.16 (T in °C, V in km/h))
+  T = 263.15 K
+  V = 8.333333333 m/s
+  assumes: T &lt;= 10 °C; V &gt; 3 mph (4.8 km/h)</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the wind chill temperature index, which represents how cold the air feels to human skin due to accelerated heat loss. Using the 2001 North American formula with inputs of air temperature 263.15 K and wind speed at ten meters 8.33333 m/s, the resulting perceived temperature is 253.63 K. This value helps assess the risk of frostbite and hypothermia under these specific weather conditions.</p>
+<h3>Atmospheric and ocean dynamics (1)</h3>
+<h4 id="inertial_period">Period of inertial oscillations — <code>inertial_period</code></h4>
+<p>The period 2 pi/|f| of free inertial oscillations of the wind or an ocean current at a latitude.</p>
+<div class="math">\[T_i = \frac{2\pi}{|f|}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>lat</code></td><td>in</td><td>latitude (degrees, north positive)</td><td>—</td></tr><tr><td><code>T_inertial</code></td><td>out</td><td>inertial period (s)</td><td>s</td></tr><tr><td><code>T_hours</code></td><td>out</td><td>inertial period (hours)</td><td>—</td></tr><tr><td><code>f</code></td><td>out</td><td>Coriolis parameter (1/s)</td><td>1/s</td></tr></tbody></table>
+<p><strong>Applies when:</strong> |latitude| &gt;= 0.5 degrees.</p>
+<pre><code class="shell">$ earth-science solve inertial_period lat=45
+T_inertial = 60927.21986 s
+T_hours = 16.92422774
+f = 0.0001031260793 1/s
+  by: Period of inertial oscillations  (T = 2 pi/|f| with f = 2 Omega sin(phi))
+  lat = 45
+  assumes: |latitude| &gt;= 0.5 degrees</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the time required for a free-moving object to complete one circular path due to the Coriolis effect alone. Using the latitude 45, it computes the Coriolis parameter as 0.000103126 1/s and derives the inertial period of 60927.2 s. This result represents the natural timescale for oscillations in ocean currents or atmospheric winds at that specific location.</p>
+<h3>Atmospheric dynamics (8)</h3>
+<h4 id="brunt_vaisala_frequency">Brunt-Väisälä (buoyancy) frequency — <code>brunt_vaisala_frequency</code></h4>
+<p>The buoyancy frequency of a stably stratified atmosphere from the potential temperature and its vertical gradient.</p>
+<div class="math">\[N = \sqrt{\frac{g}{\theta}\frac{\partial\theta}{\partial z}}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>theta</code></td><td>in</td><td>potential temperature at the level</td><td>K</td></tr><tr><td><code>dtheta_dz</code></td><td>in</td><td>vertical gradient of potential temperature</td><td>K/m</td></tr><tr><td><code>N</code></td><td>out</td><td>Brunt-Väisälä frequency (1/s)</td><td>1/s</td></tr><tr><td><code>period</code></td><td>out</td><td>buoyancy period 2 pi/N (s)</td><td>s</td></tr></tbody></table>
+<p><strong>Applies when:</strong> d theta/dz &gt; 0 (stable stratification).</p>
+<pre><code class="shell">$ earth-science solve brunt_vaisala_frequency &quot;theta=300 K&quot; &quot;dtheta_dz=0.003 K/m&quot;
+N = 0.009902853124 1/s
+period = 634.4823283 s
+  by: Brunt-Väisälä (buoyancy) frequency  (N = sqrt((g/theta) d theta/dz))
+  theta = 300 K
+  dtheta_dz = 0.003 K/m
+  assumes: d theta/dz &gt; 0 (stable stratification)</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the stability of the atmosphere by computing the Brunt-Väisälä frequency from the potential temperature and its vertical gradient. The resulting frequency of 0.00990285 1/s indicates how strongly an air parcel will oscillate if displaced vertically within this stable layer, corresponding to a full oscillation cycle that takes 634.482 s to complete.</p>
+<h4 id="coriolis_parameter">Coriolis parameter — <code>coriolis_parameter</code></h4>
+<p>The Coriolis parameter f = 2 Omega sin(latitude).</p>
+<div class="math">\[f = 2\Omega\sin\varphi\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>lat</code></td><td>in</td><td>latitude (degrees, north positive)</td><td>—</td></tr><tr><td><code>f</code></td><td>out</td><td>Coriolis parameter (1/s)</td><td>1/s</td></tr></tbody></table>
+<p><strong>Applies when:</strong> -90 &lt;= latitude &lt;= 90 degrees.</p>
+<pre><code class="shell">$ earth-science solve coriolis_parameter lat=45
+f = 0.0001031260793 1/s
+  by: Coriolis parameter  (f = 2 Omega sin(phi), Omega = 7.292115e-5 rad/s)
+  lat = 45
+  assumes: -90 &lt;= latitude &lt;= 90 degrees</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the Coriolis parameter, which quantifies the strength of the Coriolis effect due to Earth&#x27;s rotation at a specific location. Using the formula f equals two times Omega times sine of phi, where Omega is the constant angular velocity of Earth and phi is the latitude in degrees, the result for an input latitude of 45 yields a value of 0.000103126 1/s. This parameter is essential for analyzing large-scale atmospheric and oceanic movements, indicating how strongly rotating reference frames influence fluid motion at that geographical position.</p>
+<h4 id="geostrophic_wind">Geostrophic wind from a height gradient — <code>geostrophic_wind</code></h4>
+<p>Geostrophic wind speed from the change of geopotential height of a pressure surface over a horizontal distance.</p>
+<div class="math">\[V_g = \frac{g}{|f|}\left|\frac{\Delta Z}{\Delta n}\right|\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>lat</code></td><td>in</td><td>latitude (degrees, north positive)</td><td>—</td></tr><tr><td><code>dz</code></td><td>in</td><td>change of geopotential height across the distance</td><td>m</td></tr><tr><td><code>dn</code></td><td>in</td><td>horizontal distance over which the height changes</td><td>m</td></tr><tr><td><code>Vg</code></td><td>out</td><td>geostrophic wind speed (m/s)</td><td>m/s</td></tr><tr><td><code>f</code></td><td>out</td><td>Coriolis parameter (1/s)</td><td>1/s</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 5 &lt;= |latitude| &lt;= 85 degrees; dn &gt; 0.</p>
+<pre><code class="shell">$ earth-science solve geostrophic_wind lat=45 &quot;dz=60 m&quot; &quot;dn=500000 m&quot;
+Vg = 11.41125511 m/s
+f = 0.0001031260793 1/s
+  by: Geostrophic wind from a height gradient  (V_g = (g/|f|) |dZ/dn|)
+  lat = 45
+  dz = 60 m
+  dn = 500000 m
+  assumes: 5 &lt;= |latitude| &lt;= 85 degrees; dn &gt; 0</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the theoretical wind speed resulting from the balance between the pressure gradient force and the Coriolis force. Using a latitude of 45, the Coriolis parameter is computed as 0.000103126 1/s. The vertical change in geopotential height, given as 60 m, across the horizontal distance 500000 m yields a geostrophic wind speed of 11.4113 m/s. This value represents the speed at which air would flow parallel to constant pressure surfaces if friction were negligible.</p>
+<h4 id="gradient_wind">Gradient wind in curved flow — <code>gradient_wind</code></h4>
+<p>The gradient wind speed of curved, frictionless flow from the geostrophic wind, the radius of curvature of the trajectory and the latitude, for cyclonic or anticyclonic flow (the regular solution).</p>
+<div class="math">\[\frac{V^2}{R} \pm fV = fV_g\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>lat</code></td><td>in</td><td>latitude (degrees, north positive)</td><td>—</td></tr><tr><td><code>R</code></td><td>in</td><td>radius of curvature of the flow</td><td>m</td></tr><tr><td><code>Vg</code></td><td>in</td><td>geostrophic wind speed</td><td>m/s</td></tr><tr><td><code>flow</code></td><td>in</td><td>cyclonic or anticyclonic</td><td>—</td></tr><tr><td><code>V</code></td><td>out</td><td>gradient wind speed (m/s)</td><td>m/s</td></tr><tr><td><code>ratio</code></td><td>out</td><td>V/Vg</td><td>—</td></tr><tr><td><code>f</code></td><td>out</td><td>|f| (1/s)</td><td>1/s</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 5 &lt;= |latitude| &lt;= 85 degrees; R, Vg &gt; 0; anticyclonic: Vg &lt;= |f| R/4.</p>
+<pre><code class="shell">$ earth-science solve gradient_wind lat=45 &quot;R=500000 m&quot; &quot;Vg=20 m/s&quot; flow=cyclonic
+V = 15.40036403 m/s
+ratio = 0.7700182013
+f = 0.0001031260793 1/s
+  by: Gradient wind in curved flow  (cyclonic V = -fR/2 + sqrt(f^2R^2/4 + f R Vg); anticyclonic V = fR/2 - sqrt(f^2R^2/4 - f R Vg))
+  lat = 45
+  R = 500000 m
+  Vg = 20 m/s
+  flow = cyclonic
+  assumes: 5 &lt;= |latitude| &lt;= 85 degrees; R, Vg &gt; 0; anticyclonic: Vg &lt;= |f| R/4</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the gradient wind speed for curved, frictionless flow using the given latitude, radius of curvature, and geostrophic wind speed. The result, 15.4004 m/s m/s, represents the actual wind velocity where pressure gradient, Coriolis, and centrifugal forces balance. This value is derived from a geostrophic wind of 20 m/s m/s along a path with a radius of 500000 m m. The ratio of the gradient wind to the geostrophic wind is 0.770018, indicating how much the curvature modifies the straight-flow estimate. The Coriolis parameter magnitude used was 0.000103126 1/s 1/s, determined by the latitude of 45 degrees.</p>
+<h4 id="rossby_wave_speed">Phase speed of a barotropic Rossby wave — <code>rossby_wave_speed</code></h4>
+<p>Zonal phase speed of a barotropic Rossby wave in a uniform westerly flow on a beta-plane, the beta parameter, and the stationary wavelength 2 pi sqrt(U/beta).</p>
+<div class="math">\[c = U - \frac{\beta}{k^2},\quad \beta = \frac{2\Omega\cos\varphi}{a},\quad L_s = 2\pi\sqrt{U/\beta}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>U</code></td><td>in</td><td>zonal mean (westerly) wind speed</td><td>m/s</td></tr><tr><td><code>lat</code></td><td>in</td><td>latitude (degrees, north positive)</td><td>—</td></tr><tr><td><code>Lx</code></td><td>in</td><td>zonal wavelength</td><td>m</td></tr><tr><td><code>c</code></td><td>out</td><td>zonal phase speed (m/s; negative = westward)</td><td>m/s</td></tr><tr><td><code>beta</code></td><td>out</td><td>beta = df/dy (1/(m s))</td><td>1/(m*s)</td></tr><tr><td><code>Ls</code></td><td>out</td><td>stationary wavelength (m)</td><td>m</td></tr></tbody></table>
+<p><strong>Applies when:</strong> U &gt; 0; 5 &lt;= |latitude| &lt;= 85; no meridional wavenumber (l = 0).</p>
+<pre><code class="shell">$ earth-science solve rossby_wave_speed &quot;U=15 m/s&quot; lat=45 &quot;Lx=6000000 m&quot;
+c = 0.2394320651 m/s
+beta = 1.618677403e-11 1/(m*s)
+Ls = 6048467.424 m
+  by: Phase speed of a barotropic Rossby wave  (c = U - beta/k^2, beta = 2 Omega cos(phi)/a, L_s = 2 pi sqrt(U/beta))
+  U = 15 m/s
+  lat = 45
+  Lx = 6000000 m
+  assumes: U &gt; 0; 5 &lt;= |latitude| &lt;= 85; no meridional wavenumber (l = 0)</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the zonal phase speed of a barotropic Rossby wave, which is 0.239432 m/s. It also computes the beta parameter, representing the variation of the Coriolis force with latitude, found to be 1.61868e-11 1/(m*s), and the stationary wavelength where the wave does not move relative to the ground, calculated as 6.04847e+06 m. These values are derived from the background wind speed, latitude, and the specific zonal wavelength provided.</p>
+<h4 id="rossby_number">Rossby number — <code>rossby_number</code></h4>
+<p>The Rossby number Ro = U/(|f| L) of a flow with speed scale U and length scale L at a latitude: the ratio of inertial to Coriolis accelerations.</p>
+<div class="math">\[Ro = \frac{U}{|f|\,L}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>U</code></td><td>in</td><td>velocity scale</td><td>m/s</td></tr><tr><td><code>L</code></td><td>in</td><td>horizontal length scale</td><td>m</td></tr><tr><td><code>lat</code></td><td>in</td><td>latitude (degrees, north positive)</td><td>—</td></tr><tr><td><code>Ro</code></td><td>out</td><td>Rossby number</td><td>—</td></tr><tr><td><code>f</code></td><td>out</td><td>|f| (1/s)</td><td>1/s</td></tr></tbody></table>
+<p><strong>Applies when:</strong> |latitude| &gt;= 1 degree; U, L &gt; 0.</p>
+<pre><code class="shell">$ earth-science solve rossby_number &quot;U=10 m/s&quot; &quot;L=1000000 m&quot; lat=45
+Ro = 0.09696868209
+f = 0.0001031260793 1/s
+  by: Rossby number  (Ro = U/(|f| L), f = 2 Omega sin(latitude))
+  U = 10 m/s
+  L = 1000000 m
+  lat = 45
+  assumes: |latitude| &gt;= 1 degree; U, L &gt; 0</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the Rossby number, which represents the ratio of inertial forces to Coriolis forces in a fluid flow. It uses the provided velocity scale 10 m/s, horizontal length scale 1e+06 m, and latitude 45 to compute the Coriolis parameter magnitude 0.000103126 1/s. The resulting dimensionless value 0.0969687 indicates whether rotation effects dominate the system&#x27;s dynamics.</p>
+<h4 id="wind_components">Wind components from speed and direction — <code>wind_components</code></h4>
+<p>The eastward (u) and northward (v) wind components from the speed and the direction the wind blows FROM.</p>
+<div class="math">\[u = -V\sin\delta,\quad v = -V\cos\delta\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>speed</code></td><td>in</td><td>wind speed</td><td>m/s</td></tr><tr><td><code>direction</code></td><td>in</td><td>direction the wind blows from (degrees clockwise from north)</td><td>—</td></tr><tr><td><code>u</code></td><td>out</td><td>eastward component (m/s)</td><td>m/s</td></tr><tr><td><code>v</code></td><td>out</td><td>northward component (m/s)</td><td>m/s</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt;= direction &lt;= 360; meteorological convention: the direction the wind comes from.</p>
+<pre><code class="shell">$ earth-science solve wind_components &quot;speed=10 m/s&quot; direction=225
+u = 7.071067812 m/s
+v = 7.071067812 m/s
+  by: Wind components from speed and direction  (u = -V sin(dir), v = -V cos(dir))
+  speed = 10 m/s
+  direction = 225
+  assumes: 0 &lt;= direction &lt;= 360; meteorological convention: the direction the wind comes from</code></pre>
+<p><strong>What the worked example means:</strong> This calculation converts the meteorological wind speed of 10 m/s and direction of 225 degrees into Cartesian vector components. The resulting eastward component is 7.07107 m/s and the northward component is 7.07107 m/s. In this convention, the direction indicates where the wind originates, so a northerly wind produces a negative northward value while an easterly wind produces a positive eastward value. These components allow the wind vector to be used in models that require orthogonal axes rather than polar coordinates.</p>
+<h4 id="wind_speed_direction">Wind speed and direction from components — <code>wind_speed_direction</code></h4>
+<p>Wind speed and the direction the wind blows from (degrees clockwise from north, (0, 360]) from u and v.</p>
+<div class="math">\[V = \sqrt{u^2+v^2},\quad \delta = 90^\circ - \operatorname{atan2}(-v,-u)\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>u</code></td><td>in</td><td>eastward wind component</td><td>m/s</td></tr><tr><td><code>v</code></td><td>in</td><td>northward wind component</td><td>m/s</td></tr><tr><td><code>speed</code></td><td>out</td><td>wind speed (m/s)</td><td>m/s</td></tr><tr><td><code>direction</code></td><td>out</td><td>direction the wind comes from (degrees)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> calm (u = v = 0) gives direction 0.</p>
+<pre><code class="shell">$ earth-science solve wind_speed_direction &quot;u=5 m/s&quot; &quot;v=-3 m/s&quot;
+speed = 5.830951895 m/s
+direction = 300.9637565
+  by: Wind speed and direction from components  (V = hypot(u, v); direction = 90 - atan2(-v, -u) in degrees)
+  u = 5 m/s
+  v = -3 m/s
+  assumes: calm (u = v = 0) gives direction 0</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the total wind speed and meteorological direction from the eastward and northward components. The speed, given as 5.83095 m/s, represents the magnitude of the wind vector derived from inputs 5 m/s and -3 m/s. The direction, reported as 300.964, indicates where the wind originates, measured in degrees clockwise from true north. This conversion allows raw vector data to be interpreted in standard weather reporting formats.</p>
+<h3>Atmospheric moisture (7)</h3>
+<h4 id="dewpoint_from_relative_humidity">Dewpoint from temperature and relative humidity — <code>dewpoint_from_relative_humidity</code></h4>
+<p>The dewpoint of air at temperature T and relative humidity RH: Bolton&#x27;s inversion applied to RH e_s(T).</p>
+<div class="math">\[T_d = T_d^{\mathrm{Bolton}}\!\left(RH\,e_s(T)\right)\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T</code></td><td>in</td><td>air temperature</td><td>K</td></tr><tr><td><code>RH</code></td><td>in</td><td>relative humidity (fraction, or % in a question)</td><td>—</td></tr><tr><td><code>Td</code></td><td>out</td><td>dewpoint (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0.01 &lt;= RH &lt;= 1.</p>
+<pre><code class="shell">$ earth-science solve dewpoint_from_relative_humidity &quot;T=303.15 K&quot; RH=0.6
+Td = 294.5065 K
+  by: Dewpoint from temperature and relative humidity  (Td = Bolton inversion of RH e_s(T), e_s from Ambaum (2020) (MetPy&#x27;s convention))
+  T = 303.15 K
+  RH = 0.6
+  assumes: 0.01 &lt;= RH &lt;= 1</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the dewpoint temperature using the air temperature and relative humidity. By applying Bolton&#x27;s inversion to the saturation vapor pressure derived from the given temperature, the method finds the specific moisture content implied by the relative humidity. The resulting dewpoint of 294.506 K represents the temperature to which the air must be cooled at constant pressure to become saturated, providing a direct measure of atmospheric moisture availability.</p>
+<h4 id="dewpoint_from_vapor_pressure">Dewpoint from vapour pressure — <code>dewpoint_from_vapor_pressure</code></h4>
+<p>The dewpoint at which the given vapour pressure would saturate (inversion of Bolton&#x27;s 1980 formula).</p>
+<div class="math">\[T_d = \frac{243.5\,\ln(e/6.112)}{17.67-\ln(e/6.112)}\ ^\circ\mathrm{C}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>e</code></td><td>in</td><td>water vapour partial pressure</td><td>Pa</td></tr><tr><td><code>Td</code></td><td>out</td><td>dewpoint (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0.1 hPa &lt;= e &lt;= 200 hPa.</p>
+<pre><code class="shell">$ earth-science solve dewpoint_from_vapor_pressure &quot;e=1700 Pa&quot;
+Td = 288.1130551 K
+  by: Dewpoint from vapour pressure  (Td = 243.5 v/(17.67 - v) °C with v = ln(e/6.112 hPa))
+  e = 1700 Pa
+  assumes: 0.1 hPa &lt;= e &lt;= 200 hPa</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the dewpoint temperature, which is the specific temperature at which air becomes saturated with water vapor and condensation begins. Given a measured water vapour partial pressure of 1700 Pa, the algorithm applies an inversion of Bolton&#x27;s empirical saturation formula to compute the corresponding dewpoint value of 288.113 K. This result indicates the thermal condition required for the existing moisture content to reach saturation, providing critical insight into atmospheric humidity levels.</p>
+<h4 id="relative_humidity_from_dewpoint">Relative humidity from temperature and dewpoint — <code>relative_humidity_from_dewpoint</code></h4>
+<p>Relative humidity as the ratio of the vapour pressure at the dewpoint to the saturation vapour pressure.</p>
+<div class="math">\[RH = \frac{e_s(T_d)}{e_s(T)}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T</code></td><td>in</td><td>air temperature</td><td>K</td></tr><tr><td><code>Td</code></td><td>in</td><td>dewpoint temperature</td><td>K</td></tr><tr><td><code>RH</code></td><td>out</td><td>relative humidity (fraction)</td><td>—</td></tr><tr><td><code>RH_percent</code></td><td>out</td><td>relative humidity (%)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> Td &lt;= T; -45 °C &lt;= T, Td &lt;= 60 °C.</p>
+<pre><code class="shell">$ earth-science solve relative_humidity_from_dewpoint &quot;T=298.15 K&quot; &quot;Td=288.15 K&quot;
+RH = 0.5385566217
+RH_percent = 53.85566217
+  by: Relative humidity from temperature and dewpoint  (e_s(Td)/e_s(T), Ambaum (2020) e_s)
+  T = 298.15 K
+  Td = 288.15 K
+  assumes: Td &lt;= T; -45 °C &lt;= T, Td &lt;= 60 °C</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the relative humidity by comparing the saturation vapor pressure at the dewpoint to that at the air temperature. Using the Ambaum method, the ratio yields a fraction of 0.538557, which corresponds to 53.8557 when expressed as a percentage. This value indicates how close the air is to saturation given the current temperatures.</p>
+<h4 id="saturation_mixing_ratio">Saturation mixing ratio — <code>saturation_mixing_ratio</code></h4>
+<p>The mixing ratio of air saturated with respect to liquid water at temperature T and pressure p.</p>
+<div class="math">\[w_s = \frac{\varepsilon\,e_s(T)}{p-e_s(T)}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>p</code></td><td>in</td><td>total air pressure</td><td>Pa</td></tr><tr><td><code>T</code></td><td>in</td><td>air temperature</td><td>K</td></tr><tr><td><code>ws</code></td><td>out</td><td>saturation mixing ratio (kg/kg)</td><td>—</td></tr><tr><td><code>ws_g_per_kg</code></td><td>out</td><td>saturation mixing ratio (g/kg)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> e_s(T) &lt; p.</p>
+<pre><code class="shell">$ earth-science solve saturation_mixing_ratio &quot;p=100000 Pa&quot; &quot;T=298.15 K&quot;
+ws = 0.0203107222
+ws_g_per_kg = 20.3107222
+  by: Saturation mixing ratio  (w_s = epsilon e_s/(p - e_s), Ambaum (2020) e_s)
+  p = 100000 Pa
+  T = 298.15 K
+  assumes: e_s(T) &lt; p</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the maximum mass of water vapor that air can hold relative to the mass of dry air at a specific temperature and pressure before condensation occurs. Using an input total air pressure of 100000 Pa and an air temperature of 298.15 K, the resulting saturation mixing ratio is 0.0203107. This value represents the humidity limit for the given atmospheric conditions, indicating how much moisture the air can sustain as vapor rather than liquid.</p>
+<h4 id="saturation_vapor_pressure">Saturation vapour pressure over water — <code>saturation_vapor_pressure</code></h4>
+<p>The equilibrium vapour pressure over a plane surface of liquid water (Ambaum 2020, latent heat varying with temperature).</p>
+<div class="math">\[e_s = e_{s0}\left(\frac{T_0}{T}\right)^{(c_{pl}-c_{pv})/R_v}\exp\!\left(\frac{L_0}{R_vT_0}-\frac{L(T)}{R_vT}\right)\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T</code></td><td>in</td><td>temperature</td><td>K</td></tr><tr><td><code>es</code></td><td>out</td><td>saturation vapour pressure (Pa)</td><td>Pa</td></tr></tbody></table>
+<p><strong>Applies when:</strong> -45 °C &lt;= T &lt;= 60 °C (liquid water, possibly supercooled).</p>
+<pre><code class="shell">$ earth-science solve saturation_vapor_pressure &quot;T=298.15 K&quot;
+es = 3162.345599 Pa
+  by: Saturation vapour pressure over water  (Ambaum (2020) Eq. 13 with L(T) = L0 - (c_pl - c_pv)(T - T0))
+  T = 298.15 K
+  assumes: -45 °C &lt;= T &lt;= 60 °C (liquid water, possibly supercooled)</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the equilibrium vapour pressure over a plane surface of liquid water, denoted as 3162.35 Pa. It relies on the input temperature, specified here as 298.15 K. The result represents the maximum partial pressure that water vapour can exert in the air when it is in thermodynamic balance with the liquid phase. This value is critical for understanding humidity levels and cloud formation processes. As the temperature increases, the saturation vapour pressure also rises, indicating that warmer air can hold more moisture before condensation occurs.</p>
+<h4 id="specific_humidity_from_dewpoint">Specific humidity from dewpoint and pressure — <code>specific_humidity_from_dewpoint</code></h4>
+<p>Specific humidity (mass of vapour per mass of moist air) from the dewpoint and the pressure.</p>
+<div class="math">\[q = \frac{w_s(p,T_d)}{1+w_s(p,T_d)}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>p</code></td><td>in</td><td>air pressure</td><td>Pa</td></tr><tr><td><code>Td</code></td><td>in</td><td>dewpoint temperature</td><td>K</td></tr><tr><td><code>q</code></td><td>out</td><td>specific humidity (kg/kg)</td><td>—</td></tr><tr><td><code>w</code></td><td>out</td><td>mixing ratio (kg/kg)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> e_s(Td) &lt; p.</p>
+<pre><code class="shell">$ earth-science solve specific_humidity_from_dewpoint &quot;p=100000 Pa&quot; &quot;Td=288.15 K&quot;
+q = 0.01066120332
+w = 0.0107760894
+  by: Specific humidity from dewpoint and pressure  (q = w_s(p, Td)/(1 + w_s(p, Td)))
+  p = 100000 Pa
+  Td = 288.15 K
+  assumes: e_s(Td) &lt; p</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the specific humidity, which represents the mass of water vapor per unit mass of moist air, along with the mixing ratio. It uses the provided air pressure of 100000 Pa and the dewpoint temperature of 288.15 K to derive these moisture metrics. The resulting specific humidity of 0.0106612 indicates how much water vapor is present in the air parcel relative to its total mass, a key variable for understanding atmospheric moisture content.</p>
+<h4 id="mixing_ratio">Water-vapour mixing ratio from vapour pressure — <code>mixing_ratio</code></h4>
+<p>Mass of water vapour per mass of dry air from the vapour partial pressure and the total pressure.</p>
+<div class="math">\[w = \frac{\varepsilon\,e}{p-e}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>e</code></td><td>in</td><td>water vapour partial pressure</td><td>Pa</td></tr><tr><td><code>p</code></td><td>in</td><td>total air pressure</td><td>Pa</td></tr><tr><td><code>w</code></td><td>out</td><td>mixing ratio (kg/kg)</td><td>—</td></tr><tr><td><code>w_g_per_kg</code></td><td>out</td><td>mixing ratio (g/kg)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt; e &lt; p.</p>
+<pre><code class="shell">$ earth-science solve mixing_ratio &quot;e=2000 Pa&quot; &quot;p=100000 Pa&quot;
+w = 0.01269299816
+w_g_per_kg = 12.69299816
+  by: Water-vapour mixing ratio from vapour pressure  (w = epsilon e/(p - e))
+  e = 2000 Pa
+  p = 100000 Pa
+  assumes: 0 &lt; e &lt; p</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the mass of water vapour per unit mass of dry air using the vapour partial pressure and total atmospheric pressure. With an input vapour pressure of 2000 Pa and total pressure of 100000 Pa, the resulting mixing ratio is 0.012693. This value represents the absolute amount of moisture in the air parcel and remains constant during adiabatic expansion or compression unless condensation occurs. The equivalent value in grams per kilogram is 12.693, which is often more intuitive for practical meteorological applications.</p>
+<h3>Atmospheric thermodynamics (16)</h3>
+<h4 id="scale_height">Atmospheric scale height — <code>scale_height</code></h4>
+<p>The height over which pressure falls by a factor e in an isothermal dry atmosphere.</p>
+<div class="math">\[H = \frac{R_d T}{g}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T</code></td><td>in</td><td>temperature</td><td>K</td></tr><tr><td><code>H</code></td><td>out</td><td>scale height (m)</td><td>m</td></tr></tbody></table>
+<p><strong>Applies when:</strong> dry air, constant gravity.</p>
+<pre><code class="shell">$ earth-science solve scale_height &quot;T=288.15 K&quot;
+H = 8434.351641 m
+  by: Atmospheric scale height  (H = R_d T/g)
+  T = 288.15 K
+  assumes: dry air, constant gravity</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the characteristic vertical distance over which atmospheric pressure decreases by a factor of e, assuming dry air and constant gravity. Using the temperature input of 288.15 K, the resulting scale height is 8434.35 m. This value represents the thickness of the atmosphere layer where pressure decays exponentially with altitude.</p>
+<h4 id="moist_air_density">Density of moist air — <code>moist_air_density</code></h4>
+<p>Density of moist air from the ideal-gas law with the virtual temperature.</p>
+<div class="math">\[\rho = \frac{p}{R_d\,T_v}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>p</code></td><td>in</td><td>air pressure</td><td>Pa</td></tr><tr><td><code>T</code></td><td>in</td><td>air temperature</td><td>K</td></tr><tr><td><code>w</code></td><td>in</td><td>water-vapour mixing ratio (kg/kg)</td><td>—</td></tr><tr><td><code>rho</code></td><td>out</td><td>air density (kg/m^3)</td><td>kg/m^3</td></tr><tr><td><code>Tv</code></td><td>out</td><td>virtual temperature (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt;= w &lt;= 0.06.</p>
+<pre><code class="shell">$ earth-science solve moist_air_density &quot;p=100000 Pa&quot; &quot;T=298.15 K&quot; w=0.015
+rho = 1.158051084 kg/m^3
+Tv = 300.8281879 K
+  by: Density of moist air  (rho = p/(R_d T_v))
+  p = 100000 Pa
+  T = 298.15 K
+  w = 0.015
+  assumes: 0 &lt;= w &lt;= 0.06</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the mass per unit volume of humid air, yielding a density of 1.15805 kg/m^3. The process relies on the ideal gas law adjusted by virtual temperature, which was computed as 300.828 K based on an air pressure of 100000 Pa and a water-vapour mixing ratio of 0.015. This result reflects how moisture reduces air density compared to dry conditions at the same temperature and pressure.</p>
+<h4 id="equivalent_potential_temperature">Equivalent potential temperature (Bolton 1980) — <code>equivalent_potential_temperature</code></h4>
+<p>The potential temperature a parcel would have after all its vapour condensed and the latent heat warmed it.</p>
+<div class="math">\[\theta_e = T\left(\frac{p_0}{p-e}\right)^{\kappa}\left(\frac{T}{T_L}\right)^{0.28r}\exp\!\left[r(1+0.448r)\left(\frac{3036}{T_L}-1.78\right)\right]\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>p</code></td><td>in</td><td>air pressure</td><td>Pa</td></tr><tr><td><code>T</code></td><td>in</td><td>air temperature</td><td>K</td></tr><tr><td><code>Td</code></td><td>in</td><td>dewpoint</td><td>K</td></tr><tr><td><code>theta_e</code></td><td>out</td><td>equivalent potential temperature (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> Td &lt;= T; 100 hPa &lt;= p &lt;= 1100 hPa.</p>
+<pre><code class="shell">$ earth-science solve equivalent_potential_temperature &quot;p=85000 Pa&quot; &quot;T=293.15 K&quot; &quot;Td=288.15 K&quot;
+theta_e = 345.6759213 K
+  by: Equivalent potential temperature (Bolton 1980)  (Bolton (1980): T_L from T and Td, theta_L with the dry-air partial pressure, then the exponential factor)
+  p = 85000 Pa
+  T = 293.15 K
+  Td = 288.15 K
+  assumes: Td &lt;= T; 100 hPa &lt;= p &lt;= 1100 hPa</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the equivalent potential temperature, which is 345.676 K. It represents the theoretical temperature an air parcel would reach if all its water vapor condensed and the released latent heat warmed the parcel. This value helps meteorologists assess atmospheric instability by comparing it to the environment&#x27;s equivalent potential temperature.</p>
+<h4 id="geopotential_height">Geopotential and geopotential height — <code>geopotential_height</code></h4>
+<p>Geopotential and geopotential height of a geometric height above sea level, with gravity falling off as 1/(R_e + z)^2 (as MetPy).</p>
+<div class="math">\[\Phi = \frac{g\,R_e\,z}{R_e+z},\quad Z = \Phi/g\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>z</code></td><td>in</td><td>geometric height above sea level</td><td>m</td></tr><tr><td><code>phi</code></td><td>out</td><td>geopotential (m^2/s^2)</td><td>m^2/s^2</td></tr><tr><td><code>Z</code></td><td>out</td><td>geopotential height (m)</td><td>m</td></tr></tbody></table>
+<p><strong>Applies when:</strong> -1 km &lt;= z &lt;= 200 km.</p>
+<pre><code class="shell">$ earth-science solve geopotential_height &quot;z=10000 m&quot;
+phi = 97912.81505 m^2/s^2
+Z = 9984.328497 m
+  by: Geopotential and geopotential height  (Phi = g R_e z/(R_e + z))
+  z = 10000 m
+  assumes: -1 km &lt;= z &lt;= 200 km</code></pre>
+<p><strong>What the worked example means:</strong> This calculation converts the input geometric height, 10000 m, into geopotential energy per unit mass, 97912.8 m^2/s^2, and its corresponding geopotential height, 9984.33 m. The process accounts for the decrease in gravitational acceleration as altitude increases above Earth&#x27;s surface. The resulting geopotential height is the vertical coordinate typically used on weather maps because it represents the work required to lift a unit mass from sea level to that elevation against gravity.</p>
+<h4 id="standard_atmosphere_height">Height of a pressure level in the standard atmosphere — <code>standard_atmosphere_height</code></h4>
+<p>The height of a pressure level in the tropospheric standard atmosphere (pressure altitude; as MetPy).</p>
+<div class="math">\[z = \frac{T_0}{\gamma}\left[1-\left(\frac{p}{p_0}\right)^{R_d\gamma/g}\right]\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>p</code></td><td>in</td><td>pressure</td><td>Pa</td></tr><tr><td><code>z</code></td><td>out</td><td>pressure altitude (m)</td><td>m</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 226 hPa &lt;= p &lt;= 1075 hPa.</p>
+<pre><code class="shell">$ earth-science solve standard_atmosphere_height &quot;p=50000 Pa&quot;
+z = 5571.434423 m
+  by: Height of a pressure level in the standard atmosphere  (z = (T0/gamma)(1 - (p/p0)^(R_d gamma/g)))
+  p = 50000 Pa
+  assumes: 226 hPa &lt;= p &lt;= 1075 hPa</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the geometric height within the troposphere where the atmospheric pressure equals the input value. Using the International Standard Atmosphere model, which assumes a linear temperature decrease with height and constant gravity, the method converts the pressure reading into an altitude estimate. The result indicates that at a pressure of 50000 Pa, the corresponding standard atmosphere height is 5571.43 m, providing a reference level for flight operations or meteorological analysis.</p>
+<h4 id="lifting_condensation_level">Lifting condensation level (Romps 2017) — <code>lifting_condensation_level</code></h4>
+<p>Pressure and temperature at which a parcel lifted dry-adiabatically from (p, T, Td) becomes saturated, from Romps&#x27; exact solution with the Lambert W function.</p>
+<div class="math">\[T_{LCL} = \frac{c}{W_{-1}\!\left(RH^{1/a}\,c\,e^{c}\right)}\,T,\quad p_{LCL} = p\left(\frac{T_{LCL}}{T}\right)^{c_{pm}/R_m}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>p</code></td><td>in</td><td>starting pressure</td><td>Pa</td></tr><tr><td><code>T</code></td><td>in</td><td>starting temperature</td><td>K</td></tr><tr><td><code>Td</code></td><td>in</td><td>starting dewpoint</td><td>K</td></tr><tr><td><code>p_lcl</code></td><td>out</td><td>LCL pressure (Pa)</td><td>Pa</td></tr><tr><td><code>T_lcl</code></td><td>out</td><td>LCL temperature (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> Td &lt;= T; 100 hPa &lt;= p &lt;= 1100 hPa.</p>
+<pre><code class="shell">$ earth-science solve lifting_condensation_level &quot;p=100000 Pa&quot; &quot;T=303.15 K&quot; &quot;Td=293.15 K&quot;
+p_lcl = 86421.30262 Pa
+T_lcl = 290.8124964 K
+  by: Lifting condensation level (Romps 2017)  (Romps (2017) Eq. 22: T_LCL = c/W_{-1}(RH^{1/a} c e^c) T, p_LCL = p (T_LCL/T)^{c_pm/R_m})
+  p = 100000 Pa
+  T = 303.15 K
+  Td = 293.15 K
+  assumes: Td &lt;= T; 100 hPa &lt;= p &lt;= 1100 hPa</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the exact point where an unsaturated air parcel becomes saturated during dry-adiabatic ascent. Starting from a pressure of 100000 Pa, a temperature of 303.15 K, and a dewpoint of 293.15 K, the model computes the resulting LCL pressure as 86421.3 Pa and the LCL temperature as 290.812 K. These values represent the altitude conditions necessary for cloud base formation.</p>
+<h4 id="moist_static_energy">Moist static energy — <code>moist_static_energy</code></h4>
+<p>Moist static energy c_pd T + g z + L_v q (and the dry static energy c_pd T + g z) per unit mass.</p>
+<div class="math">\[h = c_{pd}T + g z + L_v q\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>z</code></td><td>in</td><td>height above sea level</td><td>m</td></tr><tr><td><code>T</code></td><td>in</td><td>air temperature</td><td>K</td></tr><tr><td><code>q</code></td><td>in</td><td>specific humidity (kg/kg)</td><td>—</td></tr><tr><td><code>h</code></td><td>out</td><td>moist static energy (J/kg)</td><td>J/kg</td></tr><tr><td><code>s</code></td><td>out</td><td>dry static energy (J/kg)</td><td>J/kg</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt;= q &lt;= 0.06.</p>
+<pre><code class="shell">$ earth-science solve moist_static_energy &quot;z=1500 m&quot; &quot;T=288.15 K&quot; q=0.008
+h = 324211.2658 J/kg
+s = 304204.5458 J/kg
+  by: Moist static energy  (h = c_pd T + g z + L_v q (MetPy&#x27;s L_v = 2.50084e6 J/kg))
+  z = 1500 m
+  T = 288.15 K
+  q = 0.008
+  assumes: 0 &lt;= q &lt;= 0.06</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the total energy per unit mass of an air parcel by combining its thermal energy, gravitational potential energy, and latent heat content. Using an input height of 1500 m, temperature of 288.15 K, and specific humidity of 0.008, the resulting moist static energy is 324211 J/kg, while the dry static energy, which excludes moisture effects, is 304205 J/kg. These values indicate the parcel&#x27;s capacity for vertical motion and stability under adiabatic conditions.</p>
+<h4 id="potential_temperature">Potential temperature — <code>potential_temperature</code></h4>
+<p>The temperature an air parcel would have if brought dry-adiabatically to 1000 hPa (Poisson&#x27;s equation).</p>
+<div class="math">\[\theta = T\left(\frac{p_0}{p}\right)^{R_d/c_{pd}},\quad p_0 = 1000\ \mathrm{hPa}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T</code></td><td>in</td><td>air temperature</td><td>K</td></tr><tr><td><code>p</code></td><td>in</td><td>air pressure</td><td>Pa</td></tr><tr><td><code>theta</code></td><td>out</td><td>potential temperature (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 150 K &lt;= T &lt;= 350 K; 1 hPa &lt;= p &lt;= 1100 hPa.</p>
+<pre><code class="shell">$ earth-science solve potential_temperature &quot;T=298.15 K&quot; &quot;p=85000 Pa&quot;
+theta = 312.3207471 K
+  by: Potential temperature  (Poisson&#x27;s equation with kappa = R_d/c_pd)
+  T = 298.15 K
+  p = 85000 Pa
+  assumes: 150 K &lt;= T &lt;= 350 K; 1 hPa &lt;= p &lt;= 1100 hPa</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the potential temperature, which represents the temperature an air parcel would possess if it were moved dry-adiabatically to a reference pressure level. By using an input air temperature of 298.15 K and an input air pressure of 85000 Pa, the method applies Poisson&#x27;s equation to remove the effects of expansion or compression caused by pressure changes. The resulting value of 312.321 K allows meteorologists to compare the thermal state of air parcels at different altitudes on a consistent basis.</p>
+<h4 id="standard_atmosphere_pressure">Pressure at a height in the standard atmosphere — <code>standard_atmosphere_pressure</code></h4>
+<p>Pressure at a height in the tropospheric standard atmosphere (T0 = 288 K, 6.5 K/km, 1013.25 hPa; as MetPy).</p>
+<div class="math">\[p = p_0\left(1-\frac{\gamma z}{T_0}\right)^{g/(R_d\gamma)}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>z</code></td><td>in</td><td>height above sea level</td><td>m</td></tr><tr><td><code>p</code></td><td>out</td><td>standard-atmosphere pressure (Pa)</td><td>Pa</td></tr></tbody></table>
+<p><strong>Applies when:</strong> -500 m &lt;= z &lt;= 11 km (troposphere).</p>
+<pre><code class="shell">$ earth-science solve standard_atmosphere_pressure &quot;z=1500 m&quot;
+p = 84547.60127 Pa
+  by: Pressure at a height in the standard atmosphere  (p = p0 (1 - gamma z/T0)^(g/(R_d gamma)))
+  z = 1500 m
+  assumes: -500 m &lt;= z &lt;= 11 km (troposphere)</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the atmospheric pressure at a specific altitude within the troposphere using the standard atmosphere model. Given a height of 1500 m, the resulting pressure is 84547.6 Pa. This value represents the idealized pressure expected under standard conditions, where temperature decreases linearly with height and air behaves as an ideal gas in hydrostatic equilibrium.</p>
+<h4 id="isothermal_pressure">Pressure at height in an isothermal atmosphere — <code>isothermal_pressure</code></h4>
+<p>The barometric formula: pressure at height z in an isothermal dry atmosphere, and its scale height R_d T/g.</p>
+<div class="math">\[p = p_0\,e^{-z/H},\quad H = \frac{R_d T}{g}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>p0</code></td><td>in</td><td>pressure at z = 0</td><td>Pa</td></tr><tr><td><code>T</code></td><td>in</td><td>temperature of the layer</td><td>K</td></tr><tr><td><code>z</code></td><td>in</td><td>height above the reference level</td><td>m</td></tr><tr><td><code>p</code></td><td>out</td><td>pressure at height z (Pa)</td><td>Pa</td></tr><tr><td><code>H</code></td><td>out</td><td>scale height (m)</td><td>m</td></tr></tbody></table>
+<p><strong>Applies when:</strong> isothermal dry air; constant gravity g = 9.80665 m/s^2.</p>
+<pre><code class="shell">$ earth-science solve isothermal_pressure &quot;p0=101325 Pa&quot; &quot;T=273.15 K&quot; &quot;z=5000 m&quot;
+p = 54215.40421 Pa
+H = 7995.291171 m
+  by: Pressure at height in an isothermal atmosphere  (p = p0 exp(-z/H), H = R_d T/g)
+  p0 = 101325 Pa
+  T = 273.15 K
+  z = 5000 m
+  assumes: isothermal dry air; constant gravity g = 9.80665 m/s^2</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the atmospheric pressure at a specific elevation by applying the barometric formula for an isothermal dry atmosphere. Using the surface pressure 101325 Pa and temperature 273.15 K, the model computes a scale height of 7995.29 m. Consequently, the pressure at the requested height of 5000 m is found to be 54215.4 Pa. This result reflects how air density and pressure decrease exponentially with altitude under constant thermal conditions.</p>
+<h4 id="pressure_with_lapse_rate">Pressure at height with a constant lapse rate — <code>pressure_with_lapse_rate</code></h4>
+<p>Pressure at height z in a dry atmosphere whose temperature falls linearly with height (troposphere model).</p>
+<div class="math">\[p = p_0\left(\frac{T_0-\gamma z}{T_0}\right)^{g/(R_d\gamma)}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>p0</code></td><td>in</td><td>pressure at z = 0</td><td>Pa</td></tr><tr><td><code>T0</code></td><td>in</td><td>temperature at z = 0</td><td>K</td></tr><tr><td><code>gamma</code></td><td>in</td><td>temperature lapse rate (positive when temperature falls with height)</td><td>K/m</td></tr><tr><td><code>z</code></td><td>in</td><td>height above the reference level</td><td>m</td></tr><tr><td><code>p</code></td><td>out</td><td>pressure at height z (Pa)</td><td>Pa</td></tr><tr><td><code>T</code></td><td>out</td><td>temperature at height z (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt; gamma &lt;= 9.8 K/km; dry air, constant gravity.</p>
+<pre><code class="shell">$ earth-science solve pressure_with_lapse_rate &quot;p0=101325 Pa&quot; &quot;T0=288.15 K&quot; &quot;gamma=0.0065 K/m&quot; &quot;z=3000 m&quot;
+p = 70108.04265 Pa
+T = 268.65 K
+  by: Pressure at height with a constant lapse rate  (p = p0 (T/T0)^(g/(R_d gamma)), T = T0 - gamma z)
+  p0 = 101325 Pa
+  T0 = 288.15 K
+  gamma = 0.0065 K/m
+  z = 3000 m
+  assumes: 0 &lt; gamma &lt;= 9.8 K/km; dry air, constant gravity</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the atmospheric pressure and temperature at a specific altitude using a constant lapse rate model. Given a surface pressure of 101325 Pa and a surface temperature of 288.15 K, with a lapse rate of 0.0065 K/m over a height of 3000 m, the resulting pressure is 70108 Pa and the temperature is 268.65 K. This reflects how pressure decreases exponentially while temperature drops linearly in a dry troposphere.</p>
+<h4 id="moist_adiabatic_lapse_rate">Saturated (moist) adiabatic lapse rate — <code>moist_adiabatic_lapse_rate</code></h4>
+<p>The rate at which a saturated parcel cools as it rises, with condensation releasing latent heat.</p>
+<div class="math">\[\Gamma_m = g\,\frac{1+\dfrac{L_v r_s}{R_d T}}{c_{pd}+\dfrac{L_v^2 r_s}{R_v T^2}}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T</code></td><td>in</td><td>air temperature</td><td>K</td></tr><tr><td><code>p</code></td><td>in</td><td>air pressure</td><td>Pa</td></tr><tr><td><code>lapse_rate</code></td><td>out</td><td>moist adiabatic lapse rate (K/m)</td><td>K/m</td></tr><tr><td><code>rs</code></td><td>out</td><td>saturation mixing ratio (kg/kg)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> -40 °C &lt;= T &lt;= 50 °C; constant latent heat L_v = 2.50084e6 J/kg in the lapse-rate formula.</p>
+<pre><code class="shell">$ earth-science solve moist_adiabatic_lapse_rate &quot;T=293.15 K&quot; &quot;p=100000 Pa&quot;
+lapse_rate = 0.004221886202 K/m
+rs = 0.0148682638
+  by: Saturated (moist) adiabatic lapse rate  (Gamma_m = g (1 + L_v r_s/(R_d T)) / (c_pd + L_v^2 r_s/(R_v T^2)), r_s from Ambaum (2020) e_s)
+  T = 293.15 K
+  p = 100000 Pa
+  assumes: -40 °C &lt;= T &lt;= 50 °C; constant latent heat L_v = 2.50084e6 J/kg in the lapse-rate formula</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the moist adiabatic lapse rate, which describes how quickly a saturated air parcel cools as it rises through the atmosphere. Using an input temperature of 293.15 K and pressure of 100000 Pa, the model computes the saturation mixing ratio, resulting in a value of 0.0148683. This moisture content influences the release of latent heat during condensation, which partially offsets the cooling caused by expansion. The final computed lapse rate is 0.00422189 K/m K/m. Unlike the dry adiabatic lapse rate, this value varies significantly with atmospheric conditions because warmer air holds more water vapor, leading to greater latent heat release and slower cooling rates.</p>
+<h4 id="temperature_from_potential_temperature">Temperature from potential temperature — <code>temperature_from_potential_temperature</code></h4>
+<p>The air temperature at pressure p of a parcel with a given potential temperature.</p>
+<div class="math">\[T = \theta\left(\frac{p}{p_0}\right)^{R_d/c_{pd}}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>theta</code></td><td>in</td><td>potential temperature</td><td>K</td></tr><tr><td><code>p</code></td><td>in</td><td>air pressure</td><td>Pa</td></tr><tr><td><code>T</code></td><td>out</td><td>air temperature (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 150 K &lt;= theta &lt;= 600 K; 1 hPa &lt;= p &lt;= 1100 hPa.</p>
+<pre><code class="shell">$ earth-science solve temperature_from_potential_temperature &quot;theta=300 K&quot; &quot;p=70000 Pa&quot;
+T = 270.9340268 K
+  by: Temperature from potential temperature  (Poisson&#x27;s equation inverted)
+  theta = 300 K
+  p = 70000 Pa
+  assumes: 150 K &lt;= theta &lt;= 600 K; 1 hPa &lt;= p &lt;= 1100 hPa</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the actual air temperature, resulting in 270.934 K, for an air parcel with a potential temperature of 300 K at a pressure of 70000 Pa. It applies Poisson&#x27;s equation to find what the observed temperature should be based on the thermodynamic state of the dry air mass.</p>
+<h4 id="dry_adiabatic_ascent">Temperature of a dry parcel after adiabatic ascent — <code>dry_adiabatic_ascent</code></h4>
+<p>The temperature of an unsaturated air parcel lifted dry-adiabatically through a height dz, and the dry adiabatic lapse rate g/c_pd.</p>
+<div class="math">\[T_2 = T - \Gamma_d\,\Delta z,\quad \Gamma_d = g/c_{pd}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T</code></td><td>in</td><td>starting temperature of the parcel</td><td>K</td></tr><tr><td><code>dz</code></td><td>in</td><td>height through which the parcel rises</td><td>m</td></tr><tr><td><code>T2</code></td><td>out</td><td>parcel temperature after the ascent (K)</td><td>K</td></tr><tr><td><code>lapse_rate</code></td><td>out</td><td>dry adiabatic lapse rate g/c_pd (K/m)</td><td>K/m</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt; dz &lt;= 20 km; the parcel stays unsaturated.</p>
+<pre><code class="shell">$ earth-science solve dry_adiabatic_ascent &quot;T=293.15 K&quot; &quot;dz=1500 m&quot;
+T2 = 278.5083462 K
+lapse_rate = 0.009761102563 K/m
+  by: Temperature of a dry parcel after adiabatic ascent  (dry adiabatic lapse rate g/c_pd times the height gained)
+  T = 293.15 K
+  dz = 1500 m
+  assumes: 0 &lt; dz &lt;= 20 km; the parcel stays unsaturated</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the final temperature of an unsaturated air parcel that has risen vertically by a specific height. Starting from an initial temperature of 293.15 K, the parcel cools as it ascends through a distance of 1500 m. The resulting temperature is 278.508 K. This process assumes no heat exchange with the surroundings and uses the standard dry adiabatic lapse rate, which is calculated as 0.0097611 K/m. This rate represents how much the temperature drops for every meter of elevation gained under these ideal conditions.</p>
+<h4 id="hypsometric_thickness">Thickness of a layer (hypsometric equation) — <code>hypsometric_thickness</code></h4>
+<p>The geometric thickness between two pressure levels from the layer-mean virtual temperature.</p>
+<div class="math">\[\Delta z = \frac{R_d\overline{T_v}}{g}\ln\frac{p_1}{p_2}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>p1</code></td><td>in</td><td>pressure at the bottom of the layer</td><td>Pa</td></tr><tr><td><code>p2</code></td><td>in</td><td>pressure at the top of the layer</td><td>Pa</td></tr><tr><td><code>Tv</code></td><td>in</td><td>layer-mean virtual temperature</td><td>K</td></tr><tr><td><code>dz</code></td><td>out</td><td>layer thickness (m)</td><td>m</td></tr></tbody></table>
+<p><strong>Applies when:</strong> p1 &gt; p2.</p>
+<pre><code class="shell">$ earth-science solve hypsometric_thickness &quot;p1=100000 Pa&quot; &quot;p2=50000 Pa&quot; &quot;Tv=263.15 K&quot;
+dz = 5339.024515 m
+  by: Thickness of a layer (hypsometric equation)  (dz = (R_d Tv/g) ln(p1/p2))
+  p1 = 100000 Pa
+  p2 = 50000 Pa
+  Tv = 263.15 K
+  assumes: p1 &gt; p2</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the geometric thickness between two atmospheric pressure levels using the hypsometric equation. By inputting the bottom pressure, top pressure, and the layer-mean virtual temperature, the model computes the vertical distance in meters. The result of 5339.02 m represents the physical height span of the air column where the pressure drops from the lower to the upper level, accounting for moisture effects through virtual temperature.</p>
+<h4 id="virtual_temperature">Virtual temperature — <code>virtual_temperature</code></h4>
+<p>The temperature dry air would need to have the density of the moist air at the same pressure.</p>
+<div class="math">\[T_v = T\,\frac{w+\varepsilon}{\varepsilon(1+w)}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T</code></td><td>in</td><td>air temperature</td><td>K</td></tr><tr><td><code>w</code></td><td>in</td><td>water-vapour mixing ratio (kg/kg)</td><td>—</td></tr><tr><td><code>Tv</code></td><td>out</td><td>virtual temperature (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt;= w &lt;= 0.06.</p>
+<pre><code class="shell">$ earth-science solve virtual_temperature &quot;T=303.15 K&quot; w=0.02
+Tv = 306.7630037 K
+  by: Virtual temperature  (Tv = T (w + epsilon)/(epsilon (1 + w)))
+  T = 303.15 K
+  w = 0.02
+  assumes: 0 &lt;= w &lt;= 0.06</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the virtual temperature, defined as the temperature that dry air would require to possess the same density as the current moist air parcel under identical pressure conditions. By using the input air temperature of 303.15 K and a water-vapour mixing ratio of 0.02, the model applies the relationship between moisture content and density. The resulting virtual temperature of 306.763 K allows practitioners to use the ideal gas law for moist air without altering the fundamental density calculation method, effectively treating the moist air as if it were dry air with this adjusted temperature.</p>
+<h3>Climate (1)</h3>
+<h4 id="energy_balance_response">Warming of a one-box energy-balance model — <code>energy_balance_response</code></h4>
+<p>Temperature response after t years to a constant radiative forcing F in a one-box model C dT/dt = F - T/lambda, the equilibrium warming lambda F and the e-folding time lambda C.</p>
+<div class="math">\[\Delta T(t) = \lambda F\left(1-e^{-t/\tau}\right),\quad \tau = \lambda C\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>F</code></td><td>in</td><td>radiative forcing applied at t = 0</td><td>W/m^2</td></tr><tr><td><code>lam</code></td><td>in</td><td>climate sensitivity parameter</td><td>K*m^2/W</td></tr><tr><td><code>C</code></td><td>in</td><td>effective heat capacity per unit area</td><td>J/(m^2*K)</td></tr><tr><td><code>t</code></td><td>in</td><td>time since the forcing began (years)</td><td>—</td></tr><tr><td><code>dT</code></td><td>out</td><td>warming after t (K)</td><td>K</td></tr><tr><td><code>dT_eq</code></td><td>out</td><td>equilibrium warming (K)</td><td>K</td></tr><tr><td><code>tau_years</code></td><td>out</td><td>e-folding time (years)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> lambda &gt; 0, C &gt; 0; the forcing is switched on at t = 0 and then held constant.</p>
+<pre><code class="shell">$ earth-science solve energy_balance_response &quot;F=3.7 W/m^2&quot; &quot;lam=0.8 K*m^2/W&quot; &quot;C=420000000 J/(m^2*K)&quot; t=10
+dT = 1.802832762 K
+dT_eq = 2.96 K
+tau_years = 10.64719751
+  by: Warming of a one-box energy-balance model  (dT(t) = lambda F (1 - exp(-t/(lambda C))))
+  F = 3.7 W/m^2
+  lam = 0.8 K*m^2/W
+  C = 420000000 J/(m^2*K)
+  t = 10
+  assumes: lambda &gt; 0, C &gt; 0; the forcing is switched on at t = 0 and then held constant</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the temperature response to a constant radiative forcing of 3.7 W/m^2 applied for 10. Using a climate sensitivity parameter of 0.8 K*m^2/W and heat capacity of 4.2e+08 J/(m^2*K), the model computes a current warming of 1.80283 K. The system tends toward an equilibrium warming of 2.96 K, governed by an e-folding time of 10.6472, which represents the delay caused by thermal inertia.</p>
+<h3>Climate and radiation (2)</h3>
+<h4 id="co2_radiative_forcing">Radiative forcing of a change in CO2 (Myhre et al. 1998) — <code>co2_radiative_forcing</code></h4>
+<p>The radiative forcing dF = 5.35 ln(C/C0) W/m^2 of a change in CO2 concentration from C0 to C, and with a climate sensitivity parameter the equilibrium warming lambda dF.</p>
+<div class="math">\[\Delta F = 5.35\,\ln\frac{C}{C_0}\ \mathrm{W\,m^{-2}}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>C</code></td><td>in</td><td>CO2 concentration (ppm)</td><td>—</td></tr><tr><td><code>C0</code></td><td>in</td><td>reference CO2 concentration (ppm)</td><td>—</td></tr><tr><td><code>lam</code></td><td>in</td><td>climate sensitivity parameter (K per W/m^2, optional) (optional)</td><td>K*m^2/W</td></tr><tr><td><code>dF</code></td><td>out</td><td>radiative forcing (W/m^2)</td><td>W/m^2</td></tr><tr><td><code>doublings</code></td><td>out</td><td>number of CO2 doublings log2(C/C0)</td><td>—</td></tr><tr><td><code>dT_eq</code></td><td>out</td><td>equilibrium warming lambda dF (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 1 &lt;= C, C0 &lt;= 100,000 ppm; the simplified logarithmic expression of Myhre et al. (1998).</p>
+<pre><code class="shell">$ earth-science solve co2_radiative_forcing C=560 C0=280
+dF = 3.708337416 W/m^2
+doublings = 1
+  by: Radiative forcing of a change in CO2 (Myhre et al. 1998)  (dF = 5.35 ln(C/C0) W/m^2; dT_eq = lambda dF)
+  C = 560
+  C0 = 280
+  assumes: 1 &lt;= C, C0 &lt;= 100,000 ppm; the simplified logarithmic expression of Myhre et al. (1998)</code></pre>
+<p>In the worked example, C = 560, C0 = 280 go through the equation above and give dF = 3.708337416 W/m^2, doublings = 1. It applies only when 1 &lt;= C, C0 &lt;= 100,000 ppm; the simplified logarithmic expression of Myhre et al. (1998): outside that it says what is wrong instead of returning a number.</p>
+<h4 id="solar_elevation_angle">Solar elevation and azimuth — <code>solar_elevation_angle</code></h4>
+<p>The sun&#x27;s elevation above the horizon, its zenith angle and azimuth (clockwise from north) for a latitude, a solar declination and an hour angle (15 degrees per hour from solar noon, negative in the morning).</p>
+<div class="math">\[\sin\alpha = \sin\varphi\sin\delta + \cos\varphi\cos\delta\cos H\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>lat</code></td><td>in</td><td>latitude (degrees, north positive)</td><td>—</td></tr><tr><td><code>decl</code></td><td>in</td><td>solar declination (degrees)</td><td>—</td></tr><tr><td><code>H</code></td><td>in</td><td>hour angle (degrees, negative before solar noon)</td><td>—</td></tr><tr><td><code>elevation</code></td><td>out</td><td>solar elevation angle (degrees)</td><td>—</td></tr><tr><td><code>zenith</code></td><td>out</td><td>solar zenith angle (degrees)</td><td>—</td></tr><tr><td><code>azimuth</code></td><td>out</td><td>solar azimuth, clockwise from north (degrees)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> |declination| &lt;= 23.5 degrees; -180 &lt;= hour angle &lt;= 180 degrees; geometric (no refraction).</p>
+<pre><code class="shell">$ earth-science solve solar_elevation_angle lat=40 decl=23.44 H=0
+elevation = 73.44
+zenith = 16.56
+azimuth = 180
+  by: Solar elevation and azimuth  (sin(elevation) = sin(phi) sin(delta) + cos(phi) cos(delta) cos(H); azimuth from the east and north components)
+  lat = 40
+  decl = 23.44
+  H = 0
+  assumes: |declination| &lt;= 23.5 degrees; -180 &lt;= hour angle &lt;= 180 degrees; geometric (no refraction)</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the sun&#x27;s position in the sky based on your latitude, the solar declination, and the hour angle. The resulting elevation of 73.44 indicates how high the sun sits above the horizon, while the zenith angle of 16.56 represents the distance from directly overhead. The azimuth value of 180 specifies the compass direction where the sun is located, rotating clockwise from true north.</p>
+<h3>Geochronology (5)</h3>
+<h4 id="radiocarbon_age">Conventional radiocarbon age — <code>radiocarbon_age</code></h4>
+<p>Conventional radiocarbon age (years BP) from the fraction modern carbon, with the Libby mean life of 8033 years (Stuiver and Polach 1977); not calibrated to calendar years.</p>
+<div class="math">\[t = -8033\,\ln F\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>F</code></td><td>in</td><td>fraction modern (14C activity relative to the modern standard; or % in a question)</td><td>—</td></tr><tr><td><code>age</code></td><td>out</td><td>conventional radiocarbon age (years BP)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 1e-5 &lt;= F &lt;= 1 (no bomb carbon).</p>
+<pre><code class="shell">$ earth-science solve radiocarbon_age F=0.5
+age = 5568.051301
+  by: Conventional radiocarbon age  (t = -8033 ln F)
+  F = 0.5
+  assumes: 1e-5 &lt;= F &lt;= 1 (no bomb carbon)</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the conventional radiocarbon age of a sample, expressed as 5568.05, by applying the Libby mean life convention to the fraction modern carbon value of 0.5. The result represents the time elapsed before present based on radioactive decay, assuming a closed system and constant initial atmospheric carbon ratios. This uncalibrated age serves as a standard reference point for archaeology and geology but requires further adjustment to match calendar years.</p>
+<h4 id="radioactive_decay_remaining">Fraction of a radioactive parent remaining — <code>radioactive_decay_remaining</code></h4>
+<p>Fraction of the parent nuclide left (and decayed) after a time t, and the decay constant ln 2/half-life.</p>
+<div class="math">\[\frac{N}{N_0} = 2^{-t/t_{1/2}} = e^{-\lambda t},\quad \lambda = \frac{\ln 2}{t_{1/2}}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>half_life</code></td><td>in</td><td>half-life (years)</td><td>—</td></tr><tr><td><code>t</code></td><td>in</td><td>elapsed time (years)</td><td>—</td></tr><tr><td><code>fraction</code></td><td>out</td><td>fraction of the parent remaining</td><td>—</td></tr><tr><td><code>decayed</code></td><td>out</td><td>fraction decayed</td><td>—</td></tr><tr><td><code>lambda</code></td><td>out</td><td>decay constant (1/yr)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> half-life &gt; 0; t &lt;= 60 half-lives.</p>
+<pre><code class="shell">$ earth-science solve radioactive_decay_remaining half_life=5730 t=10000
+fraction = 0.2982924364
+decayed = 0.7017075636
+lambda = 0.0001209680943
+  by: Fraction of a radioactive parent remaining  (N/N0 = 2^(-t/t_half), lambda = ln 2/t_half)
+  half_life = 5730
+  t = 10000
+  assumes: half-life &gt; 0; t &lt;= 60 half-lives</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the proportion of a radioactive parent isotope that remains after a specified elapsed time. Using a half-life of 5730 years and an elapsed time of 10000 years, the model computes that 0.298292 of the original atoms are still present. Consequently, the fraction that has decayed is 0.701708. The decay constant, which represents the probability of decay per unit time, is calculated as 0.000120968 inverse years.</p>
+<h4 id="isochron_age">Isochron age (e.g. Rb-Sr) from sample ratios — <code>isochron_age</code></h4>
+<p>Age and initial ratio from an isochron: a least-squares line through (parent/stable, daughter/stable) ratios of cogenetic samples (ordinary least squares, not a York fit). Default decay constant 1.42e-11 /yr (87Rb).</p>
+<div class="math">\[t = \frac{\ln(1+m)}{\lambda},\quad \frac{D}{S} = \left(\frac{D}{S}\right)_0 + m\,\frac{P}{S}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>x</code></td><td>in</td><td>parent/stable isotope ratios (list, e.g. 87Rb/86Sr)</td><td>—</td></tr><tr><td><code>y</code></td><td>in</td><td>daughter/stable isotope ratios (list, e.g. 87Sr/86Sr)</td><td>—</td></tr><tr><td><code>lam</code></td><td>in</td><td>decay constant of the parent (default 1.42e-11 /yr) (optional)</td><td>—</td></tr><tr><td><code>age</code></td><td>out</td><td>isochron age (years)</td><td>—</td></tr><tr><td><code>slope</code></td><td>out</td><td>isochron slope e^(lambda t) - 1</td><td>—</td></tr><tr><td><code>initial_ratio</code></td><td>out</td><td>initial daughter/stable ratio (intercept)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> cogenetic samples, closed systems, same initial ratio.</p>
+<pre><code class="shell">$ earth-science solve isochron_age &quot;x=[0.5, 1.2, 2.8, 4.1]&quot; &quot;y=[0.7121, 0.7221, 0.7449, 0.7634]&quot; lam=1.42e-11
+age = 996371909.4
+slope = 0.01424904459
+initial_ratio = 0.7049895541
+  by: Isochron age (e.g. Rb-Sr) from sample ratios  (t = ln(1 + slope)/lambda)
+  lam = 1.42e-11
+  assumes: cogenetic samples, closed systems, same initial ratio</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the age of a rock suite by fitting a line to parent and daughter isotope ratios. The resulting slope of 0.014249 yields an age of 9.96372e+08, while the intercept provides the initial ratio of 0.70499. These values assume that all samples formed simultaneously and remained closed systems, allowing the decay constant to convert the measured isotopic spread into a specific time duration.</p>
+<h4 id="potassium_argon_age">Potassium-argon age (branched decay) — <code>potassium_argon_age</code></h4>
+<p>K-Ar age from the radiogenic 40Ar*/40K ratio, allowing for the branching of 40K decay to 40Ar (electron capture) and 40Ca. Defaults: lambda = 5.543e-10 /yr, lambda_e = 0.581e-10 /yr (Steiger and Jäger 1977).</p>
+<div class="math">\[t = \frac{1}{\lambda}\ln\!\left(1+\frac{\lambda}{\lambda_e}\frac{^{40}\mathrm{Ar}^*}{^{40}\mathrm{K}}\right)\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>ratio</code></td><td>in</td><td>radiogenic 40Ar*/40K atom ratio</td><td>—</td></tr><tr><td><code>lam</code></td><td>in</td><td>total decay constant of 40K (default 5.543e-10 /yr) (optional)</td><td>—</td></tr><tr><td><code>lam_e</code></td><td>in</td><td>partial decay constant to 40Ar (default 0.581e-10 /yr) (optional)</td><td>—</td></tr><tr><td><code>age</code></td><td>out</td><td>K-Ar age (years)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> closed system, no initial argon.</p>
+<pre><code class="shell">$ earth-science solve potassium_argon_age ratio=0.0055
+age = 92264335.51
+  by: Potassium-argon age (branched decay)  (t = (1/lambda) ln(1 + (lambda/lambda_e) Ar*/K))
+  ratio = 0.0055
+  assumes: closed system, no initial argon</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the time since mineral formation using the potassium-argon method, specifically adjusting for the branching decay where potassium-40 transforms into either argon-40 or calcium-40. By analyzing the measured ratio of radiogenic argon-40 to remaining potassium-40, which is 0.0055, and applying the total and partial decay constants, the model computes an age of 9.22643e+07. This result represents the duration for which the system has remained closed, allowing argon to accumulate without loss.</p>
+<h4 id="radiometric_age">Radiometric age from a daughter/parent ratio — <code>radiometric_age</code></h4>
+<p>Age of a closed system from the ratio of radiogenic daughter to remaining parent atoms and the half-life (no initial daughter).</p>
+<div class="math">\[t = \frac{1}{\lambda}\ln\!\left(1+\frac{D^*}{P}\right)\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>ratio</code></td><td>in</td><td>radiogenic daughter / parent atom ratio</td><td>—</td></tr><tr><td><code>half_life</code></td><td>in</td><td>half-life of the parent (years)</td><td>—</td></tr><tr><td><code>age</code></td><td>out</td><td>age (years)</td><td>—</td></tr><tr><td><code>lambda</code></td><td>out</td><td>decay constant (1/yr)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> closed system; no daughter at the start.</p>
+<pre><code class="shell">$ earth-science solve radiometric_age ratio=0.5 half_life=1250000000
+age = 731203125.9
+lambda = 5.545177444e-10
+  by: Radiometric age from a daughter/parent ratio  (t = ln(1 + D/P)/lambda)
+  ratio = 0.5
+  half_life = 1250000000
+  assumes: closed system; no daughter at the start</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the time elapsed since a mineral formed by measuring how much radiogenic daughter product has accumulated relative to the remaining parent atoms. Using an input ratio of 0.5 and a known half-life of 1.25e+09, the model computes a decay constant of 5.54518e-10 and solves for the age, resulting in 7.31203e+08. This result indicates the duration over which radioactive decay has proceeded within a closed system.</p>
+<h3>Geodynamics (2)</h3>
+<h4 id="pratt_isostasy">Column density by Pratt isostasy — <code>pratt_isostasy</code></h4>
+<p>The density of a crustal column standing h above sea level under Pratt isostasy (columns of different density down to a common compensation depth D), given the density of a column whose top is at sea level.</p>
+<div class="math">\[\rho = \rho_0\,\frac{D}{D + h}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>h</code></td><td>in</td><td>elevation of the column above sea level</td><td>m</td></tr><tr><td><code>rho0</code></td><td>in</td><td>density of a column whose top is at sea level</td><td>kg/m^3</td></tr><tr><td><code>D</code></td><td>in</td><td>depth of compensation below sea level</td><td>m</td></tr><tr><td><code>rho</code></td><td>out</td><td>density of the elevated column (kg/m^3)</td><td>kg/m^3</td></tr><tr><td><code>drho</code></td><td>out</td><td>density deficit rho0 - rho (kg/m^3)</td><td>kg/m^3</td></tr></tbody></table>
+<p><strong>Applies when:</strong> h &gt; 0; rho0, D &gt; 0; a column on land (no water load).</p>
+<pre><code class="shell">$ earth-science solve pratt_isostasy &quot;h=3000 m&quot; &quot;rho0=2800 kg/m^3&quot; &quot;D=100000 m&quot;
+rho = 2718.446602 kg/m^3
+drho = 81.55339806 kg/m^3
+  by: Column density by Pratt isostasy  (rho = rho0 D/(D + h))
+  h = 3000 m
+  rho0 = 2800 kg/m^3
+  D = 100000 m
+  assumes: h &gt; 0; rho0, D &gt; 0; a column on land (no water load)</code></pre>
+<p><strong>What the worked example means:</strong> This calculation finds the average density of a crustal column standing above sea level under Pratt isostasy. Using an elevation of 3000 m, a reference density of 2800 kg/m^3, and a compensation depth of 100000 m, the resulting column density is 2718.45 kg/m^3. The difference between the reference and calculated density, known as the density deficit, is 81.5534 kg/m^3. This model assumes that higher elevations are supported by lower-density material extending to a common base rather than by thickened roots.</p>
+<h4 id="airy_isostasy">Mountain root by Airy isostasy — <code>airy_isostasy</code></h4>
+<p>The crustal root below topography of height h compensated by Airy isostasy (crust of uniform density floating on denser mantle), and with a normal crustal thickness the total thickness under the mountain.</p>
+<div class="math">\[r = \frac{\rho_c}{\rho_m - \rho_c}\,h\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>h</code></td><td>in</td><td>elevation of the topography above sea level</td><td>m</td></tr><tr><td><code>rho_c</code></td><td>in</td><td>crustal density</td><td>kg/m^3</td></tr><tr><td><code>rho_m</code></td><td>in</td><td>mantle density</td><td>kg/m^3</td></tr><tr><td><code>tc</code></td><td>in</td><td>normal crustal thickness (optional) (optional)</td><td>m</td></tr><tr><td><code>root</code></td><td>out</td><td>root depth below the normal crust (m)</td><td>m</td></tr><tr><td><code>root_km</code></td><td>out</td><td>root depth (km)</td><td>—</td></tr><tr><td><code>crust_thickness</code></td><td>out</td><td>total crustal thickness under the topography (m)</td><td>m</td></tr></tbody></table>
+<p><strong>Applies when:</strong> h &gt; 0; rho_m &gt; rho_c; local (Airy) compensation, uniform crustal density.</p>
+<pre><code class="shell">$ earth-science solve airy_isostasy &quot;h=3000 m&quot; &quot;rho_c=2800 kg/m^3&quot; &quot;rho_m=3300 kg/m^3&quot;
+root = 16800 m
+root_km = 16.8
+  by: Mountain root by Airy isostasy  (r = h rho_c/(rho_m - rho_c))
+  h = 3000 m
+  rho_c = 2800 kg/m^3
+  rho_m = 3300 kg/m^3
+  assumes: h &gt; 0; rho_m &gt; rho_c; local (Airy) compensation, uniform crustal density</code></pre>
+<p>In the worked example, h = 3000 m, rho_c = 2800 kg/m^3, rho_m = 3300 kg/m^3 go through the equation above and give root = 16800 m, root_km = 16.8. It applies only when h &gt; 0; rho_m &gt; rho_c; local (Airy) compensation, uniform crustal density: outside that it says what is wrong instead of returning a number.</p>
+<h3>Geomagnetism (2)</h3>
+<h4 id="dipole_inclination">Inclination and strength of a geocentric dipole field — <code>dipole_inclination</code></h4>
+<p>Magnetic inclination (dip) and field strength relative to the equator at a magnetic latitude for a geocentric axial dipole.</p>
+<div class="math">\[\tan I = 2\tan\lambda,\quad \frac{F}{F_{eq}} = \sqrt{1+3\sin^2\lambda}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>lat</code></td><td>in</td><td>magnetic latitude (degrees)</td><td>—</td></tr><tr><td><code>inclination</code></td><td>out</td><td>inclination (degrees, positive downward)</td><td>—</td></tr><tr><td><code>F_ratio</code></td><td>out</td><td>field strength / equatorial strength</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> geocentric axial dipole.</p>
+<pre><code class="shell">$ earth-science solve dipole_inclination lat=45
+inclination = 63.43494882
+F_ratio = 1.58113883
+  by: Inclination and strength of a geocentric dipole field  (tan I = 2 tan(latitude), F/F_eq = sqrt(1 + 3 sin^2 latitude))
+  lat = 45
+  assumes: geocentric axial dipole</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the magnetic inclination and relative field strength for a geocentric axial dipole at the specified magnetic latitude. Using the input latitude of 45, the model computes an inclination of 63.4349 degrees, where positive values indicate downward direction. It also calculates the ratio of the local field strength to the equatorial field strength as 1.58114. These results illustrate how the Earth&#x27;s magnetic field geometry changes with position, showing that both the dip angle and the intensity increase as one moves away from the magnetic equator toward the poles.</p>
+<h4 id="paleolatitude">Paleolatitude from magnetic inclination — <code>paleolatitude</code></h4>
+<p>The magnetic (paleo)latitude at which a rock acquired its magnetisation, from the inclination of its remanence, for a geocentric axial dipole; and the angular distance to the paleopole.</p>
+<div class="math">\[\lambda = \arctan\!\left(\tfrac12\tan I\right)\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>I_deg</code></td><td>in</td><td>inclination of the remanent magnetisation (degrees)</td><td>—</td></tr><tr><td><code>paleolatitude</code></td><td>out</td><td>paleolatitude (degrees)</td><td>—</td></tr><tr><td><code>pole_distance</code></td><td>out</td><td>distance to the pole (degrees)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> geocentric axial dipole; |I| &lt; 90.</p>
+<pre><code class="shell">$ earth-science solve paleolatitude I_deg=60
+paleolatitude = 40.89339465
+pole_distance = 49.10660535
+  by: Paleolatitude from magnetic inclination  (latitude = atan(tan I/2))
+  I_deg = 60
+  assumes: geocentric axial dipole; |I| &lt; 90</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the magnetic latitude at which a rock acquired its magnetization, using the inclination of its remanence under the geocentric axial dipole assumption. The resulting paleolatitude of 40.8934 indicates the angular distance from the equator, while the pole distance of 49.1066 represents how far the site was from the magnetic pole.</p>
+<h3>Geomorphology (1)</h3>
+<h4 id="stream_power">Stream power of a river — <code>stream_power</code></h4>
+<p>The total stream power per unit channel length Omega = rho g Q S and, with the channel width, the unit stream power omega = Omega/w.</p>
+<div class="math">\[\Omega = \rho g Q S,\quad \omega = \frac{\Omega}{w}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>Q</code></td><td>in</td><td>discharge</td><td>m^3/s</td></tr><tr><td><code>S</code></td><td>in</td><td>channel slope (m/m)</td><td>—</td></tr><tr><td><code>w</code></td><td>in</td><td>channel width (optional) (optional)</td><td>m</td></tr><tr><td><code>rho</code></td><td>in</td><td>water density (default 1000 kg/m^3) (optional)</td><td>kg/m^3</td></tr><tr><td><code>Omega</code></td><td>out</td><td>total stream power per unit length (W/m)</td><td>W/m</td></tr><tr><td><code>omega</code></td><td>out</td><td>unit stream power (W/m^2)</td><td>W/m^2</td></tr></tbody></table>
+<p><strong>Applies when:</strong> Q &gt; 0; 0 &lt; S &lt;= 1; steady uniform flow.</p>
+<pre><code class="shell">$ earth-science solve stream_power &quot;Q=100 m^3/s&quot; S=0.002
+Omega = 1961.33 W/m
+  by: Stream power of a river  (Omega = rho g Q S, omega = Omega/w)
+  Q = 100 m^3/s
+  S = 0.002
+  assumes: Q &gt; 0; 0 &lt; S &lt;= 1; steady uniform flow</code></pre>
+<p>In the worked example, Q = 100 m^3/s, S = 0.002 go through the equation above and give Omega = 1961.33 W/m. It applies only when Q &gt; 0; 0 &lt; S &lt;= 1; steady uniform flow: outside that it says what is wrong instead of returning a number.</p>
+<h3>Geophysics (3)</h3>
+<h4 id="gravity_at_latitude">Gravitational acceleration at a latitude and height — <code>gravity_at_latitude</code></h4>
+<p>Normal gravity at sea level for a latitude (International Gravity Formula 1967, as UNESCO 1983) reduced for height with the inverse-square law.</p>
+<div class="math">\[g = \frac{9.780318\,(1+5.2788\times10^{-3}\sin^2\varphi+2.36\times10^{-5}\sin^4\varphi)}{(1+z/R)^2}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>lat</code></td><td>in</td><td>latitude (degrees, north positive)</td><td>—</td></tr><tr><td><code>z</code></td><td>in</td><td>height above sea level (default 0) (optional)</td><td>m</td></tr><tr><td><code>g</code></td><td>out</td><td>gravitational acceleration (m/s^2)</td><td>m/s^2</td></tr></tbody></table>
+<p><strong>Applies when:</strong> -90 &lt;= latitude &lt;= 90; spherical inverse-square reduction for height (R = 6371 km).</p>
+<pre><code class="shell">$ earth-science solve gravity_at_latitude lat=45 &quot;z=0 m&quot;
+g = 9.806189875 m/s^2
+  by: Gravitational acceleration at a latitude and height  (g = 9.780318 (1 + 5.2788e-3 sin^2 phi + 2.36e-5 sin^4 phi)/(1 + z/R)^2)
+  lat = 45
+  z = 0 m
+  assumes: -90 &lt;= latitude &lt;= 90; spherical inverse-square reduction for height (R = 6371 km)</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the normal gravity value based on the International Gravity Formula, adjusted for the input latitude of 45 and reduced for a height above sea level of 0 m. The resulting gravitational acceleration of 9.80619 m/s^2 represents the theoretical standard force experienced at that location, assuming a spherical Earth model without local geological anomalies.</p>
+<h4 id="buried_sphere_anomaly">Gravity anomaly above a buried sphere — <code>buried_sphere_anomaly</code></h4>
+<p>Peak vertical gravity anomaly directly above a buried sphere of radius R, depth z to its centre and density contrast drho.</p>
+<div class="math">\[\Delta g = \frac{4\pi G\,\Delta\rho\,R^3}{3z^2}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>drho</code></td><td>in</td><td>density contrast of the sphere</td><td>kg/m^3</td></tr><tr><td><code>R</code></td><td>in</td><td>radius of the sphere</td><td>m</td></tr><tr><td><code>z</code></td><td>in</td><td>depth to the centre of the sphere</td><td>m</td></tr><tr><td><code>dg_mGal</code></td><td>out</td><td>peak gravity anomaly (mGal)</td><td>—</td></tr><tr><td><code>dg</code></td><td>out</td><td>peak gravity anomaly (m/s^2)</td><td>m/s^2</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt; R &lt; z; observation point directly above the centre.</p>
+<pre><code class="shell">$ earth-science solve buried_sphere_anomaly &quot;drho=500 kg/m^3&quot; &quot;R=100 m&quot; &quot;z=200 m&quot;
+dg_mGal = 0.3494655308
+dg = 3.494655308e-06 m/s^2
+  by: Gravity anomaly above a buried sphere  (dg = (4/3) pi G drho R^3/z^2)
+  drho = 500 kg/m^3
+  R = 100 m
+  z = 200 m
+  assumes: 0 &lt; R &lt; z; observation point directly above the centre</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the maximum vertical gravity anomaly directly above a buried sphere. It uses the density contrast, the sphere&#x27;s radius, and the depth to its center. The resulting anomaly is 0.349466, which helps interpret subsurface structures like ore bodies or voids based on their physical properties.</p>
+<h4 id="bouguer_slab">Gravity anomaly of an infinite horizontal slab (Bouguer) — <code>bouguer_slab</code></h4>
+<p>Vertical gravity anomaly of an infinite horizontal slab of thickness h and density contrast drho.</p>
+<div class="math">\[\Delta g = 2\pi G\,\Delta\rho\,h\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>drho</code></td><td>in</td><td>density contrast of the slab</td><td>kg/m^3</td></tr><tr><td><code>h</code></td><td>in</td><td>slab thickness</td><td>m</td></tr><tr><td><code>dg_mGal</code></td><td>out</td><td>gravity anomaly (mGal)</td><td>—</td></tr><tr><td><code>dg</code></td><td>out</td><td>gravity anomaly (m/s^2)</td><td>m/s^2</td></tr></tbody></table>
+<p><strong>Applies when:</strong> laterally infinite slab; G = 6.6743e-11 N m^2/kg^2.</p>
+<pre><code class="shell">$ earth-science solve bouguer_slab &quot;drho=2670 kg/m^3&quot; &quot;h=100 m&quot;
+dg_mGal = 11.19687561
+dg = 0.0001119687561 m/s^2
+  by: Gravity anomaly of an infinite horizontal slab (Bouguer)  (dg = 2 pi G drho h)
+  drho = 2670 kg/m^3
+  h = 100 m
+  assumes: laterally infinite slab; G = 6.6743e-11 N m^2/kg^2</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the vertical gravity anomaly caused by an infinite horizontal slab. It uses the density contrast of 2670 kg/m^3 and the slab thickness of 100 m to produce a result of 11.1969. This value represents the gravitational effect of the layer, which is used to correct observed data for terrain or sediment mass.</p>
+<h3>Geothermics (2)</h3>
+<h4 id="geotherm_radiogenic">Steady geotherm with radiogenic heat production — <code>geotherm_radiogenic</code></h4>
+<p>Temperature and heat flow at depth in a conducting layer with uniform radiogenic heat production, from the surface temperature and surface heat flow.</p>
+<div class="math">\[T(z) = T_0 + \frac{q_0}{k}z - \frac{A}{2k}z^2\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T0</code></td><td>in</td><td>surface temperature</td><td>K</td></tr><tr><td><code>q0</code></td><td>in</td><td>surface heat flow</td><td>W/m^2</td></tr><tr><td><code>k</code></td><td>in</td><td>thermal conductivity</td><td>W/(m*K)</td></tr><tr><td><code>A</code></td><td>in</td><td>radiogenic heat production per unit volume</td><td>W/m^3</td></tr><tr><td><code>z</code></td><td>in</td><td>depth</td><td>m</td></tr><tr><td><code>T</code></td><td>out</td><td>temperature at depth (K)</td><td>K</td></tr><tr><td><code>q</code></td><td>out</td><td>heat flow at depth (W/m^2)</td><td>W/m^2</td></tr></tbody></table>
+<p><strong>Applies when:</strong> steady one-dimensional conduction; uniform heat production and conductivity.</p>
+<pre><code class="shell">$ earth-science solve geotherm_radiogenic &quot;T0=283.15 K&quot; &quot;q0=0.065 W/m^2&quot; &quot;k=2.5 W/(m*K)&quot; &quot;A=1e-06 W/m^3&quot; &quot;z=10000 m&quot;
+T = 523.15 K
+q = 0.055 W/m^2
+  by: Steady geotherm with radiogenic heat production  (T(z) = T0 + q0 z/k - A z^2/(2k), q(z) = q0 - A z)
+  T0 = 283.15 K
+  q0 = 0.065 W/m^2
+  k = 2.5 W/(m*K)
+  A = 1e-06 W/m^3
+  z = 10000 m
+  assumes: steady one-dimensional conduction; uniform heat production and conductivity</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the steady-state temperature profile within a crustal layer where radioactive elements produce heat uniformly. Starting from a surface temperature of 283.15 K and an initial heat flow of 0.065 W/m^2, the model accounts for conductive heat transfer through material with thermal conductivity 2.5 W/(m*K). As depth increases, radiogenic heating adds energy to the system, while conduction moves it upward. The resulting temperature at depth 10000 m is 523.15 K, reflecting the balance between these processes. Simultaneously, the heat flow decreases with depth as some generated heat is absorbed locally, yielding a value of 0.055 W/m^2 at that specific point.</p>
+<h4 id="half_space_heat_flow">Surface heat flow of cooling oceanic lithosphere (half-space model) — <code>half_space_heat_flow</code></h4>
+<p>The conductive surface heat flow q = k dT/sqrt(pi kappa t) of oceanic lithosphere of age t (half-space cooling) and its thermal thickness. Defaults: dT 1300 K, k 3.3 W/(m K), kappa 1e-6 m^2/s.</p>
+<div class="math">\[q = \frac{k\,\Delta T}{\sqrt{\pi\kappa t}}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>t</code></td><td>in</td><td>age of the seafloor (millions of years)</td><td>—</td></tr><tr><td><code>dT</code></td><td>in</td><td>mantle minus surface temperature (default 1300 K) (optional)</td><td>K</td></tr><tr><td><code>k</code></td><td>in</td><td>thermal conductivity (default 3.3 W/(m K)) (optional)</td><td>W/(m*K)</td></tr><tr><td><code>kappa</code></td><td>in</td><td>thermal diffusivity (default 1e-6 m^2/s) (optional)</td><td>m^2/s</td></tr><tr><td><code>q</code></td><td>out</td><td>surface heat flow (W/m^2)</td><td>W/m^2</td></tr><tr><td><code>q_mW</code></td><td>out</td><td>surface heat flow (mW/m^2)</td><td>—</td></tr><tr><td><code>thickness</code></td><td>out</td><td>thermal thickness, where (T - Ts)/dT = 0.9 (m)</td><td>m</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt; t &lt;= 200 Myr; conductive half-space cooling.</p>
+<pre><code class="shell">$ earth-science solve half_space_heat_flow t=50
+q = 0.06093199112 W/m^2
+q_mW = 60.93199112
+thickness = 92401.54658 m
+  by: Surface heat flow of cooling oceanic lithosphere (half-space model)  (q = k dT/sqrt(pi kappa t); thermal thickness 2 erfinv(0.9) sqrt(kappa t) = 2.326 sqrt(kappa t))
+  t = 50
+  assumes: 0 &lt; t &lt;= 200 Myr; conductive half-space cooling</code></pre>
+<p><strong>What the worked example means:</strong> For a seafloor age of 50, the surface heat flow is 0.060932 W/m^2 and the thermal thickness is 92401.5 m.</p>
+<h3>Hydrogeology (1)</h3>
+<h4 id="darcy_flow">Groundwater discharge by Darcy&#x27;s law — <code>darcy_flow</code></h4>
+<p>The volumetric discharge Q = K A dh/L through a porous medium, the specific discharge (Darcy flux) and, with a porosity, the average linear (seepage) velocity.</p>
+<div class="math">\[Q = K A\,\frac{\Delta h}{L}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>K</code></td><td>in</td><td>hydraulic conductivity</td><td>m/s</td></tr><tr><td><code>A</code></td><td>in</td><td>cross-sectional area of flow</td><td>m^2</td></tr><tr><td><code>dh</code></td><td>in</td><td>head difference</td><td>m</td></tr><tr><td><code>L</code></td><td>in</td><td>flow length</td><td>m</td></tr><tr><td><code>n</code></td><td>in</td><td>effective porosity (optional) (optional)</td><td>—</td></tr><tr><td><code>Q</code></td><td>out</td><td>discharge (m^3/s)</td><td>m^3/s</td></tr><tr><td><code>q</code></td><td>out</td><td>specific discharge (Darcy flux, m/s)</td><td>m/s</td></tr><tr><td><code>gradient</code></td><td>out</td><td>hydraulic gradient dh/L</td><td>—</td></tr><tr><td><code>v</code></td><td>out</td><td>average linear velocity q/n (m/s)</td><td>m/s</td></tr></tbody></table>
+<p><strong>Applies when:</strong> K, A, L &gt; 0; dh &gt; 0; laminar flow in a saturated, homogeneous medium.</p>
+<pre><code class="shell">$ earth-science solve darcy_flow &quot;K=0.0001 m/s&quot; &quot;A=50 m^2&quot; &quot;dh=2 m&quot; &quot;L=100 m&quot;
+Q = 0.0001 m^3/s
+q = 2e-06 m/s
+gradient = 0.02
+  by: Groundwater discharge by Darcy&#x27;s law  (Q = K A dh/L, q = Q/A, v = q/n)
+  K = 0.0001 m/s
+  A = 50 m^2
+  dh = 2 m
+  L = 100 m
+  assumes: K, A, L &gt; 0; dh &gt; 0; laminar flow in a saturated, homogeneous medium</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the volumetric flow rate of water through a porous medium using Darcy&#x27;s Law. By applying the hydraulic conductivity, cross-sectional area, head difference, and flow length, the model computes the total discharge as 0.0001 m^3/s. The resulting specific discharge represents the flux per unit area, while the average linear velocity indicates how fast water actually moves through the pore spaces when porosity is considered.</p>
+<h3>Ocean dynamics (3)</h3>
+<h4 id="ekman_depth">Ekman layer depth — <code>ekman_depth</code></h4>
+<p>Depth of frictional influence of the wind on the ocean (the current reverses direction at D_E = pi delta).</p>
+<div class="math">\[D_E = \pi\sqrt{\frac{2A_z}{|f|}}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>Az</code></td><td>in</td><td>vertical eddy viscosity</td><td>m^2/s</td></tr><tr><td><code>lat</code></td><td>in</td><td>latitude (degrees, north positive)</td><td>—</td></tr><tr><td><code>D_E</code></td><td>out</td><td>Ekman depth pi delta (m)</td><td>m</td></tr><tr><td><code>delta</code></td><td>out</td><td>Ekman e-folding depth sqrt(2 Az/|f|) (m)</td><td>m</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 5 &lt;= |latitude| &lt;= 89; constant eddy viscosity; deep ocean.</p>
+<pre><code class="shell">$ earth-science solve ekman_depth &quot;Az=0.05 m^2/s&quot; lat=45
+D_E = 97.82855061 m
+delta = 31.13979481 m
+  by: Ekman layer depth  (D_E = pi sqrt(2 Az/|f|))
+  Az = 0.05 m^2/s
+  lat = 45
+  assumes: 5 &lt;= |latitude| &lt;= 89; constant eddy viscosity; deep ocean</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the vertical extent of wind-driven ocean currents. Using a vertical eddy viscosity of 0.05 m^2/s and a latitude of 45, it computes the Ekman depth, which is the level where the current direction reverses relative to the surface flow, yielding 97.8286 m. It also reports the e-folding depth, representing the scale over which frictional influence diminishes, calculated as 31.1398 m.</p>
+<h4 id="ekman_transport">Ekman transport — <code>ekman_transport</code></h4>
+<p>Volume transport per unit width of the wind-driven Ekman layer, directed 90 degrees to the right of the wind in the northern hemisphere (left in the southern).</p>
+<div class="math">\[M_E = \frac{\tau}{\rho\,|f|}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>tau</code></td><td>in</td><td>wind stress on the sea surface</td><td>Pa</td></tr><tr><td><code>lat</code></td><td>in</td><td>latitude (degrees, north positive)</td><td>—</td></tr><tr><td><code>rho</code></td><td>in</td><td>seawater density (default 1025 kg/m^3) (optional)</td><td>kg/m^3</td></tr><tr><td><code>M</code></td><td>out</td><td>Ekman volume transport per unit width (m^2/s)</td><td>m^2/s</td></tr><tr><td><code>mass_transport</code></td><td>out</td><td>Ekman mass transport per unit width (kg/(m s))</td><td>kg/(m*s)</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 5 &lt;= |latitude| &lt;= 89; steady state, deep ocean.</p>
+<pre><code class="shell">$ earth-science solve ekman_transport &quot;tau=0.1 Pa&quot; lat=45 &quot;rho=1025 kg/m^3&quot;
+M = 0.9460359228 m^2/s
+mass_transport = 969.6868209 kg/(m*s)
+  by: Ekman transport  (M = tau/(rho |f|))
+  tau = 0.1 Pa
+  lat = 45
+  rho = 1025 kg/m^3
+  assumes: 5 &lt;= |latitude| &lt;= 89; steady state, deep ocean</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the net water movement driven by wind stress, known as Ekman transport. Using a wind stress of 0.1 Pa at a latitude of 45 degrees and a seawater density of 1025 kg/m^3, the model computes a volume transport per unit width of 0.946036 m^2/s. This value represents the total amount of water moving perpendicular to the wind direction due to the balance between frictional forces and the Coriolis effect.</p>
+<h4 id="shallow_water_wave">Speed of a shallow-water (long) wave and tsunami travel time — <code>shallow_water_wave</code></h4>
+<p>Speed sqrt(g h) of a wave much longer than the water depth (tsunami, tide), and its travel time over a distance.</p>
+<div class="math">\[c = \sqrt{g h},\quad t = d/c\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>h</code></td><td>in</td><td>water depth</td><td>m</td></tr><tr><td><code>distance</code></td><td>in</td><td>distance travelled (optional) (optional)</td><td>m</td></tr><tr><td><code>c</code></td><td>out</td><td>wave speed (m/s)</td><td>m/s</td></tr><tr><td><code>travel_time</code></td><td>out</td><td>travel time (s)</td><td>s</td></tr><tr><td><code>travel_time_h</code></td><td>out</td><td>travel time (hours)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> wavelength much longer than the depth; standard gravity.</p>
+<pre><code class="shell">$ earth-science solve shallow_water_wave &quot;h=4000 m&quot; &quot;distance=5000000 m&quot;
+c = 198.0570625 m/s
+travel_time = 25245.24971 s
+travel_time_h = 7.012569365
+  by: Speed of a shallow-water (long) wave and tsunami travel time  (c = sqrt(g h), t = d/c)
+  h = 4000 m
+  distance = 5000000 m
+  assumes: wavelength much longer than the depth; standard gravity</code></pre>
+<p><strong>What the worked example means:</strong> The model calculates the speed of a long wave using the square root of gravity times water depth, yielding 198.057 m/s. It then determines the travel time over the given distance, resulting in 7.01257. This helps estimate when coastal areas might experience tsunami or tide effects.</p>
+<h3>Oceanography (10)</h3>
+<h4 id="seawater_adiabatic_gradient">Adiabatic temperature gradient of seawater (Bryden 1973) — <code>seawater_adiabatic_gradient</code></h4>
+<p>How fast the temperature of seawater rises under adiabatic compression, per decibar.</p>
+<div class="math">\[\Gamma(S,T,p) = \left(\frac{\partial T}{\partial p}\right)_{\eta}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>in</td><td>practical salinity (PSS-78)</td><td>—</td></tr><tr><td><code>T</code></td><td>in</td><td>in-situ temperature</td><td>K</td></tr><tr><td><code>p</code></td><td>in</td><td>sea pressure (0 at the surface)</td><td>Pa</td></tr><tr><td><code>gamma</code></td><td>out</td><td>adiabatic gradient (K per dbar)</td><td>—</td></tr><tr><td><code>gamma_per_km_dbar</code></td><td>out</td><td>adiabatic gradient (K per 1000 dbar)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt;= S &lt;= 42; -2 °C &lt;= T &lt;= 40 °C.</p>
+<pre><code class="shell">$ earth-science solve seawater_adiabatic_gradient S=35 &quot;T=283.15 K&quot; &quot;p=10000000 Pa&quot;
+gamma = 0.0001273870565
+gamma_per_km_dbar = 0.1273870565
+  by: Adiabatic temperature gradient of seawater (Bryden 1973)  (Bryden (1973) polynomial (UNESCO 1983 Eq. 30))
+  S = 35
+  T = 283.15 K
+  p = 10000000 Pa
+  assumes: 0 &lt;= S &lt;= 42; -2 °C &lt;= T &lt;= 40 °C</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the rate at which seawater temperature rises under adiabatic compression. Using practical salinity of 35, in-situ temperature of 283.15 K, and pressure of 1e+07 Pa, the model computes an adiabatic gradient of 0.000127387 K per dbar, which scales to 0.127387 K per 1000 dbar. This value quantifies how much heat is generated by pressure alone when water moves vertically without exchanging energy with its surroundings.</p>
+<h4 id="pure_water_density">Density of pure water (SMOW, Bigg 1967) — <code>pure_water_density</code></h4>
+<p>Density of standard mean ocean water (no salt) at atmospheric pressure, UNESCO 1983 polynomial.</p>
+<div class="math">\[\rho_w = \sum_{i=0}^{5} a_i\,T_{68}^{\,i}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T</code></td><td>in</td><td>water temperature</td><td>K</td></tr><tr><td><code>rho</code></td><td>out</td><td>density (kg/m^3)</td><td>kg/m^3</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 °C &lt;= T &lt;= 40 °C; atmospheric pressure.</p>
+<pre><code class="shell">$ earth-science solve pure_water_density &quot;T=277.15 K&quot;
+rho = 999.9749579 kg/m^3
+  by: Density of pure water (SMOW, Bigg 1967)  (Bigg (1967) polynomial in T68 (UNESCO 1983 Eq. 14))
+  T = 277.15 K
+  assumes: 0 °C &lt;= T &lt;= 40 °C; atmospheric pressure</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the density of standard mean ocean water, which represents pure water without salt, based on its temperature. Using a polynomial approximation valid for temperatures between zero and forty degrees Celsius at atmospheric pressure, the model computes that at an input temperature of 277.15 K, the resulting water density is 999.975 kg/m^3. This value reflects how thermal energy affects the molecular spacing in liquid water, indicating that as the temperature rises within this range, the density decreases.</p>
+<h4 id="seawater_density_surface">Density of seawater at the surface (UNESCO 1981) — <code>seawater_density_surface</code></h4>
+<p>Density of seawater at atmospheric pressure from practical salinity and temperature (EOS-80), and sigma-t.</p>
+<div class="math">\[\rho(S,T,0) = \rho_w + B(T)\,S + C(T)\,S^{3/2} + d\,S^2\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>in</td><td>practical salinity (PSS-78)</td><td>—</td></tr><tr><td><code>T</code></td><td>in</td><td>water temperature</td><td>K</td></tr><tr><td><code>rho</code></td><td>out</td><td>density (kg/m^3)</td><td>kg/m^3</td></tr><tr><td><code>sigma_t</code></td><td>out</td><td>sigma-t = rho - 1000 (kg/m^3)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt;= S &lt;= 42; -2 °C &lt;= T &lt;= 40 °C.</p>
+<pre><code class="shell">$ earth-science solve seawater_density_surface S=35 &quot;T=288.15 K&quot;
+rho = 1025.971963 kg/m^3
+sigma_t = 25.97196289
+  by: Density of seawater at the surface (UNESCO 1981)  (UNESCO (1981) one-atmosphere equation of state (EOS-80))
+  S = 35
+  T = 288.15 K
+  assumes: 0 &lt;= S &lt;= 42; -2 °C &lt;= T &lt;= 40 °C</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the density of seawater at the surface using the UNESCO one-atmosphere equation of state. Given a practical salinity of 35 and a temperature of 288.15 K K, the resulting density is 1025.97 kg/m^3 kg/m3, which corresponds to a sigma-t value of 25.972. These values indicate how heavy the water is relative to fresh water, influencing its tendency to sink or float in ocean stratification.</p>
+<h4 id="ocean_depth_from_pressure">Depth from sea pressure (Fofonoff and Millard 1983) — <code>ocean_depth_from_pressure</code></h4>
+<p>Depth in the ocean from sea pressure and latitude (UNESCO 1983 standard algorithm).</p>
+<div class="math">\[z = \frac{\sum c_i p^i}{g(\varphi) + \tfrac12\gamma&#x27; p}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>p</code></td><td>in</td><td>sea pressure (0 at the surface)</td><td>Pa</td></tr><tr><td><code>lat</code></td><td>in</td><td>latitude (degrees, north positive)</td><td>—</td></tr><tr><td><code>depth</code></td><td>out</td><td>depth (m)</td><td>m</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt;= p &lt;= 12,000 dbar.</p>
+<pre><code class="shell">$ earth-science solve ocean_depth_from_pressure &quot;p=10000000 Pa&quot; lat=30
+depth = 990.8082107 m
+  by: Depth from sea pressure (Fofonoff and Millard 1983)  (z = (9.72659 p - 2.2512e-5 p^2 + 2.279e-10 p^3 - 1.82e-15 p^4)/(g(phi) + 1.092e-6 p))
+  p = 10000000 Pa
+  lat = 30
+  assumes: 0 &lt;= p &lt;= 12,000 dbar</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the ocean depth using sea pressure and latitude. By applying the standard UNESCO algorithm, it converts the measured pressure of 1e+07 Pa into a physical depth of 990.808 m. This result represents the vertical position of a sensor in the water column, accounting for local gravity variations based on the input latitude.</p>
+<h4 id="seawater_freezing_point">Freezing point of seawater (UNESCO 1983) — <code>seawater_freezing_point</code></h4>
+<p>The freezing temperature of seawater from practical salinity and sea pressure (Millero 1978).</p>
+<div class="math">\[t_f = -0.0575S + 1.710523\times10^{-3}S^{3/2} - 2.154996\times10^{-4}S^2 - 7.53\times10^{-4}p\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>in</td><td>practical salinity (PSS-78)</td><td>—</td></tr><tr><td><code>p</code></td><td>in</td><td>sea pressure (0 at the surface; default 0) (optional)</td><td>Pa</td></tr><tr><td><code>Tf</code></td><td>out</td><td>freezing temperature (K)</td><td>K</td></tr><tr><td><code>Tf_C</code></td><td>out</td><td>freezing temperature (°C, ITS-90)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 4 &lt;= S &lt;= 40; 0 &lt;= p &lt;= 500 dbar.</p>
+<pre><code class="shell">$ earth-science solve seawater_freezing_point S=35 &quot;p=0 Pa&quot;
+Tf = 271.2281599 K
+Tf_C = -1.9218401
+  by: Freezing point of seawater (UNESCO 1983)  (t_f = -0.0575 S + 1.710523e-3 S^1.5 - 2.154996e-4 S^2 - 7.53e-4 p (p in dbar))
+  S = 35
+  p = 0 Pa
+  assumes: 4 &lt;= S &lt;= 40; 0 &lt;= p &lt;= 500 dbar</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the point at which seawater turns to ice using the UNESCO 1983 algorithm. It takes the practical salinity value of 35 and the sea pressure of 0 Pa as inputs to produce a freezing temperature result of -1.92184 degrees Celsius. This metric is critical for modeling sea ice formation in polar regions, where both salt content and depth influence the phase change of water.</p>
+<h4 id="seawater_density">In-situ density of seawater (EOS-80) — <code>seawater_density</code></h4>
+<p>In-situ density of seawater from practical salinity, temperature and sea pressure with the secant bulk modulus.</p>
+<div class="math">\[\rho(S,T,p) = \frac{\rho(S,T,0)}{1-p/K(S,T,p)}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>in</td><td>practical salinity (PSS-78)</td><td>—</td></tr><tr><td><code>T</code></td><td>in</td><td>in-situ temperature</td><td>K</td></tr><tr><td><code>p</code></td><td>in</td><td>sea pressure (0 at the surface)</td><td>Pa</td></tr><tr><td><code>rho</code></td><td>out</td><td>in-situ density (kg/m^3)</td><td>kg/m^3</td></tr><tr><td><code>sigma</code></td><td>out</td><td>rho - 1000 (kg/m^3)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt;= S &lt;= 42; -2 °C &lt;= T &lt;= 40 °C; 0 &lt;= p &lt;= 10,000 dbar.</p>
+<pre><code class="shell">$ earth-science solve seawater_density S=35 &quot;T=275.15 K&quot; &quot;p=40000000 Pa&quot;
+rho = 1046.016843 kg/m^3
+sigma = 46.01684344
+  by: In-situ density of seawater (EOS-80)  (rho = rho(S,T,0)/(1 - P/K(S,T,P)), P in bar (UNESCO 1983))
+  S = 35
+  T = 275.15 K
+  p = 40000000 Pa
+  assumes: 0 &lt;= S &lt;= 42; -2 °C &lt;= T &lt;= 40 °C; 0 &lt;= p &lt;= 10,000 dbar</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the actual density of seawater at a specific depth using practical salinity, temperature, and pressure. The resulting in-situ density is 1046.02 kg/m^3, which reflects how compression increases mass per unit volume under high pressure. The derived sigma-t value is 46.0168, representing the density relative to pure water. This metric helps assess vertical stability and buoyancy forces within the ocean interior.</p>
+<h4 id="seawater_potential_temperature">Potential temperature of seawater (Fofonoff 1977) — <code>seawater_potential_temperature</code></h4>
+<p>The temperature a seawater parcel would have if moved adiabatically to a reference pressure (default the surface), by a fourth-order Runge-Kutta integration of the adiabatic gradient.</p>
+<div class="math">\[\theta = T + \int_{p}^{p_r}\Gamma(S,\theta&#x27;,p&#x27;)\,dp&#x27;\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>in</td><td>practical salinity (PSS-78)</td><td>—</td></tr><tr><td><code>T</code></td><td>in</td><td>in-situ temperature</td><td>K</td></tr><tr><td><code>p</code></td><td>in</td><td>sea pressure (0 at the surface)</td><td>Pa</td></tr><tr><td><code>pr</code></td><td>in</td><td>reference sea pressure (default 0, the surface) (optional)</td><td>Pa</td></tr><tr><td><code>theta</code></td><td>out</td><td>potential temperature (K)</td><td>K</td></tr><tr><td><code>theta_C</code></td><td>out</td><td>potential temperature (°C)</td><td>—</td></tr><tr><td><code>dtheta</code></td><td>out</td><td>theta - T (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt;= S &lt;= 42; -2 °C &lt;= T &lt;= 40 °C.</p>
+<pre><code class="shell">$ earth-science solve seawater_potential_temperature S=35 &quot;T=276.15 K&quot; &quot;p=50000000 Pa&quot; &quot;pr=0 Pa&quot;
+theta = 275.6632032 K
+theta_C = 2.513203213
+dtheta = -0.486796787 K
+  by: Potential temperature of seawater (Fofonoff 1977)  (Fofonoff (1977) fourth-order Runge-Kutta integration of the adiabatic gradient from p to p_r)
+  S = 35
+  T = 276.15 K
+  p = 50000000 Pa
+  pr = 0 Pa
+  assumes: 0 &lt;= S &lt;= 42; -2 °C &lt;= T &lt;= 40 °C</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the potential temperature of a seawater parcel by integrating the adiabatic gradient from its current pressure to a reference pressure. Using practical salinity 35, in-situ temperature 276.15 K K, and pressure 5e+07 Pa Pa, the method computes that the parcel would have a potential temperature of 275.663 K K if moved adiabatically to the reference pressure 0 Pa Pa. The difference between this value and the original temperature is -0.486797 K K, representing the removal of pressure-induced warming effects to provide a more accurate measure of heat content.</p>
+<h4 id="ocean_pressure_from_depth">Sea pressure at a depth (Saunders 1981) — <code>ocean_pressure_from_depth</code></h4>
+<p>Sea pressure at a depth in the ocean, allowing for latitude (Saunders 1981).</p>
+<div class="math">\[p = \frac{(1-c_1)-\sqrt{(1-c_1)^2-8.84\times10^{-6}z}}{4.42\times10^{-6}}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>depth</code></td><td>in</td><td>depth below the sea surface</td><td>m</td></tr><tr><td><code>lat</code></td><td>in</td><td>latitude (degrees, north positive)</td><td>—</td></tr><tr><td><code>p</code></td><td>out</td><td>sea pressure (Pa)</td><td>Pa</td></tr><tr><td><code>p_dbar</code></td><td>out</td><td>sea pressure (dbar)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt;= depth &lt;= 11,000 m.</p>
+<pre><code class="shell">$ earth-science solve ocean_pressure_from_depth &quot;depth=1000 m&quot; lat=30
+p = 10095540.3 Pa
+p_dbar = 1009.55403
+  by: Sea pressure at a depth (Saunders 1981)  (Saunders (1981): p = [(1 - c1) - sqrt((1 - c1)^2 - 8.84e-6 z)]/4.42e-6)
+  depth = 1000 m
+  lat = 30
+  assumes: 0 &lt;= depth &lt;= 11,000 m</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the absolute sea pressure in Pascals for a specific location in the ocean. By using a depth of 1000 m and a latitude of 30, the algorithm accounts for variations in gravity to produce a result of 1.00955e+07 Pa. This value is often converted to decibars, yielding 1009.55, which is useful for interpreting data from oceanographic sensors that measure pressure rather than direct depth.</p>
+<h4 id="sound_speed_seawater">Speed of sound in seawater (Chen and Millero 1977) — <code>sound_speed_seawater</code></h4>
+<p>Speed of sound in seawater from practical salinity, temperature and sea pressure (UNESCO 1983 algorithm).</p>
+<div class="math">\[c(S,T,P) = C_w(T,P) + A(T,P)\,S + B(T,P)\,S^{3/2} + D(P)\,S^2\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>in</td><td>practical salinity (PSS-78)</td><td>—</td></tr><tr><td><code>T</code></td><td>in</td><td>water temperature</td><td>K</td></tr><tr><td><code>p</code></td><td>in</td><td>sea pressure (0 at the surface)</td><td>Pa</td></tr><tr><td><code>c</code></td><td>out</td><td>speed of sound (m/s)</td><td>m/s</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt;= S &lt;= 40; 0 °C &lt;= T &lt;= 40 °C; 0 &lt;= p &lt;= 10,000 dbar.</p>
+<pre><code class="shell">$ earth-science solve sound_speed_seawater S=35 &quot;T=283.15 K&quot; &quot;p=10000000 Pa&quot;
+c = 1506.346784 m/s
+  by: Speed of sound in seawater (Chen and Millero 1977)  (Chen and Millero (1977) polynomial, P in bar (UNESCO 1983 Eq. 33))
+  S = 35
+  T = 283.15 K
+  p = 10000000 Pa
+  assumes: 0 &lt;= S &lt;= 40; 0 °C &lt;= T &lt;= 40 °C; 0 &lt;= p &lt;= 10,000 dbar</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the speed at which sound waves propagate through seawater using the Chen and Millero polynomial. By inputting the practical salinity of 35, the water temperature of 283.15 K, and the sea pressure of 1e+07 Pa, the model yields a result of 1506.35 m/s m/s. This value is essential for interpreting acoustic data, as it reflects how the physical properties of the ocean medium influence wave velocity under standard conditions.</p>
+<h4 id="wave_dispersion">Water-wave dispersion at finite depth — <code>wave_dispersion</code></h4>
+<p>Wavelength, phase speed and group speed of a linear surface gravity wave of period T in water of depth h, from the full dispersion relation omega^2 = g k tanh(k h) (deep and shallow limits included).</p>
+<div class="math">\[\omega^2 = g k \tanh(kh),\quad c_g = \frac{c}{2}\left(1 + \frac{2kh}{\sinh 2kh}\right)\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T</code></td><td>in</td><td>wave period</td><td>s</td></tr><tr><td><code>h</code></td><td>in</td><td>water depth</td><td>m</td></tr><tr><td><code>L</code></td><td>out</td><td>wavelength (m)</td><td>m</td></tr><tr><td><code>c</code></td><td>out</td><td>phase speed (m/s)</td><td>m/s</td></tr><tr><td><code>cg</code></td><td>out</td><td>group speed (m/s)</td><td>m/s</td></tr><tr><td><code>kh</code></td><td>out</td><td>relative depth k h</td><td>—</td></tr><tr><td><code>L0</code></td><td>out</td><td>deep-water wavelength g T^2/(2 pi) (m)</td><td>m</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0.5 &lt;= T &lt;= 60 s; 0 &lt; h &lt;= 11,000 m; linear (small-amplitude) waves.</p>
+<pre><code class="shell">$ earth-science solve wave_dispersion &quot;T=10 s&quot; &quot;h=20 m&quot;
+L = 121.209844 m
+c = 12.1209844 m/s
+cg = 9.271612121 m/s
+kh = 1.036745053
+L0 = 156.0776823 m
+  by: Water-wave dispersion at finite depth  (omega^2 = g k tanh(k h) solved by Newton&#x27;s method; c = omega/k; c_g = c (1 + 2kh/sinh 2kh)/2)
+  T = 10 s
+  h = 20 m
+  assumes: 0.5 &lt;= T &lt;= 60 s; 0 &lt; h &lt;= 11,000 m; linear (small-amplitude) waves</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the properties of a linear surface gravity wave given its period and the water depth. By solving the dispersion relation, it finds that a wave with period 10 s traveling through 20 m deep water has a wavelength of 121.21 m meters. The associated phase speed is 12.121 m/s meters per second, while the energy propagates at a group speed of 9.27161 m/s meters per second. The relative depth parameter kh is calculated as 1.03675, indicating the regime between shallow and deep water limits.</p>
+<h3>Plate tectonics (2)</h3>
+<h4 id="seafloor_depth_age">Depth of the ocean floor with age (half-space cooling) — <code>seafloor_depth_age</code></h4>
+<p>Seafloor depth as oceanic lithosphere cools and contracts with age (half-space cooling, isostatic compensation under water). Defaults: ridge depth 2500 m, mantle 1300 °C, water 0 °C, alpha 3e-5 1/K, kappa 1e-6 m^2/s, rho_m 3300 and rho_w 1000 kg/m^3.</p>
+<div class="math">\[d = d_r + \frac{2\rho_m\alpha(T_m-T_w)}{\rho_m-\rho_w}\sqrt{\frac{\kappa t}{\pi}}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>t</code></td><td>in</td><td>age of the seafloor (millions of years)</td><td>—</td></tr><tr><td><code>dr</code></td><td>in</td><td>depth at the ridge (default 2500 m) (optional)</td><td>m</td></tr><tr><td><code>Tm</code></td><td>in</td><td>mantle temperature (default 1300 °C) (optional)</td><td>K</td></tr><tr><td><code>Tw</code></td><td>in</td><td>seawater temperature (default 0 °C) (optional)</td><td>K</td></tr><tr><td><code>alpha</code></td><td>in</td><td>volumetric thermal expansion coefficient (default 3e-5 1/K) (optional)</td><td>1/K</td></tr><tr><td><code>kappa</code></td><td>in</td><td>thermal diffusivity (default 1e-6 m^2/s) (optional)</td><td>m^2/s</td></tr><tr><td><code>rho_m</code></td><td>in</td><td>mantle density (default 3300 kg/m^3) (optional)</td><td>kg/m^3</td></tr><tr><td><code>rho_w</code></td><td>in</td><td>seawater density (default 1000 kg/m^3) (optional)</td><td>kg/m^3</td></tr><tr><td><code>depth</code></td><td>out</td><td>seafloor depth (m)</td><td>m</td></tr><tr><td><code>subsidence</code></td><td>out</td><td>subsidence below the ridge (m)</td><td>m</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt; age &lt;= 200 Myr (half-space cooling; old seafloor flattens in reality).</p>
+<pre><code class="shell">$ earth-science solve seafloor_depth_age t=50
+depth = 5008.087917 m
+subsidence = 2508.087917 m
+  by: Depth of the ocean floor with age (half-space cooling)  (d = d_r + 2 rho_m alpha (Tm - Tw) sqrt(kappa t/pi)/(rho_m - rho_w))
+  t = 50
+  assumes: 0 &lt; age &lt;= 200 Myr (half-space cooling; old seafloor flattens in reality)</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the ocean floor&#x27;s elevation based on the age of the tectonic plate. Using a half-space cooling model, it computes how much the lithosphere contracts as it loses heat to the surrounding water. The result shows that at an age of 50, the total depth reaches 5008.09 m, meaning the crust has sunk 2508.09 m below the initial ridge level. This relationship illustrates the fundamental link between thermal evolution and marine bathymetry.</p>
+<h4 id="plate_velocity">Plate velocity from an Euler pole — <code>plate_velocity</code></h4>
+<p>Speed and direction of a point on a rigid plate rotating about an Euler pole (sphere of radius 6371 km).</p>
+<div class="math">\[v = \omega R \sin\Delta\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>pole_lat</code></td><td>in</td><td>latitude of the Euler pole</td><td>—</td></tr><tr><td><code>pole_lon</code></td><td>in</td><td>longitude of the Euler pole</td><td>—</td></tr><tr><td><code>omega</code></td><td>in</td><td>rotation rate about the pole, counter-clockwise positive (degrees per Myr)</td><td>—</td></tr><tr><td><code>lat</code></td><td>in</td><td>latitude of the site</td><td>—</td></tr><tr><td><code>lon</code></td><td>in</td><td>longitude of the site</td><td>—</td></tr><tr><td><code>speed</code></td><td>out</td><td>plate speed (mm/yr)</td><td>—</td></tr><tr><td><code>azimuth</code></td><td>out</td><td>direction of motion (degrees from north)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> rigid plate on a sphere of radius 6371 km; site 0.5 to 179.5 degrees from the pole.</p>
+<pre><code class="shell">$ earth-science solve plate_velocity pole_lat=61.5 pole_lon=-73.7 omega=0.75 lat=35 lon=-120
+speed = 52.79395817
+azimuth = 123.0201167
+  by: Plate velocity from an Euler pole  (v = omega R sin(Delta), direction perpendicular to the great circle to the pole)
+  pole_lat = 61.5
+  pole_lon = -73.7
+  omega = 0.75
+  lat = 35
+  lon = -120
+  assumes: rigid plate on a sphere of radius 6371 km; site 0.5 to 179.5 degrees from the pole</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the instantaneous velocity of a specific site on a rigid tectonic plate. Using the Euler pole coordinates and rotation rate, it computes that the point moves with a speed of 52.794 in the direction of 123.02 degrees from north. This result helps interpret how fast the crust is moving relative to the fixed reference frame defined by the pole.</p>
+<h3>Radiation balance (6)</h3>
+<h4 id="daily_mean_insolation">Daily mean insolation at the top of the atmosphere — <code>daily_mean_insolation</code></h4>
+<p>The 24-hour mean solar flux on a horizontal surface at the top of the atmosphere for a latitude and solar declination (polar day and polar night included).</p>
+<div class="math">\[\bar Q = \frac{S_0}{\pi}\left(h_0\sin\varphi\sin\delta + \cos\varphi\cos\delta\sin h_0\right)\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>lat</code></td><td>in</td><td>latitude (degrees, north positive)</td><td>—</td></tr><tr><td><code>decl</code></td><td>in</td><td>solar declination (degrees)</td><td>—</td></tr><tr><td><code>S0</code></td><td>in</td><td>solar constant (at the actual Earth-Sun distance)</td><td>W/m^2</td></tr><tr><td><code>Q</code></td><td>out</td><td>daily mean insolation (W/m^2)</td><td>W/m^2</td></tr><tr><td><code>day_length_h</code></td><td>out</td><td>length of the day (hours)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> |latitude| &lt; 89.9; |declination| &lt;= 23.5.</p>
+<pre><code class="shell">$ earth-science solve daily_mean_insolation lat=45 decl=23.44 &quot;S0=1361 W/m^2&quot;
+Q = 499.3191739 W/m^2
+day_length_h = 15.42589241
+  by: Daily mean insolation at the top of the atmosphere  (Q = (S0/pi)(h0 sin phi sin delta + cos phi cos delta sin h0))
+  lat = 45
+  decl = 23.44
+  S0 = 1361 W/m^2
+  assumes: |latitude| &lt; 89.9; |declination| &lt;= 23.5</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the average solar energy received per square meter at the top of the atmosphere over a full day, based on the latitude of 45, the solar declination of 23.44, and a solar constant of 1361 W/m^2. The resulting daily mean insolation is 499.319 W/m^2, indicating the overall solar availability for that location and date. The corresponding length of the day is 15.4259, which reflects how long the sun remains above the horizon given these geometric conditions.</p>
+<h4 id="planetary_equilibrium_temperature">Planetary equilibrium (effective radiating) temperature — <code>planetary_equilibrium_temperature</code></h4>
+<p>The temperature at which a planet radiating as a black body balances the sunlight it absorbs.</p>
+<div class="math">\[T_e = \left(\frac{S(1-\alpha)}{4\sigma}\right)^{1/4}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>in</td><td>solar flux at the planet&#x27;s distance (solar constant)</td><td>W/m^2</td></tr><tr><td><code>albedo</code></td><td>in</td><td>planetary (Bond) albedo, a fraction</td><td>—</td></tr><tr><td><code>Te</code></td><td>out</td><td>equilibrium temperature (K)</td><td>K</td></tr><tr><td><code>absorbed</code></td><td>out</td><td>absorbed flux per unit surface area, S(1 - albedo)/4 (W/m^2)</td><td>W/m^2</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt;= albedo &lt; 1; fast rotation: absorbed sunlight spread over the whole sphere.</p>
+<pre><code class="shell">$ earth-science solve planetary_equilibrium_temperature &quot;S=1361 W/m^2&quot; albedo=0.3
+Te = 254.5781401 K
+absorbed = 238.175 W/m^2
+  by: Planetary equilibrium (effective radiating) temperature  (T_e = (S (1 - albedo)/(4 sigma))^(1/4))
+  S = 1361 W/m^2
+  albedo = 0.3
+  assumes: 0 &lt;= albedo &lt; 1; fast rotation: absorbed sunlight spread over the whole sphere</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the planetary equilibrium temperature, which represents the average surface temperature assuming the planet radiates energy as a perfect black body in balance with absorbed sunlight. The result depends on the solar flux at the planet&#x27;s distance, given as 1361 W/m^2, and the Bond albedo, provided as 0.3. Using these inputs, the absorbed flux per unit surface area is calculated to be 238.175 W/m^2, leading to an equilibrium temperature of 254.578 K. This value serves as a baseline climate metric before accounting for atmospheric greenhouse effects.</p>
+<h4 id="blackbody_flux">Radiant flux emitted by a black or grey body (Stefan-Boltzmann) — <code>blackbody_flux</code></h4>
+<p>Power emitted per unit area by a surface of temperature T and (grey) emissivity eps.</p>
+<div class="math">\[F = \varepsilon\,\sigma\,T^4\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T</code></td><td>in</td><td>surface temperature</td><td>K</td></tr><tr><td><code>eps</code></td><td>in</td><td>emissivity (0 &lt; eps &lt;= 1; default 1, a black body) (optional)</td><td>—</td></tr><tr><td><code>F</code></td><td>out</td><td>emitted flux (W/m^2)</td><td>W/m^2</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 0 &lt; eps &lt;= 1; grey body: emissivity independent of wavelength.</p>
+<pre><code class="shell">$ earth-science solve blackbody_flux &quot;T=288 K&quot; eps=1
+F = 390.1051535 W/m^2
+  by: Radiant flux emitted by a black or grey body (Stefan-Boltzmann)  (F = eps sigma T^4 (sigma = 5.670374419e-8 W/(m^2 K^4)))
+  T = 288 K
+  eps = 1
+  assumes: 0 &lt; eps &lt;= 1; grey body: emissivity independent of wavelength</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the radiant flux emitted by a surface, which represents the power radiated per unit area. The result of 390.105 W/m^2 is derived using the Stefan-Boltzmann law with a surface temperature of 288 K and an emissivity of 1. This value indicates how much thermal energy the body loses to its surroundings via radiation under these specific conditions.</p>
+<h4 id="greenhouse_single_layer">Surface temperature in the single-layer greenhouse model — <code>greenhouse_single_layer</code></h4>
+<p>Surface and atmosphere temperatures when one isothermal layer, transparent to sunlight, absorbs and emits a fraction eps of thermal radiation.</p>
+<div class="math">\[T_s = \left[\frac{S(1-\alpha)}{4\sigma(1-\varepsilon/2)}\right]^{1/4},\quad T_a = 2^{-1/4}T_s\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>in</td><td>solar constant</td><td>W/m^2</td></tr><tr><td><code>albedo</code></td><td>in</td><td>planetary (Bond) albedo, a fraction</td><td>—</td></tr><tr><td><code>eps</code></td><td>in</td><td>long-wave emissivity (absorptivity) of the atmospheric layer</td><td>—</td></tr><tr><td><code>Ts</code></td><td>out</td><td>surface temperature (K)</td><td>K</td></tr><tr><td><code>Ta</code></td><td>out</td><td>atmosphere temperature (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> the layer is transparent to sunlight; 0 &lt; eps &lt;= 1.</p>
+<pre><code class="shell">$ earth-science solve greenhouse_single_layer &quot;S=1361 W/m^2&quot; albedo=0.3 eps=0.78
+Ts = 288.0637769 K
+Ta = 242.2317974 K
+  by: Surface temperature in the single-layer greenhouse model  (T_s = [S(1 - albedo)/(4 sigma (1 - eps/2))]^(1/4), T_a = T_s/2^(1/4))
+  S = 1361 W/m^2
+  albedo = 0.3
+  eps = 0.78
+  assumes: the layer is transparent to sunlight; 0 &lt; eps &lt;= 1</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the equilibrium temperatures for a planet with a single atmospheric layer. Using a solar constant of 1361 W/m^2, a planetary albedo of 0.3, and an emissivity of 0.78, the formula produces a surface temperature of 288.064 K and an atmosphere temperature of 242.232 K. These values illustrate how the greenhouse effect raises the surface above the no-atmosphere baseline by trapping outgoing thermal radiation.</p>
+<h4 id="greenhouse_n_layers">Surface temperature with N fully absorbing layers — <code>greenhouse_n_layers</code></h4>
+<p>Surface and layer temperatures of the N-layer grey-atmosphere model (each layer absorbs all thermal radiation).</p>
+<div class="math">\[T_s = (N+1)^{1/4}\,T_e,\quad T_e = \left(\frac{S(1-\alpha)}{4\sigma}\right)^{1/4}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>in</td><td>solar constant</td><td>W/m^2</td></tr><tr><td><code>albedo</code></td><td>in</td><td>planetary (Bond) albedo, a fraction</td><td>—</td></tr><tr><td><code>N</code></td><td>in</td><td>number of absorbing layers (whole number)</td><td>—</td></tr><tr><td><code>Ts</code></td><td>out</td><td>surface temperature (K)</td><td>K</td></tr><tr><td><code>T_top</code></td><td>out</td><td>temperature of the top layer (K)</td><td>K</td></tr><tr><td><code>T_bottom_layer</code></td><td>out</td><td>temperature of the lowest layer (K)</td><td>K</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 1 &lt;= N &lt;= 100 whole layers; layers transparent to sunlight, opaque to thermal radiation.</p>
+<pre><code class="shell">$ earth-science solve greenhouse_n_layers &quot;S=1361 W/m^2&quot; albedo=0.3 N=2
+Ts = 335.0436745 K
+T_top = 254.5781401 K
+T_bottom_layer = 302.7461356 K
+  by: Surface temperature with N fully absorbing layers  (T_s = (N + 1)^(1/4) T_e, layer i from the top at i^(1/4) T_e)
+  S = 1361 W/m^2
+  albedo = 0.3
+  assumes: 1 &lt;= N &lt;= 100 whole layers; layers transparent to sunlight, opaque to thermal radiation</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the equilibrium temperatures for a planet with an atmosphere modeled as 2 fully absorbing layers. Using a solar constant of 1361 W/m^2 and an albedo of 0.3, the effective emission temperature is derived to find that the surface reaches 335.044 K. The atmospheric layers exhibit a temperature gradient, with the bottom layer at 302.746 K and the top layer radiating to space at 254.578 K. This demonstrates how multiple insulating layers trap heat, raising the surface temperature significantly above what it would be without an atmosphere.</p>
+<h4 id="wien_peak_wavelength">Wavelength of peak blackbody emission (Wien) — <code>wien_peak_wavelength</code></h4>
+<p>The wavelength at which a black body of temperature T emits most strongly per unit wavelength.</p>
+<div class="math">\[\lambda_{\max} = \frac{b}{T},\quad b = 2.897771955\times10^{-3}\ \mathrm{m\,K}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>T</code></td><td>in</td><td>temperature of the body</td><td>K</td></tr><tr><td><code>lambda_max</code></td><td>out</td><td>peak wavelength (m)</td><td>m</td></tr><tr><td><code>lambda_um</code></td><td>out</td><td>peak wavelength (micrometres)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 1 K &lt;= T &lt;= 1e5 K.</p>
+<pre><code class="shell">$ earth-science solve wien_peak_wavelength &quot;T=5772 K&quot;
+lambda_max = 5.020394932e-07 m
+lambda_um = 0.5020394932
+  by: Wavelength of peak blackbody emission (Wien)  (lambda_max = b/T, b = 2.897771955e-3 m K)
+  T = 5772 K
+  assumes: 1 K &lt;= T &lt;= 1e5 K</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the specific wavelength where a black body radiates most intensely per unit wavelength. Using Wien&#x27;s displacement law with the constant b, the tool divides this constant by the input temperature 5772 K to find the peak wavelength. The result, 5.02039e-07 m, indicates that hotter objects emit their strongest light at shorter wavelengths, while cooler objects peak at longer wavelengths. This value is also provided as 0.502039 for easier comparison with common spectral bands.</p>
+<h3>Sedimentology (1)</h3>
+<h4 id="stokes_settling_velocity">Settling velocity of a small grain (Stokes) — <code>stokes_settling_velocity</code></h4>
+<p>Terminal settling velocity of a small sphere in a viscous fluid (Stokes&#x27; law), with the grain Reynolds number (refused when it exceeds 1).</p>
+<div class="math">\[w = \frac{(\rho_s-\rho_f)\,g\,d^2}{18\,\mu}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>d</code></td><td>in</td><td>grain diameter</td><td>m</td></tr><tr><td><code>rho_s</code></td><td>in</td><td>grain density</td><td>kg/m^3</td></tr><tr><td><code>rho_f</code></td><td>in</td><td>fluid density</td><td>kg/m^3</td></tr><tr><td><code>mu</code></td><td>in</td><td>dynamic viscosity of the fluid</td><td>Pa*s</td></tr><tr><td><code>w</code></td><td>out</td><td>settling velocity (m/s)</td><td>m/s</td></tr><tr><td><code>Re</code></td><td>out</td><td>grain Reynolds number</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> grain Reynolds number &lt;= 1; a smooth sphere, no neighbouring grains.</p>
+<pre><code class="shell">$ earth-science solve stokes_settling_velocity &quot;d=5e-05 m&quot; &quot;rho_s=2650 kg/m^3&quot; &quot;rho_f=1000 kg/m^3&quot; &quot;mu=0.001 Pa*s&quot;
+w = 0.002247357292 m/s
+Re = 0.1123678646
+  by: Settling velocity of a small grain (Stokes)  (w = (rho_s - rho_f) g d^2/(18 mu))
+  d = 5e-05 m
+  rho_s = 2650 kg/m^3
+  rho_f = 1000 kg/m^3
+  mu = 0.001 Pa*s
+  assumes: grain Reynolds number &lt;= 1; a smooth sphere, no neighbouring grains</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the terminal settling velocity of a small spherical grain moving through a viscous fluid under gravity. Using Stokes&#x27; law, the result depends on the difference between the grain density and the fluid density, the gravitational acceleration, the square of the grain diameter, and the dynamic viscosity of the fluid. The output value for settling velocity is 0.00224736 m/s, indicating how fast the particle falls. Additionally, the grain Reynolds number is calculated as 0.112368 to verify that the flow remains laminar, which is a necessary condition for this method to be valid.</p>
+<h3>Seismology (10)</h3>
+<h4 id="sp_epicentral_distance">Distance to an earthquake from the S-P interval — <code>sp_epicentral_distance</code></h4>
+<p>The distance from a station to the hypocentre from the delay between the S and P arrivals, for straight rays at constant P and S speeds.</p>
+<div class="math">\[d = \frac{\Delta t\,v_p v_s}{v_p - v_s}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>dt</code></td><td>in</td><td>S minus P arrival time</td><td>s</td></tr><tr><td><code>vp</code></td><td>in</td><td>P-wave speed</td><td>m/s</td></tr><tr><td><code>vs</code></td><td>in</td><td>S-wave speed</td><td>m/s</td></tr><tr><td><code>distance</code></td><td>out</td><td>distance to the source (m)</td><td>m</td></tr><tr><td><code>distance_km</code></td><td>out</td><td>distance (km)</td><td>—</td></tr><tr><td><code>tp</code></td><td>out</td><td>P travel time (s)</td><td>s</td></tr><tr><td><code>ts</code></td><td>out</td><td>S travel time (s)</td><td>s</td></tr></tbody></table>
+<p><strong>Applies when:</strong> vp &gt; vs &gt; 0; straight rays at constant speeds (a local, crustal distance).</p>
+<pre><code class="shell">$ earth-science solve sp_epicentral_distance &quot;dt=10 s&quot; &quot;vp=6000 m/s&quot; &quot;vs=3500 m/s&quot;
+distance = 84000 m
+distance_km = 84
+tp = 14 s
+ts = 24 s
+  by: Distance to an earthquake from the S-P interval  (d = dt vp vs/(vp - vs))
+  dt = 10 s
+  vp = 6000 m/s
+  vs = 3500 m/s
+  assumes: vp &gt; vs &gt; 0; straight rays at constant speeds (a local, crustal distance)</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the hypocentral distance by analyzing the time gap between the arrival of P and S waves. Using a measured S minus P interval of 10 s and assuming constant wave speeds, the model computes a source distance of 84000 m. This result implies that the seismic station is located 84 away from the earthquake&#x27;s origin point in a straight line through the crust.</p>
+<h4 id="elastic_constants_from_velocities">Elastic moduli and Poisson&#x27;s ratio from Vp, Vs and density — <code>elastic_constants_from_velocities</code></h4>
+<p>Shear modulus, Lamé&#x27;s lambda, bulk modulus, Young&#x27;s modulus and Poisson&#x27;s ratio of an isotropic rock from its seismic velocities and density.</p>
+<div class="math">\[\mu = \rho V_S^2,\quad \lambda = \rho(V_P^2-2V_S^2),\quad \nu = \frac{V_P^2-2V_S^2}{2(V_P^2-V_S^2)}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>Vp</code></td><td>in</td><td>P-wave speed</td><td>m/s</td></tr><tr><td><code>Vs</code></td><td>in</td><td>S-wave speed</td><td>m/s</td></tr><tr><td><code>rho</code></td><td>in</td><td>density of the rock</td><td>kg/m^3</td></tr><tr><td><code>mu</code></td><td>out</td><td>shear modulus (Pa)</td><td>Pa</td></tr><tr><td><code>lam</code></td><td>out</td><td>Lamé&#x27;s first parameter (Pa)</td><td>Pa</td></tr><tr><td><code>K</code></td><td>out</td><td>bulk modulus (Pa)</td><td>Pa</td></tr><tr><td><code>E</code></td><td>out</td><td>Young&#x27;s modulus (Pa)</td><td>Pa</td></tr><tr><td><code>nu</code></td><td>out</td><td>Poisson&#x27;s ratio</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> isotropic, linear elastic; Vp &gt; sqrt(4/3) Vs.</p>
+<pre><code class="shell">$ earth-science solve elastic_constants_from_velocities &quot;Vp=6000 m/s&quot; &quot;Vs=3460 m/s&quot; &quot;rho=2700 kg/m^3&quot;
+mu = 3.232332e+10 Pa
+lam = 3.255336e+10 Pa
+K = 5.410224e+10 Pa
+E = 8.086560608e+10 Pa
+nu = 0.250886451
+  by: Elastic moduli and Poisson&#x27;s ratio from Vp, Vs and density  (mu = rho Vs^2, lambda = rho (Vp^2 - 2 Vs^2), K = lambda + 2 mu/3, nu = (Vp^2 - 2Vs^2)/(2(Vp^2 - Vs^2)))
+  Vp = 6000 m/s
+  Vs = 3460 m/s
+  rho = 2700 kg/m^3
+  assumes: isotropic, linear elastic; Vp &gt; sqrt(4/3) Vs</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the elastic properties of an isotropic rock from its measured P-wave speed, S-wave speed, and density. Using these inputs gives the shear modulus as 3.23233e+10 Pa, which resists shape change; Lamé&#x27;s first parameter as 3.25534e+10 Pa; the bulk modulus as 5.41022e+10 Pa, which resists volume change; Young&#x27;s modulus as 8.08656e+10 Pa, representing stiffness under tension or compression; and Poisson&#x27;s ratio as 0.250886, describing lateral expansion when compressed axially.</p>
+<h4 id="epicentral_distance">Epicentral distance on a spherical Earth — <code>epicentral_distance</code></h4>
+<p>Great-circle angular distance between an epicentre and a station, and its length on a sphere of radius 6371 km.</p>
+<div class="math">\[\Delta = \operatorname{atan2}\!\left(\sqrt{(\cos\varphi_2\sin\Delta\lambda)^2+(\cos\varphi_1\sin\varphi_2-\sin\varphi_1\cos\varphi_2\cos\Delta\lambda)^2},\ \sin\varphi_1\sin\varphi_2+\cos\varphi_1\cos\varphi_2\cos\Delta\lambda\right)\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>lat1</code></td><td>in</td><td>latitude of the first point (epicentre)</td><td>—</td></tr><tr><td><code>lon1</code></td><td>in</td><td>longitude of the first point (epicentre)</td><td>—</td></tr><tr><td><code>lat2</code></td><td>in</td><td>latitude of the second point (station)</td><td>—</td></tr><tr><td><code>lon2</code></td><td>in</td><td>longitude of the second point (station)</td><td>—</td></tr><tr><td><code>delta</code></td><td>out</td><td>epicentral distance (degrees)</td><td>—</td></tr><tr><td><code>distance_km</code></td><td>out</td><td>great-circle distance (km)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> spherical Earth of radius 6371 km.</p>
+<pre><code class="shell">$ earth-science solve epicentral_distance lat1=35.7 lon1=139.7 lat2=51.5 lon2=-0.1
+delta = 85.95388548
+distance_km = 9557.635991
+  by: Epicentral distance on a spherical Earth  (great-circle angle by atan2 (Vincenty&#x27;s formula on the sphere))
+  lat1 = 35.7
+  lon1 = 139.7
+  lat2 = 51.5
+  lon2 = -0.1
+  assumes: spherical Earth of radius 6371 km</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the shortest surface distance between an earthquake epicenter and a seismic station. Using the provided coordinates for the epicenter at latitude 35.7 and longitude 139.7, and the station at latitude 51.5 and longitude -0.1, the method computes the central angle via the Vincenty formula for spheres. The resulting angular separation is 85.9539 degrees, which translates to a physical distance of 9557.64 kilometers assuming a constant Earth radius of six thousand three hundred seventy-one kilometers.</p>
+<h4 id="geodesic_distance_azimuth">Geodesic distance and azimuths on the WGS84 ellipsoid (Vincenty) — <code>geodesic_distance_azimuth</code></h4>
+<p>Distance along the WGS84 ellipsoid between two points, the azimuth from the first to the second and the back-azimuth, by Vincenty&#x27;s inverse method.</p>
+<div class="math">\[s = bA(\sigma-\Delta\sigma)\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>lat1</code></td><td>in</td><td>latitude of the first point (epicentre)</td><td>—</td></tr><tr><td><code>lon1</code></td><td>in</td><td>longitude of the first point (epicentre)</td><td>—</td></tr><tr><td><code>lat2</code></td><td>in</td><td>latitude of the second point (station)</td><td>—</td></tr><tr><td><code>lon2</code></td><td>in</td><td>longitude of the second point (station)</td><td>—</td></tr><tr><td><code>distance</code></td><td>out</td><td>geodesic distance (m)</td><td>m</td></tr><tr><td><code>azimuth</code></td><td>out</td><td>azimuth at point 1 (degrees from north)</td><td>—</td></tr><tr><td><code>back_azimuth</code></td><td>out</td><td>back-azimuth from point 2 (degrees from north)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> WGS84 ellipsoid (a = 6378137 m, f = 1/298.257223563); 0.01 to 120 degrees apart.</p>
+<pre><code class="shell">$ earth-science solve geodesic_distance_azimuth lat1=35.7 lon1=139.7 lat2=51.5 lon2=-0.1
+distance = 9581233.264 m
+azimuth = 336.2493599
+back_azimuth = 31.66321763
+  by: Geodesic distance and azimuths on the WGS84 ellipsoid (Vincenty)  (Vincenty (1975) inverse iteration on the reduced latitudes)
+  lat1 = 35.7
+  lon1 = 139.7
+  lat2 = 51.5
+  lon2 = -0.1
+  assumes: WGS84 ellipsoid (a = 6378137 m, f = 1/298.257223563); 0.01 to 120 degrees apart</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the precise shortest path along the Earth&#x27;s surface, modeled as a WGS84 ellipsoid, connecting the seismic epicentre to the recording station. Using Vincenty&#x27;s inverse method on reduced latitudes, it computes the total distance in meters alongside the initial direction from the source and the return direction at the receiver. The resulting values indicate that the wave traveled 9.58123e+06 m away from the origin point, arriving from a bearing of 31.6632 degrees relative to true north.</p>
+<h4 id="gutenberg_richter_b_value">Gutenberg-Richter b-value (maximum likelihood) — <code>gutenberg_richter_b_value</code></h4>
+<p>The b-value of the Gutenberg-Richter law log10 N = a - b M by Aki&#x27;s maximum-likelihood estimator, with Utsu&#x27;s correction for magnitudes binned at width dM; also the a-value of the cumulative count at Mc.</p>
+<div class="math">\[b = \frac{\log_{10}e}{\overline{M}-\left(M_c-\Delta M/2\right)}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>mags</code></td><td>in</td><td>list of event magnitudes</td><td>—</td></tr><tr><td><code>Mc</code></td><td>in</td><td>magnitude of completeness</td><td>—</td></tr><tr><td><code>dM</code></td><td>in</td><td>magnitude bin width (0 for unbinned magnitudes; default 0) (optional)</td><td>—</td></tr><tr><td><code>b</code></td><td>out</td><td>b-value</td><td>—</td></tr><tr><td><code>a</code></td><td>out</td><td>a-value (log10 of the number of events &gt;= Mc, plus b Mc)</td><td>—</td></tr><tr><td><code>n</code></td><td>out</td><td>number of events used</td><td>—</td></tr><tr><td><code>mean</code></td><td>out</td><td>mean magnitude of the events used</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> at least 10 events with M &gt;= Mc; magnitudes complete above Mc.</p>
+<pre><code class="shell">$ earth-science solve gutenberg_richter_b_value &quot;mags=[2.1, 2.4, 2, 3.1, 2.6, 2.2, 2.9, 2.3, 2, 4, 2.5, 2.1]&quot; Mc=2 dM=0.1
+b = 0.7664020269
+a = 2.6119853
+n = 12
+mean = 2.516666667
+  by: Gutenberg-Richter b-value (maximum likelihood)  (b = log10(e)/(mean(M) - (Mc - dM/2)) (Aki 1965, Utsu 1966))
+  Mc = 2
+  dM = 0.1
+  assumes: at least 10 events with M &gt;= Mc; magnitudes complete above Mc</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the Gutenberg-Richter b-value using Aki&#x27;s maximum likelihood estimator, adjusted for magnitude binning width. Based on 12 earthquake events exceeding the completeness threshold of 2, the resulting slope is 0.766402. This value quantifies the relative frequency of small versus large earthquakes in the dataset, serving as a key indicator of seismic hazard and regional stress conditions.</p>
+<h4 id="local_magnitude">Local (Richter) magnitude from Wood-Anderson amplitude — <code>local_magnitude</code></h4>
+<p>Local magnitude from the zero-to-peak Wood-Anderson amplitude and the hypocentral distance, with the attenuation of Bakun and Joyner (1984), as ObsPy.</p>
+<div class="math">\[M_L = \log_{10}A + \log_{10}\frac{r}{100} + 0.00301\,(r-100) + 3.0\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>A</code></td><td>in</td><td>zero-to-peak Wood-Anderson amplitude</td><td>m</td></tr><tr><td><code>r</code></td><td>in</td><td>hypocentral distance</td><td>m</td></tr><tr><td><code>ML</code></td><td>out</td><td>local magnitude</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 10 km &lt;= r &lt;= 600 km; calibration of central California (Bakun and Joyner 1984).</p>
+<pre><code class="shell">$ earth-science solve local_magnitude &quot;A=0.01 m&quot; &quot;r=100000 m&quot;
+ML = 4
+  by: Local (Richter) magnitude from Wood-Anderson amplitude  (ML = log10 A + log10(r/100) + 0.00301 (r - 100) + 3.0 (A in mm, r in km))
+  A = 0.01 m
+  r = 100000 m
+  assumes: 10 km &lt;= r &lt;= 600 km; calibration of central California (Bakun and Joyner 1984)</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the local magnitude, denoted as ML, using the zero-to-peak Wood-Anderson amplitude and the hypocentral distance. The result is 4, derived from an input amplitude of 0.01 m measured over a distance of 100000 m. This method applies specific attenuation corrections for central California to standardize the magnitude estimate.</p>
+<h4 id="moment_magnitude">Moment magnitude from seismic moment — <code>moment_magnitude</code></h4>
+<p>Moment magnitude Mw of an earthquake from its scalar seismic moment (Hanks and Kanamori 1979, as ObsPy: Mw = log10(M0 in dyne cm)/1.5 - 10.7).</p>
+<div class="math">\[M_w = \tfrac{2}{3}\log_{10}M_0[\mathrm{dyn\,cm}] - 10.7\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>M0</code></td><td>in</td><td>scalar seismic moment</td><td>N*m</td></tr><tr><td><code>Mw</code></td><td>out</td><td>moment magnitude</td><td>—</td></tr><tr><td><code>M0_dyne_cm</code></td><td>out</td><td>seismic moment (dyne cm)</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> 1e6 &lt;= M0 &lt;= 1e25 N m.</p>
+<pre><code class="shell">$ earth-science solve moment_magnitude &quot;M0=1.1e+21 N*m&quot;
+Mw = 7.99426179
+M0_dyne_cm = 1.1e+28
+  by: Moment magnitude from seismic moment  (Mw = (2/3) log10(M0 [dyne cm]) - 10.7)
+  M0 = 1.1e+21 N*m
+  assumes: 1e6 &lt;= M0 &lt;= 1e25 N m</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the moment magnitude, which represents the total energy released by an earthquake. It is derived from the scalar seismic moment, given as 1.1e+21 N*m. The resulting value, 7.99426, provides a standardized measure of size that does not saturate like older magnitude scales.</p>
+<h4 id="nmo_velocity">Normal-moveout velocity from reflection picks — <code>nmo_velocity</code></h4>
+<p>Stacking (NMO) velocity, zero-offset time and reflector depth from reflection travel times at several offsets, by a least-squares fit of t^2 = t0^2 + x^2/V^2.</p>
+<div class="math">\[t^2 = t_0^2 + \frac{x^2}{V_{\mathrm{nmo}}^2}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>x</code></td><td>in</td><td>source-receiver offsets (list, in metres)</td><td>—</td></tr><tr><td><code>t</code></td><td>in</td><td>two-way reflection times (list, in seconds)</td><td>—</td></tr><tr><td><code>V_nmo</code></td><td>out</td><td>NMO velocity (m/s)</td><td>m/s</td></tr><tr><td><code>t0</code></td><td>out</td><td>zero-offset two-way time (s)</td><td>s</td></tr><tr><td><code>depth</code></td><td>out</td><td>reflector depth V t0/2 for a constant velocity (m)</td><td>m</td></tr></tbody></table>
+<p><strong>Applies when:</strong> flat reflector, constant velocity above it; offsets in m, times in s.</p>
+<pre><code class="shell">$ earth-science solve nmo_velocity &quot;x=[0, 500, 1000, 1500, 2000]&quot; &quot;t=[1, 1.0198, 1.077, 1.1662, 1.2806]&quot;
+V_nmo = 2500.069557 m/s
+t0 = 0.9999946612 s
+depth = 1250.028105 m
+  by: Normal-moveout velocity from reflection picks  (least squares of t^2 against x^2: slope 1/V^2, intercept t0^2)
+  assumes: flat reflector, constant velocity above it; offsets in m, times in s</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the stacking velocity and intercept time by performing a least-squares linear regression on squared travel times plotted against squared source-receiver offsets. The slope of this line corresponds to the inverse square of the normal moveout velocity, while the y-intercept represents the square of the zero-offset two-way time. For the given data, the resulting normal moveout velocity is 2500.07 m/s, which allows for proper alignment of seismic traces during processing.</p>
+<h4 id="seismic_velocities_from_moduli">P- and S-wave speeds from bulk and shear moduli — <code>seismic_velocities_from_moduli</code></h4>
+<p>Body-wave speeds of an isotropic elastic rock from its bulk modulus, shear modulus and density.</p>
+<div class="math">\[V_P = \sqrt{\frac{K+\tfrac43\mu}{\rho}},\quad V_S = \sqrt{\frac{\mu}{\rho}}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>K</code></td><td>in</td><td>bulk modulus (incompressibility)</td><td>Pa</td></tr><tr><td><code>mu</code></td><td>in</td><td>shear modulus (rigidity)</td><td>Pa</td></tr><tr><td><code>rho</code></td><td>in</td><td>density of the rock</td><td>kg/m^3</td></tr><tr><td><code>Vp</code></td><td>out</td><td>P-wave speed (m/s)</td><td>m/s</td></tr><tr><td><code>Vs</code></td><td>out</td><td>S-wave speed (m/s)</td><td>m/s</td></tr><tr><td><code>Vp_Vs</code></td><td>out</td><td>Vp/Vs</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> isotropic, linear elastic; K &gt; 0, mu &gt; 0.</p>
+<pre><code class="shell">$ earth-science solve seismic_velocities_from_moduli &quot;K=5e+10 Pa&quot; &quot;mu=3e+10 Pa&quot; &quot;rho=2700 kg/m^3&quot;
+Vp = 5773.502692 m/s
+Vs = 3333.333333 m/s
+Vp_Vs = 1.732050808
+  by: P- and S-wave speeds from bulk and shear moduli  (Vp = sqrt((K + 4 mu/3)/rho), Vs = sqrt(mu/rho))
+  K = 5e+10 Pa
+  mu = 3e+10 Pa
+  rho = 2700 kg/m^3
+  assumes: isotropic, linear elastic; K &gt; 0, mu &gt; 0</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines the velocity of seismic body waves traveling through an isotropic rock. Combining the bulk modulus, which measures resistance to compression, with the shear modulus, which measures rigidity, and dividing by the density gives the P-wave speed of 5773.5 m/s and the S-wave speed of 3333.33 m/s. The ratio of these velocities, 1.73205, provides insight into the material&#x27;s compressibility relative to its shear stiffness.</p>
+<h4 id="seismic_velocities_from_young">P- and S-wave speeds from Young&#x27;s modulus and Poisson&#x27;s ratio — <code>seismic_velocities_from_young</code></h4>
+<p>Body-wave speeds of an isotropic elastic rock from Young&#x27;s modulus, Poisson&#x27;s ratio and density.</p>
+<div class="math">\[V_P = \sqrt{\frac{E(1-\nu)}{\rho(1+\nu)(1-2\nu)}},\quad V_S = \sqrt{\frac{E}{2\rho(1+\nu)}}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>E</code></td><td>in</td><td>Young&#x27;s modulus</td><td>Pa</td></tr><tr><td><code>nu</code></td><td>in</td><td>Poisson&#x27;s ratio</td><td>—</td></tr><tr><td><code>rho</code></td><td>in</td><td>density of the rock</td><td>kg/m^3</td></tr><tr><td><code>Vp</code></td><td>out</td><td>P-wave speed (m/s)</td><td>m/s</td></tr><tr><td><code>Vs</code></td><td>out</td><td>S-wave speed (m/s)</td><td>m/s</td></tr><tr><td><code>Vp_Vs</code></td><td>out</td><td>Vp/Vs</td><td>—</td></tr></tbody></table>
+<p><strong>Applies when:</strong> isotropic, linear elastic; -1 &lt; nu &lt; 0.5.</p>
+<pre><code class="shell">$ earth-science solve seismic_velocities_from_young &quot;E=7e+10 Pa&quot; nu=0.25 &quot;rho=2700 kg/m^3&quot;
+Vp = 5577.73351 m/s
+Vs = 3220.305944 m/s
+Vp_Vs = 1.732050808
+  by: P- and S-wave speeds from Young&#x27;s modulus and Poisson&#x27;s ratio  (Lamé constants from E and nu, then Vp = sqrt((lambda + 2 mu)/rho), Vs = sqrt(mu/rho))
+  E = 7e+10 Pa
+  nu = 0.25
+  rho = 2700 kg/m^3
+  assumes: isotropic, linear elastic; -1 &lt; nu &lt; 0.5</code></pre>
+<p><strong>What the worked example means:</strong> This calculation determines seismic wave velocities for an isotropic elastic rock using Young&#x27;s modulus, Poisson&#x27;s ratio, and density. By converting these engineering constants into Lamé parameters, the model derives the primary wave speed as 5577.73 m/s and the secondary wave speed as 3220.31 m/s. The resulting velocity ratio of 1.73205 indicates how much faster compressional waves travel compared to shear waves in this specific material configuration.</p>
+<p>Questions and reports: support@ai999x.com. AI999X — The Future Is Self-Improving.</p></body></html>
