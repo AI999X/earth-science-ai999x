@@ -1,8 +1,8 @@
 # earth-science: the Earth Science program, user guide
 
-**earth-science-ai999x 1.1.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
+**earth-science-ai999x 1.6.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
-Earth Science covers atmospheric thermodynamics and meteorology, climate and radiation balance, oceanography and seawater properties, seismology and geophysics, and geology. This guide is about `earth-science`, the model as a self-contained program for Windows and Linux: 85 capabilities in 20 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model's page (https://www.ai999x.com/models/earth-science-ai999x/); the Python package (`pip install earth-science-ai999x`) has its own guide. Every command output printed here is what the program printed.
+Earth Science covers atmospheric thermodynamics and meteorology, climate and radiation balance, oceanography and seawater properties, seismology and geophysics, and geology. This guide is about `earth-science`, the model as a self-contained program for Windows and Linux: 87 capabilities in 21 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model's page (https://www.ai999x.com/models/earth-science-ai999x/); the Python package (`pip install earth-science-ai999x`) has its own guide. Every command output printed here is what the program printed.
 
 ## Contents
 
@@ -17,37 +17,37 @@ Earth Science covers atmospheric thermodynamics and meteorology, climate and rad
 
 ## 1. Get it
 
-Version 1.5.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
+Version 1.6.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
 
 | what | system | download |
 |---|---|---|
-| Desktop app: Earth Science | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-earth-science-1.5.0-windows-x86_64.zip |
-| Desktop app: Earth Science | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-earth-science-1.5.0-linux-x86_64.tar.gz |
-| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip |
-| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz |
-| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip |
-| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz |
+| Desktop app: Earth Science | Windows x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-earth-science-1.6.0-windows-x86_64.zip |
+| Desktop app: Earth Science | Linux x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-earth-science-1.6.0-linux-x86_64.tar.gz |
+| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-windows-x86_64.zip |
+| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-linux-x86_64.tar.gz |
+| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-windows-x86_64.zip |
+| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz |
 
 ### Desktop app
 
-Earth Science in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-earth-science-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-earth-science.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+Earth Science in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-earth-science-1.6.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-earth-science.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-earth-science-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-earth-science-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-earth-science-1.5.0-linux-x86_64.tar.gz
-./ai999x-earth-science-1.5.0-linux-x86_64/ai999x-earth-science
+tar xzf ai999x-earth-science-1.6.0-linux-x86_64.tar.gz
+./ai999x-earth-science-1.6.0-linux-x86_64/ai999x-earth-science
 ```
 
-It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.6.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
-./ai999x-1.5.0-linux-x86_64/ai999x
+tar xzf ai999x-1.6.0-linux-x86_64.tar.gz
+./ai999x-1.6.0-linux-x86_64/ai999x
 ```
 
 ### Command line: Linux
@@ -55,11 +55,11 @@ tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
 The bundle holds one program per model; `earth-science` is this one. The checksum line should print OK.
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.6.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.6.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 earth-science --version
 ```
 
@@ -68,12 +68,12 @@ earth-science --version
 The fourth line should print True.
 
 ```powershell
-$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.6.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.6.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.6.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 earth-science --version
 ```
@@ -96,7 +96,7 @@ Prints the model, its version and that this is the Rust build.
 
 ```shell
 $ earth-science --version
-earth-science-ai999x 1.5.0 (Rust build, ax-engine 1.5.0)
+earth-science-ai999x 1.6.0 (Rust build, ax-engine 1.6.0)
 ```
 
 ### 2.2 Ask in words
@@ -146,7 +146,7 @@ buried_sphere_anomaly                    Gravity anomaly above a buried sphere
 co2_radiative_forcing                    Radiative forcing of a change in CO2 (Myhre et al. 1998)
 coriolis_parameter                       Coriolis parameter
 daily_mean_insolation                    Daily mean insolation at the top of the atmosphere
-… 77 more
+… 79 more
 ```
 
 ### 2.5 What a capability needs
@@ -977,7 +977,7 @@ Z = 9984.328497 m
 
 #### Height of a pressure level in the standard atmosphere, `standard_atmosphere_height`
 
-The height of a pressure level in the tropospheric standard atmosphere (pressure altitude; as MetPy).
+The height of a pressure level in the tropospheric International Standard Atmosphere (pressure altitude; T0 = 288.15 K, 6.5 K/km, 1013.25 hPa).
 
 $$
 z = \frac{T_0}{\gamma}\left[1-\left(\frac{p}{p_0}\right)^{R_d\gamma/g}\right]
@@ -992,13 +992,13 @@ $$
 
 ```shell
 $ earth-science solve standard_atmosphere_height "p=50000 Pa"
-z = 5571.434423 m
+z = 5574.336212 m
   by: Height of a pressure level in the standard atmosphere  (z = (T0/gamma)(1 - (p/p0)^(R_d gamma/g)))
   p = 50000 Pa
   assumes: 226 hPa <= p <= 1075 hPa
 ```
 
-**What the worked example means:** This calculation determines the geometric height within the troposphere where the atmospheric pressure equals the input value. Using the International Standard Atmosphere model, which assumes a linear temperature decrease with height and constant gravity, the method converts the pressure reading into an altitude estimate. The result indicates that at a pressure of 50000 Pa, the corresponding standard atmosphere height is 5571.43 m, providing a reference level for flight operations or meteorological analysis.
+**What the worked example means:** This calculation determines the geometric height within the troposphere where the atmospheric pressure equals the input value. Using the International Standard Atmosphere model, which assumes a linear temperature decrease with height and constant gravity, the method converts the pressure reading into an altitude estimate. The result indicates that at a pressure of 50000 Pa, the corresponding standard atmosphere height is 5574.34 m, providing a reference level for flight operations or meteorological analysis.
 
 <a id="lifting_condensation_level"></a>
 
@@ -1099,7 +1099,7 @@ theta = 312.3207471 K
 
 #### Pressure at a height in the standard atmosphere, `standard_atmosphere_pressure`
 
-Pressure at a height in the tropospheric standard atmosphere (T0 = 288 K, 6.5 K/km, 1013.25 hPa; as MetPy).
+Pressure at a height in the tropospheric International Standard Atmosphere (T0 = 288.15 K, 6.5 K/km, 1013.25 hPa).
 
 $$
 p = p_0\left(1-\frac{\gamma z}{T_0}\right)^{g/(R_d\gamma)}
@@ -1114,13 +1114,13 @@ $$
 
 ```shell
 $ earth-science solve standard_atmosphere_pressure "z=1500 m"
-p = 84547.60127 Pa
+p = 84555.70741 Pa
   by: Pressure at a height in the standard atmosphere  (p = p0 (1 - gamma z/T0)^(g/(R_d gamma)))
   z = 1500 m
   assumes: -500 m <= z <= 11 km (troposphere)
 ```
 
-**What the worked example means:** This calculation determines the atmospheric pressure at a specific altitude within the troposphere using the standard atmosphere model. Given a height of 1500 m, the resulting pressure is 84547.6 Pa. This value represents the idealized pressure expected under standard conditions, where temperature decreases linearly with height and air behaves as an ideal gas in hydrostatic equilibrium.
+**What the worked example means:** This calculation determines the atmospheric pressure at a specific altitude within the troposphere using the standard atmosphere model. Given a height of 1500 m, the resulting pressure is 84555.7 Pa. This value represents the idealized pressure expected under standard conditions, where temperature decreases linearly with height and air behaves as an ideal gas in hydrostatic equilibrium.
 
 <a id="isothermal_pressure"></a>
 
@@ -1978,6 +1978,52 @@ gradient = 0.02
 
 **What the worked example means:** This calculation determines the volumetric flow rate of water through a porous medium using Darcy's Law. By applying the hydraulic conductivity, cross-sectional area, head difference, and flow length, the model computes the total discharge as 0.0001 m^3/s. The resulting specific discharge represents the flux per unit area, while the average linear velocity indicates how fast water actually moves through the pore spaces when porosity is considered.
 
+### Maps (1)
+
+<a id="map_gradient_relief"></a>
+
+#### Relief and gradient between two points of a topographic map, `map_gradient_relief`
+
+The relief (difference in elevation) between two points, the ground distance (map distance times the scale denominator, or as given), the gradient in m per km, the slope as a fraction and percent and the slope angle.
+
+$$
+\text{gradient} = \frac{|z_2 - z_1|}{d_{map}\cdot S},\quad \theta = \arctan\frac{|z_2 - z_1|}{d}
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `z1` | in | elevation of the first point | m |
+| `z2` | in | elevation of the second point | m |
+| `d_map` | in | distance measured on the map (optional: or give the ground distance) (optional) | m |
+| `scale` | in | scale denominator (24000 for 1:24000; with the map distance) (optional) | - |
+| `d` | in | ground (horizontal) distance (optional: or give the map distance and scale) (optional) | m |
+| `relief` | out | relief \|z2 - z1\| (m) | m |
+| `distance` | out | ground distance (m) | m |
+| `gradient_m_per_km` | out | gradient (m per km) | - |
+| `slope` | out | slope rise/run | - |
+| `slope_percent` | out | slope (percent) | - |
+| `slope_deg` | out | slope angle (degrees) | - |
+
+**Applies when:** elevations between -11000 and 9000 m; the ground distance, or the map distance and the scale; 0 < map distance <= 2 m; 100 <= scale <= 1e7; relief is the absolute difference (uphill or downhill).
+
+```shell
+$ earth-science solve map_gradient_relief "z1=1200 m" "z2=1450 m" "d_map=0.05 m" scale=24000
+relief = 250 m
+distance = 1200 m
+gradient_m_per_km = 208.3333333
+slope = 0.2083333333
+slope_percent = 20.83333333
+slope_deg = 11.76828893
+  by: Relief and gradient between two points of a topographic map  (relief = |z2 - z1|; run = d_map x scale; gradient = relief/run (x 1000 per km, x 100 percent); angle = atan(relief/run))
+  z1 = 1200 m
+  z2 = 1450 m
+  d_map = 0.05 m
+  scale = 24000
+  assumes: elevations between -11000 and 9000 m; the ground distance, or the map distance and the scale; 0 < map distance <= 2 m; 100 <= scale <= 1e7; relief is the absolute difference (uphill or downhill)
+```
+
+In the worked example, z1 = 1200 m, z2 = 1450 m, d_map = 0.05 m, scale = 24000 go through the equation above and give relief = 250 m, distance = 1200 m, gradient_m_per_km = 208.3333333, slope = 0.2083333333. It applies only when elevations between -11000 and 9000 m; the ground distance, or the map distance and the scale; 0 < map distance <= 2 m; 100 <= scale <= 1e7; relief is the absolute difference (uphill or downhill): outside that it says what is wrong instead of returning a number.
+
 ### Ocean dynamics (3)
 
 <a id="ekman_depth"></a>
@@ -2702,7 +2748,7 @@ Re = 0.1123678646
 
 **What the worked example means:** This calculation determines the terminal settling velocity of a small spherical grain moving through a viscous fluid under gravity. Using Stokes' law, the result depends on the difference between the grain density and the fluid density, the gravitational acceleration, the square of the grain diameter, and the dynamic viscosity of the fluid. The output value for settling velocity is 0.00224736 m/s, indicating how fast the particle falls. Additionally, the grain Reynolds number is calculated as 0.112368 to verify that the flow remains laminar, which is a necessary condition for this method to be valid.
 
-### Seismology (10)
+### Seismology (11)
 
 <a id="sp_epicentral_distance"></a>
 
@@ -2740,6 +2786,43 @@ ts = 24 s
 ```
 
 **What the worked example means:** This calculation determines the hypocentral distance by analyzing the time gap between the arrival of P and S waves. Using a measured S minus P interval of 10 s and assuming constant wave speeds, the model computes a source distance of 84000 m. This result implies that the seismic station is located 84 away from the earthquake's origin point in a straight line through the crust.
+
+<a id="earthquake_energy"></a>
+
+#### Earthquake energy and the energy and amplitude ratios of two magnitudes, `earthquake_energy`
+
+The seismic energy radiated by an earthquake of magnitude M, log10 E = 1.5 M + 4.8 (E in J, Gutenberg-Richter), as joules and tonnes of TNT (4.184e9 J per tonne), and for a second magnitude its energy, the energy ratio 10^(1.5 (M2 - M1)) and the ground-amplitude ratio 10^(M2 - M1) (same distance and instrument).
+
+$$
+\log_{10}E = 1.5M + 4.8,\quad \frac{E_2}{E_1} = 10^{1.5(M_2 - M_1)},\quad \frac{A_2}{A_1} = 10^{M_2 - M_1}
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `M1` | in | magnitude of the (first) earthquake | - |
+| `M2` | in | magnitude of a second earthquake (optional) (optional) | - |
+| `E1` | out | energy released by the first earthquake (J) | J |
+| `E1_TNT_t` | out | the same in tonnes of TNT | - |
+| `E2` | out | energy released by the second earthquake (J) | J |
+| `energy_ratio` | out | energy ratio E2/E1 | - |
+| `amplitude_ratio` | out | amplitude ratio A2/A1 | - |
+
+**Applies when:** -2 <= M <= 10; Gutenberg-Richter energy relation log10 E = 1.5 M + 4.8 (E in J); amplitude ratio for the same distance and instrument.
+
+```shell
+$ earth-science solve earthquake_energy M1=6 M2=7
+E1 = 6.309573445e+13 J
+E1_TNT_t = 15080.24246
+E2 = 1.995262315e+15 J
+energy_ratio = 31.6227766
+amplitude_ratio = 10
+  by: Earthquake energy and the energy and amplitude ratios of two magnitudes  (E = 10^(1.5 M + 4.8) J; E2/E1 = 10^(1.5 (M2 - M1)); A2/A1 = 10^(M2 - M1))
+  M1 = 6
+  M2 = 7
+  assumes: -2 <= M <= 10; Gutenberg-Richter energy relation log10 E = 1.5 M + 4.8 (E in J); amplitude ratio for the same distance and instrument
+```
+
+In the worked example, M1 = 6, M2 = 7 go through the equation above and give E1 = 6.309573445e+13 J, E1_TNT_t = 15080.24246, E2 = 1.995262315e+15 J, energy_ratio = 31.6227766. It applies only when -2 <= M <= 10; Gutenberg-Richter energy relation log10 E = 1.5 M + 4.8 (E in J); amplitude ratio for the same distance and instrument: outside that it says what is wrong instead of returning a number.
 
 <a id="elastic_constants_from_velocities"></a>
 

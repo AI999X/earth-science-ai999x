@@ -22,8 +22,8 @@ Conventions (stated once, used everywhere):
   rad/s, Earth radius 6371008.7714 m, reference pressure 1000 hPa. Saturation vapour pressure over liquid water is the
   Ambaum (2020) formula with a temperature-dependent latent heat (as MetPy); dewpoint from vapour pressure is the
   inversion of Bolton's (1980) formula (as MetPy, so the two are not exact inverses of each other); the LCL is Romps'
-  (2017) exact solution; equivalent potential temperature is Bolton's (1980) formula; the standard atmosphere is
-  MetPy's (T0 = 288 K, lapse rate 6.5 K/km, p0 = 1013.25 hPa).
+  (2017) exact solution; equivalent potential temperature is Bolton's (1980) formula; the standard atmosphere is the
+  ISA troposphere (T0 = 288.15 K, lapse rate 6.5 K/km, p0 = 1013.25 hPa; MetPy rounds T0 to 288 K).
 - Seawater follows EOS-80 / UNESCO 1983 as in python-seawater: practical salinity (PSS-78), ITS-90 temperatures
   (converted to IPTS-68 inside the formulas by T68 = 1.00024 T90), sea pressure in dbar (0 at the surface).
 - Seismic magnitudes: moment magnitude Mw = log10(M0 [dyne cm])/1.5 - 10.7 (Hanks and Kanamori 1979, as ObsPy);
@@ -423,8 +423,8 @@ EXAMPLE_OUTPUTS: dict = {
     "scale_height": [{"H": 8434.3516415}, {"H": 6531.75626861}],
     "hypsometric_thickness": [{"dz": 5339.02451459}, {"dz": 1580.74927838}],
     "pressure_with_lapse_rate": [{"p": 70108.0426498, "T": 268.65}, {"p": 83909.2913111, "T": 286.15}],
-    "standard_atmosphere_pressure": [{"p": 84547.6012724}, {"p": 30720.3142695}],
-    "standard_atmosphere_height": [{"z": 5571.43442321}, {"z": 1456.51399628}],
+    "standard_atmosphere_pressure": [{"p": 84555.7074066}, {"p": 30741.7455273}],
+    "standard_atmosphere_height": [{"z": 5574.33621197}, {"z": 1457.27259732}],
     "geopotential_height": [{"phi": 97912.8150522, "Z": 9984.3284967}, {"phi": 486514.311009, "Z": 49610.6530782}],
     "rossby_wave_speed": [{"c": 0.239432065076, "beta": 1.61867740281e-11, "Ls": 6048467.42382}, {"c": 5.36120103069, "beta": 1.14457776808e-11, "Ls": 5872962.33141}],
     "blackbody_flux": [{"F": 390.105153555}, {"F": 227.769759728}],
@@ -1277,18 +1277,32 @@ proc("pressure_with_lapse_rate", "Pressure at height with a constant lapse rate"
      latex=r"p = p_0\left(\frac{T_0-\gamma z}{T_0}\right)^{g/(R_d\gamma)}")
 
 
+ISA_T0 = 288.15          # K, the International Standard Atmosphere's sea-level temperature (ISO 2533)
+
+
 def std_pressure(z):
     _finite(z=z)
     _need(-500 <= z <= 11000, "the tropospheric standard atmosphere covers -500 m to 11 km")
-    return {"p": _r(101325.0 * (1 - (0.0065 / 288.0) * z) ** (G0 / (RD * 0.0065)))}
+    return {"p": _r(101325.0 * (1 - (0.0065 / ISA_T0) * z) ** (G0 / (RD * 0.0065)))}
+
+
+def _ref_isa_pressure(z):
+    """Independent reference: integrate the hydrostatic equation d ln p/dz = -g/(R_d T(z)), T = T0 - 0.0065 z."""
+    from scipy.integrate import quad
+    v, _ = quad(lambda h: G0 / (RD * (ISA_T0 - 0.0065 * h)), 0.0, z, epsabs=0, epsrel=1e-13, limit=200)
+    return {"p": 101325.0 * math.exp(-v)}
+
+
+def _ref_isa_height(p):
+    return {"z": _brentq(lambda z: _ref_isa_pressure(z)["p"] - p, -2000.0, 12000.0)}
 
 
 proc("standard_atmosphere_pressure", "Pressure at a height in the standard atmosphere", "atmospheric thermodynamics",
-     "Pressure at a height in the tropospheric standard atmosphere (T0 = 288 K, 6.5 K/km, 1013.25 hPa; as MetPy).",
+     "Pressure at a height in the tropospheric International Standard Atmosphere (T0 = 288.15 K, 6.5 K/km, 1013.25 hPa).",
      [I("z", "length", "length", "height above sea level", ("height", "altitude"), "m")],
      [O("p", "pressure", "standard-atmosphere pressure (Pa)")], std_pressure,
-     lambda z: (lambda mc, u: {"p": float(mc.height_to_pressure_std(z * u.m).m_as("Pa"))})(*_metpy()),
-     lambda z: {"p": _r(101325.0 * math.exp(-G0 * z / (RD * 288.0)))},
+     _ref_isa_pressure,
+     lambda z: {"p": _r(101325.0 * math.exp(-G0 * z / (RD * ISA_T0)))},
      lambda rng: {"z": rng.uniform(100, 11000)},
      [{"z": 1500}, {"z": 9000}], ["standard atmosphere pressure", "pressure in the standard atmosphere"],
      conditions=["-500 m <= z <= 11 km (troposphere)"], invalid=[{"z": 20000}],
@@ -1298,14 +1312,15 @@ proc("standard_atmosphere_pressure", "Pressure at a height in the standard atmos
 def std_height(p):
     _finite(p=p)
     _need(22632.0 <= p <= 107500.0, "the tropospheric standard atmosphere covers about 1075 hPa to 226 hPa")
-    return {"z": _r(288.0 / 0.0065 * (1 - (p / 101325.0) ** (RD * 0.0065 / G0)))}
+    return {"z": _r(ISA_T0 / 0.0065 * (1 - (p / 101325.0) ** (RD * 0.0065 / G0)))}
 
 
 proc("standard_atmosphere_height", "Height of a pressure level in the standard atmosphere", "atmospheric thermodynamics",
-     "The height of a pressure level in the tropospheric standard atmosphere (pressure altitude; as MetPy).",
+     "The height of a pressure level in the tropospheric International Standard Atmosphere (pressure altitude; T0 = "
+     "288.15 K, 6.5 K/km, 1013.25 hPa).",
      [_PRES("p", "pressure")], [O("z", "length", "pressure altitude (m)")], std_height,
-     lambda p: (lambda mc, u: {"z": float(mc.pressure_to_height_std(p * u.Pa).m_as("m"))})(*_metpy()),
-     lambda p: {"z": _r(-RD * 288.0 / G0 * math.log(p / 101325.0))},
+     _ref_isa_height,
+     lambda p: {"z": _r(-RD * ISA_T0 / G0 * math.log(p / 101325.0))},
      lambda rng: {"p": rng.uniform(25000, 98000)},
      [{"p": 500}, {"p": 850}], ["standard atmosphere height", "pressure altitude"],
      conditions=["226 hPa <= p <= 1075 hPa"], invalid=[{"p": 100}],
@@ -3446,3 +3461,152 @@ proc("half_space_heat_flow", "Surface heat flow of cooling oceanic lithosphere (
      conditions=["0 < t <= 200 Myr", "conductive half-space cooling"], invalid=[{"t": 500}],
      method="q = k dT/sqrt(pi kappa t); thermal thickness 2 erfinv(0.9) sqrt(kappa t) = 2.326 sqrt(kappa t)",
      latex=r"q = \frac{k\,\Delta T}{\sqrt{\pi\kappa t}}")
+
+
+# =============================================================================================== core curriculum gaps
+# (2026-11-12) The energy released by an earthquake and the energy and amplitude ratios of two magnitudes; relief and
+# gradient between two points of a topographic map. Example outputs below were worked by hand.
+EXAMPLE_OUTPUTS.update({
+    "earthquake_energy": [{"E1": 6.30957344480193e13, "E1_TNT_t": 15080.242458896, "E2": 1.99526231496888e15,
+                           "energy_ratio": 31.6227766016838, "amplitude_ratio": 10.0},
+                          {"E1": 1.12201845430196e13, "E1_TNT_t": 2681.6884663049}],
+    "map_gradient_relief": [{"relief": 250.0, "distance": 1200.0, "gradient_m_per_km": 208.333333333,
+                             "slope": 0.208333333333, "slope_percent": 20.8333333333, "slope_deg": 11.768288932},
+                            {"relief": 230.0, "distance": 2500.0, "gradient_m_per_km": 92.0, "slope": 0.092,
+                             "slope_percent": 9.2, "slope_deg": 5.2564149414}],
+})
+
+TNT_TONNE = 4.184e9                                                   # J per tonne of TNT (convention)
+
+
+# --- earthquake energy and magnitude ratios --------------------------------------------------------------------------
+def earthquake_energy(M1, M2=None):
+    _finite(M1=M1)
+    _need(-2 <= M1 <= 10, "the magnitude must be between -2 and 10")
+    E1 = 10 ** (1.5 * M1 + 4.8)
+    out = {"E1": _r(E1), "E1_TNT_t": _r(E1 / TNT_TONNE)}
+    if M2 is not None:
+        _finite(M2=M2)
+        _need(-2 <= M2 <= 10, "the second magnitude must be between -2 and 10")
+        out["E2"] = _r(10 ** (1.5 * M2 + 4.8))
+        out["energy_ratio"] = _r(10 ** (1.5 * (M2 - M1)))
+        out["amplitude_ratio"] = _r(10 ** (M2 - M1))
+    return out
+
+
+def _ref_earthquake_energy(M1, M2=None):
+    # exact powers of ten (sympy, 30 digits) from the magnitudes as written; the ratios as quotients of the energies
+    # and of the amplitudes A = 10^M (a restated definition: no library computes the Gutenberg-Richter energy)
+    import sympy as sp
+    m1 = sp.Rational(repr(M1))
+    e1 = sp.Integer(10) ** (sp.Rational(3, 2) * m1 + sp.Rational(24, 5))
+    out = {"E1": float(e1.evalf(30)), "E1_TNT_t": float((e1 / sp.Rational(4184000000)).evalf(30))}
+    if M2 is not None:
+        m2 = sp.Rational(repr(M2))
+        e2 = sp.Integer(10) ** (sp.Rational(3, 2) * m2 + sp.Rational(24, 5))
+        out["E2"] = float(e2.evalf(30))
+        out["energy_ratio"] = float((e2 / e1).evalf(30))
+        out["amplitude_ratio"] = float((sp.Integer(10) ** m2 / sp.Integer(10) ** m1).evalf(30))
+    return out
+
+
+def _wrong_earthquake_energy(M1, M2=None):
+    # two classic mistakes: the erg constant (11.8) used for joules, and "one magnitude = ten times the energy"
+    out = {"E1": _r(10 ** (1.5 * M1 + 11.8)), "E1_TNT_t": _r(10 ** (1.5 * M1 + 11.8) / TNT_TONNE)}
+    if M2 is not None:
+        out["E2"] = _r(10 ** (1.5 * M2 + 11.8))
+        out["energy_ratio"] = _r(10 ** (M2 - M1))
+        out["amplitude_ratio"] = _r(10 ** (M2 - M1))
+    return out
+
+
+proc("earthquake_energy", "Earthquake energy and the energy and amplitude ratios of two magnitudes", "seismology",
+     "The seismic energy radiated by an earthquake of magnitude M, log10 E = 1.5 M + 4.8 (E in J, Gutenberg-Richter), "
+     "as joules and tonnes of TNT (4.184e9 J per tonne), and for a second magnitude its energy, the energy ratio "
+     "10^(1.5 (M2 - M1)) and the ground-amplitude ratio 10^(M2 - M1) (same distance and instrument).",
+     [I("M1", "number", "number", "magnitude of the (first) earthquake", ("magnitude", "first magnitude", "m1"), ""),
+      I("M2", "number", "number", "magnitude of a second earthquake (optional)", ("second magnitude", "m2"), "", required=False)],
+     [O("E1", "energy", "energy released by the first earthquake (J)"), O("E1_TNT_t", "number", "the same in tonnes of TNT"),
+      O("E2", "energy", "energy released by the second earthquake (J)"),
+      O("energy_ratio", "number", "energy ratio E2/E1"), O("amplitude_ratio", "number", "amplitude ratio A2/A1")],
+     earthquake_energy, _ref_earthquake_energy, _guard(_wrong_earthquake_energy),
+     lambda rng: {"M1": round(rng.uniform(1.0, 8.5), 2), **({"M2": round(rng.uniform(1.0, 9.0), 2)} if rng.random() < 0.8 else {})},
+     [{"M1": 6, "M2": 7}, {"M1": 5.5}],
+     ["earthquake energy", "energy of an earthquake", "earthquake energy and amplitude ratio", "magnitude energy ratio",
+      "energy released by an earthquake"],
+     conditions=["-2 <= M <= 10", "Gutenberg-Richter energy relation log10 E = 1.5 M + 4.8 (E in J)",
+                 "amplitude ratio for the same distance and instrument"],
+     invalid=[{"M1": 12}],
+     method="E = 10^(1.5 M + 4.8) J; E2/E1 = 10^(1.5 (M2 - M1)); A2/A1 = 10^(M2 - M1)",
+     latex=r"\log_{10}E = 1.5M + 4.8,\quad \frac{E_2}{E_1} = 10^{1.5(M_2 - M_1)},\quad \frac{A_2}{A_1} = 10^{M_2 - M_1}")
+
+
+# --- relief and gradient on a topographic map -----------------------------------------------------------------------
+def map_gradient(z1, z2, d_map=None, scale=None, d=None):
+    _finite(z1=z1, z2=z2)
+    _need(-11000 <= z1 <= 9000 and -11000 <= z2 <= 9000, "elevations must be between -11000 and 9000 m")
+    if d is not None:
+        _need(d_map is None and scale is None, "give the ground distance, or the map distance and the scale (not both)")
+        _finite(d=d)
+        _need(0 < d <= 1e6, "the ground distance must be between 0 and 1000 km")
+        run = d
+    else:
+        _need(d_map is not None and scale is not None, "give the map distance and the scale, or the ground distance")
+        _finite(d_map=d_map, scale=scale)
+        _need(0 < d_map <= 2, "the map distance must be between 0 and 2 m")
+        _need(100 <= scale <= 1e7, "the scale denominator must be between 100 and 10,000,000 (1:24000 is 24000)")
+        run = d_map * scale
+    relief = abs(z2 - z1)
+    s = relief / run
+    return {"relief": _r(relief), "distance": _r(run), "gradient_m_per_km": _r(1000 * s), "slope": _r(s),
+            "slope_percent": _r(100 * s), "slope_deg": _r(math.degrees(math.atan(s)))}
+
+
+def _ref_map_gradient(z1, z2, d_map=None, scale=None, d=None):
+    # the two points as 3-D vectors (numpy): run from the horizontal components, rise from the vertical one, angle by
+    # arctan2 of the difference vector
+    import numpy as np
+    run = d if d is not None else d_map * scale
+    p1, p2 = np.array([0.0, 0.0, z1]), np.array([run, 0.0, z2])
+    dv = p2 - p1
+    horiz = float(np.hypot(dv[0], dv[1]))
+    rise = float(abs(dv[2]))
+    return {"relief": rise, "distance": horiz, "gradient_m_per_km": rise / (horiz / 1000.0), "slope": rise / horiz,
+            "slope_percent": rise / horiz * 100.0, "slope_deg": float(np.degrees(np.arctan2(rise, horiz)))}
+
+
+def _wrong_map_gradient(z1, z2, d_map=None, scale=None, d=None):
+    # the map distance used as the ground distance (the scale forgotten)
+    if d_map is not None:
+        return map_gradient(z1, z2, d=d_map)
+    return map_gradient(z1, z2, d_map, scale, d)
+
+
+def _rand_map_gradient(rng):
+    z1 = round(rng.uniform(0, 3000), 1)
+    z2 = round(z1 + rng.choice([-1, 1]) * rng.uniform(5, 600), 1)
+    if rng.random() < 0.8:
+        return {"z1": z1, "z2": z2, "d_map": round(rng.uniform(0.01, 0.4), 4), "scale": rng.choice([10000.0, 24000.0, 25000.0, 50000.0, 62500.0, 100000.0])}
+    return {"z1": z1, "z2": z2, "d": rng.uniform(200, 20000)}
+
+
+proc("map_gradient_relief", "Relief and gradient between two points of a topographic map", "maps",
+     "The relief (difference in elevation) between two points, the ground distance (map distance times the scale "
+     "denominator, or as given), the gradient in m per km, the slope as a fraction and percent and the slope angle.",
+     [I("z1", "length", "length", "elevation of the first point", ("first elevation", "elevation 1", "z1"), "m"),
+      I("z2", "length", "length", "elevation of the second point", ("second elevation", "elevation 2", "z2"), "m"),
+      I("d_map", "length", "length", "distance measured on the map (optional: or give the ground distance)", ("map distance",), "cm", required=False),
+      I("scale", "number", "number", "scale denominator (24000 for 1:24000; with the map distance)", ("scale", "map scale"), "", required=False),
+      I("d", "length", "length", "ground (horizontal) distance (optional: or give the map distance and scale)", ("ground distance", "horizontal distance"), "km", required=False)],
+     [O("relief", "length", "relief |z2 - z1| (m)"), O("distance", "length", "ground distance (m)"),
+      O("gradient_m_per_km", "number", "gradient (m per km)"), O("slope", "number", "slope rise/run"),
+      O("slope_percent", "number", "slope (percent)"), O("slope_deg", "number", "slope angle (degrees)")],
+     map_gradient, _ref_map_gradient, _guard(_wrong_map_gradient), _rand_map_gradient,
+     [{"z1": 1200, "z2": 1450, "d_map": 5, "scale": 24000}, {"z1": 350, "z2": 120, "d": 2.5}],
+     ["topographic gradient", "gradient and relief", "relief and gradient", "map gradient", "gradient from a topographic map"],
+     conditions=["elevations between -11000 and 9000 m", "the ground distance, or the map distance and the scale",
+                 "0 < map distance <= 2 m", "100 <= scale <= 1e7", "relief is the absolute difference (uphill or downhill)"],
+     invalid=[{"z1": 1200, "z2": 1450, "d_map": 5, "scale": 5}],
+     primary="gradient_m_per_km",
+     method="relief = |z2 - z1|; run = d_map x scale; gradient = relief/run (x 1000 per km, x 100 percent); angle = atan(relief/run)",
+     latex=r"\text{gradient} = \frac{|z_2 - z_1|}{d_{map}\cdot S},\quad \theta = \arctan\frac{|z_2 - z_1|}{d}")

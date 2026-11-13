@@ -84,9 +84,11 @@
   "stream_power",
   "rossby_number",
   "solar_elevation_angle",
-  "half_space_heat_flow"
+  "half_space_heat_flow",
+  "earthquake_energy",
+  "map_gradient_relief"
  ],
- "generated": "2026-10-24",
+ "generated": "2026-11-13",
  "tool": "tools/certify_procedures.py",
  "report": "release/procedure_certification.json",
  "weak_references": {

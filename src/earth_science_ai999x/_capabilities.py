@@ -15,7 +15,7 @@ def _bind(product) -> None:
     _P = product
 
 
-CapabilityId = Literal["airy_isostasy", "blackbody_flux", "bouguer_slab", "brunt_vaisala_frequency", "buried_sphere_anomaly", "co2_radiative_forcing", "coriolis_parameter", "daily_mean_insolation", "darcy_flow", "dewpoint_from_relative_humidity", "dewpoint_from_vapor_pressure", "dipole_inclination", "dry_adiabatic_ascent", "ekman_depth", "ekman_transport", "elastic_constants_from_velocities", "energy_balance_response", "epicentral_distance", "equivalent_potential_temperature", "geodesic_distance_azimuth", "geopotential_height", "geostrophic_wind", "geotherm_radiogenic", "gradient_wind", "gravity_at_latitude", "greenhouse_n_layers", "greenhouse_single_layer", "gutenberg_richter_b_value", "half_space_heat_flow", "heat_index", "hypsometric_thickness", "inertial_period", "isochron_age", "isothermal_pressure", "lifting_condensation_level", "local_magnitude", "mixing_ratio", "moist_adiabatic_lapse_rate", "moist_air_density", "moist_static_energy", "moment_magnitude", "nmo_velocity", "ocean_depth_from_pressure", "ocean_pressure_from_depth", "paleolatitude", "planetary_equilibrium_temperature", "plate_velocity", "potassium_argon_age", "potential_temperature", "pratt_isostasy", "pressure_with_lapse_rate", "pure_water_density", "radioactive_decay_remaining", "radiocarbon_age", "radiometric_age", "relative_humidity_from_dewpoint", "rossby_number", "rossby_wave_speed", "saturation_mixing_ratio", "saturation_vapor_pressure", "scale_height", "seafloor_depth_age", "seawater_adiabatic_gradient", "seawater_density", "seawater_density_surface", "seawater_freezing_point", "seawater_potential_temperature", "seismic_velocities_from_moduli", "seismic_velocities_from_young", "shallow_water_wave", "solar_elevation_angle", "sound_speed_seawater", "sp_epicentral_distance", "specific_humidity_from_dewpoint", "standard_atmosphere_height", "standard_atmosphere_pressure", "stokes_settling_velocity", "stream_power", "temperature_from_potential_temperature", "virtual_temperature", "wave_dispersion", "wien_peak_wavelength", "wind_chill", "wind_components", "wind_speed_direction"]
+CapabilityId = Literal["airy_isostasy", "blackbody_flux", "bouguer_slab", "brunt_vaisala_frequency", "buried_sphere_anomaly", "co2_radiative_forcing", "coriolis_parameter", "daily_mean_insolation", "darcy_flow", "dewpoint_from_relative_humidity", "dewpoint_from_vapor_pressure", "dipole_inclination", "dry_adiabatic_ascent", "earthquake_energy", "ekman_depth", "ekman_transport", "elastic_constants_from_velocities", "energy_balance_response", "epicentral_distance", "equivalent_potential_temperature", "geodesic_distance_azimuth", "geopotential_height", "geostrophic_wind", "geotherm_radiogenic", "gradient_wind", "gravity_at_latitude", "greenhouse_n_layers", "greenhouse_single_layer", "gutenberg_richter_b_value", "half_space_heat_flow", "heat_index", "hypsometric_thickness", "inertial_period", "isochron_age", "isothermal_pressure", "lifting_condensation_level", "local_magnitude", "map_gradient_relief", "mixing_ratio", "moist_adiabatic_lapse_rate", "moist_air_density", "moist_static_energy", "moment_magnitude", "nmo_velocity", "ocean_depth_from_pressure", "ocean_pressure_from_depth", "paleolatitude", "planetary_equilibrium_temperature", "plate_velocity", "potassium_argon_age", "potential_temperature", "pratt_isostasy", "pressure_with_lapse_rate", "pure_water_density", "radioactive_decay_remaining", "radiocarbon_age", "radiometric_age", "relative_humidity_from_dewpoint", "rossby_number", "rossby_wave_speed", "saturation_mixing_ratio", "saturation_vapor_pressure", "scale_height", "seafloor_depth_age", "seawater_adiabatic_gradient", "seawater_density", "seawater_density_surface", "seawater_freezing_point", "seawater_potential_temperature", "seismic_velocities_from_moduli", "seismic_velocities_from_young", "shallow_water_wave", "solar_elevation_angle", "sound_speed_seawater", "sp_epicentral_distance", "specific_humidity_from_dewpoint", "standard_atmosphere_height", "standard_atmosphere_pressure", "stokes_settling_velocity", "stream_power", "temperature_from_potential_temperature", "virtual_temperature", "wave_dispersion", "wien_peak_wavelength", "wind_chill", "wind_components", "wind_speed_direction"]
 
 
 def solve(find: CapabilityId | str, given: dict | None = None, conditions=(), *, target: str | None = None, **inputs):
@@ -190,6 +190,18 @@ def dry_adiabatic_ascent(T=None, dz=None):
     """
     given = {k: v for k, v in dict(T=T, dz=dz).items() if v is not None}
     return _P.solve("dry_adiabatic_ascent", **given)
+
+def earthquake_energy(M1=None, M2=None):
+    """Earthquake energy and the energy and amplitude ratios of two magnitudes. The seismic energy radiated by an earthquake of magnitude M, log10 E = 1.5 M + 4.8 (E in J, Gutenberg-Richter), as joules and tonnes of TNT (4.184e9 J per tonne), and for a second magnitude its energy, the energy ratio 10^(1.5 (M2 - M1)) and the ground-amplitude ratio 10^(M2 - M1) (same distance and instrument).
+    Formula: \\log_{10}E = 1.5M + 4.8,\\quad \\frac{E_2}{E_1} = 10^{1.5(M_2 - M_1)},\\quad \\frac{A_2}{A_1} = 10^{M_2 - M_1}
+    Inputs:
+        M1: magnitude of the (first) earthquake
+        M2: magnitude of a second earthquake (optional) (optional)
+    Outputs: E1 (energy released by the first earthquake (J)), E1_TNT_t (the same in tonnes of TNT), E2 (energy released by the second earthquake (J)), energy_ratio (energy ratio E2/E1), amplitude_ratio (amplitude ratio A2/A1)
+    See also: help("earthquake_energy")
+    """
+    given = {k: v for k, v in dict(M1=M1, M2=M2).items() if v is not None}
+    return _P.solve("earthquake_energy", **given)
 
 def ekman_depth(Az=None, lat=None):
     """Ekman layer depth. Depth of frictional influence of the wind on the ocean (the current reverses direction at D_E = pi delta).
@@ -488,6 +500,21 @@ def local_magnitude(A=None, r=None):
     """
     given = {k: v for k, v in dict(A=A, r=r).items() if v is not None}
     return _P.solve("local_magnitude", **given)
+
+def map_gradient_relief(z1=None, z2=None, d_map=None, scale=None, d=None):
+    """Relief and gradient between two points of a topographic map. The relief (difference in elevation) between two points, the ground distance (map distance times the scale denominator, or as given), the gradient in m per km, the slope as a fraction and percent and the slope angle.
+    Formula: \\text{gradient} = \\frac{|z_2 - z_1|}{d_{map}\\cdot S},\\quad \\theta = \\arctan\\frac{|z_2 - z_1|}{d}
+    Inputs:
+        z1: elevation of the first point
+        z2: elevation of the second point
+        d_map: distance measured on the map (optional: or give the ground distance) (optional)
+        scale: scale denominator (24000 for 1:24000; with the map distance) (optional)
+        d: ground (horizontal) distance (optional: or give the map distance and scale) (optional)
+    Outputs: relief (relief |z2 - z1| (m)), distance (ground distance (m)), gradient_m_per_km (gradient (m per km)), slope (slope rise/run), slope_percent (slope (percent)), slope_deg (slope angle (degrees))
+    See also: help("map_gradient_relief")
+    """
+    given = {k: v for k, v in dict(z1=z1, z2=z2, d_map=d_map, scale=scale, d=d).items() if v is not None}
+    return _P.solve("map_gradient_relief", **given)
 
 def mixing_ratio(e=None, p=None):
     """Water-vapour mixing ratio from vapour pressure. Mass of water vapour per mass of dry air from the vapour partial pressure and the total pressure.
@@ -966,7 +993,7 @@ def specific_humidity_from_dewpoint(p=None, Td=None):
     return _P.solve("specific_humidity_from_dewpoint", **given)
 
 def standard_atmosphere_height(p=None):
-    """Height of a pressure level in the standard atmosphere. The height of a pressure level in the tropospheric standard atmosphere (pressure altitude; as MetPy).
+    """Height of a pressure level in the standard atmosphere. The height of a pressure level in the tropospheric International Standard Atmosphere (pressure altitude; T0 = 288.15 K, 6.5 K/km, 1013.25 hPa).
     Formula: z = \\frac{T_0}{\\gamma}\\left[1-\\left(\\frac{p}{p_0}\\right)^{R_d\\gamma/g}\\right]
     Inputs:
         p: pressure
@@ -977,7 +1004,7 @@ def standard_atmosphere_height(p=None):
     return _P.solve("standard_atmosphere_height", **given)
 
 def standard_atmosphere_pressure(z=None):
-    """Pressure at a height in the standard atmosphere. Pressure at a height in the tropospheric standard atmosphere (T0 = 288 K, 6.5 K/km, 1013.25 hPa; as MetPy).
+    """Pressure at a height in the standard atmosphere. Pressure at a height in the tropospheric International Standard Atmosphere (T0 = 288.15 K, 6.5 K/km, 1013.25 hPa).
     Formula: p = p_0\\left(1-\\frac{\\gamma z}{T_0}\\right)^{g/(R_d\\gamma)}
     Inputs:
         z: height above sea level
@@ -1099,4 +1126,4 @@ def wind_speed_direction(u=None, v=None):
     return _P.solve("wind_speed_direction", **given)
 
 
-__all__ = ["CapabilityId", "solve", "help", "airy_isostasy", "blackbody_flux", "bouguer_slab", "brunt_vaisala_frequency", "buried_sphere_anomaly", "co2_radiative_forcing", "coriolis_parameter", "daily_mean_insolation", "darcy_flow", "dewpoint_from_relative_humidity", "dewpoint_from_vapor_pressure", "dipole_inclination", "dry_adiabatic_ascent", "ekman_depth", "ekman_transport", "elastic_constants_from_velocities", "energy_balance_response", "epicentral_distance", "equivalent_potential_temperature", "geodesic_distance_azimuth", "geopotential_height", "geostrophic_wind", "geotherm_radiogenic", "gradient_wind", "gravity_at_latitude", "greenhouse_n_layers", "greenhouse_single_layer", "gutenberg_richter_b_value", "half_space_heat_flow", "heat_index", "hypsometric_thickness", "inertial_period", "isochron_age", "isothermal_pressure", "lifting_condensation_level", "local_magnitude", "mixing_ratio", "moist_adiabatic_lapse_rate", "moist_air_density", "moist_static_energy", "moment_magnitude", "nmo_velocity", "ocean_depth_from_pressure", "ocean_pressure_from_depth", "paleolatitude", "planetary_equilibrium_temperature", "plate_velocity", "potassium_argon_age", "potential_temperature", "pratt_isostasy", "pressure_with_lapse_rate", "pure_water_density", "radioactive_decay_remaining", "radiocarbon_age", "radiometric_age", "relative_humidity_from_dewpoint", "rossby_number", "rossby_wave_speed", "saturation_mixing_ratio", "saturation_vapor_pressure", "scale_height", "seafloor_depth_age", "seawater_adiabatic_gradient", "seawater_density", "seawater_density_surface", "seawater_freezing_point", "seawater_potential_temperature", "seismic_velocities_from_moduli", "seismic_velocities_from_young", "shallow_water_wave", "solar_elevation_angle", "sound_speed_seawater", "sp_epicentral_distance", "specific_humidity_from_dewpoint", "standard_atmosphere_height", "standard_atmosphere_pressure", "stokes_settling_velocity", "stream_power", "temperature_from_potential_temperature", "virtual_temperature", "wave_dispersion", "wien_peak_wavelength", "wind_chill", "wind_components", "wind_speed_direction"]
+__all__ = ["CapabilityId", "solve", "help", "airy_isostasy", "blackbody_flux", "bouguer_slab", "brunt_vaisala_frequency", "buried_sphere_anomaly", "co2_radiative_forcing", "coriolis_parameter", "daily_mean_insolation", "darcy_flow", "dewpoint_from_relative_humidity", "dewpoint_from_vapor_pressure", "dipole_inclination", "dry_adiabatic_ascent", "earthquake_energy", "ekman_depth", "ekman_transport", "elastic_constants_from_velocities", "energy_balance_response", "epicentral_distance", "equivalent_potential_temperature", "geodesic_distance_azimuth", "geopotential_height", "geostrophic_wind", "geotherm_radiogenic", "gradient_wind", "gravity_at_latitude", "greenhouse_n_layers", "greenhouse_single_layer", "gutenberg_richter_b_value", "half_space_heat_flow", "heat_index", "hypsometric_thickness", "inertial_period", "isochron_age", "isothermal_pressure", "lifting_condensation_level", "local_magnitude", "map_gradient_relief", "mixing_ratio", "moist_adiabatic_lapse_rate", "moist_air_density", "moist_static_energy", "moment_magnitude", "nmo_velocity", "ocean_depth_from_pressure", "ocean_pressure_from_depth", "paleolatitude", "planetary_equilibrium_temperature", "plate_velocity", "potassium_argon_age", "potential_temperature", "pratt_isostasy", "pressure_with_lapse_rate", "pure_water_density", "radioactive_decay_remaining", "radiocarbon_age", "radiometric_age", "relative_humidity_from_dewpoint", "rossby_number", "rossby_wave_speed", "saturation_mixing_ratio", "saturation_vapor_pressure", "scale_height", "seafloor_depth_age", "seawater_adiabatic_gradient", "seawater_density", "seawater_density_surface", "seawater_freezing_point", "seawater_potential_temperature", "seismic_velocities_from_moduli", "seismic_velocities_from_young", "shallow_water_wave", "solar_elevation_angle", "sound_speed_seawater", "sp_epicentral_distance", "specific_humidity_from_dewpoint", "standard_atmosphere_height", "standard_atmosphere_pressure", "stokes_settling_velocity", "stream_power", "temperature_from_potential_temperature", "virtual_temperature", "wave_dispersion", "wien_peak_wavelength", "wind_chill", "wind_components", "wind_speed_direction"]

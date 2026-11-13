@@ -21,42 +21,42 @@ figcaption{font-size:9pt;color:#555}
 .pb{page-break-after:always}
 </style></head><body>
 <h1>earth-science: the Earth Science program, user guide</h1>
-<p><strong>earth-science-ai999x 1.1.0</strong>, Rust build: command line, desktop app and browser. <strong>Creator / engineer:</strong> Ibnul Jaif Farabi · <strong>Company:</strong> AI999X · support@ai999x.com</p>
-<p>Earth Science covers atmospheric thermodynamics and meteorology, climate and radiation balance, oceanography and seawater properties, seismology and geophysics, and geology. This guide is about <code>earth-science</code>, the model as a self-contained program for Windows and Linux: 85 capabilities in 20 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model&#x27;s page (https://www.ai999x.com/models/earth-science-ai999x/); the Python package (<code>pip install earth-science-ai999x</code>) has its own guide. Every command output printed here is what the program printed.</p>
+<p><strong>earth-science-ai999x 1.6.0</strong>, Rust build: command line, desktop app and browser. <strong>Creator / engineer:</strong> Ibnul Jaif Farabi · <strong>Company:</strong> AI999X · support@ai999x.com</p>
+<p>Earth Science covers atmospheric thermodynamics and meteorology, climate and radiation balance, oceanography and seawater properties, seismology and geophysics, and geology. This guide is about <code>earth-science</code>, the model as a self-contained program for Windows and Linux: 87 capabilities in 21 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model&#x27;s page (https://www.ai999x.com/models/earth-science-ai999x/); the Python package (<code>pip install earth-science-ai999x</code>) has its own guide. Every command output printed here is what the program printed.</p>
 <h2>Contents</h2>
 <ul><li>1. Get it: desktop app, command line, browser, Python</li><li>2. Quick start</li><li>3. Writing inputs</li><li>4. Outcomes and exit codes</li><li>5. Scripts and agents: batch and JSON</li><li>6. Figures</li><li>7. In a web page or Node.js: WebAssembly</li><li>8. Every capability</li></ul>
 <h2>1. Get it</h2>
-<p>Version 1.5.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/</p>
-<table><thead><tr><th>what</th><th>system</th><th>download</th></tr></thead><tbody><tr><td>Desktop app: Earth Science</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.5.0/ai999x-earth-science-1.5.0-windows-x86_64.zip</td></tr><tr><td>Desktop app: Earth Science</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.5.0/ai999x-earth-science-1.5.0-linux-x86_64.tar.gz</td></tr><tr><td>Desktop app: all models</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip</td></tr><tr><td>Desktop app: all models</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz</td></tr><tr><td>Command line</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip</td></tr><tr><td>Command line</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz</td></tr></tbody></table>
+<p>Version 1.6.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/</p>
+<table><thead><tr><th>what</th><th>system</th><th>download</th></tr></thead><tbody><tr><td>Desktop app: Earth Science</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.6.0/ai999x-earth-science-1.6.0-windows-x86_64.zip</td></tr><tr><td>Desktop app: Earth Science</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.6.0/ai999x-earth-science-1.6.0-linux-x86_64.tar.gz</td></tr><tr><td>Desktop app: all models</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-windows-x86_64.zip</td></tr><tr><td>Desktop app: all models</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-linux-x86_64.tar.gz</td></tr><tr><td>Command line</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-windows-x86_64.zip</td></tr><tr><td>Command line</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz</td></tr></tbody></table>
 <h3>Desktop app</h3>
-<p>Earth Science in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-earth-science-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-earth-science.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:</p>
-<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-earth-science-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+<p>Earth Science in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-earth-science-1.6.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-earth-science.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:</p>
+<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-earth-science-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-earth-science-1.5.0-linux-x86_64.tar.gz
-./ai999x-earth-science-1.5.0-linux-x86_64/ai999x-earth-science</code></pre>
-<p>It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:</p>
-<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+tar xzf ai999x-earth-science-1.6.0-linux-x86_64.tar.gz
+./ai999x-earth-science-1.6.0-linux-x86_64/ai999x-earth-science</code></pre>
+<p>It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.6.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:</p>
+<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
-./ai999x-1.5.0-linux-x86_64/ai999x</code></pre>
+tar xzf ai999x-1.6.0-linux-x86_64.tar.gz
+./ai999x-1.6.0-linux-x86_64/ai999x</code></pre>
 <h3>Command line, Linux</h3>
 <p>The bundle holds one program per model; <code>earth-science</code> is this one. The checksum line should print OK.</p>
-<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share &amp;&amp; tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
-echo &#x27;export PATH=&quot;$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH&quot;&#x27; &gt;&gt; ~/.bashrc &amp;&amp; source ~/.bashrc
+mkdir -p ~/.local/share &amp;&amp; tar xzf ai999x-cli-1.6.0-linux-x86_64.tar.gz -C ~/.local/share
+echo &#x27;export PATH=&quot;$HOME/.local/share/ai999x-cli-1.6.0-linux-x86_64:$PATH&quot;&#x27; &gt;&gt; ~/.bashrc &amp;&amp; source ~/.bashrc
 earth-science --version</code></pre>
 <h3>Command line, Windows (PowerShell)</h3>
 <p>The fourth line should print True.</p>
-<pre><code class="powershell">$F = &quot;ai999x-cli-1.5.0-windows-x86_64.zip&quot;
-Invoke-WebRequest &quot;https://downloads.ai999x.com/desktop/1.5.0/$F&quot; -OutFile $F
-Invoke-WebRequest &quot;https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS&quot; -OutFile SHA256SUMS
+<pre><code class="powershell">$F = &quot;ai999x-cli-1.6.0-windows-x86_64.zip&quot;
+Invoke-WebRequest &quot;https://downloads.ai999x.com/desktop/1.6.0/$F&quot; -OutFile $F
+Invoke-WebRequest &quot;https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS&quot; -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split &#x27; &#x27;)[0]
 Expand-Archive $F -DestinationPath &quot;$env:LOCALAPPDATA\AI999X&quot; -Force
-$D = &quot;$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64&quot;; $env:Path += &quot;;$D&quot;
+$D = &quot;$env:LOCALAPPDATA\AI999X\ai999x-cli-1.6.0-windows-x86_64&quot;; $env:Path += &quot;;$D&quot;
 [Environment]::SetEnvironmentVariable(&quot;Path&quot;, [Environment]::GetEnvironmentVariable(&quot;Path&quot;, &quot;User&quot;) + &quot;;$D&quot;, &quot;User&quot;)
 earth-science --version</code></pre>
 <h3>In your browser</h3>
@@ -67,7 +67,7 @@ earth-science --version</code></pre>
 <h3>2.1 Check the install</h3>
 <p>Prints the model, its version and that this is the Rust build.</p>
 <pre><code class="shell">$ earth-science --version
-earth-science-ai999x 1.5.0 (Rust build, ax-engine 1.5.0)</code></pre>
+earth-science-ai999x 1.6.0 (Rust build, ax-engine 1.6.0)</code></pre>
 <h3>2.2 Ask in words</h3>
 <p>Write the question as you would say it: the program reads the quantities and their units, picks the capability and answers.</p>
 <pre><code class="shell">$ earth-science ask &quot;Lifting condensation level with pressure = 1000 hPa, temperature = 30 °C and dewpoint = 20 °C.&quot;
@@ -102,7 +102,7 @@ buried_sphere_anomaly                    Gravity anomaly above a buried sphere
 co2_radiative_forcing                    Radiative forcing of a change in CO2 (Myhre et al. 1998)
 coriolis_parameter                       Coriolis parameter
 daily_mean_insolation                    Daily mean insolation at the top of the atmosphere
-… 77 more</code></pre>
+… 79 more</code></pre>
 <h3>2.5 What a capability needs</h3>
 <p>The equation or method, every input and output with its SI unit. Read this before solve: it tells you the input names.</p>
 <pre><code class="shell">$ earth-science info lifting_condensation_level
@@ -457,16 +457,16 @@ Z = 9984.328497 m
   assumes: -1 km &lt;= z &lt;= 200 km</code></pre>
 <p><strong>What the worked example means:</strong> This calculation converts the input geometric height, 10000 m, into geopotential energy per unit mass, 97912.8 m^2/s^2, and its corresponding geopotential height, 9984.33 m. The process accounts for the decrease in gravitational acceleration as altitude increases above Earth&#x27;s surface. The resulting geopotential height is the vertical coordinate typically used on weather maps because it represents the work required to lift a unit mass from sea level to that elevation against gravity.</p>
 <h4 id="standard_atmosphere_height">Height of a pressure level in the standard atmosphere, <code>standard_atmosphere_height</code></h4>
-<p>The height of a pressure level in the tropospheric standard atmosphere (pressure altitude; as MetPy).</p>
+<p>The height of a pressure level in the tropospheric International Standard Atmosphere (pressure altitude; T0 = 288.15 K, 6.5 K/km, 1013.25 hPa).</p>
 <div class="math">\[z = \frac{T_0}{\gamma}\left[1-\left(\frac{p}{p_0}\right)^{R_d\gamma/g}\right]\]</div>
 <table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>p</code></td><td>in</td><td>pressure</td><td>Pa</td></tr><tr><td><code>z</code></td><td>out</td><td>pressure altitude (m)</td><td>m</td></tr></tbody></table>
 <p><strong>Applies when:</strong> 226 hPa &lt;= p &lt;= 1075 hPa.</p>
 <pre><code class="shell">$ earth-science solve standard_atmosphere_height &quot;p=50000 Pa&quot;
-z = 5571.434423 m
+z = 5574.336212 m
   by: Height of a pressure level in the standard atmosphere  (z = (T0/gamma)(1 - (p/p0)^(R_d gamma/g)))
   p = 50000 Pa
   assumes: 226 hPa &lt;= p &lt;= 1075 hPa</code></pre>
-<p><strong>What the worked example means:</strong> This calculation determines the geometric height within the troposphere where the atmospheric pressure equals the input value. Using the International Standard Atmosphere model, which assumes a linear temperature decrease with height and constant gravity, the method converts the pressure reading into an altitude estimate. The result indicates that at a pressure of 50000 Pa, the corresponding standard atmosphere height is 5571.43 m, providing a reference level for flight operations or meteorological analysis.</p>
+<p><strong>What the worked example means:</strong> This calculation determines the geometric height within the troposphere where the atmospheric pressure equals the input value. Using the International Standard Atmosphere model, which assumes a linear temperature decrease with height and constant gravity, the method converts the pressure reading into an altitude estimate. The result indicates that at a pressure of 50000 Pa, the corresponding standard atmosphere height is 5574.34 m, providing a reference level for flight operations or meteorological analysis.</p>
 <h4 id="lifting_condensation_level">Lifting condensation level (Romps 2017), <code>lifting_condensation_level</code></h4>
 <p>Pressure and temperature at which a parcel lifted dry-adiabatically from (p, T, Td) becomes saturated, from Romps&#x27; exact solution with the Lambert W function.</p>
 <div class="math">\[T_{LCL} = \frac{c}{W_{-1}\!\left(RH^{1/a}\,c\,e^{c}\right)}\,T,\quad p_{LCL} = p\left(\frac{T_{LCL}}{T}\right)^{c_{pm}/R_m}\]</div>
@@ -508,16 +508,16 @@ theta = 312.3207471 K
   assumes: 150 K &lt;= T &lt;= 350 K; 1 hPa &lt;= p &lt;= 1100 hPa</code></pre>
 <p><strong>What the worked example means:</strong> This calculation determines the potential temperature, which represents the temperature an air parcel would possess if it were moved dry-adiabatically to a reference pressure level. By using an input air temperature of 298.15 K and an input air pressure of 85000 Pa, the method applies Poisson&#x27;s equation to remove the effects of expansion or compression caused by pressure changes. The resulting value of 312.321 K allows meteorologists to compare the thermal state of air parcels at different altitudes on a consistent basis.</p>
 <h4 id="standard_atmosphere_pressure">Pressure at a height in the standard atmosphere, <code>standard_atmosphere_pressure</code></h4>
-<p>Pressure at a height in the tropospheric standard atmosphere (T0 = 288 K, 6.5 K/km, 1013.25 hPa; as MetPy).</p>
+<p>Pressure at a height in the tropospheric International Standard Atmosphere (T0 = 288.15 K, 6.5 K/km, 1013.25 hPa).</p>
 <div class="math">\[p = p_0\left(1-\frac{\gamma z}{T_0}\right)^{g/(R_d\gamma)}\]</div>
 <table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>z</code></td><td>in</td><td>height above sea level</td><td>m</td></tr><tr><td><code>p</code></td><td>out</td><td>standard-atmosphere pressure (Pa)</td><td>Pa</td></tr></tbody></table>
 <p><strong>Applies when:</strong> -500 m &lt;= z &lt;= 11 km (troposphere).</p>
 <pre><code class="shell">$ earth-science solve standard_atmosphere_pressure &quot;z=1500 m&quot;
-p = 84547.60127 Pa
+p = 84555.70741 Pa
   by: Pressure at a height in the standard atmosphere  (p = p0 (1 - gamma z/T0)^(g/(R_d gamma)))
   z = 1500 m
   assumes: -500 m &lt;= z &lt;= 11 km (troposphere)</code></pre>
-<p><strong>What the worked example means:</strong> This calculation determines the atmospheric pressure at a specific altitude within the troposphere using the standard atmosphere model. Given a height of 1500 m, the resulting pressure is 84547.6 Pa. This value represents the idealized pressure expected under standard conditions, where temperature decreases linearly with height and air behaves as an ideal gas in hydrostatic equilibrium.</p>
+<p><strong>What the worked example means:</strong> This calculation determines the atmospheric pressure at a specific altitude within the troposphere using the standard atmosphere model. Given a height of 1500 m, the resulting pressure is 84555.7 Pa. This value represents the idealized pressure expected under standard conditions, where temperature decreases linearly with height and air behaves as an ideal gas in hydrostatic equilibrium.</p>
 <h4 id="isothermal_pressure">Pressure at height in an isothermal atmosphere, <code>isothermal_pressure</code></h4>
 <p>The barometric formula: pressure at height z in an isothermal dry atmosphere, and its scale height R_d T/g.</p>
 <div class="math">\[p = p_0\,e^{-z/H},\quad H = \frac{R_d T}{g}\]</div>
@@ -873,6 +873,26 @@ gradient = 0.02
   L = 100 m
   assumes: K, A, L &gt; 0; dh &gt; 0; laminar flow in a saturated, homogeneous medium</code></pre>
 <p><strong>What the worked example means:</strong> This calculation determines the volumetric flow rate of water through a porous medium using Darcy&#x27;s Law. By applying the hydraulic conductivity, cross-sectional area, head difference, and flow length, the model computes the total discharge as 0.0001 m^3/s. The resulting specific discharge represents the flux per unit area, while the average linear velocity indicates how fast water actually moves through the pore spaces when porosity is considered.</p>
+<h3>Maps (1)</h3>
+<h4 id="map_gradient_relief">Relief and gradient between two points of a topographic map, <code>map_gradient_relief</code></h4>
+<p>The relief (difference in elevation) between two points, the ground distance (map distance times the scale denominator, or as given), the gradient in m per km, the slope as a fraction and percent and the slope angle.</p>
+<div class="math">\[\text{gradient} = \frac{|z_2 - z_1|}{d_{map}\cdot S},\quad \theta = \arctan\frac{|z_2 - z_1|}{d}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>z1</code></td><td>in</td><td>elevation of the first point</td><td>m</td></tr><tr><td><code>z2</code></td><td>in</td><td>elevation of the second point</td><td>m</td></tr><tr><td><code>d_map</code></td><td>in</td><td>distance measured on the map (optional: or give the ground distance) (optional)</td><td>m</td></tr><tr><td><code>scale</code></td><td>in</td><td>scale denominator (24000 for 1:24000; with the map distance) (optional)</td><td>, </td></tr><tr><td><code>d</code></td><td>in</td><td>ground (horizontal) distance (optional: or give the map distance and scale) (optional)</td><td>m</td></tr><tr><td><code>relief</code></td><td>out</td><td>relief |z2 - z1| (m)</td><td>m</td></tr><tr><td><code>distance</code></td><td>out</td><td>ground distance (m)</td><td>m</td></tr><tr><td><code>gradient_m_per_km</code></td><td>out</td><td>gradient (m per km)</td><td>, </td></tr><tr><td><code>slope</code></td><td>out</td><td>slope rise/run</td><td>, </td></tr><tr><td><code>slope_percent</code></td><td>out</td><td>slope (percent)</td><td>, </td></tr><tr><td><code>slope_deg</code></td><td>out</td><td>slope angle (degrees)</td><td>, </td></tr></tbody></table>
+<p><strong>Applies when:</strong> elevations between -11000 and 9000 m; the ground distance, or the map distance and the scale; 0 &lt; map distance &lt;= 2 m; 100 &lt;= scale &lt;= 1e7; relief is the absolute difference (uphill or downhill).</p>
+<pre><code class="shell">$ earth-science solve map_gradient_relief &quot;z1=1200 m&quot; &quot;z2=1450 m&quot; &quot;d_map=0.05 m&quot; scale=24000
+relief = 250 m
+distance = 1200 m
+gradient_m_per_km = 208.3333333
+slope = 0.2083333333
+slope_percent = 20.83333333
+slope_deg = 11.76828893
+  by: Relief and gradient between two points of a topographic map  (relief = |z2 - z1|; run = d_map x scale; gradient = relief/run (x 1000 per km, x 100 percent); angle = atan(relief/run))
+  z1 = 1200 m
+  z2 = 1450 m
+  d_map = 0.05 m
+  scale = 24000
+  assumes: elevations between -11000 and 9000 m; the ground distance, or the map distance and the scale; 0 &lt; map distance &lt;= 2 m; 100 &lt;= scale &lt;= 1e7; relief is the absolute difference (uphill or downhill)</code></pre>
+<p>In the worked example, z1 = 1200 m, z2 = 1450 m, d_map = 0.05 m, scale = 24000 go through the equation above and give relief = 250 m, distance = 1200 m, gradient_m_per_km = 208.3333333, slope = 0.2083333333. It applies only when elevations between -11000 and 9000 m; the ground distance, or the map distance and the scale; 0 &lt; map distance &lt;= 2 m; 100 &lt;= scale &lt;= 1e7; relief is the absolute difference (uphill or downhill): outside that it says what is wrong instead of returning a number.</p>
 <h3>Ocean dynamics (3)</h3>
 <h4 id="ekman_depth">Ekman layer depth, <code>ekman_depth</code></h4>
 <p>Depth of frictional influence of the wind on the ocean (the current reverses direction at D_E = pi delta).</p>
@@ -1176,7 +1196,7 @@ Re = 0.1123678646
   mu = 0.001 Pa*s
   assumes: grain Reynolds number &lt;= 1; a smooth sphere, no neighbouring grains</code></pre>
 <p><strong>What the worked example means:</strong> This calculation determines the terminal settling velocity of a small spherical grain moving through a viscous fluid under gravity. Using Stokes&#x27; law, the result depends on the difference between the grain density and the fluid density, the gravitational acceleration, the square of the grain diameter, and the dynamic viscosity of the fluid. The output value for settling velocity is 0.00224736 m/s, indicating how fast the particle falls. Additionally, the grain Reynolds number is calculated as 0.112368 to verify that the flow remains laminar, which is a necessary condition for this method to be valid.</p>
-<h3>Seismology (10)</h3>
+<h3>Seismology (11)</h3>
 <h4 id="sp_epicentral_distance">Distance to an earthquake from the S-P interval, <code>sp_epicentral_distance</code></h4>
 <p>The distance from a station to the hypocentre from the delay between the S and P arrivals, for straight rays at constant P and S speeds.</p>
 <div class="math">\[d = \frac{\Delta t\,v_p v_s}{v_p - v_s}\]</div>
@@ -1193,6 +1213,22 @@ ts = 24 s
   vs = 3500 m/s
   assumes: vp &gt; vs &gt; 0; straight rays at constant speeds (a local, crustal distance)</code></pre>
 <p><strong>What the worked example means:</strong> This calculation determines the hypocentral distance by analyzing the time gap between the arrival of P and S waves. Using a measured S minus P interval of 10 s and assuming constant wave speeds, the model computes a source distance of 84000 m. This result implies that the seismic station is located 84 away from the earthquake&#x27;s origin point in a straight line through the crust.</p>
+<h4 id="earthquake_energy">Earthquake energy and the energy and amplitude ratios of two magnitudes, <code>earthquake_energy</code></h4>
+<p>The seismic energy radiated by an earthquake of magnitude M, log10 E = 1.5 M + 4.8 (E in J, Gutenberg-Richter), as joules and tonnes of TNT (4.184e9 J per tonne), and for a second magnitude its energy, the energy ratio 10^(1.5 (M2 - M1)) and the ground-amplitude ratio 10^(M2 - M1) (same distance and instrument).</p>
+<div class="math">\[\log_{10}E = 1.5M + 4.8,\quad \frac{E_2}{E_1} = 10^{1.5(M_2 - M_1)},\quad \frac{A_2}{A_1} = 10^{M_2 - M_1}\]</div>
+<table><thead><tr><th>symbol</th><th></th><th>meaning</th><th>SI unit</th></tr></thead><tbody><tr><td><code>M1</code></td><td>in</td><td>magnitude of the (first) earthquake</td><td>, </td></tr><tr><td><code>M2</code></td><td>in</td><td>magnitude of a second earthquake (optional) (optional)</td><td>, </td></tr><tr><td><code>E1</code></td><td>out</td><td>energy released by the first earthquake (J)</td><td>J</td></tr><tr><td><code>E1_TNT_t</code></td><td>out</td><td>the same in tonnes of TNT</td><td>, </td></tr><tr><td><code>E2</code></td><td>out</td><td>energy released by the second earthquake (J)</td><td>J</td></tr><tr><td><code>energy_ratio</code></td><td>out</td><td>energy ratio E2/E1</td><td>, </td></tr><tr><td><code>amplitude_ratio</code></td><td>out</td><td>amplitude ratio A2/A1</td><td>, </td></tr></tbody></table>
+<p><strong>Applies when:</strong> -2 &lt;= M &lt;= 10; Gutenberg-Richter energy relation log10 E = 1.5 M + 4.8 (E in J); amplitude ratio for the same distance and instrument.</p>
+<pre><code class="shell">$ earth-science solve earthquake_energy M1=6 M2=7
+E1 = 6.309573445e+13 J
+E1_TNT_t = 15080.24246
+E2 = 1.995262315e+15 J
+energy_ratio = 31.6227766
+amplitude_ratio = 10
+  by: Earthquake energy and the energy and amplitude ratios of two magnitudes  (E = 10^(1.5 M + 4.8) J; E2/E1 = 10^(1.5 (M2 - M1)); A2/A1 = 10^(M2 - M1))
+  M1 = 6
+  M2 = 7
+  assumes: -2 &lt;= M &lt;= 10; Gutenberg-Richter energy relation log10 E = 1.5 M + 4.8 (E in J); amplitude ratio for the same distance and instrument</code></pre>
+<p>In the worked example, M1 = 6, M2 = 7 go through the equation above and give E1 = 6.309573445e+13 J, E1_TNT_t = 15080.24246, E2 = 1.995262315e+15 J, energy_ratio = 31.6227766. It applies only when -2 &lt;= M &lt;= 10; Gutenberg-Richter energy relation log10 E = 1.5 M + 4.8 (E in J); amplitude ratio for the same distance and instrument: outside that it says what is wrong instead of returning a number.</p>
 <h4 id="elastic_constants_from_velocities">Elastic moduli and Poisson&#x27;s ratio from Vp, Vs and density, <code>elastic_constants_from_velocities</code></h4>
 <p>Shear modulus, Lamé&#x27;s lambda, bulk modulus, Young&#x27;s modulus and Poisson&#x27;s ratio of an isotropic rock from its seismic velocities and density.</p>
 <div class="math">\[\mu = \rho V_S^2,\quad \lambda = \rho(V_P^2-2V_S^2),\quad \nu = \frac{V_P^2-2V_S^2}{2(V_P^2-V_S^2)}\]</div>

@@ -32,12 +32,13 @@ result.show()
 | Geophysics | [Gravitational acceleration at a latitude and height](#gravity_at_latitude), [Gravity anomaly of an infinite horizontal slab (Bouguer)](#bouguer_slab), [Gravity anomaly above a buried sphere](#buried_sphere_anomaly) |
 | Geothermics | [Steady geotherm with radiogenic heat production](#geotherm_radiogenic), [Surface heat flow of cooling oceanic lithosphere (half-space model)](#half_space_heat_flow) |
 | Hydrogeology | [Groundwater discharge by Darcy's law](#darcy_flow) |
+| Maps | [Relief and gradient between two points of a topographic map](#map_gradient_relief) |
 | Ocean dynamics | [Speed of a shallow-water (long) wave and tsunami travel time](#shallow_water_wave), [Ekman layer depth](#ekman_depth), [Ekman transport](#ekman_transport) |
 | Oceanography | [Density of pure water (SMOW, Bigg 1967)](#pure_water_density), [Density of seawater at the surface (UNESCO 1981)](#seawater_density_surface), [In-situ density of seawater (EOS-80)](#seawater_density), [Freezing point of seawater (UNESCO 1983)](#seawater_freezing_point), [Speed of sound in seawater (Chen and Millero 1977)](#sound_speed_seawater), [Sea pressure at a depth (Saunders 1981)](#ocean_pressure_from_depth), [Depth from sea pressure (Fofonoff and Millard 1983)](#ocean_depth_from_pressure), [Adiabatic temperature gradient of seawater (Bryden 1973)](#seawater_adiabatic_gradient), [Potential temperature of seawater (Fofonoff 1977)](#seawater_potential_temperature), [Water-wave dispersion at finite depth](#wave_dispersion) |
 | Plate tectonics | [Plate velocity from an Euler pole](#plate_velocity), [Depth of the ocean floor with age (half-space cooling)](#seafloor_depth_age) |
 | Radiation balance | [Radiant flux emitted by a black or grey body (Stefan-Boltzmann)](#blackbody_flux), [Wavelength of peak blackbody emission (Wien)](#wien_peak_wavelength), [Planetary equilibrium (effective radiating) temperature](#planetary_equilibrium_temperature), [Surface temperature in the single-layer greenhouse model](#greenhouse_single_layer), [Surface temperature with N fully absorbing layers](#greenhouse_n_layers), [Daily mean insolation at the top of the atmosphere](#daily_mean_insolation) |
 | Sedimentology | [Settling velocity of a small grain (Stokes)](#stokes_settling_velocity) |
-| Seismology | [P- and S-wave speeds from bulk and shear moduli](#seismic_velocities_from_moduli), [P- and S-wave speeds from Young's modulus and Poisson's ratio](#seismic_velocities_from_young), [Elastic moduli and Poisson's ratio from Vp, Vs and density](#elastic_constants_from_velocities), [Epicentral distance on a spherical Earth](#epicentral_distance), [Geodesic distance and azimuths on the WGS84 ellipsoid (Vincenty)](#geodesic_distance_azimuth), [Moment magnitude from seismic moment](#moment_magnitude), [Local (Richter) magnitude from Wood-Anderson amplitude](#local_magnitude), [Gutenberg-Richter b-value (maximum likelihood)](#gutenberg_richter_b_value), [Normal-moveout velocity from reflection picks](#nmo_velocity), [Distance to an earthquake from the S-P interval](#sp_epicentral_distance) |
+| Seismology | [P- and S-wave speeds from bulk and shear moduli](#seismic_velocities_from_moduli), [P- and S-wave speeds from Young's modulus and Poisson's ratio](#seismic_velocities_from_young), [Elastic moduli and Poisson's ratio from Vp, Vs and density](#elastic_constants_from_velocities), [Epicentral distance on a spherical Earth](#epicentral_distance), [Geodesic distance and azimuths on the WGS84 ellipsoid (Vincenty)](#geodesic_distance_azimuth), [Moment magnitude from seismic moment](#moment_magnitude), [Local (Richter) magnitude from Wood-Anderson amplitude](#local_magnitude), [Gutenberg-Richter b-value (maximum likelihood)](#gutenberg_richter_b_value), [Normal-moveout velocity from reflection picks](#nmo_velocity), [Distance to an earthquake from the S-P interval](#sp_epicentral_distance), [Earthquake energy and the energy and amplitude ratios of two magnitudes](#earthquake_energy) |
 
 ## Outcomes
 
@@ -162,6 +163,8 @@ Call `solve("<id>", **inputs)` with plain numbers; the result's `values` holds e
 | rossby_number | Rossby number | U, L, lat | Ro, f |
 | solar_elevation_angle | Solar elevation and azimuth | lat, decl, H | elevation, zenith, azimuth |
 | half_space_heat_flow | Surface heat flow of cooling oceanic lithosphere (half-space model) | t, dT, k, kappa | q, q_mW, thickness |
+| earthquake_energy | Earthquake energy and the energy and amplitude ratios of two magnitudes | M1, M2 | E1, E1_TNT_t, E2, energy_ratio, amplitude_ratio |
+| map_gradient_relief | Relief and gradient between two points of a topographic map | z1, z2, d_map, scale, d | relief, distance, gradient_m_per_km, slope, slope_percent, slope_deg |
 
 <a id="potential_temperature"></a>
 
@@ -1518,7 +1521,7 @@ earth_science_ai999x.solve('pressure_with_lapse_rate', p0=100000.0, T0=298.15, g
 
 ### Pressure at a height in the standard atmosphere, `standard_atmosphere_pressure`
 
-Pressure at a height in the tropospheric standard atmosphere (T0 = 288 K, 6.5 K/km, 1013.25 hPa; as MetPy).
+Pressure at a height in the tropospheric International Standard Atmosphere (T0 = 288.15 K, 6.5 K/km, 1013.25 hPa).
 
 $$
 p = p_0\left(1-\frac{\gamma z}{T_0}\right)^{g/(R_d\gamma)}
@@ -1538,28 +1541,28 @@ $$
 
 ![Standard atmosphere: pressure with height: p against z from 0 to 30 km, drawn with height on the vertical axis; 15 runs of the package](https://www.ai999x.com/?ax_fig=earth-science-ai999x/standard-atmosphere-pressure-profile)
 
-*Standard atmosphere: pressure with height: p against z from 0 to 30 km, drawn with height on the vertical axis; 15 runs of the package. Marked: the worked example, z = 1.5 km, p = 84.5476 kPa.*
+*Standard atmosphere: pressure with height: p against z from 0 to 30 km, drawn with height on the vertical axis; 15 runs of the package. Marked: the worked example, z = 1.5 km, p = 84.5557 kPa.*
 
 ![p (standard-atmosphere pressure (Pa)) against z (height above sea level) from 150 m to 15000 m on a logarithmic axis](https://www.ai999x.com/?ax_fig=earth-science-ai999x/standard-atmosphere-pressure-curve)
 
-*p (standard-atmosphere pressure (Pa)) against z (height above sea level) from 150 m to 15000 m on a logarithmic axis. 38 points computed by earth-science-ai999x; marked: the worked example, z = 1500 m, p = 84547.6 Pa.*
+*p (standard-atmosphere pressure (Pa)) against z (height above sea level) from 150 m to 15000 m on a logarithmic axis. 38 points computed by earth-science-ai999x; marked: the worked example, z = 1500 m, p = 84555.7 Pa.*
 
 ```python
 earth_science_ai999x.solve('standard_atmosphere_pressure', z=1500.0)
-# -> p = 84547.6 Pa   (SOLVED)
+# -> p = 84555.7 Pa   (SOLVED)
 ```
 
 ```python
 earth_science_ai999x.solve('standard_atmosphere_pressure', z=9000.0)
-# -> p = 30720.3 Pa   (SOLVED)
+# -> p = 30741.7 Pa   (SOLVED)
 ```
 
 **Questions in words (documented forms), as executed:**
 
 | question | outcome | result |
 |---|---|---|
-| Standard atmosphere pressure with height = 1500 m. | SOLVED | p = 84547.6 Pa |
-| Standard atmosphere pressure with height = 9000 m. | SOLVED | p = 30720.3 Pa |
+| Standard atmosphere pressure with height = 1500 m. | SOLVED | p = 84555.7 Pa |
+| Standard atmosphere pressure with height = 9000 m. | SOLVED | p = 30741.7 Pa |
 | Standard atmosphere pressure with height = 1500 m and colour = 3. | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: earth_science_ai999x.templates(); |
 | Standard atmosphere pressure with height = 20000 m. | INVALID_INPUT | Pressure at a height in the standard atmosphere: the tropospheric standard atmosphere covers -500 m to 11 km. |
 
@@ -1567,7 +1570,7 @@ earth_science_ai999x.solve('standard_atmosphere_pressure', z=9000.0)
 
 ### Height of a pressure level in the standard atmosphere, `standard_atmosphere_height`
 
-The height of a pressure level in the tropospheric standard atmosphere (pressure altitude; as MetPy).
+The height of a pressure level in the tropospheric International Standard Atmosphere (pressure altitude; $T_{0} = 288.15$ K, 6.5 K/km, 1013.25 hPa).
 
 $$
 z = \frac{T_0}{\gamma}\left[1-\left(\frac{p}{p_0}\right)^{R_d\gamma/g}\right]
@@ -1587,24 +1590,24 @@ $$
 
 ![z (pressure altitude (m)) against p (pressure) from 25000 Pa to 75000 Pa](https://www.ai999x.com/?ax_fig=earth-science-ai999x/standard-atmosphere-height-curve)
 
-*z (pressure altitude (m)) against p (pressure) from 25000 Pa to 75000 Pa. 31 points computed by earth-science-ai999x; marked: the worked example, p = 50000 Pa, z = 5571.43 m.*
+*z (pressure altitude (m)) against p (pressure) from 25000 Pa to 75000 Pa. 31 points computed by earth-science-ai999x; marked: the worked example, p = 50000 Pa, z = 5574.34 m.*
 
 ```python
 earth_science_ai999x.solve('standard_atmosphere_height', p=50000.0)
-# -> z = 5571.43 m   (SOLVED)
+# -> z = 5574.34 m   (SOLVED)
 ```
 
 ```python
 earth_science_ai999x.solve('standard_atmosphere_height', p=85000.0)
-# -> z = 1456.51 m   (SOLVED)
+# -> z = 1457.27 m   (SOLVED)
 ```
 
 **Questions in words (documented forms), as executed:**
 
 | question | outcome | result |
 |---|---|---|
-| Standard atmosphere height with pressure = 500 hPa. | SOLVED | z = 5571.43 m |
-| Standard atmosphere height with pressure = 850 hPa. | SOLVED | z = 1456.51 m |
+| Standard atmosphere height with pressure = 500 hPa. | SOLVED | z = 5574.34 m |
+| Standard atmosphere height with pressure = 850 hPa. | SOLVED | z = 1457.27 m |
 | Standard atmosphere height with pressure = 500 hPa and colour = 3. | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: earth_science_ai999x.templates(); |
 | Standard atmosphere height with pressure = 100 hPa. | INVALID_INPUT | Height of a pressure level in the standard atmosphere: the tropospheric standard atmosphere covers about 1075 hPa to 226 |
 
@@ -4344,3 +4347,108 @@ earth_science_ai999x.solve('half_space_heat_flow', t=10.0, dT=1350.0, k=3.1, kap
 | Half space heat flow with age = 10 Myr, temperature difference = 1350 K, thermal conductivity = 3.1 W/(m*K) and thermal diffusivity = 8e-07 m^2/s. | SOLVED | q = 0.148602 W/m^2, q_mW = 148.602, thickness = 36960.6 m |
 | Half space heat flow with age = 50 Myr and colour = 3. | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: earth_science_ai999x.templates(); |
 | Half space heat flow with age = 500 Myr. | INVALID_INPUT | Surface heat flow of cooling oceanic lithosphere (half-space model): the seafloor age must be between 0 and 200 Myr. |
+
+<a id="earthquake_energy"></a>
+
+### Earthquake energy and the energy and amplitude ratios of two magnitudes, `earthquake_energy`
+
+The seismic energy radiated by an earthquake of magnitude M, log10 $E = 1.5$ $M + 4.8$ (E in J, Gutenberg-Richter), as joules and tonnes of TNT (4.184e9 J per tonne), and for a second magnitude its energy, the energy ratio 10^(1.5 $(M_{2} - M_{1})$) and the ground-amplitude ratio $10^{M_{2} - M_{1}}$ (same distance and instrument).
+
+$$
+\log_{10}E = 1.5M + 4.8,\quad \frac{E_2}{E_1} = 10^{1.5(M_2 - M_1)},\quad \frac{A_2}{A_1} = 10^{M_2 - M_1}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `M1` | magnitude of the (first) earthquake |  |
+| `M2` | magnitude of a second earthquake (optional) |  |
+
+| output | meaning |
+|---|---|
+| `E1` | energy released by the first earthquake (J) |
+| `E1_TNT_t` | the same in tonnes of TNT |
+| `E2` | energy released by the second earthquake (J) |
+| `energy_ratio` | energy ratio $E_{2}/E_{1}$ |
+| `amplitude_ratio` | amplitude ratio $A_{2}/A_{1}$ |
+
+- **Method:** E = 10^(1.5 M + 4.8) J; E2/E1 = 10^(1.5 $(M_{2} - M_{1})$); $A_{2}/A_{1} = 10^{M_{2} - M_{1}}$
+- **Assumes:** $-2  \leq  M  \leq  10$; Gutenberg-Richter energy relation log10 $E = 1.5$ $M + 4.8$ (E in J); amplitude ratio for the same distance and instrument
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![E1 (energy released by the first earthquake (J)) against M1 (magnitude of the (first) earthquake) from 3 to 9, logarithmic output axis](https://www.ai999x.com/?ax_fig=earth-science-ai999x/earthquake-energy-curve)
+
+*E1 (energy released by the first earthquake (J)) against M1 (magnitude of the (first) earthquake) from 3 to 9, logarithmic output axis. Other inputs as in the worked example: M2 = 7.0. 31 points computed by earth-science-ai999x; marked: the worked example, M1 = 6, E1 = 6.3096e+13 J.*
+
+```python
+earth_science_ai999x.solve('earthquake_energy', M1=6.0, M2=7.0)
+# -> E1 = 6.30957e+13 J, E1_TNT_t = 15080.2, E2 = 1.99526e+15 J, energy_ratio = 31.6228, amplitude_ratio = 10   (SOLVED)
+```
+
+```python
+earth_science_ai999x.solve('earthquake_energy', M1=5.5)
+# -> E1 = 1.12202e+13 J, E1_TNT_t = 2681.69   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Earthquake energy with magnitude = 6 and second magnitude = 7. | SOLVED | E1 = 6.30957e+13 J, E1_TNT_t = 15080.2, E2 = 1.99526e+15 J, energy_ratio = 31.6228, amplitude_ratio = 10 |
+| Earthquake energy with magnitude = 5.5. | SOLVED | E1 = 1.12202e+13 J, E1_TNT_t = 2681.69 |
+| Earthquake energy with magnitude = 6 and second magnitude = 7 and colour = 3. | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: earth_science_ai999x.templates(); |
+| Earthquake energy with magnitude = 12. | INVALID_INPUT | Earthquake energy and the energy and amplitude ratios of two magnitudes: the magnitude must be between -2 and 10. |
+
+<a id="map_gradient_relief"></a>
+
+### Relief and gradient between two points of a topographic map, `map_gradient_relief`
+
+The relief (difference in elevation) between two points, the ground distance (map distance times the scale denominator, or as given), the gradient in m per km, the slope as a fraction and percent and the slope angle.
+
+$$
+\text{gradient} = \frac{|z_2 - z_1|}{d_{map}\cdot S},\quad \theta = \arctan\frac{|z_2 - z_1|}{d}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `z1` | elevation of the first point |  |
+| `z2` | elevation of the second point |  |
+| `d_map` | distance measured on the map (optional: or give the ground distance) |  |
+| `scale` | scale denominator (24000 for 1:24000; with the map distance) |  |
+| `d` | ground (horizontal) distance (optional: or give the map distance and scale) |  |
+
+| output | meaning |
+|---|---|
+| `relief` | relief \|$z_{2} - z_{1}$\| (m) |
+| `distance` | ground distance (m) |
+| `gradient_m_per_km` | gradient (m per km) |
+| `slope` | slope rise/run |
+| `slope_percent` | slope (percent) |
+| `slope_deg` | slope angle (degrees) |
+
+- **Method:** relief = |$z_{2} - z_{1}$|; run = d_map x scale; gradient = relief/run (x 1000 per km, x 100 percent); angle = atan(relief/run)
+- **Assumes:** elevations between -11000 and 9000 m; the ground distance, or the map distance and the scale; 0 < map distance <= 2 m; 100 <= scale <= 1e7; relief is the absolute difference (uphill or downhill)
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![gradient_m_per_km (gradient (m per km)) against z1 (elevation of the first point) from 120 m to 12000 m on a logarithmic axis](https://www.ai999x.com/?ax_fig=earth-science-ai999x/map-gradient-relief-curve)
+
+*gradient_m_per_km (gradient (m per km)) against z1 (elevation of the first point) from 120 m to 12000 m on a logarithmic axis. One curve for each value of z2 (elevation of the second point): 1450 m, 725 m, 2900 m. Other inputs as in the worked example: d_map = 0.05 m, scale = 24000.0. 38 points per curve computed by earth-science-ai999x; marked: the worked example, z1 = 1200 m, gradient_m_per_km = 208.333.*
+
+```python
+earth_science_ai999x.solve('map_gradient_relief', z1=1200.0, z2=1450.0, d_map=0.05, scale=24000.0)
+# -> relief = 250 m, distance = 1200 m, gradient_m_per_km = 208.333, slope = 0.208333, slope_percent = 20.8333, slope_deg = 11.7683   (SOLVED)
+```
+
+```python
+earth_science_ai999x.solve('map_gradient_relief', z1=350.0, z2=120.0, d=2500.0)
+# -> relief = 230 m, distance = 2500 m, gradient_m_per_km = 92, slope = 0.092, slope_percent = 9.2, slope_deg = 5.25641   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Topographic gradient with first elevation = 1200 m, second elevation = 1450 m, map distance = 5 cm and scale = 24000. | SOLVED | relief = 250 m, distance = 1200 m, gradient_m_per_km = 208.333, slope = 0.208333, slope_percent = 20.8333, slope_deg = 11.7683 |
+| Topographic gradient with first elevation = 350 m, second elevation = 120 m and ground distance = 2.5 km. | SOLVED | relief = 230 m, distance = 2500 m, gradient_m_per_km = 92, slope = 0.092, slope_percent = 9.2, slope_deg = 5.25641 |
+| Topographic gradient with first elevation = 1200 m, map distance = 5 cm and scale = 24000. | NEEDS_INPUT | map_gradient_relief needs z2 (elevation of the second point). Example: solve('map_gradient_relief', z1='1200 m', z2='145 |
+| Topographic gradient with first elevation = 1200 m, second elevation = 1450 m, map distance = 5 cm and scale = 24000 and colour = 3. | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: earth_science_ai999x.templates(); |
+| Topographic gradient with first elevation = 1200 m, second elevation = 1450 m, map distance = 5 cm and scale = 5. | INVALID_INPUT | Relief and gradient between two points of a topographic map: the scale denominator must be between 100 and 10,000,000 (1 |
