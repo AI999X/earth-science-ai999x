@@ -1,6 +1,6 @@
 # earth-science: the Earth Science program, user guide
 
-**earth-science-ai999x 1.6.3**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
+**earth-science-ai999x 1.6.4**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
 Earth Science covers atmospheric thermodynamics and meteorology, climate and radiation balance, oceanography and seawater properties, seismology and geophysics, and geology. This guide is about `earth-science`, the model as a self-contained program for Windows and Linux: 87 capabilities in 21 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model's page (https://www.ai999x.com/models/earth-science-ai999x/); the Python package (`pip install earth-science-ai999x`) has its own guide. Every command output printed here is what the program printed.
 
@@ -96,7 +96,7 @@ Prints the model, its version and that this is the Rust build.
 
 ```shell
 $ earth-science --version
-earth-science-ai999x 1.6.3 (Rust build, ax-engine 1.6.3)
+earth-science-ai999x 1.6.4 (Rust build, ax-engine 1.6.4)
 ```
 
 ### 2.2 Ask in words
