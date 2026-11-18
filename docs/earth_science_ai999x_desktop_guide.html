@@ -1,0 +1,72 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Earth Science: desktop app user guide</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
+<style>
+@page{size:A4;margin:16mm 15mm}
+body{font-family:"Segoe UI",Arial,sans-serif;font-size:10.5pt;line-height:1.45;color:#1b1f24;max-width:880px;margin:auto}
+h1{font-size:22pt;border-bottom:2px solid #2b5c8a;padding-bottom:4px;margin-top:28px;page-break-before:always}
+h1:first-of-type{page-break-before:avoid}
+h2{font-size:15pt;color:#2b5c8a;margin-top:22px;page-break-after:avoid}
+h3{font-size:12pt;margin-top:16px;page-break-after:avoid}
+pre{background:#f4f6f8;border:1px solid #dde3e8;border-radius:4px;padding:8px 10px;font-size:8.8pt;white-space:pre-wrap;page-break-inside:avoid}
+code{font-family:Consolas,monospace;font-size:9pt;background:#f4f6f8;padding:0 2px}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;margin:8px 0;font-size:9pt;width:100%;page-break-inside:auto}
+th,td{border:1px solid #cfd6dd;padding:3px 6px;vertical-align:top;text-align:left}
+th{background:#eaf0f5}
+.math{margin:6px 0;overflow-x:auto}
+.badge{display:inline-block;color:#fff;border-radius:3px;padding:0 5px;font-size:8.5pt;white-space:nowrap}
+figure{margin:10px 0;text-align:center;page-break-inside:avoid}figure img{max-width:88%}.svgfig svg{max-width:88%;height:auto}
+figcaption{font-size:9pt;color:#555}
+.pb{page-break-after:always}
+</style></head><body>
+<h1>Earth Science: the desktop app, user guide</h1>
+<p><strong>Earth Science</strong>, desktop app 1.6.5 for Windows and Linux. <strong>Creator / engineer:</strong> Ibnul Jaif Farabi · <strong>Company:</strong> AI999X · support@ai999x.com</p>
+<p>Earth Science covers atmospheric thermodynamics and meteorology, climate and radiation balance, oceanography and seawater properties, seismology and geophysics, and geology. Its desktop app holds all 87 calculations in 21 topics: pick one, change its inputs and the answer, a live scene and charts follow at once. It runs on your own computer with no network connection and nothing else to install. The pictures in this guide were taken in this app.</p>
+<h2>Contents</h2>
+<ul><li>1. Get it and start it</li><li>2. The window</li><li>3. Compute a calculation</li><li>4. Ask in words</li><li>5. The live scene and the charts</li><li>6. Light and dark</li><li>7. Every calculation</li><li>8. Other ways to use it</li></ul>
+<h2>1. Get it and start it</h2>
+<table><thead><tr><th>system</th><th>download</th></tr></thead><tbody><tr><td>Windows x86-64</td><td>https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.5/ai999x-earth-science-1.6.5-windows-x86_64.zip</td></tr><tr><td>Linux x86-64</td><td>https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.5/ai999x-earth-science-1.6.5-linux-x86_64.tar.gz</td></tr></tbody></table>
+<p>Windows: Download ai999x-earth-science-1.6.5-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-earth-science.exe. If Windows SmartScreen asks, choose More info → Run anyway.</p>
+<p>Linux:</p>
+<pre><code class="shell">curl -LO https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.5/ai999x-earth-science-1.6.5-linux-x86_64.tar.gz
+curl -LO https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.5/SHA256SUMS
+sha256sum -c --ignore-missing SHA256SUMS
+tar xzf ai999x-earth-science-1.6.5-linux-x86_64.tar.gz
+./ai999x-earth-science-1.6.5-linux-x86_64/ai999x-earth-science</code></pre>
+<p>Checksums of every download: https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.5/SHA256SUMS. Install steps for every app: https://www.ai999x.com/desktop-cli/</p>
+<h2>2. The window</h2>
+<figure><img src="https://www.ai999x.com/?ax_shot=earth-science-ai999x/hero.webp"><figcaption>The Earth Science app, opened on Lifting condensation level (Romps 2017) with its worked example.</figcaption></figure>
+<p>On the left, a search box and the topics with their calculations. In the middle, the chosen calculation: its answer at the top, then the live scene (or its charts), what the answer means and the formula. On the right, its inputs, each with a slider where that makes sense, and the Compute and Reset buttons. At the bottom, a box for a question in words.</p>
+<h2>3. Compute a calculation</h2>
+<p>Open Atmospheric thermodynamics › Lifting condensation level (Romps 2017) (or type part of its name in the search box). It opens with a worked example filled in: “Lifting condensation level with pressure = 1000 hPa, temperature = 30 °C and dewpoint = 20 °C.” The answer: p_lcl = 86421.30262 Pa, T_lcl = 290.8124964 K.</p>
+<p>Change any input (type a number with its unit, or drag its slider) and the answer, the scene and the charts follow; Compute recomputes after typing, Reset brings back the worked example. An input outside the range the formula holds for is refused with the reason, never answered with a guessed number.</p>
+<figure><img src="https://www.ai999x.com/?ax_shot=earth-science-ai999x/scene-1.webp"><figcaption>Lifting condensation level (Romps 2017): the live scene of the worked example.</figcaption></figure>
+<h2>4. Ask in words</h2>
+<p>Type a question as you would say it, for example “Lifting condensation level with pressure = 1000 hPa, temperature = 30 °C and dewpoint = 20 °C.” The app reads the quantities and their units, picks the calculation and answers; the command-line program reads it the same way and printed:</p>
+<pre><code class="text">Read as: Lifting condensation level (Romps 2017)
+p_lcl = 86421.30262 Pa
+T_lcl = 290.8124964 K</code></pre>
+<p>When a question names a quantity the app cannot place, it says what is missing instead of guessing.</p>
+<h2>5. The live scene and the charts</h2>
+<p>Every calculation draws a scene from its answer: it moves as an input changes. The Charts button shows charts that vary one input around your values; Enlarge opens one in a large view. Scenes from other topics:</p>
+<figure><img src="https://www.ai999x.com/?ax_shot=earth-science-ai999x/scene-2.webp"><figcaption>In-situ density of seawater (EOS-80)</figcaption></figure>
+<figure><img src="https://www.ai999x.com/?ax_shot=earth-science-ai999x/scene-3.webp"><figcaption>Planetary equilibrium (effective radiating) temperature</figcaption></figure>
+<figure><img src="https://www.ai999x.com/?ax_shot=earth-science-ai999x/scene-4.webp"><figcaption>Moment magnitude from seismic moment</figcaption></figure>
+<figure><img src="https://www.ai999x.com/?ax_shot=earth-science-ai999x/scene-5.webp"><figcaption>Radiometric age from a daughter/parent ratio</figcaption></figure>
+<figure><img src="https://www.ai999x.com/?ax_shot=earth-science-ai999x/scene-6.webp"><figcaption>Heat index (NWS)</figcaption></figure>
+<figure><img src="https://www.ai999x.com/?ax_shot=earth-science-ai999x/scene-7.webp"><figcaption>Period of inertial oscillations</figcaption></figure>
+<figure><img src="https://www.ai999x.com/?ax_shot=earth-science-ai999x/scene-8.webp"><figcaption>Column density by Pratt isostasy</figcaption></figure>
+<figure><img src="https://www.ai999x.com/?ax_shot=earth-science-ai999x/chart-1.webp"><figcaption>Lifting condensation level (Romps 2017): a chart, enlarged.</figcaption></figure>
+<figure><img src="https://www.ai999x.com/?ax_shot=earth-science-ai999x/chart-2.webp"><figcaption>In-situ density of seawater (EOS-80): a chart, enlarged.</figcaption></figure>
+<h2>6. Light and dark</h2>
+<p>The app follows a light or a dark theme (the switch is in its top bar).</p>
+<figure><img src="https://www.ai999x.com/?ax_shot=earth-science-ai999x/hero-dark.webp"><figcaption>The Earth Science app in the dark theme.</figcaption></figure>
+<h2>7. Every calculation</h2>
+<p>87 calculations in 21 topics; each has its own entry on the model&#x27;s page (https://www.ai999x.com/models/earth-science-ai999x/) with its formula, worked example and charts.</p>
+<table><thead><tr><th>topic</th><th>calculations</th></tr></thead><tbody><tr><td>Applied meteorology</td><td>Heat index (NWS), Wind chill temperature index</td></tr><tr><td>Atmospheric and ocean dynamics</td><td>Period of inertial oscillations</td></tr><tr><td>Atmospheric dynamics</td><td>Brunt-Väisälä (buoyancy) frequency, Coriolis parameter, Geostrophic wind from a height gradient, Gradient wind in curved flow, Phase speed of a barotropic Rossby wave, Rossby number, Wind components from speed and direction, Wind speed and direction from components</td></tr><tr><td>Atmospheric moisture</td><td>Dewpoint from temperature and relative humidity, Dewpoint from vapour pressure, Relative humidity from temperature and dewpoint, Saturation mixing ratio, Saturation vapour pressure over water, Specific humidity from dewpoint and pressure, Water-vapour mixing ratio from vapour pressure</td></tr><tr><td>Atmospheric thermodynamics</td><td>Atmospheric scale height, Density of moist air, Equivalent potential temperature (Bolton 1980), Geopotential and geopotential height, Height of a pressure level in the standard atmosphere, Lifting condensation level (Romps 2017), Moist static energy, Potential temperature, Pressure at a height in the standard atmosphere, Pressure at height in an isothermal atmosphere, Pressure at height with a constant lapse rate, Saturated (moist) adiabatic lapse rate, Temperature from potential temperature, Temperature of a dry parcel after adiabatic ascent, Thickness of a layer (hypsometric equation), Virtual temperature</td></tr><tr><td>Climate</td><td>Warming of a one-box energy-balance model</td></tr><tr><td>Climate and radiation</td><td>Radiative forcing of a change in CO2 (Myhre et al. 1998), Solar elevation and azimuth</td></tr><tr><td>Geochronology</td><td>Conventional radiocarbon age, Fraction of a radioactive parent remaining, Isochron age (e.g. Rb-Sr) from sample ratios, Potassium-argon age (branched decay), Radiometric age from a daughter/parent ratio</td></tr><tr><td>Geodynamics</td><td>Column density by Pratt isostasy, Mountain root by Airy isostasy</td></tr><tr><td>Geomagnetism</td><td>Inclination and strength of a geocentric dipole field, Paleolatitude from magnetic inclination</td></tr><tr><td>Geomorphology</td><td>Stream power of a river</td></tr><tr><td>Geophysics</td><td>Gravitational acceleration at a latitude and height, Gravity anomaly above a buried sphere, Gravity anomaly of an infinite horizontal slab (Bouguer)</td></tr><tr><td>Geothermics</td><td>Steady geotherm with radiogenic heat production, Surface heat flow of cooling oceanic lithosphere (half-space model)</td></tr><tr><td>Hydrogeology</td><td>Groundwater discharge by Darcy&#x27;s law</td></tr><tr><td>Maps</td><td>Relief and gradient between two points of a topographic map</td></tr><tr><td>Ocean dynamics</td><td>Ekman layer depth, Ekman transport, Speed of a shallow-water (long) wave and tsunami travel time</td></tr><tr><td>Oceanography</td><td>Adiabatic temperature gradient of seawater (Bryden 1973), Density of pure water (SMOW, Bigg 1967), Density of seawater at the surface (UNESCO 1981), Depth from sea pressure (Fofonoff and Millard 1983), Freezing point of seawater (UNESCO 1983), In-situ density of seawater (EOS-80), Potential temperature of seawater (Fofonoff 1977), Sea pressure at a depth (Saunders 1981), Speed of sound in seawater (Chen and Millero 1977), Water-wave dispersion at finite depth</td></tr><tr><td>Plate tectonics</td><td>Depth of the ocean floor with age (half-space cooling), Plate velocity from an Euler pole</td></tr><tr><td>Radiation balance</td><td>Daily mean insolation at the top of the atmosphere, Planetary equilibrium (effective radiating) temperature, Radiant flux emitted by a black or grey body (Stefan-Boltzmann), Surface temperature in the single-layer greenhouse model, Surface temperature with N fully absorbing layers, Wavelength of peak blackbody emission (Wien)</td></tr><tr><td>Sedimentology</td><td>Settling velocity of a small grain (Stokes)</td></tr><tr><td>Seismology</td><td>Distance to an earthquake from the S-P interval, Earthquake energy and the energy and amplitude ratios of two magnitudes, Elastic moduli and Poisson&#x27;s ratio from Vp, Vs and density, Epicentral distance on a spherical Earth, Geodesic distance and azimuths on the WGS84 ellipsoid (Vincenty), Gutenberg-Richter b-value (maximum likelihood), Local (Richter) magnitude from Wood-Anderson amplitude, Moment magnitude from seismic moment, Normal-moveout velocity from reflection picks, P- and S-wave speeds from bulk and shear moduli, P- and S-wave speeds from Young&#x27;s modulus and Poisson&#x27;s ratio</td></tr></tbody></table>
+<h2>8. Other ways to use it</h2>
+<p>The same engine runs on the command line (<code>earth-science</code>, its own guide), in Python (<code>pip install earth-science-ai999x</code>, <code>import earth_science_ai999x</code>, its own guide) and in the browser on https://www.ai999x.com/models/earth-science-ai999x/.</p>
+<h2>Credits</h2>
+<ul><li>Coastlines and lakes: Natural Earth (public domain).</li></ul>
+<p>Licence: Apache-2.0 · AI999X · https://www.ai999x.com/models/earth-science-ai999x/</p></body></html>
