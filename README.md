@@ -10,8 +10,8 @@ Earth Science covers atmospheric thermodynamics and meteorology, climate and rad
 
 | | |
 |---|---|
-| **Desktop app** (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.5/ai999x-earth-science-1.6.5-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.5/ai999x-earth-science-1.6.5-linux-x86_64.tar.gz) |
-| **Command line** `earth-science` (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.4/ai999x-cli-1.6.4-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.4/ai999x-cli-1.6.4-linux-x86_64.tar.gz) |
+| **Desktop app** (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-earth-science-1.6.6-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-earth-science-1.6.6-linux-x86_64.tar.gz) |
+| **Command line** `earth-science` (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cli-1.6.6-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cli-1.6.6-linux-x86_64.tar.gz) |
 | **Browser** (any device) | [Try it on the model page](https://www.ai999x.com/models/earth-science-ai999x/#capabilities) |
 | **Python** 3.10+ | `pip install earth-science-ai999x`: on Windows and Linux (x86-64) `pip` installs the same compiled engine; on other systems (macOS, ARM) it installs a pure-Python build that gives the same answers |
 
@@ -206,100 +206,6 @@ slope_percent = 20.83333333
 slope_deg = 11.76828893
 ```
 
-## Rust library: 15 examples
-
-The crate `earth-science-ai999x` (in `rust/` of the GitHub repository) answers a JSON request with `earth_science_ai999x::solve_json`. Each call below was compiled and run on this release; the comment under it is what it printed. The whole program is `rust/earth-science/examples/readme.rs`: `cd rust && cargo run --release --example readme -p earth-science-ai999x`.
-
-```rust
-use serde_json::{json, Value};
-
-fn show(request: Value) {
-    let answer: Value = serde_json::from_str(&earth_science_ai999x::solve_json(&request.to_string())).unwrap();
-    println!("{}", answer["outcome"].as_str().unwrap_or(""));
-    for v in answer["values"].as_array().into_iter().flatten() {
-        let unit = v[2].as_str().unwrap_or("");
-        let unit = if unit.is_empty() || unit == "1" { String::new() } else { format!(" {unit}") };
-        println!("{} = {}{}", v[0].as_str().unwrap_or(""), v[1], unit);
-    }
-}
-
-show(json!({"key": "heat_index", "inputs": {"T": "305.15 K", "RH": "0.7"}}));
-// SOLVED
-// HI = 313.55927368 K
-
-show(json!({"key": "inertial_period", "inputs": {"lat": "45"}}));
-// SOLVED
-// T_inertial = 60927.2198554 s
-// T_hours = 16.9242277376
-// f = 0.000103126079314 1/s
-
-show(json!({"key": "brunt_vaisala_frequency", "inputs": {"theta": "300 K", "dtheta_dz": "0.003 K/m"}}));
-// SOLVED
-// N = 0.00990285312423 1/s
-// period = 634.482328311 s
-
-show(json!({"key": "dewpoint_from_relative_humidity", "inputs": {"T": "303.15 K", "RH": "0.6"}}));
-// SOLVED
-// Td = 294.506499951 K
-
-show(json!({"key": "scale_height", "inputs": {"T": "288.15 K"}}));
-// SOLVED
-// H = 8434.3516415 m
-
-show(json!({"key": "energy_balance_response", "inputs": {"F": "3.7 W/m^2", "lam": "0.8 K*m^2/W", "C": "420000000 J/(m^2*K)", "t": "10"}}));
-// SOLVED
-// dT = 1.8028327616 K
-// dT_eq = 2.96 K
-// tau_years = 10.6471975055
-
-show(json!({"key": "co2_radiative_forcing", "inputs": {"C": "560", "C0": "280"}}));
-// SOLVED
-// dF = 3.708337416 W/m^2
-// doublings = 1.0
-
-show(json!({"key": "radiocarbon_age", "inputs": {"F": "0.5"}}));
-// SOLVED
-// age = 5568.05130144
-
-show(json!({"key": "pratt_isostasy", "inputs": {"h": "3000 m", "rho0": "2800 kg/m^3", "D": "100000 m"}}));
-// SOLVED
-// rho = 2718.44660194 kg/m^3
-// drho = 81.5533980583 kg/m^3
-
-show(json!({"key": "dipole_inclination", "inputs": {"lat": "45"}}));
-// SOLVED
-// inclination = 63.4349488229
-// F_ratio = 1.58113883008
-
-show(json!({"key": "stream_power", "inputs": {"Q": "100 m^3/s", "S": "0.002"}}));
-// SOLVED
-// Omega = 1961.33 W/m
-
-show(json!({"key": "gravity_at_latitude", "inputs": {"lat": "45", "z": "0 m"}}));
-// SOLVED
-// g = 9.80618987521 m/s^2
-
-show(json!({"key": "geotherm_radiogenic", "inputs": {"T0": "283.15 K", "q0": "0.065 W/m^2", "k": "2.5 W/(m*K)", "A": "1e-06 W/m^3", "z": "10000 m"}}));
-// SOLVED
-// T = 523.15 K
-// q = 0.055 W/m^2
-
-show(json!({"key": "darcy_flow", "inputs": {"K": "0.0001 m/s", "A": "50 m^2", "dh": "2 m", "L": "100 m"}}));
-// SOLVED
-// Q = 0.0001 m^3/s
-// q = 2e-6 m/s
-// gradient = 0.02
-
-show(json!({"key": "map_gradient_relief", "inputs": {"z1": "1200 m", "z2": "1450 m", "d_map": "0.05 m", "scale": "24000"}}));
-// SOLVED
-// relief = 250.0 m
-// distance = 1200.0 m
-// gradient_m_per_km = 208.333333333
-// slope = 0.208333333333
-// slope_percent = 20.8333333333
-// slope_deg = 11.768288932
-```
-
 ## Guides
 
 - Desktop app guide: the window, every calculation, scenes and charts: [PDF](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_desktop_guide.pdf) · [HTML](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_desktop_guide.html) · [Markdown](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_desktop_guide.md)
@@ -308,7 +214,7 @@ show(json!({"key": "map_gradient_relief", "inputs": {"z1": "1200 m", "z2": "1450
 
 Every calculation, with its formula, a worked example and its figures: **[Earth Science on ai999x.com](https://www.ai999x.com/models/earth-science-ai999x/)**. Install guides for the app and the command line: [https://www.ai999x.com/desktop-cli/](https://www.ai999x.com/desktop-cli/).
 
-Version 1.6.4 · License: Apache-2.0 · Author: Ibnul Jaif Farabi · Organization: AI999X · Contact: support@ai999x.com · [Support the project](https://buymeacoffee.com/ibnuljaiffarabi)
+Version 1.6.6 · License: Apache-2.0 · Author: Ibnul Jaif Farabi · Organization: AI999X · Contact: support@ai999x.com · [Support the project](https://buymeacoffee.com/ibnuljaiffarabi)
 
 *The Future Is Self-Improving.*
 
