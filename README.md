@@ -10,8 +10,8 @@ Earth Science covers atmospheric thermodynamics and meteorology, climate and rad
 
 | | |
 |---|---|
-| **Desktop app** (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-earth-science-1.6.6-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-earth-science-1.6.6-linux-x86_64.tar.gz) |
-| **Command line** `earth-science` (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cli-1.6.6-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cli-1.6.6-linux-x86_64.tar.gz) |
+| **Desktop app** (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.7/ai999x-earth-science-1.6.7-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.7/ai999x-earth-science-1.6.7-linux-x86_64.tar.gz) |
+| **Command line** `earth-science` (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.7/ai999x-cli-1.6.7-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.7/ai999x-cli-1.6.7-linux-x86_64.tar.gz) |
 | **Browser** (any device) | [Try it on the model page](https://www.ai999x.com/models/earth-science-ai999x/#capabilities) |
 | **Python** 3.10+ | `pip install earth-science-ai999x`: on Windows and Linux (x86-64) `pip` installs the same compiled engine; on other systems (macOS, ARM) it installs a pure-Python build that gives the same answers |
 
@@ -139,73 +139,6 @@ print(a.outcome, a.values)
 # SOLVED {'gamma': 0.000127387056532, 'gamma_per_km_dbar': 0.127387056532}
 ```
 
-## Command line: 15 examples
-
-Each command below was run with `earth-science` of this release; the lines under it are the answer it printed (the full answer goes on with the method, every input in SI units and the conditions it assumes).
-
-```text
-$ earth-science solve heat_index "T=305.15 K" RH=0.7
-HI = 313.5592737 K
-
-$ earth-science solve inertial_period lat=45
-T_inertial = 60927.21986 s
-T_hours = 16.92422774
-f = 0.0001031260793 1/s
-
-$ earth-science solve brunt_vaisala_frequency "theta=300 K" "dtheta_dz=0.003 K/m"
-N = 0.009902853124 1/s
-period = 634.4823283 s
-
-$ earth-science solve dewpoint_from_relative_humidity "T=303.15 K" RH=0.6
-Td = 294.5065 K
-
-$ earth-science solve scale_height "T=288.15 K"
-H = 8434.351641 m
-
-$ earth-science solve energy_balance_response "F=3.7 W/m^2" "lam=0.8 K*m^2/W" "C=420000000 J/(m^2*K)" t=10
-dT = 1.802832762 K
-dT_eq = 2.96 K
-tau_years = 10.64719751
-
-$ earth-science solve co2_radiative_forcing C=560 C0=280
-dF = 3.708337416 W/m^2
-doublings = 1
-
-$ earth-science solve radiocarbon_age F=0.5
-age = 5568.051301
-
-$ earth-science solve pratt_isostasy "h=3000 m" "rho0=2800 kg/m^3" "D=100000 m"
-rho = 2718.446602 kg/m^3
-drho = 81.55339806 kg/m^3
-
-$ earth-science solve dipole_inclination lat=45
-inclination = 63.43494882
-F_ratio = 1.58113883
-
-$ earth-science solve stream_power "Q=100 m^3/s" S=0.002
-Omega = 1961.33 W/m
-
-$ earth-science solve gravity_at_latitude lat=45 "z=0 m"
-g = 9.806189875 m/s^2
-
-$ earth-science solve geotherm_radiogenic "T0=283.15 K" "q0=0.065 W/m^2" "k=2.5 W/(m*K)" "A=1e-06 W/m^3" "z=10000 m"
-T = 523.15 K
-q = 0.055 W/m^2
-
-$ earth-science solve darcy_flow "K=0.0001 m/s" "A=50 m^2" "dh=2 m" "L=100 m"
-Q = 0.0001 m^3/s
-q = 2e-06 m/s
-gradient = 0.02
-
-$ earth-science solve map_gradient_relief "z1=1200 m" "z2=1450 m" "d_map=0.05 m" scale=24000
-relief = 250 m
-distance = 1200 m
-gradient_m_per_km = 208.3333333
-slope = 0.2083333333
-slope_percent = 20.83333333
-slope_deg = 11.76828893
-```
-
 ## Guides
 
 - Desktop app guide: the window, every calculation, scenes and charts: [PDF](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_desktop_guide.pdf) · [HTML](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_desktop_guide.html) · [Markdown](https://huggingface.co/AI999X/earth-science-ai999x/blob/main/docs/earth_science_ai999x_desktop_guide.md)
@@ -214,13 +147,13 @@ slope_deg = 11.76828893
 
 Every calculation, with its formula, a worked example and its figures: **[Earth Science on ai999x.com](https://www.ai999x.com/models/earth-science-ai999x/)**. Install guides for the app and the command line: [https://www.ai999x.com/desktop-cli/](https://www.ai999x.com/desktop-cli/).
 
-Version 1.6.6 · License: Apache-2.0 · Author: Ibnul Jaif Farabi · Organization: AI999X · Contact: support@ai999x.com · [Support the project](https://buymeacoffee.com/ibnuljaiffarabi)
+Version 1.6.7 · License: Apache-2.0 · Author: Ibnul Jaif Farabi · Organization: AI999X · Contact: support@ai999x.com · [Support the project](https://buymeacoffee.com/ibnuljaiffarabi)
 
 *The Future Is Self-Improving.*
 
 ## Source and releases
 
-This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/earth-science-ai999x/) (`pip install .` builds it). Releases are tagged `v1.6.6`; the [GitHub release](https://github.com/AI999X/earth-science-ai999x/releases/tag/v1.6.6) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
+This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/earth-science-ai999x/) (`pip install .` builds it). Releases are tagged `v1.6.7`; the [GitHub release](https://github.com/AI999X/earth-science-ai999x/releases/tag/v1.6.7) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
 
 ## Build the program from source
 
